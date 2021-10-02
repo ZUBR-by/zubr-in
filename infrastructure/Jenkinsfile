@@ -12,7 +12,7 @@ pipeline {
             ansiblePlaybook(
                   playbook: 'infrastructure/deploy.yml',
                   inventory: "$FRONTEND_HOST,",
-                  credentialsId: "SSH_PRIVATE_KEY",
+                  credentialsId: "CURRENT_DEPLOY_KEY",
                   hostKeyChecking: false
             )
         }
