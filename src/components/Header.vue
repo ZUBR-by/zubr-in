@@ -26,7 +26,7 @@
       </a>
       <div class="header-links flex-grow-all pdng-l-20px pdng-r-20px">
         <router-link :to="route.to" v-for="route of routes">
-          {{route.name}}
+          {{ route.name }}
         </router-link>
         <!--        <a href="">Выборы</a>-->
         <!--        <a href="">Нарушения</a>-->
@@ -64,7 +64,7 @@ import {routes} from '../router';
 export default defineComponent({
   setup() {
     return {
-      routes: routes.map(item => {
+      routes: routes.filter(i => !i.exclude).map(item => {
         return {
           to: item.path,
           name: item.label

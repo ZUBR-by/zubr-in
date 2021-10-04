@@ -4,6 +4,7 @@ import Messages from './components/Messages.vue'
 import Organizations from './components/Organizations.vue'
 import Commissions from "./components/Commissions.vue";
 import News from "./components/News.vue";
+import Commission from "./components/Commission.vue";
 
 const routes = [
     {
@@ -29,6 +30,13 @@ const routes = [
         name: 'commissions',
         label: 'Комиссии',
         component: Commissions,
+    },
+    {
+        path: '/commission/:id',
+        name: 'commission',
+        label: 'Комиссия',
+        exclude: true,
+        component: Commission,
     },
     {
         path: '/news',
