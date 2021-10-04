@@ -24,7 +24,7 @@
       <a class="organization-unit">
         <div class="section size-10 pdng-l-20px">
           <div class="organization-unit-logo">
-            <img src="imgs/org-logo.png" alt="">
+            <img src="/imgs/org-logo.png" alt="">
           </div>
         </div>
         <div class="section pdng-r-20px pdng-l-30px pdng-t-20px pdng-b-20px">
@@ -39,7 +39,7 @@
       <a class="organization-unit">
         <div class="section size-10 pdng-l-20px">
           <div class="organization-unit-logo">
-            <img src="imgs/org-logo.png" alt="">
+            <img src="/imgs/org-logo.png" alt="">
           </div>
         </div>
         <div class="section pdng-r-20px pdng-l-30px pdng-t-20px pdng-b-20px">
@@ -54,7 +54,7 @@
       <a class="organization-unit">
         <div class="section size-10 pdng-l-20px">
           <div class="organization-unit-logo">
-            <img src="imgs/org-logo.png" alt="">
+            <img src="/imgs/org-logo.png" alt="">
           </div>
         </div>
         <div class="section pdng-r-20px pdng-l-30px pdng-t-20px pdng-b-20px">
@@ -69,7 +69,7 @@
       <a class="organization-unit">
         <div class="section size-10 pdng-l-20px">
           <div class="organization-unit-logo">
-            <img src="imgs/org-logo.png" alt="">
+            <img src="/imgs/org-logo.png" alt="">
           </div>
         </div>
         <div class="section pdng-r-20px pdng-l-30px pdng-t-20px pdng-b-20px">
@@ -84,7 +84,7 @@
       <a class="organization-unit">
         <div class="section size-10 pdng-l-20px">
           <div class="organization-unit-logo">
-            <img src="imgs/org-logo.png" alt="">
+            <img src="/imgs/org-logo.png" alt="">
           </div>
         </div>
         <div class="section pdng-r-20px pdng-l-30px pdng-t-20px pdng-b-20px">
@@ -99,7 +99,7 @@
       <a class="organization-unit">
         <div class="section size-10 pdng-l-20px">
           <div class="organization-unit-logo">
-            <img src="imgs/org-logo.png" alt="">
+            <img src="/imgs/org-logo.png" alt="">
           </div>
         </div>
         <div class="section pdng-r-20px pdng-l-30px pdng-t-20px pdng-b-20px">
