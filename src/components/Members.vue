@@ -30,7 +30,7 @@
             <div class="section pdng-r-20px">
               <div class="person-photo">
                 <div class="person-initials">С.Г.Т.</div>
-                <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
+                <img src="/imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
               </div>
             </div>
             <div class="section">
