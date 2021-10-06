@@ -7,6 +7,7 @@ import News from "./components/News.vue";
 import Commission from "./components/Commission.vue";
 import Members from "./components/Members.vue";
 import Member from "./components/Member.vue";
+import NewsItem from "./components/NewsItem.vue";
 
 const routes = [
     {
@@ -58,6 +59,13 @@ const routes = [
         name: 'news',
         label: 'Новости',
         component: News,
+    },
+    {
+        path: '/news/:id',
+        name: 'news_item',
+        label: 'Новость',
+        exclude: true,
+        component: NewsItem,
     },
 ]
 const router = createRouter({
