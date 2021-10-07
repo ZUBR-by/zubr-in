@@ -76,7 +76,7 @@
         <div class="section size-50">
           <div class="map-wrp"
                style="background:#EDEDED; width:100%; height:100%; position:absolute; left:0; top:0; border-radius:30px;">
-            Map
+            <location :feature="data.commission.coordinates"></location>
           </div>
         </div>
       </div>
@@ -315,6 +315,7 @@
 </template>
 <script>
 import Header from './Header.vue';
+import Location from './Point.vue';
 import {defineComponent, onMounted, ref} from "vue";
 import {useRoute} from 'vue-router'
 
@@ -334,7 +335,8 @@ async function fetchCommission() {
 
 export default defineComponent({
   components: {
-    'header-view': Header
+    'header-view': Header,
+    Location
   },
   setup() {
     onMounted(() => {
