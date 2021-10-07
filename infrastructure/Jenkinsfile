@@ -5,6 +5,9 @@ pipeline {
     }
     stages {
         stage('Build') {
+            environment {
+                VITE_API_URL = 'https://graph.zubr.app/api/rest'
+            }
             steps {
                 sh 'yarn'
                 sh 'yarn run build --emptyOutDir'

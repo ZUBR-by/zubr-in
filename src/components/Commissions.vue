@@ -18,24 +18,24 @@
             </div>
           </div>
         </div>
-        <div class="inline-block mrgn-l-30px">
-          <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">
-            Регион и насел. пункт
-          </div>
-          <div class="buttongroup">
-            <div class="buttongroup-unit active">
-              Инпут
-            </div>
-          </div>
-        </div>
-        <div class="inline-block mrgn-l-30px">
-          <label class="flex-row flex-algn-itms-c txt-size-14px txt-color-3-1 txt-medium">
-            <input type="checkbox" style="width:16px; height:16px;">
-            <span class="mrgn-l-5px">
-                Участки без наблюдателей
-              </span>
-          </label>
-        </div>
+        <!--        <div class="inline-block mrgn-l-30px">-->
+        <!--          <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">-->
+        <!--            Регион и насел. пункт-->
+        <!--          </div>-->
+        <!--          <div class="buttongroup">-->
+        <!--            <div class="buttongroup-unit active">-->
+        <!--              Инпут-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--        </div>-->
+        <!--        <div class="inline-block mrgn-l-30px">-->
+        <!--          <label class="flex-row flex-algn-itms-c txt-size-14px txt-color-3-1 txt-medium">-->
+        <!--            <input type="checkbox" style="width:16px; height:16px;">-->
+        <!--            <span class="mrgn-l-5px">-->
+        <!--                Участки без наблюдателей-->
+        <!--              </span>-->
+        <!--          </label>-->
+        <!--        </div>-->
       </div>
       <div class="section pdng-30px pdng-t-15px pdng-b-15px">
         <div class="inline-block">
@@ -55,72 +55,76 @@
     </div>
   </header-view>
   <div style="margin-top:170px;" class="scene" v-if="view === 'list'">
-    <div class="committee-list">
-      <a class="committee-unit" :class="{mark: item === 2}"
-         :href="'/commission/1'" v-for="item of [1,2,3,4,5]">
-        <div class="section pdng-r-20px pdng-l-30px pdng-t-20px pdng-b-20px">
-          <h2 class="txt-color-1 txt-size-20px txt-medium">
-            Ленинский район г.Минска
-          </h2>
-          <div class="txt-color-2 txt-size-14px">
-            Ленинский райисполком г.Минска, каб.104
+    <template v-if="data">
+      <div class="committee-list">
+        <!--        :class="{mark: item === 2}"-->
+        <a class="committee-unit"
+           :href="'/commission/' + item.id" v-for="item of data.commissions">
+          <div class="section pdng-r-20px pdng-l-30px pdng-t-20px pdng-b-20px">
+            <h2 class="txt-color-1 txt-size-20px txt-medium">
+              {{ item.name }}
+            </h2>
+            <div class="txt-color-2 txt-size-14px">
+              {{ item.description }}
+            </div>
           </div>
-        </div>
-        <div class="section pdng-r-20px pdng-l-20px pdng-t-20px pdng-b-20px border-l-1px border-color2">
-          <div class="txt-color-1 txt-size-20px txt-medium">
-            07-002-0000
+          <div class="section pdng-r-20px pdng-l-20px pdng-t-20px pdng-b-20px border-l-1px border-color2">
+            <div class="txt-color-1 txt-size-20px txt-medium">
+              {{ item.code }}
+            </div>
+            <div class="txt-color-2 txt-size-14px">
+              {{ item.address }}
+            </div>
           </div>
-          <div class="txt-color-2 txt-size-14px">
-            г.Минск, просп.Дзержинского, 10
-          </div>
-        </div>
-        <div class="section flex-grow-all txt-algn-r pdng-r-30px pdng-l-20px pdng-t-20px pdng-b-20px">
-          <div class="inline-flex flex-algn-itms-c">
-            <div class="section">
-              <div class="flex-row flex-algn-itms-c">
-                <div class="section">
-                  <svg class="block" width="16" height="21" viewBox="0 0 16 21" fill="none"
-                       xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M1.66797 2.26288C1.66797 2.26288 4.16908 0.840252 5.84339 0.694131C8.02769 0.503502 9.8518 2.26288 11.355 2.26288C12.8581 2.26287 15.3634 1.21705 15.3634 1.21705V11.6753C15.3634 11.6753 13.6553 12.5125 12.5241 12.7212C9.90404 13.2044 8.51567 11.1524 5.84339 11.1524C3.17112 11.1524 1.66797 12.7212 1.66797 12.7212V2.26288Z"
-                        fill="#FF5C01"/>
-                    <rect y="1.29492" width="1.22907" height="19.6652" fill="#FF5C01"/>
-                  </svg>
-                </div>
-                <div class="section pdng-l-15px">
-                  <div class=" txt-color-2 txt-size-20px txt-bold">
-                    1 337
+          <div class="section flex-grow-all txt-algn-r pdng-r-30px pdng-l-20px pdng-t-20px pdng-b-20px">
+            <div class="inline-flex flex-algn-itms-c">
+              <div class="section">
+                <div class="flex-row flex-algn-itms-c">
+                  <div class="section">
+                    <svg class="block" width="16" height="21" viewBox="0 0 16 21" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                      <path
+                          d="M1.66797 2.26288C1.66797 2.26288 4.16908 0.840252 5.84339 0.694131C8.02769 0.503502 9.8518 2.26288 11.355 2.26288C12.8581 2.26287 15.3634 1.21705 15.3634 1.21705V11.6753C15.3634 11.6753 13.6553 12.5125 12.5241 12.7212C9.90404 13.2044 8.51567 11.1524 5.84339 11.1524C3.17112 11.1524 1.66797 12.7212 1.66797 12.7212V2.26288Z"
+                          fill="#FF5C01"/>
+                      <rect y="1.29492" width="1.22907" height="19.6652" fill="#FF5C01"/>
+                    </svg>
+                  </div>
+                  <div class="section pdng-l-15px">
+                    <div class=" txt-color-2 txt-size-20px txt-bold">
+                      <!--                      {{ item.messages.aggregate.count }}-->
+                      0
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="section pdng-l-20px">
-              <div class="flex-row flex-algn-itms-c">
-                <div class="section">
-                  <svg class="block" width="22" height="13" viewBox="0 0 22 13" fill="none"
-                       xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M11 0.75C15.0486 0.75 17.6168 2.28517 19.1763 3.78975C19.9622 4.54792 20.4986 5.30548 20.8368 5.86991C20.9913 6.12764 21.1037 6.34396 21.1792 6.5C21.1037 6.65604 20.9913 6.87235 20.8368 7.13009C20.4986 7.69452 19.9622 8.45208 19.1763 9.21025C17.6168 10.7148 15.0486 12.25 11 12.25C6.95137 12.25 4.38316 10.7148 2.82367 9.21025C2.03783 8.45208 1.50143 7.69452 1.16317 7.13009C1.00871 6.87235 0.89626 6.65604 0.820791 6.5C0.89626 6.34396 1.00871 6.12764 1.16317 5.86991C1.50143 5.30548 2.03783 4.54792 2.82367 3.78975C4.38316 2.28517 6.95137 0.75 11 0.75ZM0.700307 6.23154C0.700114 6.23104 0.70007 6.23093 0.700174 6.2312L0.700307 6.23154Z"
-                        stroke="#FF5C01" stroke-width="1.5"/>
-                    <circle cx="11" cy="6" r="3" stroke="#FF5C01" stroke-width="2"/>
-                  </svg>
-                </div>
-                <div class="section pdng-l-15px">
-                  <div class=" txt-color-2 txt-size-20px txt-bold">
-                    1 337
-                  </div>
-                </div>
-              </div>
+              <!--              <div class="section pdng-l-20px">-->
+              <!--                <div class="flex-row flex-algn-itms-c">-->
+              <!--                  <div class="section">-->
+              <!--                    <svg class="block" width="22" height="13" viewBox="0 0 22 13" fill="none"-->
+              <!--                         xmlns="http://www.w3.org/2000/svg">-->
+              <!--                      <path-->
+              <!--                          d="M11 0.75C15.0486 0.75 17.6168 2.28517 19.1763 3.78975C19.9622 4.54792 20.4986 5.30548 20.8368 5.86991C20.9913 6.12764 21.1037 6.34396 21.1792 6.5C21.1037 6.65604 20.9913 6.87235 20.8368 7.13009C20.4986 7.69452 19.9622 8.45208 19.1763 9.21025C17.6168 10.7148 15.0486 12.25 11 12.25C6.95137 12.25 4.38316 10.7148 2.82367 9.21025C2.03783 8.45208 1.50143 7.69452 1.16317 7.13009C1.00871 6.87235 0.89626 6.65604 0.820791 6.5C0.89626 6.34396 1.00871 6.12764 1.16317 5.86991C1.50143 5.30548 2.03783 4.54792 2.82367 3.78975C4.38316 2.28517 6.95137 0.75 11 0.75ZM0.700307 6.23154C0.700114 6.23104 0.70007 6.23093 0.700174 6.2312L0.700307 6.23154Z"-->
+              <!--                          stroke="#FF5C01" stroke-width="1.5"/>-->
+              <!--                      <circle cx="11" cy="6" r="3" stroke="#FF5C01" stroke-width="2"/>-->
+              <!--                    </svg>-->
+              <!--                  </div>-->
+              <!--                  <div class="section pdng-l-15px">-->
+              <!--                    <div class=" txt-color-2 txt-size-20px txt-bold">-->
+              <!--                      1 337-->
+              <!--                    </div>-->
+              <!--                  </div>-->
+              <!--                </div>-->
+              <!--              </div>-->
             </div>
           </div>
-        </div>
-      </a>
-    </div>
-    <div class="flex-column flex-algn-itms-c pdng-t-40px">
-      <a href="#" class="button primary pdng-l-40px pdng-r-40px">
-        Загрузить еще 100 избирательных комиссий из 3 765
-      </a>
-    </div>
+        </a>
+      </div>
+      <div class="flex-column flex-algn-itms-c pdng-t-40px">
+        <a href="#" class="button primary pdng-l-40px pdng-r-40px">
+          Загрузить еще 100 избирательных комиссий из {{data.pagination.aggregate.count}}
+        </a>
+      </div>
+    </template>
   </div>
   <div style="margin-top:170px; max-width:100%; padding:0;" class="scene" v-if="view === 'map'">
     <div class="map-wrp" style="background:#EDEDED; width:auto; min-height:640px">
@@ -237,17 +241,35 @@
 </template>
 <script>
 import Header from './Header.vue'
-import {defineComponent, ref} from "vue";
+import {defineComponent, onMounted, ref} from "vue";
+
+const data = ref(null)
+
+async function fetchCommissions() {
+  try {
+    const response = await fetch(import.meta.env.VITE_API_URL + '/commissions')
+    data.value = await response.json()
+  } catch (e) {
+    data.value = {commissions: [], pagination: {aggregate: {count: 0}}};
+  }
+  return {
+    data
+  }
+}
 
 export default defineComponent({
   components: {
-    'header-view': Header
+    'header-view': Header,
   },
   setup() {
     const view = ref('list')
+    onMounted(() => {
+      fetchCommissions()
+    })
     return {
-      view
+      view,
+      data
     }
-  }
+  },
 })
 </script>
