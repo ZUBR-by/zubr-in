@@ -166,14 +166,6 @@
             </div>
           </div>-->
         </div>
-        <div class="border-l-1px border-r-1px border-color2 pdng-20px">
-          <p class="txt-size-14px txt-color-3-1">
-            {{violation.description}}
-          </p>
-          <div class="tag-wrp pdng-t-10px">
-            <a href="" class="tag-unit">Заметка</a>
-          </div>
-        </div>
         <div class="size-20 flex-column flex-noshrink pdng-20px">
           <div class="flex-grow-all">
             <div class="flex-row flex-algn-itms-c">
@@ -219,27 +211,35 @@
               </div>
             </div>
           </div>
-<!--          <div>-->
-<!--            <div class="persons-preview-list">-->
-<!--              <div class="persons-preview-unit">-->
-<!--                <img src="/imgs/person-photo.png" alt="">-->
-<!--                <div class="tooltip">-->
-<!--                  Светлана Георгьевна-->
-<!--                </div>-->
-<!--              </div>-->
-<!--              <div class="persons-preview-unit">-->
-<!--                <img src="/imgs/person-photo.png" alt="">-->
-<!--                <div class="tooltip">-->
-<!--                  Светлана Георгьевна-->
-<!--                </div>-->
-<!--              </div>-->
-<!--              <div class="persons-preview-unit">-->
-<!--                <div class="tooltip">-->
-<!--                  Светлана Георгьевна-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
+          <!--          <div>-->
+          <!--            <div class="persons-preview-list">-->
+          <!--              <div class="persons-preview-unit">-->
+          <!--                <img src="/imgs/person-photo.png" alt="">-->
+          <!--                <div class="tooltip">-->
+          <!--                  Светлана Георгьевна-->
+          <!--                </div>-->
+          <!--              </div>-->
+          <!--              <div class="persons-preview-unit">-->
+          <!--                <img src="/imgs/person-photo.png" alt="">-->
+          <!--                <div class="tooltip">-->
+          <!--                  Светлана Георгьевна-->
+          <!--                </div>-->
+          <!--              </div>-->
+          <!--              <div class="persons-preview-unit">-->
+          <!--                <div class="tooltip">-->
+          <!--                  Светлана Георгьевна-->
+          <!--                </div>-->
+          <!--              </div>-->
+          <!--            </div>-->
+          <!--          </div>-->
+        </div>
+        <div class="border-l-1px border-r-1px border-color2 pdng-20px">
+          <p class="txt-size-14px txt-color-3-1">
+            {{violation.description}}
+          </p>
+          <div class="tag-wrp pdng-t-10px">
+            <a href="" class="tag-unit">Заметка</a>
+          </div>
         </div>
       </div>
 
