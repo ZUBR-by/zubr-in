@@ -13,7 +13,7 @@
                 <rect y="1" width="2" height="32" fill="#FF5C01"></rect>
               </svg>
             </div>
-            <div class="section pdng-l-15px">
+            <div class="section pdng-l-15px" v-if="data">
               <div class="txt-size-18px">
                 Сообщений о нарушений
               </div>
