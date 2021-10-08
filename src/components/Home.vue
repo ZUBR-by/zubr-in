@@ -10,7 +10,7 @@ export default defineComponent({
 </script>
 <template>
   <header-view></header-view>
-  <div class="scene">
+  <div class="scene" style="margin-top:170px;">
     <h1 class="txt-color-2 txt-size-18px txt-normal pdng-l-40px pdng-r-40px">
       <dl>
         <dt class="txt-color-1 txt-inline txt-bold">
