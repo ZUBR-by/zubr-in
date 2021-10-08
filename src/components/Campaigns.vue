@@ -92,7 +92,7 @@
             <div class="person-wrp flex-row flex-algn-itms-c cursor-pointer">
               <div class="person-photo">
                 <div class="person-initials">С.Г.Т.</div>
-                <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
+                <img src="/imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
               </div>
               <div class="person-info pdng-l-10px">
                 <div class="chart-wrp">
@@ -114,37 +114,7 @@
             <div class="person-wrp flex-row flex-algn-itms-c cursor-pointer">
               <div class="person-photo">
                 <div class="person-initials">С.Г.Т.</div>
-                <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
-              </div>
-              <div class="person-info pdng-l-10px">
-                <div class="chart-wrp">
-                  <div class="chart-unit" style="width:67%;"></div>
-                  <div class="chart-value">
-                    67%
-                  </div>
-                </div>
-                <div class="person-name txt-size-14px txt-medium">
-                  Светлана Георгиевна
-                  <br>
-                  Тихановская
-                </div>
-                <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
-                  37 лет
-                </div>
-                <!--<div class="infoblock txt-size-12px">
-        <div class="infoblock-name">
-          Должность
-        </div>
-        <div class="infoblock-value">
-          Президент Республики Беларусь
-        </div>
-        </div>-->
-              </div>
-            </div>
-            <div class="person-wrp flex-row flex-algn-itms-c cursor-pointer">
-              <div class="person-photo">
-                <div class="person-initials">С.Г.Т.</div>
-                <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
+                <img src="/imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
               </div>
               <div class="person-info pdng-l-10px">
                 <div class="chart-wrp">
@@ -174,7 +144,7 @@
             <div class="person-wrp flex-row flex-algn-itms-c cursor-pointer">
               <div class="person-photo">
                 <div class="person-initials">С.Г.Т.</div>
-                <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
+                <img src="/imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
               </div>
               <div class="person-info pdng-l-10px">
                 <div class="chart-wrp">
@@ -204,7 +174,7 @@
             <div class="person-wrp flex-row flex-algn-itms-c cursor-pointer">
               <div class="person-photo">
                 <div class="person-initials">С.Г.Т.</div>
-                <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
+                <img src="/imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
               </div>
               <div class="person-info pdng-l-10px">
                 <div class="chart-wrp">
@@ -234,7 +204,7 @@
             <div class="person-wrp flex-row flex-algn-itms-c cursor-pointer">
               <div class="person-photo">
                 <div class="person-initials">С.Г.Т.</div>
-                <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
+                <img src="/imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
               </div>
               <div class="person-info pdng-l-10px">
                 <div class="chart-wrp">
@@ -264,7 +234,37 @@
             <div class="person-wrp flex-row flex-algn-itms-c cursor-pointer">
               <div class="person-photo">
                 <div class="person-initials">С.Г.Т.</div>
-                <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
+                <img src="/imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
+              </div>
+              <div class="person-info pdng-l-10px">
+                <div class="chart-wrp">
+                  <div class="chart-unit" style="width:67%;"></div>
+                  <div class="chart-value">
+                    67%
+                  </div>
+                </div>
+                <div class="person-name txt-size-14px txt-medium">
+                  Светлана Георгиевна
+                  <br>
+                  Тихановская
+                </div>
+                <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
+                  37 лет
+                </div>
+                <!--<div class="infoblock txt-size-12px">
+        <div class="infoblock-name">
+          Должность
+        </div>
+        <div class="infoblock-value">
+          Президент Республики Беларусь
+        </div>
+        </div>-->
+              </div>
+            </div>
+            <div class="person-wrp flex-row flex-algn-itms-c cursor-pointer">
+              <div class="person-photo">
+                <div class="person-initials">С.Г.Т.</div>
+                <img src="/imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
               </div>
               <div class="person-info pdng-l-10px">
                 <div class="chart-wrp">
