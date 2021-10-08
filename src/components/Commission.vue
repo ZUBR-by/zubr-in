@@ -15,10 +15,10 @@
             </div>
             <div class="section pdng-l-15px">
               <div class="txt-size-18px">
-                Нарушений
+                Сообщений о нарушений
               </div>
               <div class="txt-size-18px txt-bold">
-                237
+                {{data.commission.violations.length}}
               </div>
             </div>
           </div>
