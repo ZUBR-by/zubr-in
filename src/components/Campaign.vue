@@ -1,0 +1,1171 @@
+<template>
+  <header-view>
+    <div class="header-subnav border-t-1px border-color2">
+      <div class="section pdng-30px pdng-t-15px pdng-b-15px flex-grow-all">
+        <div class="txt-color-1 txt-size-18px">
+          6—9 августа 2020
+        </div>
+        <div class="txt-size-18px txt-bold">
+          28 дней до начала
+        </div>
+      </div>
+      <div class="section flex-row flex-algn-itms-c flex-noshrink flex-algn-slf-strch pdng-l-20px pdng-r-30px border-l-1px border-color2">
+        <div class="section">
+          <div class="flex-row flex-algn-itms-c">
+            <div class="section">
+              <svg width="25" height="33" viewBox="0 0 25 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.71436 2.57623C2.71436 2.57623 6.78428 0.261278 9.50878 0.0235027C13.0632 -0.286697 16.0314 2.57623 18.4774 2.57623C20.9234 2.57623 25.0001 0.874411 25.0001 0.874411V17.8926C25.0001 17.8926 22.2207 19.2549 20.3799 19.5944C16.1164 20.3807 13.8572 17.0417 9.50878 17.0417C5.16035 17.0417 2.71436 19.5944 2.71436 19.5944V2.57623Z" fill="#FF5C01"></path>
+                <rect y="1" width="2" height="32" fill="#FF5C01"></rect>
+              </svg>
+            </div>
+            <div class="section pdng-l-15px">
+              <div class="txt-size-18px">
+                Нарушений
+              </div>
+              <div class="txt-size-18px txt-bold">
+                1 337
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section pdng-l-40px">
+          <div class="button medium primary">
+            Сообщить о нарушении
+          </div>
+          <div class="button medium mrgn-l-20px">
+            Стать наблюдателем
+          </div>
+        </div>
+      </div>
+    </div>
+  </header-view>
+  <div style="margin-top:170px" class="scene">
+    <h1>
+      Выбор президента Республики Беларусь 2020
+    </h1>
+    <div class="tag-wrp mrgn-t-20px">
+      <a class="tag-unit">
+        Общереспубликанские выборы
+      </a>
+    </div>
+    <div class="mrgn-t-40px">
+      <p>
+        Это платформа для наблюдателей и избирателей в Беларуси.
+        Здесь можно узнать о любом из кандидатов и их кампаниях, любой из задействованных в выборах организациях, любом из членов избирательных комиссий на любом из работающих на этих выборах участков для голосования.
+      </p>
+      <p>
+        Это платформа для наблюдателей и избирателей в Беларуси.
+        Здесь можно узнать о любом из кандидатов и их кампаниях, любой из задействованных в выборах организациях, любом из членов избирательных комиссий на любом из работающих на этих выборах участков для голосования.
+      </p>
+    </div>
+  </div>
+  <div class="scene">
+    <h2 class="txt-size-36px txt-bold pdng-b-40px">
+      Участники компании
+    </h2>
+    <div class="campaign-candidates-list">
+      <div class="person-wrp flex-column flex-algn-itms-strch">
+        <div class="person-photo">
+          <div class="person-initials">С.Г.Т.</div>
+          <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
+        </div>
+        <div class="person-info pdng-t-10px">
+          <div class="person-name txt-size-14px txt-medium">
+            Светлана Георгиевна
+            <br>
+            Тихановская
+          </div>
+          <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
+            37 лет
+          </div>
+          <div class="chart-wrp mrgn-t-10px">
+            <div class="chart-unit" style="width:67%;"></div>
+            <div class="chart-value">
+              67%
+            </div>
+          </div>
+        </div>
+
+        <div class="person-popover cursor-pointer">
+          <div class="flex-column flex-algn-itms-strch">
+            <div class="person-photo">
+              <div class="person-initials">С.Г.Т.</div>
+              <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
+            </div>
+            <div class="person-info pdng-t-10px">
+              <div class="person-name txt-size-14px txt-medium">
+                Светлана Георгиевна
+                <br>
+                Тихановская
+              </div>
+              <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
+                37 лет
+              </div>
+              <div class="chart-wrp mrgn-t-10px">
+                <div class="chart-unit" style="width:67%;"></div>
+                <div class="chart-value">
+                  67%
+                </div>
+              </div>
+              <div class="infoblock txt-size-12px">
+                <div class="infoblock-name">
+                  Должность
+                </div>
+                <div class="infoblock-value ">
+                  Президент Республики Беларусь
+                </div>
+              </div>
+              <div class="infoblock txt-size-12px">
+                <div class="infoblock-name">
+                  Субъект выдвижения
+                </div>
+                <div class="infoblock-value ">
+                  Самовыдвижение
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="person-wrp flex-column flex-algn-itms-strch">
+        <div class="person-photo">
+          <div class="person-initials">С.Г.Т.</div>
+          <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
+        </div>
+        <div class="person-info pdng-t-10px">
+          <div class="person-name txt-size-14px txt-medium">
+            Светлана Георгиевна
+            <br>
+            Тихановская
+          </div>
+          <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
+            37 лет
+          </div>
+          <div class="chart-wrp mrgn-t-10px">
+            <div class="chart-unit" style="width:67%;"></div>
+            <div class="chart-value">
+              67%
+            </div>
+          </div>
+        </div>
+
+        <div class="person-popover cursor-pointer">
+          <div class="flex-column flex-algn-itms-strch">
+            <div class="person-photo">
+              <div class="person-initials">С.Г.Т.</div>
+              <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
+            </div>
+            <div class="person-info pdng-t-10px">
+              <div class="person-name txt-size-14px txt-medium">
+                Светлана Георгиевна
+                <br>
+                Тихановская
+              </div>
+              <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
+                37 лет
+              </div>
+              <div class="chart-wrp mrgn-t-10px">
+                <div class="chart-unit" style="width:67%;"></div>
+                <div class="chart-value">
+                  67%
+                </div>
+              </div>
+              <div class="infoblock txt-size-12px">
+                <div class="infoblock-name">
+                  Должность
+                </div>
+                <div class="infoblock-value ">
+                  Президент Республики Беларусь
+                </div>
+              </div>
+              <div class="infoblock txt-size-12px">
+                <div class="infoblock-name">
+                  Субъект выдвижения
+                </div>
+                <div class="infoblock-value ">
+                  Самовыдвижение
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="person-wrp flex-column flex-algn-itms-strch">
+        <div class="person-photo">
+          <div class="person-initials">С.Г.Т.</div>
+          <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
+        </div>
+        <div class="person-info pdng-t-10px">
+          <div class="person-name txt-size-14px txt-medium">
+            Светлана Георгиевна
+            <br>
+            Тихановская
+          </div>
+          <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
+            37 лет
+          </div>
+          <div class="chart-wrp mrgn-t-10px">
+            <div class="chart-unit" style="width:67%;"></div>
+            <div class="chart-value">
+              67%
+            </div>
+          </div>
+        </div>
+
+        <div class="person-popover cursor-pointer">
+          <div class="flex-column flex-algn-itms-strch">
+            <div class="person-photo">
+              <div class="person-initials">С.Г.Т.</div>
+              <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
+            </div>
+            <div class="person-info pdng-t-10px">
+              <div class="person-name txt-size-14px txt-medium">
+                Светлана Георгиевна
+                <br>
+                Тихановская
+              </div>
+              <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
+                37 лет
+              </div>
+              <div class="chart-wrp mrgn-t-10px">
+                <div class="chart-unit" style="width:67%;"></div>
+                <div class="chart-value">
+                  67%
+                </div>
+              </div>
+              <div class="infoblock txt-size-12px">
+                <div class="infoblock-name">
+                  Должность
+                </div>
+                <div class="infoblock-value ">
+                  Президент Республики Беларусь
+                </div>
+              </div>
+              <div class="infoblock txt-size-12px">
+                <div class="infoblock-name">
+                  Субъект выдвижения
+                </div>
+                <div class="infoblock-value ">
+                  Самовыдвижение
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="person-wrp flex-column flex-algn-itms-strch">
+        <div class="person-photo">
+          <div class="person-initials">С.Г.Т.</div>
+          <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
+        </div>
+        <div class="person-info pdng-t-10px">
+          <div class="person-name txt-size-14px txt-medium">
+            Светлана Георгиевна
+            <br>
+            Тихановская
+          </div>
+          <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
+            37 лет
+          </div>
+          <div class="chart-wrp mrgn-t-10px">
+            <div class="chart-unit" style="width:67%;"></div>
+            <div class="chart-value">
+              67%
+            </div>
+          </div>
+        </div>
+
+        <div class="person-popover cursor-pointer">
+          <div class="flex-column flex-algn-itms-strch">
+            <div class="person-photo">
+              <div class="person-initials">С.Г.Т.</div>
+              <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
+            </div>
+            <div class="person-info pdng-t-10px">
+              <div class="person-name txt-size-14px txt-medium">
+                Светлана Георгиевна
+                <br>
+                Тихановская
+              </div>
+              <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
+                37 лет
+              </div>
+              <div class="chart-wrp mrgn-t-10px">
+                <div class="chart-unit" style="width:67%;"></div>
+                <div class="chart-value">
+                  67%
+                </div>
+              </div>
+              <div class="infoblock txt-size-12px">
+                <div class="infoblock-name">
+                  Должность
+                </div>
+                <div class="infoblock-value ">
+                  Президент Республики Беларусь
+                </div>
+              </div>
+              <div class="infoblock txt-size-12px">
+                <div class="infoblock-name">
+                  Субъект выдвижения
+                </div>
+                <div class="infoblock-value ">
+                  Самовыдвижение
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="person-wrp flex-column flex-algn-itms-strch">
+        <div class="person-photo">
+          <div class="person-initials">С.Г.Т.</div>
+          <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
+        </div>
+        <div class="person-info pdng-t-10px">
+          <div class="person-name txt-size-14px txt-medium">
+            Светлана Георгиевна
+            <br>
+            Тихановская
+          </div>
+          <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
+            37 лет
+          </div>
+          <div class="chart-wrp mrgn-t-10px">
+            <div class="chart-unit" style="width:67%;"></div>
+            <div class="chart-value">
+              67%
+            </div>
+          </div>
+        </div>
+
+        <div class="person-popover cursor-pointer">
+          <div class="flex-column flex-algn-itms-strch">
+            <div class="person-photo">
+              <div class="person-initials">С.Г.Т.</div>
+              <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
+            </div>
+            <div class="person-info pdng-t-10px">
+              <div class="person-name txt-size-14px txt-medium">
+                Светлана Георгиевна
+                <br>
+                Тихановская
+              </div>
+              <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
+                37 лет
+              </div>
+              <div class="chart-wrp mrgn-t-10px">
+                <div class="chart-unit" style="width:67%;"></div>
+                <div class="chart-value">
+                  67%
+                </div>
+              </div>
+              <div class="infoblock txt-size-12px">
+                <div class="infoblock-name">
+                  Должность
+                </div>
+                <div class="infoblock-value ">
+                  Президент Республики Беларусь
+                </div>
+              </div>
+              <div class="infoblock txt-size-12px">
+                <div class="infoblock-name">
+                  Субъект выдвижения
+                </div>
+                <div class="infoblock-value ">
+                  Самовыдвижение
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="person-wrp flex-column flex-algn-itms-strch">
+        <div class="person-photo">
+          <div class="person-initials">С.Г.Т.</div>
+          <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
+        </div>
+        <div class="person-info pdng-t-10px">
+          <div class="person-name txt-size-14px txt-medium">
+            Светлана Георгиевна
+            <br>
+            Тихановская
+          </div>
+          <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
+            37 лет
+          </div>
+          <div class="chart-wrp mrgn-t-10px">
+            <div class="chart-unit" style="width:67%;"></div>
+            <div class="chart-value">
+              67%
+            </div>
+          </div>
+        </div>
+
+        <div class="person-popover cursor-pointer">
+          <div class="flex-column flex-algn-itms-strch">
+            <div class="person-photo">
+              <div class="person-initials">С.Г.Т.</div>
+              <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
+            </div>
+            <div class="person-info pdng-t-10px">
+              <div class="person-name txt-size-14px txt-medium">
+                Светлана Георгиевна
+                <br>
+                Тихановская
+              </div>
+              <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
+                37 лет
+              </div>
+              <div class="chart-wrp mrgn-t-10px">
+                <div class="chart-unit" style="width:67%;"></div>
+                <div class="chart-value">
+                  67%
+                </div>
+              </div>
+              <div class="infoblock txt-size-12px">
+                <div class="infoblock-name">
+                  Должность
+                </div>
+                <div class="infoblock-value ">
+                  Президент Республики Беларусь
+                </div>
+              </div>
+              <div class="infoblock txt-size-12px">
+                <div class="infoblock-name">
+                  Субъект выдвижения
+                </div>
+                <div class="infoblock-value ">
+                  Самовыдвижение
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="person-wrp flex-column flex-algn-itms-strch">
+        <div class="person-photo">
+          <div class="person-initials">С.Г.Т.</div>
+          <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
+        </div>
+        <div class="person-info pdng-t-10px">
+          <div class="person-name txt-size-14px txt-medium">
+            Светлана Георгиевна
+            <br>
+            Тихановская
+          </div>
+          <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
+            37 лет
+          </div>
+          <div class="chart-wrp mrgn-t-10px">
+            <div class="chart-unit" style="width:67%;"></div>
+            <div class="chart-value">
+              67%
+            </div>
+          </div>
+        </div>
+
+        <div class="person-popover cursor-pointer">
+          <div class="flex-column flex-algn-itms-strch">
+            <div class="person-photo">
+              <div class="person-initials">С.Г.Т.</div>
+              <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
+            </div>
+            <div class="person-info pdng-t-10px">
+              <div class="person-name txt-size-14px txt-medium">
+                Светлана Георгиевна
+                <br>
+                Тихановская
+              </div>
+              <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
+                37 лет
+              </div>
+              <div class="chart-wrp mrgn-t-10px">
+                <div class="chart-unit" style="width:67%;"></div>
+                <div class="chart-value">
+                  67%
+                </div>
+              </div>
+              <div class="infoblock txt-size-12px">
+                <div class="infoblock-name">
+                  Должность
+                </div>
+                <div class="infoblock-value ">
+                  Президент Республики Беларусь
+                </div>
+              </div>
+              <div class="infoblock txt-size-12px">
+                <div class="infoblock-name">
+                  Субъект выдвижения
+                </div>
+                <div class="infoblock-value ">
+                  Самовыдвижение
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="person-wrp flex-column flex-algn-itms-strch">
+        <div class="person-photo">
+          <div class="person-initials">С.Г.Т.</div>
+          <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
+        </div>
+        <div class="person-info pdng-t-10px">
+          <div class="person-name txt-size-14px txt-medium">
+            Светлана Георгиевна
+            <br>
+            Тихановская
+          </div>
+          <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
+            37 лет
+          </div>
+          <div class="chart-wrp mrgn-t-10px">
+            <div class="chart-unit" style="width:67%;"></div>
+            <div class="chart-value">
+              67%
+            </div>
+          </div>
+        </div>
+
+        <div class="person-popover cursor-pointer">
+          <div class="flex-column flex-algn-itms-strch">
+            <div class="person-photo">
+              <div class="person-initials">С.Г.Т.</div>
+              <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
+            </div>
+            <div class="person-info pdng-t-10px">
+              <div class="person-name txt-size-14px txt-medium">
+                Светлана Георгиевна
+                <br>
+                Тихановская
+              </div>
+              <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
+                37 лет
+              </div>
+              <div class="chart-wrp mrgn-t-10px">
+                <div class="chart-unit" style="width:67%;"></div>
+                <div class="chart-value">
+                  67%
+                </div>
+              </div>
+              <div class="infoblock txt-size-12px">
+                <div class="infoblock-name">
+                  Должность
+                </div>
+                <div class="infoblock-value ">
+                  Президент Республики Беларусь
+                </div>
+              </div>
+              <div class="infoblock txt-size-12px">
+                <div class="infoblock-name">
+                  Субъект выдвижения
+                </div>
+                <div class="infoblock-value ">
+                  Самовыдвижение
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="person-wrp flex-column flex-algn-itms-strch">
+        <div class="person-photo">
+          <div class="person-initials">С.Г.Т.</div>
+          <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
+        </div>
+        <div class="person-info pdng-t-10px">
+          <div class="person-name txt-size-14px txt-medium">
+            Светлана Георгиевна
+            <br>
+            Тихановская
+          </div>
+          <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
+            37 лет
+          </div>
+          <div class="chart-wrp mrgn-t-10px">
+            <div class="chart-unit" style="width:67%;"></div>
+            <div class="chart-value">
+              67%
+            </div>
+          </div>
+        </div>
+
+        <div class="person-popover cursor-pointer">
+          <div class="flex-column flex-algn-itms-strch">
+            <div class="person-photo">
+              <div class="person-initials">С.Г.Т.</div>
+              <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
+            </div>
+            <div class="person-info pdng-t-10px">
+              <div class="person-name txt-size-14px txt-medium">
+                Светлана Георгиевна
+                <br>
+                Тихановская
+              </div>
+              <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
+                37 лет
+              </div>
+              <div class="chart-wrp mrgn-t-10px">
+                <div class="chart-unit" style="width:67%;"></div>
+                <div class="chart-value">
+                  67%
+                </div>
+              </div>
+              <div class="infoblock txt-size-12px">
+                <div class="infoblock-name">
+                  Должность
+                </div>
+                <div class="infoblock-value ">
+                  Президент Республики Беларусь
+                </div>
+              </div>
+              <div class="infoblock txt-size-12px">
+                <div class="infoblock-name">
+                  Субъект выдвижения
+                </div>
+                <div class="infoblock-value ">
+                  Самовыдвижение
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="scene">
+    <h2 class="txt-size-36px txt-bold pdng-b-40px">
+      Последние инциденты. <a class="txt-underline-2px" href="#">Всего 873 инцидента и нарушений</a>.
+    </h2>
+    <div class="incident-list">
+      <div class="incident-unit cursor-pointer">
+        <div class="size-25 flex-column flex-noshrink pdng-20px txt-medium">
+          <div class="flex-grow-all">
+            <div class="txt-size-14px">
+              Несоблюдение комиссией
+              сроков вывешивания протокола
+            </div>
+            <div class="txt-color-3-1 txt-size-12px mrgn-t-5px">
+              17 авг 2020, 02:36
+            </div>
+            <div class="mrgn-t-10px">
+              <a class="inline txt-size-12px txt-underline-inline" href="#">
+                01-047-0056, Участок 56: ГУО "Гимназия №5 г.Барановичи"
+              </a>
+            </div>
+          </div>
+          <!--<div>
+            <div class="mrgn-t-10px">
+              <a class="inline txt-size-12px txt-underline-inline" href="#">
+                Честные люди
+              </a>
+            </div>
+          </div>-->
+        </div>
+        <div class="border-l-1px border-r-1px border-color2 pdng-20px">
+          <p class="txt-size-14px txt-color-3-1">
+            1. меня допустили на участок для голосования в период с 10.00 - 12.00. Все остальное время я проводил на улице под окном. Подсчет голосов был затруднён, поскольку был большой наплыв людей, которые стоя в очереди закрывали собой урну. До 10.00, находясь на улице, я видел из окна 2 кабинки и считал людей по двум кабинкам ...
+          </p>
+          <div class="tag-wrp pdng-t-10px">
+            <a href="" class="tag-unit">Заметка</a>
+          </div>
+        </div>
+        <div class="size-20 flex-column flex-noshrink pdng-20px">
+          <div class="flex-grow-all">
+            <div class="flex-row flex-algn-itms-c">
+              <div class="section">
+                <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g filter="url(#filter0_d)">
+                    <path d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z" fill="#F3F3F3"/>
+                  </g>
+                  <g opacity="0.5">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z" fill="#C6C6C6"/>
+                  </g>
+                  <defs>
+                    <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                      <feOffset dy="1"/>
+                      <feGaussianBlur stdDeviation="0.5"/>
+                      <feComposite in2="hardAlpha" operator="out"/>
+                      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                    </filter>
+                  </defs>
+                </svg>
+              </div>
+              <div class="section pdng-l-10px">
+                <div class="txt-color-1 txt-bold txt-size-14px">
+                  25
+                </div>
+                <div class="txt-size-14px">
+                  вложений
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="persons-preview-list">
+              <div class="persons-preview-unit">
+                <img src="imgs/person-photo.png" alt="">
+                <div class="tooltip">
+                  Светлана Георгьевна
+                </div>
+              </div>
+              <div class="persons-preview-unit">
+                <img src="imgs/person-photo.png" alt="">
+                <div class="tooltip">
+                  Светлана Георгьевна
+                </div>
+              </div>
+              <div class="persons-preview-unit">
+                <div class="tooltip">
+                  Светлана Георгьевна
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="incident-unit cursor-pointer">
+        <div class="size-25 flex-column flex-noshrink pdng-20px txt-medium">
+          <div class="flex-grow-all">
+            <div class="txt-size-14px">
+              Несоблюдение комиссией
+              сроков вывешивания протокола
+            </div>
+            <div class="txt-color-3-1 txt-size-12px mrgn-t-5px">
+              17 авг 2020, 02:36
+            </div>
+            <div class="mrgn-t-10px">
+              <a class="inline txt-size-12px txt-underline-inline" href="#">
+                01-047-0056, Участок 56: ГУО "Гимназия №5 г.Барановичи"
+              </a>
+            </div>
+          </div>
+          <!--<div>
+            <div class="mrgn-t-10px">
+              <a class="inline txt-size-12px txt-underline-inline" href="#">
+                Честные люди
+              </a>
+            </div>
+          </div>-->
+        </div>
+        <div class="border-l-1px border-r-1px border-color2 pdng-20px">
+          <p class="txt-size-14px txt-color-3-1">
+            1. меня допустили на участок для голосования в период с 10.00 - 12.00. Все остальное время я проводил на улице под окном. Подсчет голосов был затруднён, поскольку был большой наплыв людей, которые стоя в очереди закрывали собой урну. До 10.00, находясь на улице, я видел из окна 2 кабинки и считал людей по двум кабинкам ...
+          </p>
+          <div class="tag-wrp pdng-t-10px">
+            <a href="" class="tag-unit">Заметка</a>
+          </div>
+        </div>
+        <div class="size-20 flex-column flex-noshrink pdng-20px">
+          <div class="flex-grow-all">
+            <div class="flex-row flex-algn-itms-c">
+              <div class="section">
+                <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g filter="url(#filter0_d)">
+                    <path d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z" fill="#F3F3F3"/>
+                  </g>
+                  <g opacity="0.5">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z" fill="#C6C6C6"/>
+                  </g>
+                  <defs>
+                    <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                      <feOffset dy="1"/>
+                      <feGaussianBlur stdDeviation="0.5"/>
+                      <feComposite in2="hardAlpha" operator="out"/>
+                      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                    </filter>
+                  </defs>
+                </svg>
+              </div>
+              <div class="section pdng-l-10px">
+                <div class="txt-color-1 txt-bold txt-size-14px">
+                  25
+                </div>
+                <div class="txt-size-14px">
+                  вложений
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="persons-preview-list">
+              <div class="persons-preview-unit">
+                <img src="imgs/person-photo.png" alt="">
+                <div class="tooltip">
+                  Светлана Георгьевна
+                </div>
+              </div>
+              <div class="persons-preview-unit">
+                <img src="imgs/person-photo.png" alt="">
+                <div class="tooltip">
+                  Светлана Георгьевна
+                </div>
+              </div>
+              <div class="persons-preview-unit">
+                <div class="tooltip">
+                  Светлана Георгьевна
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="incident-unit cursor-pointer">
+        <div class="size-25 flex-column flex-noshrink pdng-20px txt-medium">
+          <div class="flex-grow-all">
+            <div class="txt-size-14px">
+              Несоблюдение комиссией
+              сроков вывешивания протокола
+            </div>
+            <div class="txt-color-3-1 txt-size-12px mrgn-t-5px">
+              17 авг 2020, 02:36
+            </div>
+            <div class="mrgn-t-10px">
+              <a class="inline txt-size-12px txt-underline-inline" href="#">
+                01-047-0056, Участок 56: ГУО "Гимназия №5 г.Барановичи"
+              </a>
+            </div>
+          </div>
+          <!--<div>
+            <div class="mrgn-t-10px">
+              <a class="inline txt-size-12px txt-underline-inline" href="#">
+                Честные люди
+              </a>
+            </div>
+          </div>-->
+        </div>
+        <div class="border-l-1px border-r-1px border-color2 pdng-20px">
+          <p class="txt-size-14px txt-color-3-1">
+            1. меня допустили на участок для голосования в период с 10.00 - 12.00. Все остальное время я проводил на улице под окном. Подсчет голосов был затруднён, поскольку был большой наплыв людей, которые стоя в очереди закрывали собой урну. До 10.00, находясь на улице, я видел из окна 2 кабинки и считал людей по двум кабинкам ...
+          </p>
+          <div class="tag-wrp pdng-t-10px">
+            <a href="" class="tag-unit">Заметка</a>
+          </div>
+        </div>
+        <div class="size-20 flex-column flex-noshrink pdng-20px">
+          <div class="flex-grow-all">
+            <div class="flex-row flex-algn-itms-c">
+              <div class="section">
+                <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g filter="url(#filter0_d)">
+                    <path d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z" fill="#F3F3F3"/>
+                  </g>
+                  <g opacity="0.5">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z" fill="#C6C6C6"/>
+                  </g>
+                  <defs>
+                    <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                      <feOffset dy="1"/>
+                      <feGaussianBlur stdDeviation="0.5"/>
+                      <feComposite in2="hardAlpha" operator="out"/>
+                      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                    </filter>
+                  </defs>
+                </svg>
+              </div>
+              <div class="section pdng-l-10px">
+                <div class="txt-color-1 txt-bold txt-size-14px">
+                  25
+                </div>
+                <div class="txt-size-14px">
+                  вложений
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="persons-preview-list">
+              <div class="persons-preview-unit">
+                <img src="imgs/person-photo.png" alt="">
+                <div class="tooltip">
+                  Светлана Георгьевна
+                </div>
+              </div>
+              <div class="persons-preview-unit">
+                <img src="imgs/person-photo.png" alt="">
+                <div class="tooltip">
+                  Светлана Георгьевна
+                </div>
+              </div>
+              <div class="persons-preview-unit">
+                <div class="tooltip">
+                  Светлана Георгьевна
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="incident-unit cursor-pointer">
+        <div class="size-25 flex-column flex-noshrink pdng-20px txt-medium">
+          <div class="flex-grow-all">
+            <div class="txt-size-14px">
+              Несоблюдение комиссией
+              сроков вывешивания протокола
+            </div>
+            <div class="txt-color-3-1 txt-size-12px mrgn-t-5px">
+              17 авг 2020, 02:36
+            </div>
+            <div class="mrgn-t-10px">
+              <a class="inline txt-size-12px txt-underline-inline" href="#">
+                01-047-0056, Участок 56: ГУО "Гимназия №5 г.Барановичи"
+              </a>
+            </div>
+          </div>
+          <!--<div>
+            <div class="mrgn-t-10px">
+              <a class="inline txt-size-12px txt-underline-inline" href="#">
+                Честные люди
+              </a>
+            </div>
+          </div>-->
+        </div>
+        <div class="border-l-1px border-r-1px border-color2 pdng-20px">
+          <p class="txt-size-14px txt-color-3-1">
+            1. меня допустили на участок для голосования в период с 10.00 - 12.00. Все остальное время я проводил на улице под окном. Подсчет голосов был затруднён, поскольку был большой наплыв людей, которые стоя в очереди закрывали собой урну. До 10.00, находясь на улице, я видел из окна 2 кабинки и считал людей по двум кабинкам ...
+          </p>
+          <div class="tag-wrp pdng-t-10px">
+            <a href="" class="tag-unit">Заметка</a>
+          </div>
+        </div>
+        <div class="size-20 flex-column flex-noshrink pdng-20px">
+          <div class="flex-grow-all">
+            <div class="flex-row flex-algn-itms-c">
+              <div class="section">
+                <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g filter="url(#filter0_d)">
+                    <path d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z" fill="#F3F3F3"/>
+                  </g>
+                  <g opacity="0.5">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z" fill="#C6C6C6"/>
+                  </g>
+                  <defs>
+                    <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                      <feOffset dy="1"/>
+                      <feGaussianBlur stdDeviation="0.5"/>
+                      <feComposite in2="hardAlpha" operator="out"/>
+                      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                    </filter>
+                  </defs>
+                </svg>
+              </div>
+              <div class="section pdng-l-10px">
+                <div class="txt-color-1 txt-bold txt-size-14px">
+                  25
+                </div>
+                <div class="txt-size-14px">
+                  вложений
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="persons-preview-list">
+              <div class="persons-preview-unit">
+                <img src="imgs/person-photo.png" alt="">
+                <div class="tooltip">
+                  Светлана Георгьевна
+                </div>
+              </div>
+              <div class="persons-preview-unit">
+                <img src="imgs/person-photo.png" alt="">
+                <div class="tooltip">
+                  Светлана Георгьевна
+                </div>
+              </div>
+              <div class="persons-preview-unit">
+                <div class="tooltip">
+                  Светлана Георгьевна
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="incident-unit cursor-pointer">
+        <div class="size-25 flex-column flex-noshrink pdng-20px txt-medium">
+          <div class="flex-grow-all">
+            <div class="txt-size-14px">
+              Несоблюдение комиссией
+              сроков вывешивания протокола
+            </div>
+            <div class="txt-color-3-1 txt-size-12px mrgn-t-5px">
+              17 авг 2020, 02:36
+            </div>
+            <div class="mrgn-t-10px">
+              <a class="inline txt-size-12px txt-underline-inline" href="#">
+                01-047-0056, Участок 56: ГУО "Гимназия №5 г.Барановичи"
+              </a>
+            </div>
+          </div>
+          <!--<div>
+            <div class="mrgn-t-10px">
+              <a class="inline txt-size-12px txt-underline-inline" href="#">
+                Честные люди
+              </a>
+            </div>
+          </div>-->
+        </div>
+        <div class="border-l-1px border-r-1px border-color2 pdng-20px">
+          <p class="txt-size-14px txt-color-3-1">
+            1. меня допустили на участок для голосования в период с 10.00 - 12.00. Все остальное время я проводил на улице под окном. Подсчет голосов был затруднён, поскольку был большой наплыв людей, которые стоя в очереди закрывали собой урну. До 10.00, находясь на улице, я видел из окна 2 кабинки и считал людей по двум кабинкам ...
+          </p>
+          <div class="tag-wrp pdng-t-10px">
+            <a href="" class="tag-unit">Заметка</a>
+          </div>
+        </div>
+        <div class="size-20 flex-column flex-noshrink pdng-20px">
+          <div class="flex-grow-all">
+            <div class="flex-row flex-algn-itms-c">
+              <div class="section">
+                <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g filter="url(#filter0_d)">
+                    <path d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z" fill="#F3F3F3"/>
+                  </g>
+                  <g opacity="0.5">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z" fill="#C6C6C6"/>
+                  </g>
+                  <defs>
+                    <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                      <feOffset dy="1"/>
+                      <feGaussianBlur stdDeviation="0.5"/>
+                      <feComposite in2="hardAlpha" operator="out"/>
+                      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                    </filter>
+                  </defs>
+                </svg>
+              </div>
+              <div class="section pdng-l-10px">
+                <div class="txt-color-1 txt-bold txt-size-14px">
+                  25
+                </div>
+                <div class="txt-size-14px">
+                  вложений
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="persons-preview-list">
+              <div class="persons-preview-unit">
+                <img src="imgs/person-photo.png" alt="">
+                <div class="tooltip">
+                  Светлана Георгьевна
+                </div>
+              </div>
+              <div class="persons-preview-unit">
+                <img src="imgs/person-photo.png" alt="">
+                <div class="tooltip">
+                  Светлана Георгьевна
+                </div>
+              </div>
+              <div class="persons-preview-unit">
+                <div class="tooltip">
+                  Светлана Георгьевна
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="flex-column flex-algn-itms-c pdng-t-40px">
+      <a href="#" class="button primary inline-flex flex-algn-itms-c pdng-l-40px pdng-r-40px">
+        <div class="section">
+          Показать все 873 нарушений и инцидентов
+        </div>
+        <div class="section mrgn-l-20px">
+          <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 5.25C0.585786 5.25 0.25 5.58579 0.25 6C0.25 6.41421 0.585786 6.75 1 6.75V5.25ZM13.5303 6.53033C13.8232 6.23744 13.8232 5.76256 13.5303 5.46967L8.75736 0.696699C8.46447 0.403806 7.98959 0.403806 7.6967 0.696699C7.40381 0.989593 7.40381 1.46447 7.6967 1.75736L11.9393 6L7.6967 10.2426C7.40381 10.5355 7.40381 11.0104 7.6967 11.3033C7.98959 11.5962 8.46447 11.5962 8.75736 11.3033L13.5303 6.53033ZM1 6.75H13V5.25H1V6.75Z" fill="white"></path>
+          </svg>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="scene">
+    <h2 class="txt-size-36px txt-bold pdng-b-30px">
+      Избирательные комиссии.
+      <br>
+      Всего наблюдается <a class="txt-underline-2px" href="#">317</a> участков из <a class="txt-underline-2px" href="#">1 396</a>.
+    </h2>
+    <div class="map-content">
+      <div class="flex-row pdng-b-15px txt-size-14px">
+        <div class="section flex-grow-all">
+          <div class="inline-flex flex-algn-itms-c txt-color-3-1">
+            <div>
+              <svg width="22" height="13" viewBox="0 0 22 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 1C14.9773 1 17.4849 2.50522 19.0028 3.96966C19.7698 4.70972 20.2931 5.44898 20.6224 5.99842C20.7392 6.19335 20.8311 6.36347 20.9002 6.5C20.8311 6.63653 20.7392 6.80664 20.6224 7.00158C20.2931 7.55102 19.7698 8.29028 19.0028 9.03034C17.4849 10.4948 14.9773 12 11 12C7.02275 12 4.51514 10.4948 2.99725 9.03034C2.23018 8.29028 1.70689 7.55102 1.37761 7.00158C1.26079 6.80664 1.16894 6.63653 1.09977 6.5C1.16894 6.36347 1.26079 6.19336 1.37761 5.99842C1.70689 5.44898 2.23018 4.70972 2.99725 3.96966C4.51514 2.50522 7.02275 1 11 1Z" stroke="#FF5C01" stroke-width="2"/>
+                <circle cx="11" cy="6" r="3" stroke="#FF5C01" stroke-width="2"/>
+              </svg>
+            </div>
+            <div class="mrgn-l-5px">
+              Количество наблюдателей
+            </div>
+          </div>
+          <div class="inline-flex flex-algn-itms-c txt-color-3-1 mrgn-l-20px">
+            <div>
+              <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.80425 15L10 1.8868L18.1958 15H1.80425Z" fill="white" stroke="#FF5C01" stroke-width="2"/>
+                <rect x="9" y="6" width="2" height="4" rx="1" fill="#FF5C01"/>
+                <rect x="9" y="11" width="2" height="2" rx="1" fill="#FF5C01"/>
+              </svg>
+            </div>
+            <div class="mrgn-l-5px">
+              Количество инцидентов
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <label class="flex-row flex-algn-itms-c txt-color-3-1">
+            <input type="checkbox" style="width:16px; height:16px;">
+            <span class="mrgn-l-5px">
+                Участки без наблюдателей
+              </span>
+          </label>
+        </div>
+      </div>
+      <div class="map-wrp" style="background:#EDEDED; width:auto; height:460px"></div>
+    </div>
+  </div>
+</template>
+<script>
+import Header from './Header.vue';
+import {defineComponent} from "vue";
+
+export default defineComponent({
+  components: {
+    'header-view': Header
+  }
+})
+</script>

@@ -8,6 +8,8 @@ import Commission from "./components/Commission.vue";
 import Members from "./components/Members.vue";
 import Member from "./components/Member.vue";
 import NewsItem from "./components/NewsItem.vue";
+import Campaigns from "./components/Campaigns.vue";
+import Campaign from "./components/Campaign.vue";
 
 const routes = [
     {
@@ -66,6 +68,19 @@ const routes = [
         label: 'Новость',
         exclude: true,
         component: NewsItem,
+    },
+    {
+        path: '/campaigns',
+        name: 'campaigns',
+        label: 'Кампании',
+        component: Campaigns,
+    },
+    {
+        path: '/campaign/:id',
+        name: 'campaign',
+        label: 'Кампания',
+        exclude: true,
+        component: Campaign,
     },
 ]
 const router = createRouter({
