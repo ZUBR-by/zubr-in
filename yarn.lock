@@ -445,6 +445,21 @@ postcss@^8.1.10, postcss@^8.3.8:
     nanoid "^3.1.25"
     source-map-js "^0.6.2"
 
+primeflex@^3.0.0:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/primeflex/-/primeflex-3.0.1.tgz#38b4f37caf0d20d3d28ed72fe1dee571671fc6b6"
+  integrity sha512-OmBVecmPyXFjIHuOmcbUVGJPh+2TPF3bBVO9ENtu4O4kF6taZThxGrxaWCljkfu6427wLfgDbtFKqq1vU2nj/Q==
+
+primeicons@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/primeicons/-/primeicons-4.1.0.tgz#19eaef8ef5594b0006358ae64e738d03e167c9bb"
+  integrity sha512-uEv2pSPk1zQCfaB2VgnUfnUxxlGryYi+5rbdxmZBBt5v9S/pscIQYS5YDLxsQZ7D9jn5c76+Tx5wX/2J1nK6sA==
+
+primevue@^3.7.1:
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/primevue/-/primevue-3.8.0.tgz#218c7331c1dca870e0d6e821360e4a4dec360253"
+  integrity sha512-p3k1uy4nd+wf2MAxfmT4dHX7+SR1tRIS2LGkv6bMOar6LjS8bR2R4r4RAb+w4qMhEq5A/nDWGyF/hL9DacFXGg==
+
 protocol-buffers-schema@^3.3.1:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/protocol-buffers-schema/-/protocol-buffers-schema-3.6.0.tgz#77bc75a48b2ff142c1ad5b5b90c94cd0fa2efd03"

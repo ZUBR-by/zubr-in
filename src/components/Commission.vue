@@ -18,7 +18,7 @@
                 Сообщений о нарушений
               </div>
               <div class="txt-size-18px txt-bold">
-                {{data.commission.violations.length}}
+                {{ data.commission.violations.length }}
               </div>
             </div>
           </div>
@@ -59,7 +59,7 @@
             </div>
             <div class="infoblock">
               <div class="infoblock-name">Тип комиссии:</div>
-              <div class="infoblock-value">{{data.commission.kind}}</div>
+              <div class="infoblock-value">{{ data.commission.kind }}</div>
             </div>
             <div class="infoblock">
               <div class="infoblock-name">Код комиссии:</div>
@@ -89,7 +89,7 @@
     <div class="campaign-candidates-list">
       <div class="person-wrp flex-column flex-algn-itms-strch" v-for="item of data.commission.persons">
         <div class="person-photo">
-<!--          <div class="person-initials">С.Г.Т.</div>-->
+          <!--          <div class="person-initials">С.Г.Т.</div>-->
           <img :src="item.person.photo_url" :alt="item.person.full_name">
         </div>
         <div class="person-info pdng-t-10px">
@@ -106,7 +106,7 @@
         <div class="person-popover cursor-pointer">
           <div class="flex-column flex-algn-itms-strch">
             <div class="person-photo">
-<!--              <div class="person-initials">С.Г.Т.</div>-->
+              <!--              <div class="person-initials">С.Г.Т.</div>-->
               <img :src="item.person.photo_url" :alt="item.person.full_name">
             </div>
             <div class="person-info pdng-t-10px">
@@ -148,14 +148,15 @@
       Последние инциденты комиссии. <a class="txt-underline-2px" href="#">Всего 237 инцидента и нарушений</a>.
     </h2>
     <div class="incident-list">
-      <div class="incident-unit cursor-pointer" v-for="violation of data.commission.violations">
+      <div class="incident-unit cursor-pointer" v-for="violation of data.commission.violations"
+           @click="showModal(violation)">
         <div class="size-25 flex-column flex-noshrink pdng-20px txt-medium">
           <div class="flex-grow-all">
             <div class="txt-size-14px">
-              {{violation.categories}}
+              {{ violation.categories }}
             </div>
             <div class="txt-color-3-1 txt-size-12px mrgn-t-5px">
-              {{violation.created_at}}
+              {{ violation.created_at }}
             </div>
           </div>
           <!--<div>
@@ -203,7 +204,7 @@
               </div>
               <div class="section pdng-l-10px">
                 <div class="txt-color-1 txt-bold txt-size-14px">
-                  {{violation.attachments.length}}
+                  {{ violation.attachments.length }}
                 </div>
                 <div class="txt-size-14px">
                   вложений
@@ -235,7 +236,7 @@
         </div>
         <div class="border-l-1px border-r-1px border-color2 pdng-20px">
           <p class="txt-size-14px txt-color-3-1">
-            {{violation.description}}
+            {{ violation.description }}
           </p>
           <div class="tag-wrp pdng-t-10px">
             <a href="" class="tag-unit">Заметка</a>
@@ -312,12 +313,160 @@
       </div>
     </div>
   </div>
+
+  <Dialog header="Header" v-model:visible="displayModal" :modal="true">
+    <template #header>
+      <div class="popup-header flex-row flex-algn-itms-c border-b-1px border-color1">
+      <div class="section flex-grow-all pdng-l-30px">
+        <div class="txt-medium">Инцидент #{{ message.id }}</div>
+      </div>
+    </div></template>
+    <div class="popup-body">
+      <div class="flex-row flex-algn-itms-c border-b-1px border-color1">
+        <div class="section flex-grow-all pdng-l-30px pdng-r-20px pdng-t-20px pdng-b-20px">
+          <div class="txt-size-14px txt-medium">
+            Несоблюдение комиссией сроков вывешивания протокола
+          </div>
+          <div class="txt-color-3-1 txt-size-12px txt-medium">
+            {{ message.created_at }}
+          </div>
+          <div class="tag-unit  mrgn-t-20px">
+            Честные люди
+          </div>
+        </div>
+        <div class="section pdng-r-30px pdng-l-20px">
+          <!-- ПОказываем кнопку в диалоге просмотра инцидента везде, кроме раздела инцидентов и подраздела инцидентов в разделе кампании -->
+          <a class="button medium" href="#">Все нарушения/инциденты кампании</a>
+        </div>
+      </div>
+      <div class="pdng-30px">
+        <div>
+          <h3 class="txt-size-20px txt-bold">
+            Инцидент затрагивает:
+          </h3>
+          <div class="mrgn-t-30px">
+            <div class="campaign-candidates-list">
+              <div class="person-wrp flex-column flex-algn-itms-strch">
+                <div class="person-photo">
+                  <div class="person-initials">С.Г.Т.</div>
+                  <img src="/imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
+                </div>
+                <div class="person-info pdng-t-10px">
+                  <div class="person-name txt-size-14px txt-medium">
+                    Светлана Георгиевна
+                    <br>
+                    Тихановская
+                  </div>
+                  <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
+                    Зам. председателя комиссии
+                  </div>
+                </div>
+
+                <div class="person-popover cursor-pointer">
+                  <div class="flex-column flex-algn-itms-strch">
+                    <div class="person-photo">
+                      <div class="person-initials">С.Г.Т.</div>
+                      <img src="/imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
+                    </div>
+                    <div class="person-info pdng-t-10px">
+                      <div class="person-name txt-size-14px txt-medium">
+                        Светлана Георгиевна
+                        <br>
+                        Тихановская
+                      </div>
+                      <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
+                        Зам. председателя комиссии
+                      </div>
+                      <div class="infoblock txt-size-12px">
+                        <div class="infoblock-name">
+                          Должность
+                        </div>
+                        <div class="infoblock-value ">
+                          Президент Республики Беларусь
+                        </div>
+                      </div>
+                      <div class="infoblock txt-size-12px">
+                        <div class="infoblock-name">
+                          Субъект выдвижения
+                        </div>
+                        <div class="infoblock-value ">
+                          Самовыдвижение
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mrgn-t-50px" v-if="message.description">
+          <h3 class="txt-size-20px txt-bold">
+            Инцидент/нарушение:
+          </h3>
+          <div class="mrgn-t-30px">
+            {{message.description}}
+          </div>
+        </div>
+        <div class="mrgn-t-50px" v-if="message && message.attachments.length > 0">
+          <h3 class="txt-size-20px txt-bold">
+            Прикрепленные файлы:
+          </h3>
+          <div class="incident-attachments mrgn-t-30px">
+            <a :href="attachment.url" class="attachment-unit cursor-pointer" v-for="(attachment, index) of message.attachments">
+              <div class="flex-row flex-algn-itms-c">
+                <div class="section">
+                  <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_d)">
+                      <path d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z" fill="#F3F3F3"></path>
+                    </g>
+                    <g opacity="0.5">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z" fill="#C6C6C6"></path>
+                    </g>
+                    <defs>
+                      <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
+                        <feOffset dy="1"></feOffset>
+                        <feGaussianBlur stdDeviation="0.5"></feGaussianBlur>
+                        <feComposite in2="hardAlpha" operator="out"></feComposite>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"></feBlend>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"></feBlend>
+                      </filter>
+                    </defs>
+                  </svg>
+                </div>
+                <div class="section pdng-l-10px">
+                  <div class="txt-color-1 txt-bold txt-size-14px">
+                    Вложение #{{index + 1}}
+                  </div>
+<!--                  <div class="txt-size-12px txt-color-3-1">-->
+<!--                    JPG, 2.5 MB-->
+<!--                  </div>-->
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="mrgn-t-50px">
+          <div class="txt-color-3-1 txt-size-14px">
+            Поделитесь этим материалам, это поможет <br> привлечь внимание к инциденту и его решению.
+          </div>
+        </div>
+      </div>
+    </div>
+  </Dialog>
+
 </template>
 <script>
 import Header from './Header.vue';
 import Location from './Point.vue';
 import {defineComponent, onMounted, ref} from "vue";
 import {useRoute} from 'vue-router'
+import Dialog from 'primevue/dialog';
+import Button from 'primevue/button';
 
 const data = ref(null)
 
@@ -336,14 +485,24 @@ async function fetchCommission() {
 export default defineComponent({
   components: {
     'header-view': Header,
-    Location
+    Location,
+    Dialog,
+    Button
   },
   setup() {
     onMounted(() => {
       fetchCommission()
     })
+    const displayModal = ref(false)
+    const message = ref(null)
     return {
-      data
+      data,
+      displayModal,
+      message,
+      showModal(violation) {
+        message.value = violation
+        displayModal.value = true
+      }
     }
   }
 })
