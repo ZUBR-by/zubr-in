@@ -6,20 +6,8 @@
           <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">
             Избирательная инициатива
           </div>
-          <div class="buttongroup">
-            <div class="buttongroup-unit active">
-              Все
-            </div>
-            <div class="buttongroup-unit">
-              Зубр
-            </div>
-            <div class="buttongroup-unit">
-              Честные люди
-            </div>
-            <div class="buttongroup-unit">
-              Права выбару
-            </div>
-
+          <div>
+            <SelectButton v-model="filter" :options="options" />
           </div>
         </div>
         <div class="inline-block mrgn-l-30px">
@@ -867,10 +855,18 @@
 </template>
 <script>
 import Header from './Header.vue';
-import {defineComponent} from "vue";
+import {defineComponent, ref} from "vue";
+import SelectButton from 'primevue/selectbutton';
+
 export default defineComponent({
   components: {
-    'header-view' : Header
+    'header-view' : Header,
+    SelectButton
+  },
+  setup() {
+    const filter = ref('Все');
+    const options = ref(['Все', 'Честные Люди', 'Право Выбора']);
+    return { filter, options }
   }
 })
 </script>

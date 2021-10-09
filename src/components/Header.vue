@@ -35,22 +35,22 @@
         <!--        <a class="active" href="">Новости</a>-->
         <!--        <a href="">О проекте</a>-->
       </div>
-      <div class="section pdng-l-20px pdng-r-30px">
-        <div class="search-input-wrp">
-          <input class="search-input" type="search" placeholder="Поиск">
-          <div class="droplist min-size-100 notdisplay">
-            <div class="droplist-unit">
-              Value 1
-            </div>
-            <div class="droplist-unit">
-              Value 2
-            </div>
-            <div class="droplist-unit">
-              Value 3
-            </div>
-          </div>
-        </div>
-      </div>
+<!--      <div class="section pdng-l-20px pdng-r-30px">-->
+<!--        <div class="search-input-wrp">-->
+<!--          <input class="search-input" type="search" placeholder="Поиск">-->
+<!--          <div class="droplist min-size-100 notdisplay">-->
+<!--            <div class="droplist-unit">-->
+<!--              Value 1-->
+<!--            </div>-->
+<!--            <div class="droplist-unit">-->
+<!--              Value 2-->
+<!--            </div>-->
+<!--            <div class="droplist-unit">-->
+<!--              Value 3-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
     </div>
     <slot>
     </slot>
