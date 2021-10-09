@@ -10,6 +10,7 @@ import Member from "./components/Member.vue";
 import NewsItem from "./components/NewsItem.vue";
 import Campaigns from "./components/Campaigns.vue";
 import Campaign from "./components/Campaign.vue";
+import Organization from "./components/Organization.vue";
 
 const routes = [
     {
@@ -29,6 +30,13 @@ const routes = [
         name: 'organizations',
         label: 'Организации',
         component: Organizations,
+    },
+    {
+        path: '/organization/:id',
+        name: 'organization',
+        label: 'Организация',
+        exclude: true,
+        component: Organization,
     },
     {
         path: '/commissions',
