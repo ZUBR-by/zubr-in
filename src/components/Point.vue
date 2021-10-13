@@ -49,7 +49,7 @@ export default {
       style : new Style({
         image: new Icon({
           scale: 0.3,
-          src  : '/imgs/icons/marker.png',
+          src  : '/img/marker.png',
         }),
       }),
     });
