@@ -75,15 +75,15 @@
         <div class="size-25 flex-column flex-noshrink pdng-20px txt-medium">
           <div class="flex-grow-all">
             <div class="txt-size-14px">
-              Несоблюдение комиссией
-              сроков вывешивания протокола
+              {{ item.categories }}
             </div>
             <div class="txt-color-3-1 txt-size-12px mrgn-t-5px">
-              17 авг 2020, 02:36
+              {{item.created_at}}
             </div>
             <div class="mrgn-t-10px">
-              <a class="inline txt-size-12px txt-underline-inline" href="#">
-                01-047-0056, Участок 56: ГУО "Гимназия №5 г.Барановичи"
+              <a class="inline txt-size-12px txt-underline-inline"
+                 :href="'/commission/' + item.commission.id">
+                {{ item.commission.code }},{{ item.commission.name }}: {{ item.commission.description }}
               </a>
             </div>
           </div>
@@ -97,7 +97,7 @@
         </div>
         <div class="border-l-1px border-r-1px border-color2 pdng-20px">
           <p class="txt-size-14px txt-color-3-1">
-            1. меня допустили на участок для голосования в период с 10.00 - 12.00. Все остальное время я проводил на улице под окном. Подсчет голосов был затруднён, поскольку был большой наплыв людей, которые стоя в очереди закрывали собой урну. До 10.00, находясь на улице, я видел из окна 2 кабинки и считал людей по двум кабинкам ...
+              {{item.description}}
           </p>
           <div class="tag-wrp pdng-t-10px">
             <a href="" class="tag-unit">Заметка</a>
