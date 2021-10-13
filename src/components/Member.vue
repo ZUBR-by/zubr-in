@@ -35,7 +35,7 @@
           <div class="person-view">
             <div class="person-photo">
               <div class="person-initials">С.Г.Т.</div>
-              <img :src="data.member.photo_url" :alt="data.member.full_name">
+              <img :src="data.member.photo_url ? data.member.photo_url : '/img/user.svg'" :alt="data.member.full_name">
             </div>
             <div class="txt-size-12px">
               <div class="mrgn-t-10px">

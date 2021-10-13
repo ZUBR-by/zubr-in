@@ -90,7 +90,7 @@
       <div class="person-wrp flex-column flex-algn-itms-strch" v-for="item of data.commission.persons">
         <div class="person-photo">
           <!--          <div class="person-initials">С.Г.Т.</div>-->
-          <img :src="item.person.photo_url" :alt="item.person.full_name">
+          <img :src="item.person.photo_url ? item.person.photo_url : '/img/user.svg'" :alt="item.person.full_name">
         </div>
         <div class="person-info pdng-t-10px">
           <div class="person-name txt-size-14px txt-medium">
@@ -107,7 +107,7 @@
           <div class="flex-column flex-algn-itms-strch">
             <div class="person-photo">
               <!--              <div class="person-initials">С.Г.Т.</div>-->
-              <img :src="item.person.photo_url" :alt="item.person.full_name">
+              <img :src="item.person.photo_url ? item.person.photo_url : '/img/user.svg'" :alt="item.person.full_name">
             </div>
             <div class="person-info pdng-t-10px">
               <div class="person-name txt-size-14px txt-medium">
@@ -340,70 +340,9 @@
         </div>
       </div>
       <div class="pdng-30px">
-        <div>
-          <h3 class="txt-size-20px txt-bold">
-            Инцидент затрагивает:
-          </h3>
-          <div class="mrgn-t-30px">
-            <div class="campaign-candidates-list">
-              <div class="person-wrp flex-column flex-algn-itms-strch">
-                <div class="person-photo">
-                  <div class="person-initials">С.Г.Т.</div>
-                  <img src="/imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
-                </div>
-                <div class="person-info pdng-t-10px">
-                  <div class="person-name txt-size-14px txt-medium">
-                    Светлана Георгиевна
-                    <br>
-                    Тихановская
-                  </div>
-                  <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
-                    Зам. председателя комиссии
-                  </div>
-                </div>
-
-                <div class="person-popover cursor-pointer">
-                  <div class="flex-column flex-algn-itms-strch">
-                    <div class="person-photo">
-                      <div class="person-initials">С.Г.Т.</div>
-                      <img src="/imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
-                    </div>
-                    <div class="person-info pdng-t-10px">
-                      <div class="person-name txt-size-14px txt-medium">
-                        Светлана Георгиевна
-                        <br>
-                        Тихановская
-                      </div>
-                      <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
-                        Зам. председателя комиссии
-                      </div>
-                      <div class="infoblock txt-size-12px">
-                        <div class="infoblock-name">
-                          Должность
-                        </div>
-                        <div class="infoblock-value ">
-                          Президент Республики Беларусь
-                        </div>
-                      </div>
-                      <div class="infoblock txt-size-12px">
-                        <div class="infoblock-name">
-                          Субъект выдвижения
-                        </div>
-                        <div class="infoblock-value ">
-                          Самовыдвижение
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
         <div class="mrgn-t-50px" v-if="message.description">
           <h3 class="txt-size-20px txt-bold">
-            Инцидент/нарушение:
+            Описание:
           </h3>
           <div class="mrgn-t-30px">
             {{message.description}}
