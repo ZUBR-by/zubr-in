@@ -1,16 +1,6 @@
-<script>
-import Header from './Header.vue';
-import {defineComponent} from "vue";
-
-export default defineComponent({
-  components: {
-    'header-view': Header
-  }
-})
-</script>
 <template>
   <header-view></header-view>
-  <div class="scene" style="margin-top:170px;">
+  <div class="scene" style="margin-top:80px;">
     <h1 class="txt-color-2 txt-size-18px txt-normal pdng-l-40px pdng-r-40px">
       <dl>
         <dt class="txt-color-1 txt-inline txt-bold">
@@ -26,105 +16,12 @@ export default defineComponent({
     </h1>
   </div>
   <div class="scene pdng-t-0">
-    <div class="election-campaign-list">
-      <!-- Current campaigning -->
-      <div class="election-campaign-unit">
-        <div class="elect-camp-unit-header flex-row flex-algn-itms-c size-100 border-b-2px border-color2">
-          <div class="section flex-grow-all txt-size-20px pdng-20px pdng-l-40px pdng-r-40px">
-            <div class="txt-color-1 txt-medium">
-              6—9 августа 2021
-            </div>
-            <div class="txt-bold">
-              <div class="elect-camp-dot"></div>
-              Кампания уже начата, 2 дня до окончания
-            </div>
-          </div>
-          <div
-              class="section flex-algn-slf-strch flex-row flex-algn-itms-c border-l-2px border-color2 pdng-20px pdng-l-40px pdng-r-40px cursor-pointer hovered">
-            <div class="flex-row flex-algn-itms-c">
-              <div class="section">
-                <svg width="25" height="33" viewBox="0 0 25 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                      d="M2.71436 2.57623C2.71436 2.57623 6.78428 0.261278 9.50878 0.0235027C13.0632 -0.286697 16.0314 2.57623 18.4774 2.57623C20.9234 2.57623 25.0001 0.874411 25.0001 0.874411V17.8926C25.0001 17.8926 22.2207 19.2549 20.3799 19.5944C16.1164 20.3807 13.8572 17.0417 9.50878 17.0417C5.16035 17.0417 2.71436 19.5944 2.71436 19.5944V2.57623Z"
-                      fill="#FF5C01"/>
-                  <rect y="1" width="2" height="32" fill="#FF5C01"/>
-                </svg>
-              </div>
-              <div class="section pdng-l-15px">
-                <div class="txt-size-20px">
-                  Нарушений
-                </div>
-                <div class="txt-size-20px txt-bold">
-                  1 337
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="elect-camp-unit-info pdng-t-30px pdng-b-50px pdng-l-40px pdng-r-40px">
-          <h2 class="txt-color-1 txt-size-48px txt-lh-1_1em">
-            <a class="txt-underline-2px" href="/campaign/1">Выбор президента Республики Беларусь 2020</a>
-          </h2>
-          <div class="tag-wrp mrgn-t-20px">
-            <a class="tag-unit">
-              Общереспубликанские выборы
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Upcoming secondary campaigning -->
-      <div class="election-campaign-unit">
-        <div class="elect-camp-unit-header flex-row flex-algn-itms-c size-100 border-b-2px border-color2">
-          <div class="section flex-grow-all txt-size-18px pdng-20px pdng-l-40px pdng-r-40px">
-            <div class="txt-color-1 txt-medium">
-              11—15 сентября 2021
-            </div>
-            <div class="txt-bold">
-              23 дня до начала
-            </div>
-          </div>
-          <div class="section border-l-2px border-color2 pdng-20px pdng-l-40px pdng-r-40px cursor-pointer hovered">
-            <div class="flex-row flex-algn-itms-c">
-              <div class="section">
-                <svg width="25" height="33" viewBox="0 0 25 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                      d="M2.71436 2.57623C2.71436 2.57623 6.78428 0.261278 9.50878 0.0235027C13.0632 -0.286697 16.0314 2.57623 18.4774 2.57623C20.9234 2.57623 25.0001 0.874411 25.0001 0.874411V17.8926C25.0001 17.8926 22.2207 19.2549 20.3799 19.5944C16.1164 20.3807 13.8572 17.0417 9.50878 17.0417C5.16035 17.0417 2.71436 19.5944 2.71436 19.5944V2.57623Z"
-                      fill="#FF5C01"/>
-                  <rect y="1" width="2" height="32" fill="#FF5C01"/>
-                </svg>
-              </div>
-              <div class="section pdng-l-15px">
-                <div class="txt-size-18px">
-                  Нарушений
-                </div>
-                <div class="txt-size-18px txt-bold">
-                  1 337
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="elect-camp-unit-info pdng-t-20px pdng-b-40px pdng-l-40px pdng-r-40px">
-          <h2 class="txt-color-1 txt-size-36px txt-lh-1_1em">
-            <a class="txt-underline-inline" href="/campaign/1">
-              Выборы представителей нижней палаты верхнего представительства третьего созыва депутатов
-            </a>
-          </h2>
-          <div class="tag-wrp mrgn-t-20px">
-            <a class="tag-unit">
-              Общереспубликанские выборы
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Archive campaigning -->
-      <div class="election-campaign-unit">
+    <div class="election-campaign-list" v-if="data">
+      <div class="election-campaign-unit" v-for="campaign of data.campaigns">
         <div class="elect-camp-unit-header flex-row flex-algn-itms-c size-100 border-b-2px border-color2">
           <div class="section flex-grow-all txt-size-18px pdng-20px pdng-l-40px pdng-r-40px grayscale">
             <div class="txt-color-1 txt-medium">
-              6—9 августа 2021
+              {{ campaign.started_at }} - {{ campaign.ended_at }}
             </div>
             <div class="txt-bold">
               Архив
@@ -145,7 +42,7 @@ export default defineComponent({
                   Нарушений
                 </div>
                 <div class="txt-size-18px txt-bold">
-                  1 337
+                  {{ campaign.messages.aggregate.count }}
                 </div>
               </div>
             </div>
@@ -153,23 +50,18 @@ export default defineComponent({
         </div>
         <div class="elect-camp-unit-info pdng-t-20px pdng-b-40px pdng-l-40px pdng-r-40px grayscale">
           <h2 class="txt-color-1 txt-size-36px txt-lh-1_1em">
-            <a class="txt-underline-inline" href="#">
-              Выборы представителей нижней палаты верхнего представительства третьего созыва депутатов
+            <a class="txt-underline-inline" :href="'/campaign/' + campaign.id">
+              {{ campaign.name }}
             </a>
           </h2>
-          <div class="tag-wrp mrgn-t-20px">
-            <a class="tag-unit">
-              Общереспубликанские выборы
-            </a>
-          </div>
         </div>
       </div>
 
     </div>
     <div class="flex-column flex-algn-itms-c pdng-t-40px">
-      <a href="#" class="button primary inline-flex flex-algn-itms-c pdng-l-40px pdng-r-40px">
+      <a href="/campaigns" class="button primary inline-flex flex-algn-itms-c pdng-l-40px pdng-r-40px">
         <div class="section">
-          Показать все 15 электоральных компании
+          Показать все электоральные кампании
         </div>
         <div class="section mrgn-l-20px">
           <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -259,7 +151,24 @@ export default defineComponent({
     </div>
   </div>
 </template>
+<script>
+import {fetchCampaigns} from './Campaigns.vue'
+import {defineComponent} from "vue";
+import Header from "./Header.vue";
 
+export default defineComponent({
+  components: {
+    'header-view': Header
+  },
+  setup() {
+    const {data, load} = fetchCampaigns()
+    load()
+    return {
+      data
+    }
+  }
+})
+</script>
 <style scoped>
 
 </style>
