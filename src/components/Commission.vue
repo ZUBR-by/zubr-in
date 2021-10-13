@@ -90,7 +90,8 @@
       <div class="person-wrp flex-column flex-algn-itms-strch" v-for="item of data.commission.persons">
         <div class="person-photo">
           <!--          <div class="person-initials">С.Г.Т.</div>-->
-          <img :src="item.person.photo_url ? item.person.photo_url : '/img/user.svg'" :alt="item.person.full_name">
+          <img :src="item.person.photo_url ? item.person.photo_url : '//img/user.svg'"
+               :alt="item.person.full_name">
         </div>
         <div class="person-info pdng-t-10px">
           <div class="person-name txt-size-14px txt-medium">
@@ -107,7 +108,7 @@
           <div class="flex-column flex-algn-itms-strch">
             <div class="person-photo">
               <!--              <div class="person-initials">С.Г.Т.</div>-->
-              <img :src="item.person.photo_url ? item.person.photo_url : '/img/user.svg'" :alt="item.person.full_name">
+              <img :src="item.person.photo_url ? item.person.photo_url : '//img/user.svg'" :alt="item.person.full_name">
             </div>
             <div class="person-info pdng-t-10px">
               <div class="person-name txt-size-14px txt-medium">
@@ -145,7 +146,8 @@
   </div>
   <div class="scene" v-if="data">
     <h2 class="txt-size-36px txt-bold pdng-b-40px">
-      Последние инциденты комиссии. <a class="txt-underline-2px" href="#">Всего 237 инцидента и нарушений</a>.
+      Последние инциденты комиссии.
+      <a class="txt-underline-2px" href="#">Всего 237 инцидента и нарушений</a>.
     </h2>
     <div class="incident-list">
       <div class="incident-unit cursor-pointer"
@@ -157,7 +159,7 @@
               {{ violation.categories }}
             </div>
             <div class="txt-color-3-1 txt-size-12px mrgn-t-5px">
-              {{violation.created_at}}
+              {{ violation.created_at }}
             </div>
             <div class="mrgn-t-10px">
               <a class="inline txt-size-12px txt-underline-inline"
@@ -176,7 +178,7 @@
         </div>
         <div class="border-l-1px border-r-1px border-color2 pdng-20px">
           <p class="txt-size-14px txt-color-3-1">
-            {{violation.description}}
+            {{ violation.description }}
           </p>
           <div class="tag-wrp pdng-t-10px">
             <a href="" class="tag-unit">Заметка</a>
@@ -186,17 +188,24 @@
           <div class="flex-grow-all">
             <div class="flex-row flex-algn-itms-c">
               <div class="section">
-                <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
                   <g filter="url(#filter0_d)">
-                    <path d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z" fill="#F3F3F3"/>
+                    <path
+                        d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z"
+                        fill="#F3F3F3"/>
                   </g>
                   <g opacity="0.5">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z" fill="#C6C6C6"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z"
+                          fill="#C6C6C6"/>
                   </g>
                   <defs>
-                    <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse"
+                            color-interpolation-filters="sRGB">
                       <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                     result="hardAlpha"/>
                       <feOffset dy="1"/>
                       <feGaussianBlur stdDeviation="0.5"/>
                       <feComposite in2="hardAlpha" operator="out"/>
@@ -209,7 +218,7 @@
               </div>
               <div class="section pdng-l-10px">
                 <div class="txt-color-1 txt-bold txt-size-14px">
-                  25
+                  {{ violation.attachments.length }}
                 </div>
                 <div class="txt-size-14px">
                   вложений
@@ -291,16 +300,33 @@
 
   <Dialog v-model:visible="displayModal"
           class="popup"
-          :header="'Инцидент #1'"
+          :show-header="false"
           :modal="true">
-    <div class="popup-body">
+    <div class="popup-header flex-row flex-algn-itms-c border-b-1px border-color1">
+      <div class="section flex-grow-all pdng-l-30px">
+        <div class="txt-medium">Инцидент #32821</div>
+      </div>
+      <a class="close-popup cursor-pointer" @click="displayModal = false">
+        <div class="pdng-t-15px pdng-b-15px pdng-r-20px pdng-l-20px">
+          <svg class="block" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect y="19.1013" width="26.8534" height="2.68534" transform="rotate(-45 0 19.1013)" fill="#FF5C01"/>
+            <rect x="1.89893" y="0.112793" width="26.8534" height="2.68534" transform="rotate(45 1.89893 0.112793)"
+                  fill="#FF5C01"/>
+          </svg>
+        </div>
+      </a>
+    </div>
+    <div class="popup-body" v-if="message">
       <div class="flex-row flex-algn-itms-c border-b-1px border-color1">
         <div class="section flex-grow-all pdng-l-30px pdng-r-20px pdng-t-20px pdng-b-20px">
           <div class="txt-size-14px txt-medium">
             Несоблюдение комиссией сроков вывешивания протокола
           </div>
           <div class="txt-color-3-1 txt-size-12px txt-medium">
-            {{ message.created_at }}
+            17 авг 2020, 02:36
+          </div>
+          <div class="txt-size-12px txt-medium mrgn-t-5px">
+            <a class="txt-underline-inline" href="#">01-047-0056, Участок 56: ГУО "Гимназия №5 г.Барановичи"</a>
           </div>
           <div class="tag-unit  mrgn-t-20px">
             Честные люди
@@ -311,38 +337,77 @@
           <a class="button medium" href="#">Все нарушения/инциденты кампании</a>
         </div>
       </div>
-      <div class="pdng-30px">
-        <div class="mrgn-t-50px" v-if="message.description">
+      <div class="pdng-l-30px">
+        <div class="mrgn-t-20px">
           <h3 class="txt-size-20px txt-bold">
             Описание:
           </h3>
           <div class="mrgn-t-30px">
-            {{message.description}}
+            {{ message.description }}
+            <p>
+              г. Брест, Ленинский район, участок-6. Аккредитованного наблюдателя, председатель участковой комиссии,
+              не допустил осуществлять наблюдение за ходом голосования на участке, так как на участке уже
+              присутствовали наблюдатели ранее зарегистрированные
+              в журнале аккредитации. После 16:00 не дали возможность находится на участке для голосования и у двери.
+            </p>
+            <p>
+              г. Брест, Ленинский район, участок-6. Аккредитованного наблюдателя, председатель участковой комиссии,
+              не допустил осуществлять наблюдение за ходом голосования на участке, так как на участке уже
+              присутствовали наблюдатели ранее зарегистрированные
+              в журнале аккредитации. После 16:00 не дали возможность находится на участке для голосования и у двери.
+            </p>
+            <p>
+              г. Брест, Ленинский район, участок-6. Аккредитованного наблюдателя, председатель участковой комиссии,
+              не допустил осуществлять наблюдение за ходом голосования на участке, так как на участке уже
+              присутствовали наблюдатели ранее зарегистрированные
+              в журнале аккредитации. После 16:00 не дали возможность находится на участке для голосования и у двери.
+            </p>
+            <p>
+              г. Брест, Ленинский район, участок-6. Аккредитованного наблюдателя, председатель участковой комиссии,
+              не допустил осуществлять наблюдение за ходом голосования на участке, так как на участке уже
+              присутствовали наблюдатели ранее зарегистрированные
+              в журнале аккредитации. После 16:00 не дали возможность находится на участке для голосования и у двери.
+            </p>
+            <p>
+              г. Брест, Ленинский район, участок-6. Аккредитованного наблюдателя, председатель участковой комиссии,
+              не допустил осуществлять наблюдение за ходом голосования на участке, так как на участке уже
+              присутствовали наблюдатели ранее зарегистрированные
+              в журнале аккредитации. После 16:00 не дали возможность находится на участке для голосования и у двери.
+            </p>
           </div>
         </div>
-        <div class="mrgn-t-50px" v-if="message && message.attachments.length > 0">
+        <div class="mrgn-t-30px" v-if="message.attachments.length > 0">
           <h3 class="txt-size-20px txt-bold">
             Прикрепленные файлы:
           </h3>
           <div class="incident-attachments mrgn-t-30px">
-            <a :href="attachment.url" class="attachment-unit cursor-pointer" v-for="(attachment, index) of message.attachments">
+            <a :href="attachment.url" class="attachment-unit cursor-pointer"
+               v-for="(attachment, index) of message.attachments">
               <div class="flex-row flex-algn-itms-c">
                 <div class="section">
-                  <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none"
+                       xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_d)">
-                      <path d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z" fill="#F3F3F3"></path>
+                      <path
+                          d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z"
+                          fill="#F3F3F3"></path>
                     </g>
                     <g opacity="0.5">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z" fill="#C6C6C6"></path>
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z"
+                            fill="#C6C6C6"></path>
                     </g>
                     <defs>
-                      <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                      <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse"
+                              color-interpolation-filters="sRGB">
                         <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                       result="hardAlpha"></feColorMatrix>
                         <feOffset dy="1"></feOffset>
                         <feGaussianBlur stdDeviation="0.5"></feGaussianBlur>
                         <feComposite in2="hardAlpha" operator="out"></feComposite>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
+                        <feColorMatrix type="matrix"
+                                       values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"></feBlend>
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"></feBlend>
                       </filter>
@@ -351,14 +416,176 @@
                 </div>
                 <div class="section pdng-l-10px">
                   <div class="txt-color-1 txt-bold txt-size-14px">
-                    Вложение #{{index + 1}}
+                    Файл #{{ index + 1 }}
                   </div>
-<!--                  <div class="txt-size-12px txt-color-3-1">-->
-<!--                    JPG, 2.5 MB-->
-<!--                  </div>-->
                 </div>
               </div>
             </a>
+          </div>
+        </div>
+        <div class="mrgn-t-20px">
+          <h3 class="txt-size-20px txt-bold">
+            Инцидент затрагивает:
+          </h3>
+          <div class="mrgn-t-30px">
+            <div class="campaign-candidates-list">
+              <div class="person-wrp flex-column flex-algn-itms-strch">
+                <div class="person-photo">
+                  <div class="person-initials">С.Г.Т.</div>
+                  <img src="/img/user.svg" alt="Светлана Георгиевна Тихановская">
+                </div>
+                <div class="person-info pdng-t-10px">
+                  <div class="person-name txt-size-14px txt-medium">
+                    Светлана Георгиевна
+                    <br>
+                    Тихановская
+                  </div>
+                  <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
+                    Зам. председателя комиссии
+                  </div>
+                </div>
+
+                <div class="person-popover cursor-pointer">
+                  <div class="flex-column flex-algn-itms-strch">
+                    <div class="person-photo">
+                      <div class="person-initials">С.Г.Т.</div>
+                      <img src="/img/user.svg" alt="Светлана Георгиевна Тихановская">
+                    </div>
+                    <div class="person-info pdng-t-10px">
+                      <div class="person-name txt-size-14px txt-medium">
+                        Светлана Георгиевна
+                        <br>
+                        Тихановская
+                      </div>
+                      <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
+                        Зам. председателя комиссии
+                      </div>
+                      <div class="infoblock txt-size-12px">
+                        <div class="infoblock-name">
+                          Должность
+                        </div>
+                        <div class="infoblock-value ">
+                          Президент Республики Беларусь
+                        </div>
+                      </div>
+                      <div class="infoblock txt-size-12px">
+                        <div class="infoblock-name">
+                          Субъект выдвижения
+                        </div>
+                        <div class="infoblock-value ">
+                          Самовыдвижение
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="person-wrp flex-column flex-algn-itms-strch">
+                <div class="person-photo">
+                  <div class="person-initials">С.Г.Т.</div>
+                  <img src="/img/user.svg" alt="Светлана Георгиевна Тихановская">
+                </div>
+                <div class="person-info pdng-t-10px">
+                  <div class="person-name txt-size-14px txt-medium">
+                    Светлана Георгиевна
+                    <br>
+                    Тихановская
+                  </div>
+                  <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
+                    Зам. председателя комиссии
+                  </div>
+                </div>
+
+                <div class="person-popover cursor-pointer">
+                  <div class="flex-column flex-algn-itms-strch">
+                    <div class="person-photo">
+                      <div class="person-initials">С.Г.Т.</div>
+                      <img src="/img/user.svg" alt="Светлана Георгиевна Тихановская">
+                    </div>
+                    <div class="person-info pdng-t-10px">
+                      <div class="person-name txt-size-14px txt-medium">
+                        Светлана Георгиевна
+                        <br>
+                        Тихановская
+                      </div>
+                      <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
+                        Зам. председателя комиссии
+                      </div>
+                      <div class="infoblock txt-size-12px">
+                        <div class="infoblock-name">
+                          Должность
+                        </div>
+                        <div class="infoblock-value ">
+                          Президент Республики Беларусь
+                        </div>
+                      </div>
+                      <div class="infoblock txt-size-12px">
+                        <div class="infoblock-name">
+                          Субъект выдвижения
+                        </div>
+                        <div class="infoblock-value ">
+                          Самовыдвижение
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="person-wrp flex-column flex-algn-itms-strch">
+                <div class="person-photo">
+                  <div class="person-initials">С.Г.Т.</div>
+                  <img src="/img/user.svg" alt="Светлана Георгиевна Тихановская">
+                </div>
+                <div class="person-info pdng-t-10px">
+                  <div class="person-name txt-size-14px txt-medium">
+                    Светлана Георгиевна
+                    <br>
+                    Тихановская
+                  </div>
+                  <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
+                    Зам. председателя комиссии
+                  </div>
+                </div>
+
+                <div class="person-popover cursor-pointer">
+                  <div class="flex-column flex-algn-itms-strch">
+                    <div class="person-photo">
+                      <div class="person-initials">С.Г.Т.</div>
+                      <img src="/img/user.svg" alt="Светлана Георгиевна Тихановская">
+                    </div>
+                    <div class="person-info pdng-t-10px">
+                      <div class="person-name txt-size-14px txt-medium">
+                        Светлана Георгиевна
+                        <br>
+                        Тихановская
+                      </div>
+                      <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
+                        Зам. председателя комиссии
+                      </div>
+                      <div class="infoblock txt-size-12px">
+                        <div class="infoblock-name">
+                          Должность
+                        </div>
+                        <div class="infoblock-value ">
+                          Президент Республики Беларусь
+                        </div>
+                      </div>
+                      <div class="infoblock txt-size-12px">
+                        <div class="infoblock-name">
+                          Субъект выдвижения
+                        </div>
+                        <div class="infoblock-value ">
+                          Самовыдвижение
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="mrgn-t-50px">
@@ -378,6 +605,7 @@ import {defineComponent, onMounted, ref} from "vue";
 import {useRoute} from 'vue-router'
 import Dialog from 'primevue/dialog';
 import Button from 'primevue/button';
+
 const data = ref(null)
 
 async function fetchCommission() {
