@@ -18,6 +18,12 @@
             </div>
           </div>
         </div>
+        <div class="inline-block pdng-l-10px">
+          <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">
+            ФИО
+          </div>
+          <input :class="['p-inputtext p-component']" v-model.lazy="value">
+        </div>
       </div>
     </div>
   </header-view>
@@ -25,7 +31,7 @@
     <div class="committee-members-list">
       <!--      :class="{mark: item === 2}"-->
       <a class="committee-members-unit"
-         :href="'/member/1'" v-for="item of data.members">
+         :href="'/member/' + item.id" v-for="item of data.members">
         <div class="section pdng-r-20px pdng-l-20px pdng-t-20px pdng-b-20px">
           <div class="flex-row flex-algn-itms-c">
             <div class="section pdng-r-20px">
@@ -39,7 +45,7 @@
                 {{ item.full_name }}
               </h2>
               <div class="txt-color-2 txt-size-14px">
-                Председатель комиссии
+                {{ item.organizations[0].position }}
               </div>
             </div>
           </div>
@@ -55,20 +61,26 @@
     </div>
     <div class="flex-column flex-algn-itms-c pdng-t-40px">
       <a href="#" class="button primary pdng-l-40px pdng-r-40px">
-        Загрузить еще 50 членов избирательных комиссий из {{data.pagination.aggregate.count}}
+        Загрузить еще 50 членов избирательных комиссий из {{ data.pagination.aggregate.count }}
       </a>
     </div>
   </div>
 </template>
 <script>
 import Header from './Header.vue'
-import {defineComponent, onMounted, ref} from "vue";
+import {defineComponent, onMounted, ref, watch} from "vue";
 
 const data = ref(null)
+const value = ref('')
 
 async function fetchMembers() {
   try {
-    const response = await fetch(import.meta.env.VITE_API_URL + '/members')
+    const response = await fetch(
+        import.meta.env.VITE_API_URL
+        +
+        '/members'
+        + (value.value ? '?name=' + encodeURIComponent('%' + value.value + '%') : '')
+    )
     data.value = await response.json()
   } catch (e) {
     data.value = {members: [], pagination: {aggregate: {count: 0}}};
@@ -80,14 +92,18 @@ async function fetchMembers() {
 
 export default defineComponent({
   components: {
-    'header-view': Header
+    'header-view': Header,
   },
   setup() {
+    watch(value, () => {
+      fetchMembers()
+    })
     onMounted(() => {
       fetchMembers()
     });
     return {
-      data
+      data,
+      value
     }
   }
 })
