@@ -29,13 +29,13 @@
     </div>
   </header-view>
   <div class="scene-wrp bg-color-1 border-b-1px border-color1">
-    <div style="margin-top:170px;" class="scene">
+    <div style="margin-top:170px;" class="scene" v-if="data">
       <div class="flex-row">
         <div class="section pdng-r-30px">
           <div class="person-view">
             <div class="person-photo">
               <div class="person-initials">С.Г.Т.</div>
-              <img src="/imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
+              <img :src="data.member.photo_url" :alt="data.member.full_name">
             </div>
             <div class="txt-size-12px">
               <div class="mrgn-t-10px">
@@ -49,11 +49,8 @@
         </div>
         <div class="section flex-grow-all">
           <h1 class="txt-size-32px">
-            Ипатов Вадим Дмитриевич
+            {{ data.member.full_name }}
           </h1>
-          <h2 class="txt-size-20px">
-            57 лет
-          </h2>
           <div class="mrgn-t-40px txt-size-14px">
             <div class="infoblock">
               <div class="infoblock-name">Должность:</div>
@@ -68,14 +65,14 @@
               </div>
             </div>
           </div>
-          <div class="tag-wrp mrgn-t-20px">
-            <a class="tag-unit">
-              Фальсификации
-            </a>
-            <a class="tag-unit">
-              Санкции
-            </a>
-          </div>
+<!--          <div class="tag-wrp mrgn-t-20px">-->
+<!--            <a class="tag-unit">-->
+<!--              Фальсификации-->
+<!--            </a>-->
+<!--            <a class="tag-unit">-->
+<!--              Санкции-->
+<!--            </a>-->
+<!--          </div>-->
         </div>
       </div>
     </div>
@@ -653,11 +650,31 @@
 </template>
 <script>
 import Header from './Header.vue';
-import {defineComponent} from "vue";
+import {defineComponent, ref} from "vue";
+import {useRoute} from "vue-router";
+const data = ref(null)
+
+async function fetchMember() {
+  try {
+    const response = await fetch(import.meta.env.VITE_API_URL + '/member/' + useRoute().params.id)
+    data.value = await response.json()
+  } catch (e) {
+    data.value = {member: {}};
+  }
+  return {
+    data
+  }
+}
 
 export default defineComponent({
   components: {
     'header-view': Header
+  },
+  setup() {
+    fetchMember()
+    return {
+      data
+    }
   }
 })
 </script>
