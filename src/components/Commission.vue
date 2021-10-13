@@ -216,13 +216,16 @@
                   </defs>
                 </svg>
               </div>
-              <div class="section pdng-l-10px">
+              <div class="section pdng-l-10px" v-if="violation.attachments.length">
                 <div class="txt-color-1 txt-bold txt-size-14px">
-                  {{ violation.attachments.length }}
+                  {{ violation.attachments.length > 0 ? violation.attachments.length : 'Нет' }}
                 </div>
                 <div class="txt-size-14px">
                   вложений
                 </div>
+              </div>
+              <div class="section pdng-l-10px" v-else>
+                Нет вложений
               </div>
             </div>
           </div>
