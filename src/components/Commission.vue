@@ -302,21 +302,10 @@
           class="popup"
           :show-header="false"
           :modal="true">
-    <div class="popup-header flex-row flex-algn-itms-c border-b-1px border-color1">
-      <div class="section flex-grow-all pdng-l-30px">
-        <div class="txt-medium">Инцидент #32821</div>
-      </div>
-      <a class="close-popup cursor-pointer" @click="displayModal = false">
-        <div class="pdng-t-15px pdng-b-15px pdng-r-20px pdng-l-20px">
-          <svg class="block" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect y="19.1013" width="26.8534" height="2.68534" transform="rotate(-45 0 19.1013)" fill="#FF5C01"/>
-            <rect x="1.89893" y="0.112793" width="26.8534" height="2.68534" transform="rotate(45 1.89893 0.112793)"
-                  fill="#FF5C01"/>
-          </svg>
-        </div>
-      </a>
-    </div>
-    <div class="popup-body" v-if="message">
+    <template #header>
+      Инцидент #{{ message.id }}
+    </template>
+    <template v-if="message">
       <div class="flex-row flex-algn-itms-c border-b-1px border-color1">
         <div class="section flex-grow-all pdng-l-30px pdng-r-20px pdng-t-20px pdng-b-20px">
           <div class="txt-size-14px txt-medium">
@@ -337,43 +326,13 @@
           <a class="button medium" href="#">Все нарушения/инциденты кампании</a>
         </div>
       </div>
-      <div class="pdng-l-30px">
+      <div class="pdng-30px">
         <div class="mrgn-t-20px">
           <h3 class="txt-size-20px txt-bold">
             Описание:
           </h3>
           <div class="mrgn-t-30px">
             {{ message.description }}
-            <p>
-              г. Брест, Ленинский район, участок-6. Аккредитованного наблюдателя, председатель участковой комиссии,
-              не допустил осуществлять наблюдение за ходом голосования на участке, так как на участке уже
-              присутствовали наблюдатели ранее зарегистрированные
-              в журнале аккредитации. После 16:00 не дали возможность находится на участке для голосования и у двери.
-            </p>
-            <p>
-              г. Брест, Ленинский район, участок-6. Аккредитованного наблюдателя, председатель участковой комиссии,
-              не допустил осуществлять наблюдение за ходом голосования на участке, так как на участке уже
-              присутствовали наблюдатели ранее зарегистрированные
-              в журнале аккредитации. После 16:00 не дали возможность находится на участке для голосования и у двери.
-            </p>
-            <p>
-              г. Брест, Ленинский район, участок-6. Аккредитованного наблюдателя, председатель участковой комиссии,
-              не допустил осуществлять наблюдение за ходом голосования на участке, так как на участке уже
-              присутствовали наблюдатели ранее зарегистрированные
-              в журнале аккредитации. После 16:00 не дали возможность находится на участке для голосования и у двери.
-            </p>
-            <p>
-              г. Брест, Ленинский район, участок-6. Аккредитованного наблюдателя, председатель участковой комиссии,
-              не допустил осуществлять наблюдение за ходом голосования на участке, так как на участке уже
-              присутствовали наблюдатели ранее зарегистрированные
-              в журнале аккредитации. После 16:00 не дали возможность находится на участке для голосования и у двери.
-            </p>
-            <p>
-              г. Брест, Ленинский район, участок-6. Аккредитованного наблюдателя, председатель участковой комиссии,
-              не допустил осуществлять наблюдение за ходом голосования на участке, так как на участке уже
-              присутствовали наблюдатели ранее зарегистрированные
-              в журнале аккредитации. После 16:00 не дали возможность находится на участке для голосования и у двери.
-            </p>
           </div>
         </div>
         <div class="mrgn-t-30px" v-if="message.attachments.length > 0">
@@ -594,7 +553,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </template>
   </Dialog>
 
 </template>
@@ -603,7 +562,7 @@ import Header from './Header.vue';
 import Location from './Point.vue';
 import {defineComponent, onMounted, ref} from "vue";
 import {useRoute} from 'vue-router'
-import Dialog from 'primevue/dialog';
+import Dialog from './Modal.vue';
 import Button from 'primevue/button';
 
 const data = ref(null)
