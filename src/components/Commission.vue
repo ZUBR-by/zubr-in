@@ -289,13 +289,10 @@
     </div>
   </div>
 
-  <Dialog header="Header" v-model:visible="displayModal" :modal="true">
-    <template #header>
-      <div class="popup-header flex-row flex-algn-itms-c border-b-1px border-color1">
-      <div class="section flex-grow-all pdng-l-30px">
-        <div class="txt-medium">Инцидент #{{ message.id }}</div>
-      </div>
-    </div></template>
+  <Dialog v-model:visible="displayModal"
+          class="popup"
+          :header="'Инцидент #1'"
+          :modal="true">
     <div class="popup-body">
       <div class="flex-row flex-algn-itms-c border-b-1px border-color1">
         <div class="section flex-grow-all pdng-l-30px pdng-r-20px pdng-t-20px pdng-b-20px">
@@ -381,7 +378,6 @@ import {defineComponent, onMounted, ref} from "vue";
 import {useRoute} from 'vue-router'
 import Dialog from 'primevue/dialog';
 import Button from 'primevue/button';
-
 const data = ref(null)
 
 async function fetchCommission() {
