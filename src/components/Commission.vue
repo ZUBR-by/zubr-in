@@ -225,7 +225,9 @@
                 </div>
               </div>
               <div class="section pdng-l-10px" v-else>
-                Нет вложений
+                <div class="txt-size-14px">
+                  Нет вложений
+                </div>
               </div>
             </div>
           </div>
