@@ -45,6 +45,9 @@
     </div>
   </header-view>
   <div style="margin-top:190px" class="scene">
+    <div class="election-campaign-list" v-if="loading">
+      Загрузка...
+    </div>
     <div class="election-campaign-list" v-if="data">
       <div class="election-campaign-unit" v-for="campaign of data.campaigns">
         <div class="elect-camp-unit-header flex-row flex-algn-itms-c size-100 border-b-2px border-color2">
@@ -87,11 +90,11 @@
       </div>
 
     </div>
-    <div class="flex-column flex-algn-itms-c pdng-t-40px">
-      <a href="#" class="button primary pdng-l-40px pdng-r-40px">
-        Показать еще 15 электоральных компаний из 37
-      </a>
-    </div>
+<!--    <div class="flex-column flex-algn-itms-c pdng-t-40px">-->
+<!--      <a href="#" class="button primary pdng-l-40px pdng-r-40px">-->
+<!--        Показать еще 15 электоральных компаний из 37-->
+<!--      </a>-->
+<!--    </div>-->
   </div>
 </template>
 <script>
@@ -101,17 +104,21 @@ import {defineComponent, ref} from "vue";
 function fetchCampaigns() {
   const data = ref(null)
   const error = ref(null)
+  const loading = ref(false)
   const load = async () => {
     try {
+      loading.value = true
       const response = await fetch(import.meta.env.VITE_API_URL + '/campaigns')
       data.value = await response.json()
+      loading.value = false
     } catch (e) {
+      loading.value = false
       error.value = e.message;
       console.error(e)
     }
   }
 
-  return {data, load, error}
+  return {data, load, error, loading}
 }
 
 export {fetchCampaigns}
@@ -120,10 +127,11 @@ export default defineComponent({
     'header-view': Header
   },
   setup() {
-    const {data, load} = fetchCampaigns();
+    const {data, load, loading} = fetchCampaigns();
     load()
     return {
-      data
+      data,
+      loading
     }
   }
 })
