@@ -7,7 +7,7 @@
             Избирательная инициатива
           </div>
           <div>
-            <SelectButton v-model="filter" :options="options" />
+            <SelectButton v-model="filter" :options="options"/>
           </div>
         </div>
         <div class="inline-block mrgn-l-30px">
@@ -61,7 +61,10 @@
         </div>
         <div class="border-l-1px border-r-1px border-color2 pdng-20px">
           <p class="txt-size-14px txt-color-3-1">
-            1. меня допустили на участок для голосования в период с 10.00 - 12.00. Все остальное время я проводил на улице под окном. Подсчет голосов был затруднён, поскольку был большой наплыв людей, которые стоя в очереди закрывали собой урну. До 10.00, находясь на улице, я видел из окна 2 кабинки и считал людей по двум кабинкам ...
+            1. меня допустили на участок для голосования в период с 10.00 - 12.00. Все остальное время я проводил на
+            улице под окном. Подсчет голосов был затруднён, поскольку был большой наплыв людей, которые стоя в очереди
+            закрывали собой урну. До 10.00, находясь на улице, я видел из окна 2 кабинки и считал людей по двум кабинкам
+            ...
           </p>
           <div class="tag-wrp pdng-t-10px">
             <a href="" class="tag-unit">Заметка</a>
@@ -71,17 +74,24 @@
           <div class="flex-grow-all">
             <div class="flex-row flex-algn-itms-c">
               <div class="section">
-                <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
                   <g filter="url(#filter0_d)">
-                    <path d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z" fill="#F3F3F3"/>
+                    <path
+                        d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z"
+                        fill="#F3F3F3"/>
                   </g>
                   <g opacity="0.5">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z" fill="#C6C6C6"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z"
+                          fill="#C6C6C6"/>
                   </g>
                   <defs>
-                    <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse"
+                            color-interpolation-filters="sRGB">
                       <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                     result="hardAlpha"/>
                       <feOffset dy="1"/>
                       <feGaussianBlur stdDeviation="0.5"/>
                       <feComposite in2="hardAlpha" operator="out"/>
@@ -151,7 +161,10 @@
         </div>
         <div class="border-l-1px border-r-1px border-color2 pdng-20px">
           <p class="txt-size-14px txt-color-3-1">
-            1. меня допустили на участок для голосования в период с 10.00 - 12.00. Все остальное время я проводил на улице под окном. Подсчет голосов был затруднён, поскольку был большой наплыв людей, которые стоя в очереди закрывали собой урну. До 10.00, находясь на улице, я видел из окна 2 кабинки и считал людей по двум кабинкам ...
+            1. меня допустили на участок для голосования в период с 10.00 - 12.00. Все остальное время я проводил на
+            улице под окном. Подсчет голосов был затруднён, поскольку был большой наплыв людей, которые стоя в очереди
+            закрывали собой урну. До 10.00, находясь на улице, я видел из окна 2 кабинки и считал людей по двум кабинкам
+            ...
           </p>
           <div class="tag-wrp pdng-t-10px">
             <a href="" class="tag-unit">Заметка</a>
@@ -161,17 +174,24 @@
           <div class="flex-grow-all">
             <div class="flex-row flex-algn-itms-c">
               <div class="section">
-                <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
                   <g filter="url(#filter0_d)">
-                    <path d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z" fill="#F3F3F3"/>
+                    <path
+                        d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z"
+                        fill="#F3F3F3"/>
                   </g>
                   <g opacity="0.5">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z" fill="#C6C6C6"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z"
+                          fill="#C6C6C6"/>
                   </g>
                   <defs>
-                    <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse"
+                            color-interpolation-filters="sRGB">
                       <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                     result="hardAlpha"/>
                       <feOffset dy="1"/>
                       <feGaussianBlur stdDeviation="0.5"/>
                       <feComposite in2="hardAlpha" operator="out"/>
@@ -241,7 +261,10 @@
         </div>
         <div class="border-l-1px border-r-1px border-color2 pdng-20px">
           <p class="txt-size-14px txt-color-3-1">
-            1. меня допустили на участок для голосования в период с 10.00 - 12.00. Все остальное время я проводил на улице под окном. Подсчет голосов был затруднён, поскольку был большой наплыв людей, которые стоя в очереди закрывали собой урну. До 10.00, находясь на улице, я видел из окна 2 кабинки и считал людей по двум кабинкам ...
+            1. меня допустили на участок для голосования в период с 10.00 - 12.00. Все остальное время я проводил на
+            улице под окном. Подсчет голосов был затруднён, поскольку был большой наплыв людей, которые стоя в очереди
+            закрывали собой урну. До 10.00, находясь на улице, я видел из окна 2 кабинки и считал людей по двум кабинкам
+            ...
           </p>
           <div class="tag-wrp pdng-t-10px">
             <a href="" class="tag-unit">Заметка</a>
@@ -251,17 +274,24 @@
           <div class="flex-grow-all">
             <div class="flex-row flex-algn-itms-c">
               <div class="section">
-                <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
                   <g filter="url(#filter0_d)">
-                    <path d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z" fill="#F3F3F3"/>
+                    <path
+                        d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z"
+                        fill="#F3F3F3"/>
                   </g>
                   <g opacity="0.5">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z" fill="#C6C6C6"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z"
+                          fill="#C6C6C6"/>
                   </g>
                   <defs>
-                    <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse"
+                            color-interpolation-filters="sRGB">
                       <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                     result="hardAlpha"/>
                       <feOffset dy="1"/>
                       <feGaussianBlur stdDeviation="0.5"/>
                       <feComposite in2="hardAlpha" operator="out"/>
@@ -331,7 +361,10 @@
         </div>
         <div class="border-l-1px border-r-1px border-color2 pdng-20px">
           <p class="txt-size-14px txt-color-3-1">
-            1. меня допустили на участок для голосования в период с 10.00 - 12.00. Все остальное время я проводил на улице под окном. Подсчет голосов был затруднён, поскольку был большой наплыв людей, которые стоя в очереди закрывали собой урну. До 10.00, находясь на улице, я видел из окна 2 кабинки и считал людей по двум кабинкам ...
+            1. меня допустили на участок для голосования в период с 10.00 - 12.00. Все остальное время я проводил на
+            улице под окном. Подсчет голосов был затруднён, поскольку был большой наплыв людей, которые стоя в очереди
+            закрывали собой урну. До 10.00, находясь на улице, я видел из окна 2 кабинки и считал людей по двум кабинкам
+            ...
           </p>
           <div class="tag-wrp pdng-t-10px">
             <a href="" class="tag-unit">Заметка</a>
@@ -341,17 +374,24 @@
           <div class="flex-grow-all">
             <div class="flex-row flex-algn-itms-c">
               <div class="section">
-                <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
                   <g filter="url(#filter0_d)">
-                    <path d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z" fill="#F3F3F3"/>
+                    <path
+                        d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z"
+                        fill="#F3F3F3"/>
                   </g>
                   <g opacity="0.5">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z" fill="#C6C6C6"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z"
+                          fill="#C6C6C6"/>
                   </g>
                   <defs>
-                    <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse"
+                            color-interpolation-filters="sRGB">
                       <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                     result="hardAlpha"/>
                       <feOffset dy="1"/>
                       <feGaussianBlur stdDeviation="0.5"/>
                       <feComposite in2="hardAlpha" operator="out"/>
@@ -421,7 +461,10 @@
         </div>
         <div class="border-l-1px border-r-1px border-color2 pdng-20px">
           <p class="txt-size-14px txt-color-3-1">
-            1. меня допустили на участок для голосования в период с 10.00 - 12.00. Все остальное время я проводил на улице под окном. Подсчет голосов был затруднён, поскольку был большой наплыв людей, которые стоя в очереди закрывали собой урну. До 10.00, находясь на улице, я видел из окна 2 кабинки и считал людей по двум кабинкам ...
+            1. меня допустили на участок для голосования в период с 10.00 - 12.00. Все остальное время я проводил на
+            улице под окном. Подсчет голосов был затруднён, поскольку был большой наплыв людей, которые стоя в очереди
+            закрывали собой урну. До 10.00, находясь на улице, я видел из окна 2 кабинки и считал людей по двум кабинкам
+            ...
           </p>
           <div class="tag-wrp pdng-t-10px">
             <a href="" class="tag-unit">Заметка</a>
@@ -431,17 +474,24 @@
           <div class="flex-grow-all">
             <div class="flex-row flex-algn-itms-c">
               <div class="section">
-                <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
                   <g filter="url(#filter0_d)">
-                    <path d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z" fill="#F3F3F3"/>
+                    <path
+                        d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z"
+                        fill="#F3F3F3"/>
                   </g>
                   <g opacity="0.5">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z" fill="#C6C6C6"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z"
+                          fill="#C6C6C6"/>
                   </g>
                   <defs>
-                    <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse"
+                            color-interpolation-filters="sRGB">
                       <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                     result="hardAlpha"/>
                       <feOffset dy="1"/>
                       <feGaussianBlur stdDeviation="0.5"/>
                       <feComposite in2="hardAlpha" operator="out"/>
@@ -511,7 +561,10 @@
         </div>
         <div class="border-l-1px border-r-1px border-color2 pdng-20px">
           <p class="txt-size-14px txt-color-3-1">
-            1. меня допустили на участок для голосования в период с 10.00 - 12.00. Все остальное время я проводил на улице под окном. Подсчет голосов был затруднён, поскольку был большой наплыв людей, которые стоя в очереди закрывали собой урну. До 10.00, находясь на улице, я видел из окна 2 кабинки и считал людей по двум кабинкам ...
+            1. меня допустили на участок для голосования в период с 10.00 - 12.00. Все остальное время я проводил на
+            улице под окном. Подсчет голосов был затруднён, поскольку был большой наплыв людей, которые стоя в очереди
+            закрывали собой урну. До 10.00, находясь на улице, я видел из окна 2 кабинки и считал людей по двум кабинкам
+            ...
           </p>
           <div class="tag-wrp pdng-t-10px">
             <a href="" class="tag-unit">Заметка</a>
@@ -521,17 +574,24 @@
           <div class="flex-grow-all">
             <div class="flex-row flex-algn-itms-c">
               <div class="section">
-                <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
                   <g filter="url(#filter0_d)">
-                    <path d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z" fill="#F3F3F3"/>
+                    <path
+                        d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z"
+                        fill="#F3F3F3"/>
                   </g>
                   <g opacity="0.5">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z" fill="#C6C6C6"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z"
+                          fill="#C6C6C6"/>
                   </g>
                   <defs>
-                    <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse"
+                            color-interpolation-filters="sRGB">
                       <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                     result="hardAlpha"/>
                       <feOffset dy="1"/>
                       <feGaussianBlur stdDeviation="0.5"/>
                       <feComposite in2="hardAlpha" operator="out"/>
@@ -601,7 +661,10 @@
         </div>
         <div class="border-l-1px border-r-1px border-color2 pdng-20px">
           <p class="txt-size-14px txt-color-3-1">
-            1. меня допустили на участок для голосования в период с 10.00 - 12.00. Все остальное время я проводил на улице под окном. Подсчет голосов был затруднён, поскольку был большой наплыв людей, которые стоя в очереди закрывали собой урну. До 10.00, находясь на улице, я видел из окна 2 кабинки и считал людей по двум кабинкам ...
+            1. меня допустили на участок для голосования в период с 10.00 - 12.00. Все остальное время я проводил на
+            улице под окном. Подсчет голосов был затруднён, поскольку был большой наплыв людей, которые стоя в очереди
+            закрывали собой урну. До 10.00, находясь на улице, я видел из окна 2 кабинки и считал людей по двум кабинкам
+            ...
           </p>
           <div class="tag-wrp pdng-t-10px">
             <a href="" class="tag-unit">Заметка</a>
@@ -611,17 +674,24 @@
           <div class="flex-grow-all">
             <div class="flex-row flex-algn-itms-c">
               <div class="section">
-                <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
                   <g filter="url(#filter0_d)">
-                    <path d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z" fill="#F3F3F3"/>
+                    <path
+                        d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z"
+                        fill="#F3F3F3"/>
                   </g>
                   <g opacity="0.5">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z" fill="#C6C6C6"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z"
+                          fill="#C6C6C6"/>
                   </g>
                   <defs>
-                    <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse"
+                            color-interpolation-filters="sRGB">
                       <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                     result="hardAlpha"/>
                       <feOffset dy="1"/>
                       <feGaussianBlur stdDeviation="0.5"/>
                       <feComposite in2="hardAlpha" operator="out"/>
@@ -691,7 +761,10 @@
         </div>
         <div class="border-l-1px border-r-1px border-color2 pdng-20px">
           <p class="txt-size-14px txt-color-3-1">
-            1. меня допустили на участок для голосования в период с 10.00 - 12.00. Все остальное время я проводил на улице под окном. Подсчет голосов был затруднён, поскольку был большой наплыв людей, которые стоя в очереди закрывали собой урну. До 10.00, находясь на улице, я видел из окна 2 кабинки и считал людей по двум кабинкам ...
+            1. меня допустили на участок для голосования в период с 10.00 - 12.00. Все остальное время я проводил на
+            улице под окном. Подсчет голосов был затруднён, поскольку был большой наплыв людей, которые стоя в очереди
+            закрывали собой урну. До 10.00, находясь на улице, я видел из окна 2 кабинки и считал людей по двум кабинкам
+            ...
           </p>
           <div class="tag-wrp pdng-t-10px">
             <a href="" class="tag-unit">Заметка</a>
@@ -701,17 +774,24 @@
           <div class="flex-grow-all">
             <div class="flex-row flex-algn-itms-c">
               <div class="section">
-                <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
                   <g filter="url(#filter0_d)">
-                    <path d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z" fill="#F3F3F3"/>
+                    <path
+                        d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z"
+                        fill="#F3F3F3"/>
                   </g>
                   <g opacity="0.5">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z" fill="#C6C6C6"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z"
+                          fill="#C6C6C6"/>
                   </g>
                   <defs>
-                    <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse"
+                            color-interpolation-filters="sRGB">
                       <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                     result="hardAlpha"/>
                       <feOffset dy="1"/>
                       <feGaussianBlur stdDeviation="0.5"/>
                       <feComposite in2="hardAlpha" operator="out"/>
@@ -781,7 +861,10 @@
         </div>
         <div class="border-l-1px border-r-1px border-color2 pdng-20px">
           <p class="txt-size-14px txt-color-3-1">
-            1. меня допустили на участок для голосования в период с 10.00 - 12.00. Все остальное время я проводил на улице под окном. Подсчет голосов был затруднён, поскольку был большой наплыв людей, которые стоя в очереди закрывали собой урну. До 10.00, находясь на улице, я видел из окна 2 кабинки и считал людей по двум кабинкам ...
+            1. меня допустили на участок для голосования в период с 10.00 - 12.00. Все остальное время я проводил на
+            улице под окном. Подсчет голосов был затруднён, поскольку был большой наплыв людей, которые стоя в очереди
+            закрывали собой урну. До 10.00, находясь на улице, я видел из окна 2 кабинки и считал людей по двум кабинкам
+            ...
           </p>
           <div class="tag-wrp pdng-t-10px">
             <a href="" class="tag-unit">Заметка</a>
@@ -791,17 +874,24 @@
           <div class="flex-grow-all">
             <div class="flex-row flex-algn-itms-c">
               <div class="section">
-                <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
                   <g filter="url(#filter0_d)">
-                    <path d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z" fill="#F3F3F3"/>
+                    <path
+                        d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z"
+                        fill="#F3F3F3"/>
                   </g>
                   <g opacity="0.5">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z" fill="#C6C6C6"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z"
+                          fill="#C6C6C6"/>
                   </g>
                   <defs>
-                    <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse"
+                            color-interpolation-filters="sRGB">
                       <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                     result="hardAlpha"/>
                       <feOffset dy="1"/>
                       <feGaussianBlur stdDeviation="0.5"/>
                       <feComposite in2="hardAlpha" operator="out"/>
@@ -858,15 +948,31 @@ import Header from './Header.vue';
 import {defineComponent, ref} from "vue";
 import SelectButton from 'primevue/selectbutton';
 
+const hash = {
+  0: "Отказ в аккредитации наблюдателя",
+  1: "Допуск аккредитованного наблюдателя на участок",
+  2: "Недопуск аккредитованного наблюдателя на участок",
+  3: "Лишение наблюдателя аккредитации (удаление с участка)",
+  4: "Принуждение избирателей к досрочному голосованию",
+  5: "Несоблюдение комиссией сроков вывешивания протокола",
+  6: "Нарушение порядка голосования избирателя по месту нахождения",
+  7: "Несовпадение количества проголосовавших по подсчётам наблюдателя с данными из протокола комиссии",
+  8: "Несоответствие оформления помещения участка  нормам медицинской безопасности",
+  9: "Непрозрачный подсчёт голосов",
+  10: "Ограничение прав наблюдателя",
+  11: "Другое",
+}
+
+export {hash}
 export default defineComponent({
   components: {
-    'header-view' : Header,
+    'header-view': Header,
     SelectButton
   },
   setup() {
     const filter = ref('Все');
     const options = ref(['Все', 'Честные Люди', 'Право Выбора']);
-    return { filter, options }
+    return {filter, options}
   }
 })
 </script>

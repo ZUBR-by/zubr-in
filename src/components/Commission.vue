@@ -156,7 +156,10 @@
         <div class="size-25 flex-column flex-noshrink pdng-20px txt-medium">
           <div class="flex-grow-all">
             <div class="txt-size-14px">
-              {{ violation.categories }}
+              <template v-for="cat of violation.categories">
+                {{hash[cat]}}
+                <br>
+              </template>
             </div>
             <div class="txt-color-3-1 txt-size-12px mrgn-t-5px">
               {{ violation.created_at }}
@@ -314,7 +317,7 @@
       <div class="flex-row flex-algn-itms-c border-b-1px border-color1">
         <div class="section flex-grow-all pdng-l-30px pdng-r-20px pdng-t-20px pdng-b-20px">
           <div class="txt-size-14px txt-medium">
-            Несоблюдение комиссией сроков вывешивания протокола
+            {{formatCategories(message.categories)}}
           </div>
           <div class="txt-color-3-1 txt-size-12px txt-medium">
             17 авг 2020, 02:36
@@ -569,6 +572,7 @@ import {defineComponent, onMounted, ref} from "vue";
 import {useRoute} from 'vue-router'
 import Dialog from './Modal.vue';
 import Button from 'primevue/button';
+import {hash} from './Messages.vue'
 
 const data = ref(null)
 
@@ -601,10 +605,14 @@ export default defineComponent({
       data,
       displayModal,
       message,
+      formatCategories(categories) {
+        return categories.map(i => hash[i]).join(',')
+      },
       showModal(violation) {
         message.value = violation
         displayModal.value = true
-      }
+      },
+      hash
     }
   }
 })
