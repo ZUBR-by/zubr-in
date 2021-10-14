@@ -156,10 +156,9 @@
         <div class="size-25 flex-column flex-noshrink pdng-20px txt-medium">
           <div class="flex-grow-all">
             <div class="txt-size-14px">
-              <template v-for="cat of violation.categories">
+              <p v-for="cat of violation.categories">
                 {{hash[cat]}}
-                <br>
-              </template>
+              </p>
             </div>
             <div class="txt-color-3-1 txt-size-12px mrgn-t-5px">
               {{ violation.created_at }}
