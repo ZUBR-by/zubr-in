@@ -90,16 +90,13 @@
       <div class="person-wrp flex-column flex-algn-itms-strch" v-for="item of data.commission.persons">
         <div class="person-photo">
           <!--          <div class="person-initials">С.Г.Т.</div>-->
-          <img :src="item.person.photo_url ? item.person.photo_url : '//img/user.svg'"
+          <img :src="item.person.photo_url ? item.person.photo_url : '/img/user.svg'"
                :alt="item.person.full_name">
         </div>
         <div class="person-info pdng-t-10px">
           <div class="person-name txt-size-14px txt-medium">
             {{ item.person.full_name }}
           </div>
-          <!--          <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">-->
-          <!--            37 лет-->
-          <!--          </div>-->
           <div class="txt-color-1 txt-size-12px txt-medium mrgn-t-10px">
             {{ item.position }}
           </div>
@@ -108,15 +105,12 @@
           <div class="flex-column flex-algn-itms-strch">
             <div class="person-photo">
               <!--              <div class="person-initials">С.Г.Т.</div>-->
-              <img :src="item.person.photo_url ? item.person.photo_url : '//img/user.svg'" :alt="item.person.full_name">
+              <img :src="item.person.photo_url ? item.person.photo_url : '/img/user.svg'" :alt="item.person.full_name">
             </div>
             <div class="person-info pdng-t-10px">
               <div class="person-name txt-size-14px txt-medium">
                 {{ item.person.full_name }}
               </div>
-              <!--              <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">-->
-              <!--                37 лет-->
-              <!--              </div>-->
               <div class="txt-color-1 txt-size-12px txt-medium mrgn-t-10px">
                 {{ item.position }}
               </div>
@@ -139,15 +133,14 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
   </div>
   <div class="scene" v-if="data">
     <h2 class="txt-size-36px txt-bold pdng-b-40px">
-      Последние инциденты комиссии.
-      <a class="txt-underline-2px" href="#">Всего 237 инцидента и нарушений</a>.
+      Последние сообщения о нарушениях.
+      <a class="txt-underline-2px" href="#">Всего {{data.commission.violations.length}} сообщений о нарушениях</a>.
     </h2>
     <div class="incident-list">
       <div class="incident-unit cursor-pointer"
@@ -155,28 +148,22 @@
            @click="showModal(violation)">
         <div class="size-25 flex-column flex-noshrink pdng-20px txt-medium">
           <div class="flex-grow-all">
-            <div class="txt-size-14px">
-              <p v-for="cat of violation.categories">
-                {{hash[cat]}}
-              </p>
-            </div>
             <div class="txt-color-3-1 txt-size-12px mrgn-t-5px">
               {{ violation.created_at }}
             </div>
-            <div class="mrgn-t-10px">
-              <a class="inline txt-size-12px txt-underline-inline"
-                 :href="'/commission/' + violation.commission.id">
-                {{ violation.commission.code }},{{ violation.commission.name }}: {{ violation.commission.description }}
-              </a>
+            <div class="txt-size-14px">
+              <div v-for="cat of violation.categories" class="pdng-t-5px">
+                {{hash[cat]}}
+              </div>
             </div>
           </div>
-          <!--<div>
+          <div>
             <div class="mrgn-t-10px">
               <a class="inline txt-size-12px txt-underline-inline" href="#">
                 Честные люди
               </a>
             </div>
-          </div>-->
+          </div>
         </div>
         <div class="border-l-1px border-r-1px border-color2 pdng-20px">
           <p class="txt-size-14px txt-color-3-1">
@@ -190,33 +177,7 @@
           <div class="flex-grow-all">
             <div class="flex-row flex-algn-itms-c">
               <div class="section">
-                <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none"
-                     xmlns="http://www.w3.org/2000/svg">
-                  <g filter="url(#filter0_d)">
-                    <path
-                        d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z"
-                        fill="#F3F3F3"/>
-                  </g>
-                  <g opacity="0.5">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z"
-                          fill="#C6C6C6"/>
-                  </g>
-                  <defs>
-                    <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse"
-                            color-interpolation-filters="sRGB">
-                      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                                     result="hardAlpha"/>
-                      <feOffset dy="1"/>
-                      <feGaussianBlur stdDeviation="0.5"/>
-                      <feComposite in2="hardAlpha" operator="out"/>
-                      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
-                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
-                    </filter>
-                  </defs>
-                </svg>
+                  <img src="/img/icon/attachment.svg">
               </div>
               <div class="section pdng-l-10px" v-if="violation.attachments.length">
                 <div class="txt-color-1 txt-bold txt-size-14px">
@@ -235,20 +196,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="flex-column flex-algn-itms-c pdng-t-40px">
-      <a href="#" class="button primary inline-flex flex-algn-itms-c pdng-l-40px pdng-r-40px">
-        <div class="section">
-          Показать все 873 нарушений и инцидентов
-        </div>
-        <div class="section mrgn-l-20px">
-          <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-                d="M1 5.25C0.585786 5.25 0.25 5.58579 0.25 6C0.25 6.41421 0.585786 6.75 1 6.75V5.25ZM13.5303 6.53033C13.8232 6.23744 13.8232 5.76256 13.5303 5.46967L8.75736 0.696699C8.46447 0.403806 7.98959 0.403806 7.6967 0.696699C7.40381 0.989593 7.40381 1.46447 7.6967 1.75736L11.9393 6L7.6967 10.2426C7.40381 10.5355 7.40381 11.0104 7.6967 11.3033C7.98959 11.5962 8.46447 11.5962 8.75736 11.3033L13.5303 6.53033ZM1 6.75H13V5.25H1V6.75Z"
-                fill="white"></path>
-          </svg>
-        </div>
-      </a>
     </div>
   </div>
   <div class="scene">
@@ -319,10 +266,7 @@
             {{formatCategories(message.categories)}}
           </div>
           <div class="txt-color-3-1 txt-size-12px txt-medium">
-            17 авг 2020, 02:36
-          </div>
-          <div class="txt-size-12px txt-medium mrgn-t-5px">
-            <a class="txt-underline-inline" href="#">01-047-0056, Участок 56: ГУО "Гимназия №5 г.Барановичи"</a>
+            {{message.created_at}}
           </div>
           <div class="tag-unit  mrgn-t-20px">
             Честные люди
@@ -333,7 +277,7 @@
           <a class="button medium" href="#">Все нарушения/инциденты кампании</a>
         </div>
       </div>
-      <div class="pdng-30px">
+      <div class="pdng-l-30px pdng-r-30px pdng-t-10px pdng-b-30px">
         <div class="mrgn-t-20px">
           <h3 class="txt-size-20px txt-bold">
             Описание:
@@ -351,34 +295,7 @@
                v-for="(attachment, index) of message.attachments">
               <div class="flex-row flex-algn-itms-c">
                 <div class="section">
-                  <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none"
-                       xmlns="http://www.w3.org/2000/svg">
-                    <g filter="url(#filter0_d)">
-                      <path
-                          d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z"
-                          fill="#F3F3F3"></path>
-                    </g>
-                    <g opacity="0.5">
-                      <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z"
-                            fill="#C6C6C6"></path>
-                    </g>
-                    <defs>
-                      <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse"
-                              color-interpolation-filters="sRGB">
-                        <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                                       result="hardAlpha"></feColorMatrix>
-                        <feOffset dy="1"></feOffset>
-                        <feGaussianBlur stdDeviation="0.5"></feGaussianBlur>
-                        <feComposite in2="hardAlpha" operator="out"></feComposite>
-                        <feColorMatrix type="matrix"
-                                       values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
-                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"></feBlend>
-                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"></feBlend>
-                      </filter>
-                    </defs>
-                  </svg>
+                  <img src="/img/icon/attachment.svg" alt="Иконка вложения">
                 </div>
                 <div class="section pdng-l-10px">
                   <div class="txt-color-1 txt-bold txt-size-14px">
