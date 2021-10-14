@@ -65,10 +65,12 @@
               <div class="infoblock-name">Код комиссии:</div>
               <div class="infoblock-value">{{ data.commission.code }}</div>
             </div>
-            <div class="infoblock">
+            <div class="infoblock" v-if="data.commission.parents.length > 0">
               <div class="infoblock-name">Вышестоящая комиссия:</div>
               <div class="infoblock-value">
-                <a class="txt-underline-inline" href="#">Центральная комиссия</a>
+                <a class="txt-underline-inline" :href="'/commission/' + data.commission.parents[0].parent_org.id">
+                  {{ data.commission.parents[0].parent_org.name }}
+                </a>
               </div>
             </div>
           </div>
