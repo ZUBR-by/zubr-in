@@ -2,29 +2,8 @@
   <header-view>
     <div class="header-subnav border-t-1px border-color2">
       <div
-          class="section flex-row flex-algn-itms-c flex-grow-all flex-algn-slf-strch pdng-20px pdng-l-30px pdng-r-30px border-l-1px border-color2">
-        <div class="section">
-          <div class="flex-row flex-algn-itms-c">
-            <div class="section">
-              <svg width="25" height="33" viewBox="0 0 25 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M2.71436 2.57623C2.71436 2.57623 6.78428 0.261278 9.50878 0.0235027C13.0632 -0.286697 16.0314 2.57623 18.4774 2.57623C20.9234 2.57623 25.0001 0.874411 25.0001 0.874411V17.8926C25.0001 17.8926 22.2207 19.2549 20.3799 19.5944C16.1164 20.3807 13.8572 17.0417 9.50878 17.0417C5.16035 17.0417 2.71436 19.5944 2.71436 19.5944V2.57623Z"
-                    fill="#FF5C01"></path>
-                <rect y="1" width="2" height="32" fill="#FF5C01"></rect>
-              </svg>
-            </div>
-            <div class="section pdng-l-15px" v-if="data">
-              <div class="txt-size-18px">
-                Сообщений о нарушений
-              </div>
-              <div class="txt-size-18px txt-bold">
-<!--                {{ data.commission.violations.length }}-->
-                0
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="section pdng-l-40px">
+          class="section flex-row flex-algn-itms-c flex-grow-all flex-algn-slf-strch pdng-20px pdng-l-10px pdng-r-30px border-l-1px border-color2">
+        <div class="section pdng-l-10px">
           <div class="button medium primary">
             Сообщить о нарушении
           </div>
@@ -97,13 +76,10 @@
             <div class="person-name txt-size-14px txt-medium">
               {{ item.person.full_name}}
             </div>
-            <div class="person-mark txt-color-2 txt-size-12px">
+            <div class="person-mark txt-color-2 txt-size-12px" v-if="false">
               <div class="flex-row flex-algn-itms-c mrgn-t-5px">
                 <div class="section">
-                  <svg class="block" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.21484 1.153C1.21484 1.153 3.03635 0.116935 4.2557 0.0105187C5.84647 -0.128312 7.17493 1.153 8.26964 1.153C9.36435 1.153 11.1889 0.391345 11.1889 0.391345V8.00787C11.1889 8.00787 9.94496 8.61757 9.12108 8.76952C7.21297 9.12144 6.20186 7.62704 4.2557 7.62704C2.30955 7.62704 1.21484 8.76952 1.21484 8.76952V1.153Z" fill="#FF5C01"/>
-                    <rect width="0.923077" height="12" fill="#FF5C01"/>
-                  </svg>
+                  <img src="/img/icon/flag.svg">
                 </div>
                 <div class="section pdng-l-5px">
                   <div class="txt-bold">
@@ -127,13 +103,10 @@
                 <div class="person-name txt-size-14px txt-medium">
                   {{ item.person.full_name}}
                 </div>
-                <div class="person-mark txt-color-2 txt-size-12px">
+                <div class="person-mark txt-color-2 txt-size-12px" v-if="false">
                   <div class="flex-row flex-algn-itms-c mrgn-t-5px">
                     <div class="section">
-                      <svg class="block" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1.21484 1.153C1.21484 1.153 3.03635 0.116935 4.2557 0.0105187C5.84647 -0.128312 7.17493 1.153 8.26964 1.153C9.36435 1.153 11.1889 0.391345 11.1889 0.391345V8.00787C11.1889 8.00787 9.94496 8.61757 9.12108 8.76952C7.21297 9.12144 6.20186 7.62704 4.2557 7.62704C2.30955 7.62704 1.21484 8.76952 1.21484 8.76952V1.153Z" fill="#FF5C01"/>
-                        <rect width="0.923077" height="12" fill="#FF5C01"/>
-                      </svg>
+                      <img src="/img/icon/flag.svg">
                     </div>
                     <div class="section pdng-l-5px">
                       <div class="txt-bold">
@@ -183,10 +156,7 @@
             <div class="section border-l-2px border-color2 pdng-20px pdng-l-40px pdng-r-40px cursor-pointer hovered">
               <div class="flex-row flex-algn-itms-c">
                 <div class="section">
-                  <svg width="25" height="33" viewBox="0 0 25 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2.71436 2.57623C2.71436 2.57623 6.78428 0.261278 9.50878 0.0235027C13.0632 -0.286697 16.0314 2.57623 18.4774 2.57623C20.9234 2.57623 25.0001 0.874411 25.0001 0.874411V17.8926C25.0001 17.8926 22.2207 19.2549 20.3799 19.5944C16.1164 20.3807 13.8572 17.0417 9.50878 17.0417C5.16035 17.0417 2.71436 19.5944 2.71436 19.5944V2.57623Z" fill="#FF5C01"/>
-                    <rect y="1" width="2" height="32" fill="#FF5C01"/>
-                  </svg>
+                  <img src="/img/icon/flag_large.svg">
                 </div>
                 <div class="section pdng-l-15px">
                   <div class="txt-size-18px">
@@ -225,7 +195,7 @@
                     Валерьевич
                   </div>
                   <div class="person-mark txt-color-2 txt-size-12px">
-                    <div class="flex-row flex-algn-itms-c mrgn-t-5px">
+                    <div class="flex-row flex-algn-itms-c mrgn-t-5px" v-if="false">
                       <div class="section">
                         <img src="/img/icon/flag.svg">
                       </div>
