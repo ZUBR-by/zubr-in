@@ -89,7 +89,7 @@
       Члены комиссии
     </h2>
     <div class="campaign-candidates-list">
-      <div class="person-wrp flex-column flex-algn-itms-strch" v-for="item of data.commission.persons">
+      <a :href="'/member/' + item.person.id" class="person-wrp flex-column flex-algn-itms-strch" v-for="item of data.commission.persons">
         <div class="person-photo">
           <!--          <div class="person-initials">С.Г.Т.</div>-->
           <img :src="item.person.photo_url ? item.person.photo_url : '/img/user.svg'"
@@ -136,7 +136,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </a>
     </div>
   </div>
   <div class="scene" v-if="data">
