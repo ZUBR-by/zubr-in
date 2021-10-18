@@ -17,12 +17,14 @@ const routes = [
         path: '/',
         name: 'home',
         label: 'Главная',
+        exclude: true,
         component: Home,
     },
     {
         path: '/messages',
         name: 'messages',
         label: 'Сообщения',
+        exclude: true,
         component: Messages,
     },
     {
