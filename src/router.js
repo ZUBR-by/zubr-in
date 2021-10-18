@@ -56,6 +56,7 @@ const routes = [
     {
         path: '/members',
         name: 'members',
+        exclude: true,
         label: 'Члены комиссий',
         component: Members,
     },

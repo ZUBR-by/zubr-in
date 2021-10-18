@@ -181,7 +181,7 @@
     <h2 class="txt-size-36px txt-bold pdng-b-30px">
       Избирательные комиссии.
       <br>
-      Всего наблюдается <a class="txt-underline-2px" href="#">317</a> участков из <a class="txt-underline-2px" href="#">1
+      Всего наблюдается <a class="txt-underline-2px" href="/commissions">317</a> участков из <a class="txt-underline-2px" href="#">1
       396</a>.
     </h2>
     <div class="map-content">
