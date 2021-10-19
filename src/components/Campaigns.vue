@@ -6,39 +6,16 @@
           <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">
             Статус кампаний
           </div>
-          <div class="buttongroup">
-            <div class="buttongroup-unit active">
-              Все
-            </div>
-            <div class="buttongroup-unit">
-              Текущие
-            </div>
-            <div class="buttongroup-unit">
-              Архивные
-            </div>
-
+          <div>
+            <SelectButton :options="['Все','Текущие','Архивные']"/>
           </div>
         </div>
         <div class="inline-block mrgn-l-30px">
           <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">
             Тип избирательной кампании
           </div>
-          <div class="buttongroup">
-            <div class="buttongroup-unit">
-              Все
-            </div>
-            <div class="buttongroup-unit active">
-              Местные
-            </div>
-            <div class="buttongroup-unit">
-              Парламентские
-            </div>
-            <div class="buttongroup-unit">
-              Президенсткие
-            </div>
-            <div class="buttongroup-unit">
-              Референдум
-            </div>
+          <div>
+            <SelectButton :options="['Все','Местные','Парламентские','Президентские','Референдум']"/>
           </div>
         </div>
       </div>
@@ -65,7 +42,7 @@
           <div class="section border-l-2px border-color2 pdng-20px pdng-l-40px pdng-r-40px cursor-pointer hovered">
             <div class="flex-row flex-algn-itms-c">
               <div class="section">
-                  <img src="/img/icon/flag.svg">
+                <img src="/img/icon/flag.svg">
               </div>
               <div class="section pdng-l-15px">
                 <div class="txt-size-18px">
@@ -80,7 +57,7 @@
         </div>
         <div class="elect-camp-unit-info pdng-t-20px pdng-b-40px pdng-l-40px pdng-r-40px"
              :class="{'grayscale' : !isLater(campaign.started_at)}"
-          >
+        >
           <h2 class="txt-color-1 txt-size-36px txt-lh-1_1em">
             <a class="txt-underline-inline" :href="'/campaign/' + campaign.id">
               {{ campaign.name }}
@@ -88,18 +65,13 @@
           </h2>
         </div>
       </div>
-
     </div>
-<!--    <div class="flex-column flex-algn-itms-c pdng-t-40px">-->
-<!--      <a href="#" class="button primary pdng-l-40px pdng-r-40px">-->
-<!--        Показать еще 15 электоральных компаний из 37-->
-<!--      </a>-->
-<!--    </div>-->
   </div>
 </template>
 <script>
 import Header from './Header.vue'
 import {defineComponent, ref} from "vue";
+import SelectButton from "primevue/selectbutton";
 
 function fetchCampaigns() {
   const data = ref(null)
@@ -134,7 +106,8 @@ function isLater(started_at) {
 export {fetchCampaigns, isLater}
 export default defineComponent({
   components: {
-    'header-view': Header
+    'header-view': Header,
+    SelectButton
   },
   setup() {
     const {data, load, loading} = fetchCampaigns();
