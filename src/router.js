@@ -63,7 +63,7 @@ const routes = [
     {
         path: '/member/:id',
         name: 'member',
-        label: 'Комиссия',
+        label: 'Член комиссии',
         exclude: true,
         component: Member,
     },
