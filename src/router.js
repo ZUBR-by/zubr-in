@@ -28,6 +28,18 @@ const routes = [
         component: Messages,
     },
     {
+        path: '/campaigns',
+        name: 'campaigns',
+        label: 'Кампании',
+        component: Campaigns,
+    },
+    {
+        path: '/commissions',
+        name: 'commissions',
+        label: 'Комиссии',
+        component: Commissions,
+    },
+    {
         path: '/organization',
         name: 'organizations',
         label: 'Организации',
@@ -39,19 +51,6 @@ const routes = [
         label: 'Организация',
         exclude: true,
         component: Organization,
-    },
-    {
-        path: '/commissions',
-        name: 'commissions',
-        label: 'Комиссии',
-        component: Commissions,
-    },
-    {
-        path: '/commission/:id',
-        name: 'commission',
-        label: 'Комиссия',
-        exclude: true,
-        component: Commission,
     },
     {
         path: '/members',
@@ -68,6 +67,13 @@ const routes = [
         component: Member,
     },
     {
+        path: '/commission/:id',
+        name: 'commission',
+        label: 'Комиссия',
+        exclude: true,
+        component: Commission,
+    },
+    {
         path: '/news',
         name: 'news',
         label: 'Новости',
@@ -79,12 +85,6 @@ const routes = [
         label: 'Новость',
         exclude: true,
         component: NewsItem,
-    },
-    {
-        path: '/campaigns',
-        name: 'campaigns',
-        label: 'Кампании',
-        component: Campaigns,
     },
     {
         path: '/campaign/:id',
