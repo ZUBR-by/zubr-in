@@ -1,532 +1,75 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Zubr.in</title>
-    <link rel="stylesheet" href="css/_zubr-framework.css">
-    <link rel="stylesheet" href="css/main.css">
-  </head>
-  <body class="zubr_in-homepage" style="background:#FCFCFC;">
-    <div class="header-wrp">
-      <div class="header flex-row flex-algn-itms-c">
-        <a href="#" class="section pdng-l-20px pdng-r-20px">
-          <svg width="100" height="77" viewBox="0 0 100 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6.65221 73.4819H15.2477V76.7576H1.243V74.5132L9.81376 62.3811H1.1936V59.0933H15.1612V61.277L6.65221 73.4819Z" fill="#FF5C01" fill-opacity="0.9"/>
-            <path d="M31.3271 59.0933V70.6552C31.3271 71.9654 31.0431 73.1018 30.475 74.0643C29.9069 75.0187 29.0918 75.7466 28.0297 76.248C26.9676 76.7495 25.7121 77.0002 24.263 77.0002C22.073 77.0002 20.3481 76.4422 19.0885 75.326C17.8288 74.2099 17.1866 72.6812 17.1619 70.7401V59.0933H21.5214V70.825C21.5708 72.758 22.4847 73.7246 24.263 73.7246C25.1604 73.7246 25.8397 73.4819 26.3007 72.9966C26.7618 72.5114 26.9923 71.7228 26.9923 70.6309V59.0933H31.3271Z" fill="#FF5C01" fill-opacity="0.9"/>
-            <path d="M34.0441 76.7576V59.0933H40.503C42.8165 59.0933 44.5743 59.5098 45.7764 60.3429C46.9867 61.1759 47.5918 62.3851 47.5918 63.9704C47.5918 64.8843 47.3777 65.6648 46.9496 66.3119C46.5215 66.9589 45.8916 67.4361 45.0601 67.7434C45.9987 67.9861 46.7191 68.439 47.2213 69.1022C47.7235 69.7655 47.9746 70.5743 47.9746 71.5287C47.9746 73.2595 47.4148 74.5617 46.2951 75.4352C45.1836 76.3006 43.5328 76.7414 41.3428 76.7576H34.0441ZM38.3788 69.2478V73.4819H41.2193C42.0014 73.4819 42.6025 73.308 43.0224 72.9602C43.4423 72.6044 43.6522 72.107 43.6522 71.468C43.6522 69.996 42.9071 69.2559 41.4169 69.2478H38.3788ZM38.3788 66.4574H40.6389C41.5857 66.4494 42.2608 66.2795 42.6642 65.9479C43.0676 65.6163 43.2694 65.127 43.2694 64.4799C43.2694 63.7358 43.0512 63.202 42.6148 62.8785C42.1785 62.5469 41.4745 62.3811 40.503 62.3811H38.3788V66.4574Z" fill="#FF5C01" fill-opacity="0.9"/>
-            <path d="M57.0517 70.5217H54.7053V76.7576H50.3705V59.0933H57.4469C59.5793 59.0933 61.2466 59.5583 62.4486 60.4885C63.6506 61.4186 64.2517 62.7329 64.2517 64.4314C64.2517 65.6608 63.9964 66.6799 63.486 67.4887C62.9838 68.2975 62.1934 68.9526 61.1148 69.4541L64.8692 76.5756V76.7576H60.2256L57.0517 70.5217ZM54.7053 67.2339H57.4469C58.2703 67.2339 58.8877 67.0236 59.2994 66.603C59.7193 66.1744 59.9292 65.5799 59.9292 64.8196C59.9292 64.0593 59.7193 63.4649 59.2994 63.0362C58.8795 62.5994 58.262 62.3811 57.4469 62.3811H54.7053V67.2339Z" fill="#FF5C01" fill-opacity="0.9"/>
-            <path d="M96.7869 39.4466V34.8847C100.391 42.1723 99.2605 37.0526 96.7869 31.7675C95.1297 28.2266 90.0615 21.2966 87.2803 20.0537C85.4828 16.9921 70.016 -13.4326 42.6177 7.02631C20.222 23.7496 8.42462 18.1729 8.3309 23.1518C8.23718 28.1307 11.0235 29.1978 4.62771 39.4466C1.3967 41.0615 -4.37165e-05 43.7424 1.02622e-09 47.7611C12.8547 33.2107 11.0235 27.0785 11.0235 27.0785C13.2842 42.1527 2.214 56.7054 2.214 56.7054H16.0518C34.3176 42.1723 54.2439 46.7355 54.2439 46.7355L49.2624 56.685L64.2072 56.7054L73.6168 42.1723C73.6168 42.1723 79.7947 38.927 73.6168 50.4709L89.8545 47.7611L92.1865 45.1893L93.7205 41.2068L96.7869 39.4466Z" fill="#FF5C01" fill-opacity="0.9"/>
-            <path d="M84.1628 30.4403L87.1097 35.2168C88.5385 35.2168 91.164 35.1107 90.2352 34.6861C89.3065 34.2616 89.2529 33.2709 89.2529 32.4748C90.5924 31.3248 94.5216 32.0325 95.5039 32.0325C91.3604 29.485 84.8772 29.4673 84.1628 30.4403Z" fill="#FCFCFC"/>
-          </svg>
-        </a>
-        <div class="header-links flex-grow-all pdng-l-20px pdng-r-20px">
-          <a href="">Выборы</a>
-          <a href="/messages.html">Нарушения</a>
-          <a href="/commissions.html">Комиссии</a>
-          <a href="/organizations.html">Организации</a>
-          <a class="active" href="/feed.html">Новости</a>
-          <a href="">О проекте</a>
-        </div>
-        <div class="section pdng-l-20px pdng-r-30px">
-          <div class="search-input-wrp">
-            <input class="search-input" type="search" placeholder="Поиск">
-            <div class="droplist min-size-100">
-              <div class="droplist-unit">
-                Value 1
-              </div>
-              <div class="droplist-unit">
-                Value 2
-              </div>
-              <div class="droplist-unit">
-                Value 3
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="scene">
-      <h1 class="txt-color-2 txt-size-18px txt-normal pdng-l-40px pdng-r-40px">
-        <dl>
-          <dt class="txt-color-1 txt-inline txt-bold">
-            ZUBR
-          </dt>
-          —
-          <dd class="txt-inline">
-            это платформа для наблюдателей и избирателей в Беларуси. Здесь можно узнать о любом из кандидатов и их кампаниях, любой из задействованных в выборах организациях, любом из членов избирательных комиссий на любом из работающих на этих выборах участков для голосования.
-          </dd>
-        </dl>
-      </h1>
-    </div>
-    <div class="scene pdng-t-0">
-      <div class="election-campaign-list">
-        <!-- Current campaigning -->
-        <div class="election-campaign-unit">
-          <div class="elect-camp-unit-header flex-row flex-algn-itms-c size-100 border-b-2px border-color2">
-            <div class="section flex-grow-all txt-size-20px pdng-20px pdng-l-40px pdng-r-40px">
-              <div class="txt-color-1 txt-medium">
-                6—9 августа 2021
-              </div>
-              <div class="txt-bold">
-                <div class="elect-camp-dot"></div>
-                Кампания уже начата, 2 дня до окончания
-              </div>
-            </div>
-            <div class="section flex-algn-slf-strch flex-row flex-algn-itms-c border-l-2px border-color2 pdng-20px pdng-l-40px pdng-r-40px cursor-pointer hovered">
-              <div class="flex-row flex-algn-itms-c">
-                <div class="section">
-                  <svg width="25" height="33" viewBox="0 0 25 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2.71436 2.57623C2.71436 2.57623 6.78428 0.261278 9.50878 0.0235027C13.0632 -0.286697 16.0314 2.57623 18.4774 2.57623C20.9234 2.57623 25.0001 0.874411 25.0001 0.874411V17.8926C25.0001 17.8926 22.2207 19.2549 20.3799 19.5944C16.1164 20.3807 13.8572 17.0417 9.50878 17.0417C5.16035 17.0417 2.71436 19.5944 2.71436 19.5944V2.57623Z" fill="#FF5C01"/>
-                    <rect y="1" width="2" height="32" fill="#FF5C01"/>
-                  </svg>
-                </div>
-                <div class="section pdng-l-15px">
-                  <div class="txt-size-20px">
-                    Нарушений
-                  </div>
-                  <div class="txt-size-20px txt-bold">
-                    1 337
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="elect-camp-unit-info pdng-t-30px pdng-b-50px pdng-l-40px pdng-r-40px">
-            <h2 class="txt-color-1 txt-size-48px txt-lh-1_1em">
-              <a class="txt-underline-2px" href="#">Выбор президента Республики Беларусь 2020</a>
-            </h2>
-            <div class="tag-wrp mrgn-t-20px">
-              <a class="tag-unit">
-                Общереспубликанские выборы
-              </a>
-            </div>
-          </div>
-          <div class="elect-camp-unit-candidates border-t-2px border-color2">
-            <div class="elect-camp-unit-candds-wrp flex-row">
-              <div class="person-wrp flex-row flex-algn-itms-c cursor-pointer">
-                <div class="person-photo">
-                  <div class="person-initials">С.Г.Т.</div>
-                  <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
-                </div>
-                <div class="person-info pdng-l-10px">
-                  <div class="chart-wrp">
-                    <div class="chart-unit" style="width:67%;"></div>
-                    <div class="chart-value">
-                      67%
-                    </div>
-                  </div>
-                  <div class="person-name txt-size-14px txt-medium">
-                    Светлана Георгиевна
-                    <br>
-                    Тихановская
-                  </div>
-                  <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
-                    37 лет
-                  </div>
-                </div>
-              </div>
-              <div class="person-wrp flex-row flex-algn-itms-c cursor-pointer">
-                <div class="person-photo">
-                  <div class="person-initials">С.Г.Т.</div>
-                  <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
-                </div>
-                <div class="person-info pdng-l-10px">
-                  <div class="chart-wrp">
-                    <div class="chart-unit" style="width:67%;"></div>
-                    <div class="chart-value">
-                      67%
-                    </div>
-                  </div>
-                  <div class="person-name txt-size-14px txt-medium">
-                    Светлана Георгиевна
-                    <br>
-                    Тихановская
-                  </div>
-                  <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
-                    37 лет
-                  </div>
-                  <!--<div class="infoblock txt-size-12px">
-					<div class="infoblock-name">
-					  Должность
-					</div>
-					<div class="infoblock-value">
-					  Президент Республики Беларусь
-					</div>
-				  </div>-->
-                </div>
-              </div>
-              <div class="person-wrp flex-row flex-algn-itms-c cursor-pointer">
-                <div class="person-photo">
-                  <div class="person-initials">С.Г.Т.</div>
-                  <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
-                </div>
-                <div class="person-info pdng-l-10px">
-                  <div class="chart-wrp">
-                    <div class="chart-unit" style="width:67%;"></div>
-                    <div class="chart-value">
-                      67%
-                    </div>
-                  </div>
-                  <div class="person-name txt-size-14px txt-medium">
-                    Светлана Георгиевна
-                    <br>
-                    Тихановская
-                  </div>
-                  <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
-                    37 лет
-                  </div>
-                  <!--<div class="infoblock txt-size-12px">
-					<div class="infoblock-name">
-					  Должность
-					</div>
-					<div class="infoblock-value">
-					  Президент Республики Беларусь
-					</div>
-				  </div>-->
-                </div>
-              </div>
-              <div class="person-wrp flex-row flex-algn-itms-c cursor-pointer">
-                <div class="person-photo">
-                  <div class="person-initials">С.Г.Т.</div>
-                  <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
-                </div>
-                <div class="person-info pdng-l-10px">
-                  <div class="chart-wrp">
-                    <div class="chart-unit" style="width:67%;"></div>
-                    <div class="chart-value">
-                      67%
-                    </div>
-                  </div>
-                  <div class="person-name txt-size-14px txt-medium">
-                    Светлана Георгиевна
-                    <br>
-                    Тихановская
-                  </div>
-                  <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
-                    37 лет
-                  </div>
-                  <!--<div class="infoblock txt-size-12px">
-					<div class="infoblock-name">
-					  Должность
-					</div>
-					<div class="infoblock-value">
-					  Президент Республики Беларусь
-					</div>
-				  </div>-->
-                </div>
-              </div>
-              <div class="person-wrp flex-row flex-algn-itms-c cursor-pointer">
-                <div class="person-photo">
-                  <div class="person-initials">С.Г.Т.</div>
-                  <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
-                </div>
-                <div class="person-info pdng-l-10px">
-                  <div class="chart-wrp">
-                    <div class="chart-unit" style="width:67%;"></div>
-                    <div class="chart-value">
-                      67%
-                    </div>
-                  </div>
-                  <div class="person-name txt-size-14px txt-medium">
-                    Светлана Георгиевна
-                    <br>
-                    Тихановская
-                  </div>
-                  <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
-                    37 лет
-                  </div>
-                  <!--<div class="infoblock txt-size-12px">
-					<div class="infoblock-name">
-					  Должность
-					</div>
-					<div class="infoblock-value">
-					  Президент Республики Беларусь
-					</div>
-				  </div>-->
-                </div>
-              </div>
-              <div class="person-wrp flex-row flex-algn-itms-c cursor-pointer">
-                <div class="person-photo">
-                  <div class="person-initials">С.Г.Т.</div>
-                  <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
-                </div>
-                <div class="person-info pdng-l-10px">
-                  <div class="chart-wrp">
-                    <div class="chart-unit" style="width:67%;"></div>
-                    <div class="chart-value">
-                      67%
-                    </div>
-                  </div>
-                  <div class="person-name txt-size-14px txt-medium">
-                    Светлана Георгиевна
-                    <br>
-                    Тихановская
-                  </div>
-                  <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
-                    37 лет
-                  </div>
-                  <!--<div class="infoblock txt-size-12px">
-					<div class="infoblock-name">
-					  Должность
-					</div>
-					<div class="infoblock-value">
-					  Президент Республики Беларусь
-					</div>
-				  </div>-->
-                </div>
-              </div>
-              <div class="person-wrp flex-row flex-algn-itms-c cursor-pointer">
-                <div class="person-photo">
-                  <div class="person-initials">С.Г.Т.</div>
-                  <img src="imgs/person-photo.png" alt="Светлана Георгиевна Тихановская">
-                </div>
-                <div class="person-info pdng-l-10px">
-                  <div class="chart-wrp">
-                    <div class="chart-unit" style="width:67%;"></div>
-                    <div class="chart-value">
-                      67%
-                    </div>
-                  </div>
-                  <div class="person-name txt-size-14px txt-medium">
-                    Светлана Георгиевна
-                    <br>
-                    Тихановская
-                  </div>
-                  <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
-                    37 лет
-                  </div>
-                  <!--<div class="infoblock txt-size-12px">
-					<div class="infoblock-name">
-					  Должность
-					</div>
-					<div class="infoblock-value">
-					  Президент Республики Беларусь
-					</div>
-				  </div>-->
-                </div>
-              </div>
-            </div>
-            <div class="elect-camp-unit-candds-mask">
-              <div class="button primary flex-row flex-algn-itms-c">
-                <div class="section">
-                  Все кандидаты
-                </div>
-                <div class="section mrgn-l-10px">
-                  <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 5.25C0.585786 5.25 0.25 5.58579 0.25 6C0.25 6.41421 0.585786 6.75 1 6.75V5.25ZM13.5303 6.53033C13.8232 6.23744 13.8232 5.76256 13.5303 5.46967L8.75736 0.696699C8.46447 0.403806 7.98959 0.403806 7.6967 0.696699C7.40381 0.989593 7.40381 1.46447 7.6967 1.75736L11.9393 6L7.6967 10.2426C7.40381 10.5355 7.40381 11.0104 7.6967 11.3033C7.98959 11.5962 8.46447 11.5962 8.75736 11.3033L13.5303 6.53033ZM1 6.75H13V5.25H1V6.75Z" fill="white"/>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Upcoming secondary campaigning -->
-        <div class="election-campaign-unit">
-          <div class="elect-camp-unit-header flex-row flex-algn-itms-c size-100 border-b-2px border-color2">
-            <div class="section flex-grow-all txt-size-18px pdng-20px pdng-l-40px pdng-r-40px">
-              <div class="txt-color-1 txt-medium">
-                11—15 сентября 2021
-              </div>
-              <div class="txt-bold">
-                23 дня до начала
-              </div>
-            </div>
-            <div class="section border-l-2px border-color2 pdng-20px pdng-l-40px pdng-r-40px cursor-pointer hovered">
-              <div class="flex-row flex-algn-itms-c">
-                <div class="section">
-                  <svg width="25" height="33" viewBox="0 0 25 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2.71436 2.57623C2.71436 2.57623 6.78428 0.261278 9.50878 0.0235027C13.0632 -0.286697 16.0314 2.57623 18.4774 2.57623C20.9234 2.57623 25.0001 0.874411 25.0001 0.874411V17.8926C25.0001 17.8926 22.2207 19.2549 20.3799 19.5944C16.1164 20.3807 13.8572 17.0417 9.50878 17.0417C5.16035 17.0417 2.71436 19.5944 2.71436 19.5944V2.57623Z" fill="#FF5C01"/>
-                    <rect y="1" width="2" height="32" fill="#FF5C01"/>
-                  </svg>
-                </div>
-                <div class="section pdng-l-15px">
-                  <div class="txt-size-18px">
-                    Нарушений
-                  </div>
-                  <div class="txt-size-18px txt-bold">
-                    1 337
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="elect-camp-unit-info pdng-t-20px pdng-b-40px pdng-l-40px pdng-r-40px">
-            <h2 class="txt-color-1 txt-size-36px txt-lh-1_1em">
-              <a class="txt-underline-inline" href="#">
-                Выборы представителей нижней палаты верхнего представительства третьего созыва депутатов
-              </a>
-            </h2>
-            <div class="tag-wrp mrgn-t-20px">
-              <a class="tag-unit">
-                Общереспубликанские выборы
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Archive campaigning -->
-        <div class="election-campaign-unit">
-          <div class="elect-camp-unit-header flex-row flex-algn-itms-c size-100 border-b-2px border-color2">
-            <div class="section flex-grow-all txt-size-18px pdng-20px pdng-l-40px pdng-r-40px grayscale">
-              <div class="txt-color-1 txt-medium">
-                6—9 августа 2021
-              </div>
-              <div class="txt-bold">
-                Архив
-              </div>
-            </div>
-            <div class="section border-l-2px border-color2 pdng-20px pdng-l-40px pdng-r-40px cursor-pointer hovered">
-              <div class="flex-row flex-algn-itms-c">
-                <div class="section">
-                  <svg width="25" height="33" viewBox="0 0 25 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2.71436 2.57623C2.71436 2.57623 6.78428 0.261278 9.50878 0.0235027C13.0632 -0.286697 16.0314 2.57623 18.4774 2.57623C20.9234 2.57623 25.0001 0.874411 25.0001 0.874411V17.8926C25.0001 17.8926 22.2207 19.2549 20.3799 19.5944C16.1164 20.3807 13.8572 17.0417 9.50878 17.0417C5.16035 17.0417 2.71436 19.5944 2.71436 19.5944V2.57623Z" fill="#FF5C01"/>
-                    <rect y="1" width="2" height="32" fill="#FF5C01"/>
-                  </svg>
-                </div>
-                <div class="section pdng-l-15px">
-                  <div class="txt-size-18px">
-                    Нарушений
-                  </div>
-                  <div class="txt-size-18px txt-bold">
-                    1 337
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="elect-camp-unit-info pdng-t-20px pdng-b-40px pdng-l-40px pdng-r-40px grayscale">
-            <h2 class="txt-color-1 txt-size-36px txt-lh-1_1em">
-              <a class="txt-underline-inline" href="#">
-                Выборы представителей нижней палаты верхнего представительства третьего созыва депутатов
-              </a>
-            </h2>
-            <div class="tag-wrp mrgn-t-20px">
-              <a class="tag-unit">
-                Общереспубликанские выборы
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <div class="flex-column flex-algn-itms-c pdng-t-40px">
-        <a href="#" class="button primary inline-flex flex-algn-itms-c pdng-l-40px pdng-r-40px">
-          <div class="section">
-            Показать все 15 электоральных компании
-          </div>
-          <div class="section mrgn-l-20px">
-            <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 5.25C0.585786 5.25 0.25 5.58579 0.25 6C0.25 6.41421 0.585786 6.75 1 6.75V5.25ZM13.5303 6.53033C13.8232 6.23744 13.8232 5.76256 13.5303 5.46967L8.75736 0.696699C8.46447 0.403806 7.98959 0.403806 7.6967 0.696699C7.40381 0.989593 7.40381 1.46447 7.6967 1.75736L11.9393 6L7.6967 10.2426C7.40381 10.5355 7.40381 11.0104 7.6967 11.3033C7.98959 11.5962 8.46447 11.5962 8.75736 11.3033L13.5303 6.53033ZM1 6.75H13V5.25H1V6.75Z" fill="white"/>
-            </svg>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="scene">
-      <div class="pdng-b-40px">
-        <h3 class="txt-size-36px txt-bold">
-          Последние новости.
-          <a class="txt-underline-2px" href="#">Всего 73 новости</a>.
-        </h3>
-      </div>
-      <div class="">
-        <div class="article-preview-unit">
-          <time class="block txt-color-3-1 txt-size-14px mrgn-b-10px">
-            19:45, сегодня
-          </time>
-          <h4 class="txt-size-36px txt-bold txt-color-1">
-            <a class="txt-underline-2px" href="#">
-              Вброшенный президент
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" href="/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ZUBR.in</title>
+    <link rel="stylesheet" href="/css/_zubr-framework.css?var=1">
+    <link rel="stylesheet" href="/css/main.css?var=1">
+    <meta name="description"
+          content="Онлайн-платформа по контролю за ходом избирательного процесса в Республике Беларусь.">
+    <meta property="og:description"
+          content="Онлайн-платформа по контролю за ходом избирательного процесса в Республике Беларусь.">
+</head>
+<body style="background:#FCFCFC;">
+<div id="app">
+    <div class="header-wrp fixedhrd">
+        <div class="header flex-row flex-algn-itms-c">
+            <a href="/" class="section pdng-l-20px pdng-r-20px">
+                <img src="/img/icon/zubr.svg">
             </a>
-          </h4>
-          <h5 class="txt-size-28px txt-bold mrgn-t-15px">
-            Как белорусские УИКи не смогли «нарисовать» нужный результат Лукашенко, а Тихановская выиграла выборы. Исследование «Новой».
-          </h5>
-          <div class="pdng-t-30px pdng-b-30px">
-            <p>
-              <a class="txt-underline" href="#">По версии белорусской ЦИК</a>, более 80% избирателей проголосовали за то, чтобы Александр Лукашенко стал главой государства в шестой раз и остался у власти еще на пять лет, а его главную соперницу — Светлану Тихановскую — поддержали скромные 10%.
-            </p>
-            <p>
-              Чтобы защитить свой реальный выбор, белорусы не только выходят на улицы, но и пытаются организовать «народный Центризбирком» — ведут подсчет голосов своими силами. Собрать полные данные по всей стране невозможно, однако даже доступная часть протоколов показывает, что участковые комиссии «рисовали» спущенные сверху результаты во время досрочного голосования.
-            </p>
-          </div>
-          <div class="article-preview-image pdng-b-20px">
-            <img src="https://novayagazeta.ru/static/records/60a0cf3c93f24e15a5f398d5adb530f0.webp" alt="">
-          </div>
-          <div class="tag-wrp">
-            <a class="tag-unit">Расследование</a>
-            <a class="tag-unit">Анализ</a>
-            <a class="tag-unit">Выборы 2020</a>
-          </div>
         </div>
-        <div class="article-preview-unit">
-          <time class="block txt-color-3-1 txt-size-14px mrgn-b-10px">
-            19:45, сегодня
-          </time>
-          <h4 class="txt-size-36px txt-bold txt-color-1">
-            <a class="txt-underline-2px" href="#">
-              Вброшенный президент
-            </a>
-          </h4>
-          <h5 class="txt-size-28px txt-bold mrgn-t-15px">
-            Как белорусские УИКи не смогли «нарисовать» нужный результат Лукашенко, а Тихановская выиграла выборы. Исследование «Новой».
-          </h5>
-          <div class="pdng-t-30px pdng-b-30px">
-            <p>
-              <a class="txt-underline" href="#">По версии белорусской ЦИК</a>, более 80% избирателей проголосовали за то, чтобы Александр Лукашенко стал главой государства в шестой раз и остался у власти еще на пять лет, а его главную соперницу — Светлану Тихановскую — поддержали скромные 10%.
-            </p>
-            <p>
-              Чтобы защитить свой реальный выбор, белорусы не только выходят на улицы, но и пытаются организовать «народный Центризбирком» — ведут подсчет голосов своими силами. Собрать полные данные по всей стране невозможно, однако даже доступная часть протоколов показывает, что участковые комиссии «рисовали» спущенные сверху результаты во время досрочного голосования.
-            </p>
-          </div>
-          <div class="tag-wrp">
-            <a class="tag-unit">Расследование</a>
-            <a class="tag-unit">Анализ</a>
-            <a class="tag-unit">Выборы 2020</a>
-          </div>
-        </div>
-      </div>
     </div>
-    <div class="footer flex-row flex-algn-itms-c pdng-40px">
-      <div class="section size-60">
+    <div class="scene" style="margin-top: 170px">
+    </div>
+</div>
+<div class="footer flex-row flex-algn-itms-c pdng-40px">
+    <div class="section size-60">
         <div class="flex-row mrgn-b-30px txt-size-14px">
-          <div>©2021 ZUBR</div>
-          <div class="mrgn-l-30px txt-underline">
-            <a href="mailto:info@zubr.in">info@zubr.in</a>
-          </div>
+            <div>©2021 ZUBR</div>
+            <div class="mrgn-l-30px txt-underline">
+                <a href="mailto:info@zubr.in">info@zubr.in</a>
+            </div>
         </div>
         <div>
-          <p class="txt-size-12px">
-            <span class="txt-medium">Цель проекта ZUBR</span> – фиксировать, обрабатывать и отображать все сведения о процессе выборов в Беларуси в режиме реального времени. Это позволит каждому гражданину Беларуси максимально реализовать свое избирательное право и обеспечить проведение выборов в полном соответствии с законодательством Республики Беларуси.
-          </p>
+            <p class="txt-size-12px">
+                <span class="txt-medium">Цель проекта ZUBR</span> – фиксировать, обрабатывать и отображать все сведения
+                о процессе выборов в Беларуси в режиме реального времени. Это позволит каждому гражданину Беларуси
+                максимально реализовать свое избирательное право и обеспечить проведение выборов в полном соответствии с
+                законодательством Республики Беларуси.
+            </p>
         </div>
-      </div>
-      <div class="section size-40">
+    </div>
+    <div class="section size-40">
         <div class="zbr-ftr-links txt-algn-r">
-          <a class="cursor-pointer" href="https://www.youtube.com/channel/UC5sPqti8bakMgz5T5u6_o6A" target="_blank">
-            <img src="imgs/icons/yt.png" alt="YouTube">
-          </a>
-          <a class="cursor-pointer" href="https://www.facebook.com/zubrBY" target="_blank">
-            <img src="imgs/icons/fb.png" alt="Facebook">
-          </a>
-          <a class="cursor-pointer" href="https://www.instagram.com/zubr_in/" target="_blank">
-            <img src="imgs/icons/in.png" alt="Instagram">
-          </a>
-          <a class="cursor-pointer" href="https://ok.ru/zubrblr" target="_blank">
-            <img src="imgs/icons/ok.png" alt="OK">
-          </a>
-          <a class="cursor-pointer" href="https://t.me/zubr_in" target="_blank">
-            <img src="imgs/icons/tg.png" alt="Telegram">
-          </a>
-          <a class="cursor-pointer" href="https://vk.com/zubrblr" target="_blank">
-            <img src="imgs/icons/vk.png" alt="VK">
-          </a>
+            <a class="cursor-pointer" href="https://www.youtube.com/channel/UC5sPqti8bakMgz5T5u6_o6A" target="_blank">
+                <img src="/imgs/icons/yt.png" alt="YouTube">
+            </a>
+            <a class="cursor-pointer" href="https://www.facebook.com/zubrBY" target="_blank">
+                <img src="/imgs/icons/fb.png" alt="Facebook">
+            </a>
+            <a class="cursor-pointer" href="https://www.instagram.com/zubr_in/" target="_blank">
+                <img src="/imgs/icons/in.png" alt="Instagram">
+            </a>
+            <a class="cursor-pointer" href="https://ok.ru/zubrblr" target="_blank">
+                <img src="/imgs/icons/ok.png" alt="OK">
+            </a>
+            <a class="cursor-pointer" href="https://t.me/zubr_in" target="_blank">
+                <img src="/imgs/icons/tg.png" alt="Telegram">
+            </a>
+            <a class="cursor-pointer" href="https://vk.com/zubrblr" target="_blank">
+                <img src="/imgs/icons/vk.png" alt="VK">
+            </a>
 
         </div>
-      </div>
     </div>
-  </body>
+</div>
+<script type="module" src="/src/main.js"></script>
+</body>
+<style>
+    .p-overflow-hidden {
+        overflow: hidden !important;
+    }
+</style>
 </html>
