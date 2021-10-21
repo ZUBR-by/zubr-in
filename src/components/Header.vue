@@ -2,7 +2,7 @@
   <div class="header-wrp">
     <div class="header flex-row flex-algn-itms-c">
       <a href="/" class="section pdng-l-20px pdng-r-20px">
-        <img src="/img/icon/zubr.svg">
+        <img src="/img/icon/zubr.svg" class="mil-zoom-0_5">
       </a>
       <div class="header-links flex-grow-all pdng-l-20px pdng-r-20px mil-notdisplay">
         <router-link :to="route.to" v-for="route of routes">

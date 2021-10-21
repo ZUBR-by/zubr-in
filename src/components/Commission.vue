@@ -2,11 +2,12 @@
   <header-view>
     <div class="header-subnav border-t-1px border-color2">
       <div
-          class="section flex-row flex-algn-itms-c flex-grow-all flex-algn-slf-strch pdng-20px pdng-l-30px pdng-r-30px border-l-1px border-color2">
+          class="section flex-row flex-algn-itms-c flex-grow-all flex-algn-slf-strch pdng-20px pdng-l-30px pdng-r-30px mil-pdng-20px mil-pdng-t-10px mil-pdng-b-10px">
         <div class="section">
           <div class="flex-row flex-algn-itms-c">
             <div class="section">
-              <svg width="25" height="33" viewBox="0 0 25 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg class="zoom-0_75" width="25" height="33" viewBox="0 0 25 33" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M2.71436 2.57623C2.71436 2.57623 6.78428 0.261278 9.50878 0.0235027C13.0632 -0.286697 16.0314 2.57623 18.4774 2.57623C20.9234 2.57623 25.0001 0.874411 25.0001 0.874411V17.8926C25.0001 17.8926 22.2207 19.2549 20.3799 19.5944C16.1164 20.3807 13.8572 17.0417 9.50878 17.0417C5.16035 17.0417 2.71436 19.5944 2.71436 19.5944V2.57623Z"
                     fill="#FF5C01"></path>
@@ -14,20 +15,20 @@
               </svg>
             </div>
             <div class="section pdng-l-15px" v-if="data">
-              <div class="txt-size-18px">
-                Сообщений о нарушений
+              <div class="txt-size-18px mil-txt-size-14px">
+                Нарушений
               </div>
-              <div class="txt-size-18px txt-bold">
+              <div class="txt-size-18px txt-bold mil-txt-size-14px">
                 {{ data.commission.violations.length }}
               </div>
             </div>
           </div>
         </div>
-        <div class="section pdng-l-40px">
+        <div class="section pdng-l-40px mil-pdng-l-20px">
           <div class="button medium primary">
             Сообщить о нарушении
           </div>
-          <div class="button medium mrgn-l-20px">
+          <div class="button medium mrgn-l-20px mil-mrgn-l-10px">
             Стать наблюдателем
           </div>
         </div>
@@ -35,9 +36,9 @@
     </div>
   </header-view>
   <div class="scene-wrp bg-color-1 border-b-1px border-color1">
-    <div style="margin-top:170px;" class="scene" v-if="data">
-      <div class="flex-row">
-        <div class="section size-50">
+    <div class="scene mrgn-t-170px mil-mrgn-t-120px">
+      <div class="flex-row mil-flex-wrap" v-if="data">
+        <div class="section size-50 pdng-r-30px mil-size-100 mil-pdng-0">
           <h1 class="txt-size-32px">
             {{ data.commission.name }}
           </h1>
@@ -50,7 +51,9 @@
             </a>
           </div>
           <div class="mrgn-t-40px" v-if="data.commission.extra.area">
-            {{ data.commission.extra.area }}
+            <p>
+              {{ data.commission.extra.area }}
+            </p>
           </div>
           <div class="mrgn-t-40px">
             <div class="infoblock">
@@ -59,7 +62,10 @@
             </div>
             <div class="infoblock">
               <div class="infoblock-name">Тип комиссии:</div>
-              <div class="infoblock-value">{{ data.commission.kind }}</div>
+              <div class="infoblock-value">
+<!--                {{ data.commission.kind }}-->
+                KIND
+              </div>
             </div>
             <div class="infoblock">
               <div class="infoblock-name">Код комиссии:</div>
@@ -75,21 +81,23 @@
             </div>
           </div>
         </div>
-        <div class="section size-50">
-          <div class="map-wrp"
-               style="background:#EDEDED; width:100%; height:100%; position:absolute; left:0; top:0; border-radius:30px;">
+        <div class="section size-50 mil-size-100 mil-pdng-t-50px">
+          <div class="map-wrp committee-view">
             <location :feature="data.commission.coordinates"></location>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+
   <div class="scene" v-if="data">
-    <h2 class="txt-size-36px txt-bold pdng-b-40px">
+    <h2 class="txt-size-36px txt-bold pdng-b-40px mil-txt-size-30px">
       Члены комиссии
     </h2>
     <div class="campaign-candidates-list">
-      <a :href="'/member/' + item.person.id" class="person-wrp flex-column flex-algn-itms-strch" v-for="item of data.commission.persons">
+      <a :href="'/member/' + item.person.id" class="person-wrp flex-column flex-algn-itms-strch"
+         v-for="item of data.commission.persons">
         <div class="person-photo">
           <!--          <div class="person-initials">С.Г.Т.</div>-->
           <img :src="item.person.photo_url ? item.person.photo_url : '/img/user.svg'"
@@ -140,22 +148,22 @@
     </div>
   </div>
   <div class="scene" v-if="data">
-    <h2 class="txt-size-36px txt-bold pdng-b-40px">
+    <h2 class="txt-size-36px txt-bold pdng-b-40px mil-txt-size-30px">
       Последние сообщения о нарушениях.
-      <a class="txt-underline-2px" href="#">Всего {{data.commission.violations.length}} сообщений о нарушениях</a>.
+      <a class="txt-underline-inline-2px" href="#">Всего {{ data.commission.violations.length }} сообщений о нарушениях</a>.
     </h2>
     <div class="incident-list">
       <div class="incident-unit cursor-pointer"
            v-for="violation of data.commission.violations"
            @click="showModal(violation)">
-        <div class="size-25 flex-column flex-noshrink pdng-20px txt-medium">
+        <div class="size-25 mil-size-100 flex-column flex-noshrink pdng-20px txt-medium">
           <div class="flex-grow-all">
             <div class="txt-color-3-1 txt-size-12px mrgn-t-5px">
               {{ violation.created_at }}
             </div>
             <div class="txt-size-14px">
               <div v-for="cat of violation.categories" class="pdng-t-5px">
-                {{hash[cat]}}
+                {{ hash[cat] }}
               </div>
             </div>
           </div>
@@ -167,7 +175,7 @@
             </div>
           </div>
         </div>
-        <div class="border-l-1px border-r-1px border-color2 pdng-20px">
+        <div class="flex-grow-all border-l-1px border-r-1px border-color2  mil-border-0 mil-border-t-1px mil-border-b-1px mil-border-color1 pdng-20px mil-size-100 mil-border-0 mil-border-t-1px mil-border-b-1px">
           <p class="txt-size-14px txt-color-3-1">
             {{ violation.description }}
           </p>
@@ -175,11 +183,11 @@
             <a href="" class="tag-unit">Заметка</a>
           </div>
         </div>
-        <div class="size-20 flex-column flex-noshrink pdng-20px">
+        <div class="size-20 flex-column flex-noshrink pdng-20px mil-size-100 mil-flex-row">
           <div class="flex-grow-all">
             <div class="flex-row flex-algn-itms-c">
               <div class="section">
-                  <img src="/img/icon/attachment.svg">
+                <img src="/img/icon/attachment.svg">
               </div>
               <div class="section pdng-l-10px" v-if="violation.attachments.length">
                 <div class="txt-color-1 txt-bold txt-size-14px">
@@ -201,14 +209,14 @@
     </div>
   </div>
   <div class="scene">
-    <h2 class="txt-size-36px txt-bold pdng-b-40px">
+    <h2 class="txt-size-36px mil-txt-size-30px txt-bold pdng-b-40px">
       Последние избирательные кампании
     </h2>
     <div>
       <!-- Archive campaigning -->
       <div class="election-campaign-unit">
         <div class="elect-camp-unit-header flex-row flex-algn-itms-c size-100 border-b-2px border-color2">
-          <div class="section flex-grow-all txt-size-18px pdng-20px pdng-l-40px pdng-r-40px grayscale">
+          <div class="section flex-grow-all txt-size-18px mil-txt-size-14px pdng-20px pdng-l-40px pdng-r-40px grayscale">
             <div class="txt-color-1 txt-medium">
               6—9 августа 2021
             </div>
@@ -216,10 +224,10 @@
               Архив
             </div>
           </div>
-          <div class="section border-l-2px border-color2 pdng-20px pdng-l-40px pdng-r-40px cursor-pointer hovered">
+          <div class="section flex-algn-slf-strch flex-row flex-algn-itms-c border-l-2px border-color2 pdng-20px pdng-l-40px pdng-r-40px cursor-pointer hovered">
             <div class="flex-row flex-algn-itms-c">
               <div class="section">
-                <svg width="25" height="33" viewBox="0 0 25 33" fill="none"
+                <svg class="mil-zoom-0_65" width="25" height="33" viewBox="0 0 25 33" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
                   <path
                       d="M2.71436 2.57623C2.71436 2.57623 6.78428 0.261278 9.50878 0.0235027C13.0632 -0.286697 16.0314 2.57623 18.4774 2.57623C20.9234 2.57623 25.0001 0.874411 25.0001 0.874411V17.8926C25.0001 17.8926 22.2207 19.2549 20.3799 19.5944C16.1164 20.3807 13.8572 17.0417 9.50878 17.0417C5.16035 17.0417 2.71436 19.5944 2.71436 19.5944V2.57623Z"
@@ -231,7 +239,7 @@
                 <div class="txt-size-18px">
                   Нарушений
                 </div>
-                <div class="txt-size-18px txt-bold">
+                <div class="txt-size-18px txt-bold txt-nowrap">
                   1 337
                 </div>
               </div>
@@ -239,7 +247,7 @@
           </div>
         </div>
         <div class="elect-camp-unit-info pdng-t-20px pdng-b-40px pdng-l-40px pdng-r-40px grayscale">
-          <h2 class="txt-color-1 txt-size-36px txt-lh-1_1em">
+          <h2 class="txt-color-1 txt-size-36px mil-txt-size-30px txt-lh-1_1em">
             <a class="txt-underline-inline" href="#">
               Выборы представителей нижней палаты верхнего представительства третьего созыва депутатов
             </a>
@@ -265,10 +273,10 @@
       <div class="flex-row flex-algn-itms-c border-b-1px border-color1">
         <div class="section flex-grow-all pdng-l-30px pdng-r-20px pdng-t-20px pdng-b-20px">
           <div class="txt-size-14px txt-medium">
-            {{formatCategories(message.categories)}}
+            {{ formatCategories(message.categories) }}
           </div>
           <div class="txt-color-3-1 txt-size-12px txt-medium">
-            {{message.created_at}}
+            {{ message.created_at }}
           </div>
           <div class="tag-unit  mrgn-t-20px">
             Честные люди
