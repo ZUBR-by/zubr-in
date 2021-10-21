@@ -1,15 +1,15 @@
 <template>
-  <div class="header-wrp fixedhrd">
+  <div class="header-wrp">
     <div class="header flex-row flex-algn-itms-c">
       <a href="/" class="section pdng-l-20px pdng-r-20px">
         <img src="/img/icon/zubr.svg">
       </a>
-      <div class="header-links flex-grow-all pdng-l-20px pdng-r-20px">
+      <div class="header-links flex-grow-all pdng-l-20px pdng-r-20px mil-notdisplay">
         <router-link :to="route.to" v-for="route of routes">
           {{ route.name }}
         </router-link>
       </div>
-      <div class="section pdng-l-20px pdng-r-30px">
+      <div class="section pdng-l-20px pdng-r-30px mil-notdisplay">
         <div class="search-input-wrp">
           <Dropdown :options="results"
                     placeholder="Поиск..."
@@ -33,8 +33,26 @@
           </Dropdown>
         </div>
       </div>
+      <slot></slot>
+      <!-- mobile nav -->
+      <div class="section flex-grow-all pdng-l-20px pdng-r-30px notdisplay mil-show">
+        <input id="brgrbtn" class="notdisplay mil-show" type="checkbox">
+        <label for="brgrbtn" class="notdisplay burger-button mil-show">
+          <div class="burger-button-line"></div>
+          <div class="burger-button-line"></div>
+          <div class="burger-button-line"></div>
+        </label>
+        <div class="brgr-nav notdisplay mil-show">
+          <div class="header-links pdng-l-20px pdng-r-20px">
+            <div class="pdng-t-30px" v-for="route of routes">
+              <router-link :to="route.to">
+                {{ route.name }}
+              </router-link>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <slot></slot>
   </div>
 </template>
 
