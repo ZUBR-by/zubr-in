@@ -54,7 +54,7 @@
       </div>
     </div>
   </header-view>
-  <div style="margin-top:170px;" class="scene" v-if="view === 'list'">
+  <div class="scene" v-if="view === 'list'">
     <template v-if="data">
       <div class="committee-list">
         <!--        :class="{mark: item === 2}"-->

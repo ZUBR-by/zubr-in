@@ -21,7 +21,7 @@
       </div>
     </div>
   </header-view>
-  <div style="margin-top:190px" class="scene">
+  <div class="scene">
     <div class="election-campaign-list" v-if="loading">
       Загрузка...
     </div>

@@ -33,7 +33,6 @@
           </Dropdown>
         </div>
       </div>
-      <slot></slot>
       <!-- mobile nav -->
       <div class="section flex-grow-all pdng-l-20px pdng-r-30px notdisplay mil-show">
         <input id="brgrbtn" class="notdisplay mil-show" type="checkbox">
@@ -53,6 +52,7 @@
         </div>
       </div>
     </div>
+    <slot></slot>
   </div>
 </template>
 

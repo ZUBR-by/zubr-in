@@ -19,7 +19,7 @@
       </div>
     </div>
   </header-view>
-  <div style="margin-top:170px;" class="scene">
+  <div class="scene">
     <div class="organization-list" v-if="data">
       <a :href="'/organization/' + item.id" class="organization-unit" v-for="item of data.organizations">
         <div class="section pdng-r-20px pdng-l-30px pdng-t-20px pdng-b-20px">
