@@ -98,12 +98,12 @@ p.quote:after {
 .button,
 .input {
     display:inline-block;
-    font-size:15px;
+    font-size:13px;
     font-weight:500;
     /*text-transform:uppercase;*/
     padding:10px 15px;
     background:transparent;
-    border:#FF5C01 1px solid;
+    border:#D4D4D4 1px solid;
     border-radius:8px;
     /*box-shadow:rgba(255,92,1,0.2) 0 3px 6px;*/
     cursor:pointer;
@@ -195,7 +195,10 @@ p.quote:after {
     color:#FF5C01;
     text-transform:none;
     }
-.input:focus {box-shadow:rgba(255,92,1,0.4) 0 2px 8px;}
+.input:focus,
+.textarea:focus {
+    box-shadow:rgba(255,92,1,0.4) 0 2px 8px;
+    }
 
 .courts-list-linetabs{
     margin:0 -5%;
