@@ -36,7 +36,7 @@
     </div>
   </header-view>
   <div class="scene-wrp bg-color-1 border-b-1px border-color1">
-    <div class="scene mrgn-t-170px mil-mrgn-t-120px">
+    <div class="scene mrgn-t-120px mil-mrgn-t-170px">
       <div class="flex-row mil-flex-wrap" v-if="data">
         <div class="section size-50 pdng-r-30px mil-size-100 mil-pdng-0">
           <h1 class="txt-size-32px">
@@ -89,15 +89,13 @@
       </div>
     </div>
   </div>
-
-
   <div class="scene" v-if="data">
     <h2 class="txt-size-36px txt-bold pdng-b-40px mil-txt-size-30px">
       Члены комиссии
     </h2>
     <div class="campaign-candidates-list">
-      <a :href="'/member/' + item.person.id" class="person-wrp flex-column flex-algn-itms-strch"
-         v-for="item of data.commission.persons">
+      <div class="person-wrp flex-column flex-algn-itms-strch"
+           v-for="item of data.commission.persons">
         <div class="person-photo">
           <!--          <div class="person-initials">С.Г.Т.</div>-->
           <img :src="item.person.photo_url ? item.person.photo_url : '/img/user.svg'"
@@ -111,16 +109,16 @@
             {{ item.position }}
           </div>
         </div>
+
         <div class="person-popover cursor-pointer">
           <div class="flex-column flex-algn-itms-strch">
             <div class="person-photo">
-              <!--              <div class="person-initials">С.Г.Т.</div>-->
               <img :src="item.person.photo_url ? item.person.photo_url : '/img/user.svg'" :alt="item.person.full_name">
             </div>
             <div class="person-info pdng-t-10px">
-              <div class="person-name txt-size-14px txt-medium">
+              <a class="txt-size-14px txt-medium" :href="'/member/' + item.person.id">
                 {{ item.person.full_name }}
-              </div>
+              </a>
               <div class="txt-color-1 txt-size-12px txt-medium mrgn-t-10px">
                 {{ item.position }}
               </div>
@@ -129,8 +127,7 @@
                   Должность
                 </div>
                 <div class="infoblock-value ">
-                  Заместитель Председателя Центральной комиссии, директор Национального центра
-                  законодательства и правовых исследований Республики Беларусь
+                  Заместитель Председателя Центральной комиссии, директор Национального центра законодательства и правовых исследований Республики Беларусь
                 </div>
               </div>
               <div class="infoblock txt-size-12px">
@@ -144,7 +141,7 @@
             </div>
           </div>
         </div>
-      </a>
+      </div>
     </div>
   </div>
   <div class="scene" v-if="data">

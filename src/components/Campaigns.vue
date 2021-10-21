@@ -1,7 +1,7 @@
 <template>
   <header-view>
     <div class="header-subnav">
-      <div class="section flex-grow-all pdng-30px pdng-t-15px pdng-b-15px">
+      <div class="section flex-grow-all pdng-20px pdng-t-15px pdng-b-15px">
         <div class="inline-block">
           <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">
             Статус кампаний
@@ -15,13 +15,13 @@
             Тип избирательной кампании
           </div>
           <div>
-            <SelectButton :options="['Все','Местные','Парламентские','Президентские','Референдум']"/>
+            <SelectButton :options="['Все','Местные','Парламентские','Президентские','Референдум']" class="p-button-sm"/>
           </div>
         </div>
       </div>
     </div>
   </header-view>
-  <div class="scene">
+  <div class="scene mil-mrgn-t-170px">
     <div class="election-campaign-list" v-if="loading">
       Загрузка...
     </div>
