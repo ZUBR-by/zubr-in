@@ -14,10 +14,10 @@
       </div>
     </div>
   </header-view>
-  <div class="scene-wrp bg-color-1 border-b-1px border-color1">
-    <div style="margin-top:170px;" class="scene" v-if="data">
-      <div class="flex-row">
-        <div class="section flex-grow-all">
+  <div class="scene mrgn-t-120px mil-mrgn-t-100px">
+    <div class="flex-row mil-flex-column">
+      <div class="section pdng-r-30px mil-pdng-0 mil-flex-column flex-algn-itms-c" v-if="data">
+        <div class="section flex-grow-all mil-size-100 mil-pdng-t-50px">
           <h1 class="txt-size-32px">
             {{data.organization.name}}
           </h1>
@@ -52,9 +52,9 @@
     </div>
   </div>
   <div class="scene" v-if="data">
-    <h2 class="flex-row flex-algn-itms-c txt-size-36px txt-bold pdng-b-40px">
-      Члены комиссий от организации
-      <div class="buttongroup mrgn-l-20px">
+    <h2 class="flex-row flex-algn-itms-c txt-size-36px txt-bold pdng-b-40px mil-flex-column mil-txt-size-30px">
+      <span>Члены комиссий от организации</span>
+      <div class="buttongroup mrgn-l-20px mil-mrgn-0 mil-mrgn-t-20px mil-size-100">
         <div class="buttongroup">
           <button class="buttongroup-unit" :class="{active: view === 'list'}" @click="view = 'list'">
             Списком
