@@ -11,7 +11,7 @@
     </div>
   </header-view>
   <div class="scene-wrp bg-color-1 border-b-1px border-color1">
-    <div class="scene mrgn-t-120px mil-mrgn-t-170px">
+    <div class="scene mil-mrgn-t-170px">
       <div class="flex-row mil-flex-column">
         <div class="section pdng-r-30px mil-pdng-0 mil-flex-column flex-algn-itms-c">
           <div class="person-view mil-size-100">

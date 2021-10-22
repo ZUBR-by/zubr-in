@@ -54,7 +54,7 @@
       </div>
     </div>
   </header-view>
-  <div class="scene mrgn-t-120px mil-mrgn-t-170px" v-if="view === 'list'">
+  <div class="scene mil-mrgn-t-170px" v-if="view === 'list'">
     <template v-if="data">
       <div class="committee-list mil-flex-column">
         <!--        :class="{mark: item === 2}"-->

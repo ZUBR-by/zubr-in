@@ -14,7 +14,7 @@
       </div>
     </div>
   </header-view>
-  <div class="scene mrgn-t-120px mil-mrgn-t-100px">
+  <div class="scene mil-mrgn-t-100px">
     <div class="flex-row mil-flex-column">
       <div class="section pdng-r-30px mil-pdng-0 mil-flex-column flex-algn-itms-c" v-if="data">
         <div class="section flex-grow-all mil-size-100 mil-pdng-t-50px">
