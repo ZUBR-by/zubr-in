@@ -64,9 +64,15 @@
               {{ campaign.name }}
             </a>
           </h2>
-          <div class="tag-wrp mrgn-t-20px">
-            <a class="tag-unit">
+          <div class="tag-wrp mrgn-t-20px" v-if="campaign.extra.type">
+            <a class="tag-unit" v-if="['parliamentary_elections', 'presidential_elections'].includes(campaign.extra.type)">
               Общереспубликанские выборы
+            </a>
+            <a class="tag-unit" v-if="['local_elections'].includes(campaign.extra.type)">
+              Местные выборы
+            </a>
+            <a class="tag-unit" v-if="['referendum'].includes(campaign.extra.type)">
+              Референдум
             </a>
           </div>
         </div>

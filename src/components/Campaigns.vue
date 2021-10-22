@@ -26,7 +26,7 @@
       Загрузка...
     </div>
     <div class="election-campaign-list" v-if="data">
-      <div class="election-campaign-unit" v-for="(campaign, index) of data.campaigns">
+      <div class="election-campaign-unit" v-for="(campaign) of data.campaigns">
         <div class="elect-camp-unit-header flex-row flex-algn-itms-c size-100 border-b-2px border-color2">
           <div class="section flex-grow-all txt-size-18px pdng-20px pdng-l-40px pdng-r-40px grayscale">
             <div class="txt-color-1 txt-medium" v-if="campaign.started_at">
