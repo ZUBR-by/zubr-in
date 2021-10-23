@@ -11,12 +11,12 @@
         <time class="block txt-color-3-1 txt-size-14px mrgn-b-10px">
           {{ item.date }}
         </time>
-        <h4 class="txt-size-36px txt-bold txt-color-1">
+        <h4 class="txt-size-36px mil-txt-size-30px txt-bold txt-color-1">
           <a class="txt-underline-2px" href="/news/1">
             {{item.title.rendered}}
           </a>
         </h4>
-        <h5 class="txt-size-28px txt-bold mrgn-t-15px" v-html="item.excerpt.rendered">
+        <h5 class="txt-size-28px mil-txt-size-24px txt-bold mrgn-t-15px" v-html="item.excerpt.rendered">
         </h5>
         <div class="pdng-t-30px pdng-b-30px" v-html="item.content.rendered"></div>
       </div>
