@@ -54,7 +54,7 @@ export default {
           style = new Style({
             image: new Icon({
               src: '/img/icon/commission.svg',
-              scale: 0.3,
+              scale: 0.8,
             }),
           });
 
