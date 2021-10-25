@@ -1,11 +1,12 @@
 <template>
   <header-view>
     <div class="header-subnav border-t-1px border-color2">
-      <div class="section flex-grow-all pdng-30px pdng-t-15px pdng-b-15px mil-pdng-20px mil-pdng-t-10px mil-pdng-b-10px">
+      <div
+          class="section flex-grow-all pdng-30px pdng-t-15px pdng-b-15px mil-pdng-20px mil-pdng-t-10px mil-pdng-b-10px">
         <div class="txt-color-1 txt-size-18px mil-txt-size-14px" v-if="data">
-          {{data.campaign.started_at}} — {{data.campaign.ended_at}}
+          {{ data.campaign.started_at }} — {{ data.campaign.ended_at }}
         </div>
-        <div class="txt-size-18px mil-txt-size-14px txt-bold">
+        <div class="txt-size-18px mil-txt-size-14px txt-bold" v-if="false">
           28 дней до начала
         </div>
       </div>
@@ -14,7 +15,8 @@
         <div class="section">
           <div class="flex-row flex-algn-itms-c">
             <div class="section">
-              <svg class="mil-zoom-0_75" width="25" height="33" viewBox="0 0 25 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg class="mil-zoom-0_75" width="25" height="33" viewBox="0 0 25 33" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M2.71436 2.57623C2.71436 2.57623 6.78428 0.261278 9.50878 0.0235027C13.0632 -0.286697 16.0314 2.57623 18.4774 2.57623C20.9234 2.57623 25.0001 0.874411 25.0001 0.874411V17.8926C25.0001 17.8926 22.2207 19.2549 20.3799 19.5944C16.1164 20.3807 13.8572 17.0417 9.50878 17.0417C5.16035 17.0417 2.71436 19.5944 2.71436 19.5944V2.57623Z"
                     fill="#FF5C01"></path>
@@ -44,11 +46,12 @@
   </header-view>
   <div class="scene mil-mrgn-t-120px" v-if="data">
     <h1 class="mil-txt-size-34px">
-      {{data.campaign.name}}
+      {{ data.campaign.name }}
     </h1>
     <div class="tag-wrp mrgn-t-20px">
       <template v-if="data.campaign.extra.type">
-        <a class="tag-unit" v-if="['parliamentary_elections', 'presidential_elections'].includes(data.campaign.extra.type)">
+        <a class="tag-unit"
+           v-if="['parliamentary_elections', 'presidential_elections'].includes(data.campaign.extra.type)">
           Общереспубликанские выборы
         </a>
         <a class="tag-unit" v-if="['local_elections'].includes(data.campaign.extra.type)">
@@ -103,7 +106,8 @@
             </div>
           </div>
         </div>
-        <div class="flex-grow-all border-l-1px border-r-1px border-color2 mil-border-0 mil-border-t-1px mil-border-b-1px mil-border-color1 pdng-20px mil-size-100 mil-border-0 mil-border-t-1px mil-border-b-1px">
+        <div
+            class="flex-grow-all border-l-1px border-r-1px border-color2 mil-border-0 mil-border-t-1px mil-border-b-1px mil-border-color1 pdng-20px mil-size-100 mil-border-0 mil-border-t-1px mil-border-b-1px">
           <p class="txt-size-14px txt-color-3-1">
             {{ item.description }}
           </p>
@@ -115,61 +119,14 @@
           <div class="flex-grow-all">
             <div class="flex-row flex-algn-itms-c">
               <div class="section">
-                <svg class="block" width="24" height="34" viewBox="0 0 24 34" fill="none"
-                     xmlns="http://www.w3.org/2000/svg">
-                  <g filter="url(#filter0_d)">
-                    <path
-                        d="M1 2C1 0.895431 1.89543 0 3 0H21C22.1046 0 23 0.895431 23 2V30C23 31.1046 22.1046 32 21 32H3C1.89543 32 1 31.1046 1 30V2Z"
-                        fill="#F3F3F3"/>
-                  </g>
-                  <g opacity="0.5">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M3 5H21V7H3V5ZM4 11H20V12H4V11ZM20 20H4V21H20V20ZM4 13H20V14H4V13ZM20 22H4V23H20V22ZM4 15H20V16H4V15ZM20 24H4V25H20V24ZM4 17H16V18H4V17ZM8 26H4V27H8V26Z"
-                          fill="#C6C6C6"/>
-                  </g>
-                  <defs>
-                    <filter id="filter0_d" x="0" y="0" width="24" height="34" filterUnits="userSpaceOnUse"
-                            color-interpolation-filters="sRGB">
-                      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                                     result="hardAlpha"/>
-                      <feOffset dy="1"/>
-                      <feGaussianBlur stdDeviation="0.5"/>
-                      <feComposite in2="hardAlpha" operator="out"/>
-                      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
-                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
-                    </filter>
-                  </defs>
-                </svg>
+                <img src="/img/icon/attachment.svg" class="block">
               </div>
               <div class="section pdng-l-10px">
                 <div class="txt-color-1 txt-bold txt-size-14px">
-                  25
+                  {{ item.attachments.length }}
                 </div>
                 <div class="txt-size-14px">
                   вложений
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="persons-preview-list">
-              <div class="persons-preview-unit">
-                <img src="/img/user.svg" alt="">
-                <div class="tooltip">
-                  Светлана Георгьевна
-                </div>
-              </div>
-              <div class="persons-preview-unit">
-                <img src="/img/user.svg" alt="">
-                <div class="tooltip">
-                  Светлана Георгьевна
-                </div>
-              </div>
-              <div class="persons-preview-unit">
-                <div class="tooltip">
-                  Светлана Георгьевна
                 </div>
               </div>
             </div>
