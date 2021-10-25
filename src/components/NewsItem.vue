@@ -29,14 +29,13 @@
   <div class="scene">
     <div class="article-view" v-if="data">
       <time class="block txt-color-3-1 txt-size-14px mrgn-b-10px">
-        19:45, сегодня
+        {{data.date}}
       </time>
-      <h1 class="txt-size-48px txt-bold txt-color-1">
-        {{data.title.rendered}}
+      <h1 class="txt-size-48px txt-bold txt-color-1" v-html="data.title.rendered">
       </h1>
       <h2 class="txt-size-32px txt-bold mrgn-t-15px" v-html="data.excerpt.rendered">
       </h2>
-      <div class="tag-wrp mrgn-t-20px">
+      <div class="tag-wrp mrgn-t-20px" v-if="false">
         <a class="tag-unit txt-size-14px">Расследование</a>
         <a class="tag-unit txt-size-14px">Анализ</a>
         <a class="tag-unit txt-size-14px">Выборы 2020</a>
