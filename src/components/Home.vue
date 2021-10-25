@@ -9,8 +9,10 @@
         —
         <dd class="txt-inline">
           это платформа онлайн-мониторинга избирательного процесса Республики Беларусь. Тут вы можете найти
-          актуальные данные по наблюдению за избирательным процессом: сообщения о нарушениях от наблюдателей с избирательных
-          участков, перечень избирательных комиссий и их состав, а также анализ результатов электоральных кампаний от различных инициатив.
+          актуальные данные по наблюдению за избирательным процессом: сообщения о нарушениях от наблюдателей с
+          избирательных
+          участков, перечень избирательных комиссий и их состав, а также анализ результатов электоральных кампаний от
+          различных инициатив.
         </dd>
       </dl>
     </h1>
@@ -47,7 +49,7 @@
               </div>
               <div class="section pdng-l-15px">
                 <div class="txt-size-20px mil-txt-size-15px mil-notdisplay">
-                  Нарушений
+                  Сообщений о нарушениях:
                 </div>
                 <div class="txt-size-20px mil-txt-size-15px txt-bold txt-nowrap">
                   {{ campaign.messages.aggregate.count }}
@@ -65,7 +67,8 @@
             </a>
           </h2>
           <div class="tag-wrp mrgn-t-20px" v-if="campaign.extra.type">
-            <a class="tag-unit" v-if="['parliamentary_elections', 'presidential_elections'].includes(campaign.extra.type)">
+            <a class="tag-unit"
+               v-if="['parliamentary_elections', 'presidential_elections'].includes(campaign.extra.type)">
               Общереспубликанские выборы
             </a>
             <a class="tag-unit" v-if="['local_elections'].includes(campaign.extra.type)">
