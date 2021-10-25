@@ -82,88 +82,53 @@
       </div>
     </div>
   </div>
-  <div class="scene">
+  <div class="scene" v-if="news">
     <div class="pdng-b-40px">
       <h3 class="txt-size-36px mil-txt-size-30px txt-bold">
         Последние новости.
-        <a class="txt-underline-inline-2px" href="#">Всего 73 новости</a>.
+        <a class="txt-underline-inline-2px" href="/news">Всего 73 новости</a>.
       </h3>
     </div>
-    <div class="">
-      <div class="article-preview-unit">
+    <div>
+      <div class="article-preview-unit" v-for="item of news">
         <time class="block txt-color-3-1 txt-size-14px mrgn-b-10px">
-          19:45, сегодня
+          {{ item.date }}
         </time>
         <h4 class="txt-size-36px mil-txt-size-30px txt-bold txt-color-1">
-          <a class="txt-underline-inline-2px" href="#">
-            Вброшенный президент
+          <a class="txt-underline-inline-2px" :href="'/news/' + item.slug">
+            {{ item.title.rendered }}
           </a>
         </h4>
-        <h5 class="txt-size-28px mil-txt-size-24px txt-bold mrgn-t-15px">
-          Как белорусские УИКи не смогли «нарисовать» нужный результат Лукашенко, а Тихановская выиграла выборы.
-          Исследование «Новой».
-        </h5>
-        <div class="pdng-t-30px pdng-b-30px">
-          <p>
-            <a class="txt-underline" href="#">По версии белорусской ЦИК</a>, более 80% избирателей проголосовали за то,
-            чтобы Александр Лукашенко стал главой государства в шестой раз и остался у власти еще на пять лет, а его
-            главную соперницу — Светлану Тихановскую — поддержали скромные 10%.
-          </p>
-          <p>
-            Чтобы защитить свой реальный выбор, белорусы не только выходят на улицы, но и пытаются организовать
-            «народный Центризбирком» — ведут подсчет голосов своими силами. Собрать полные данные по всей стране
-            невозможно, однако даже доступная часть протоколов показывает, что участковые комиссии «рисовали» спущенные
-            сверху результаты во время досрочного голосования.
-          </p>
-        </div>
-        <div class="article-preview-image pdng-b-20px">
-          <img src="https://novayagazeta.ru/static/records/60a0cf3c93f24e15a5f398d5adb530f0.webp" alt="">
-        </div>
-        <div class="tag-wrp">
-          <a class="tag-unit">Расследование</a>
-          <a class="tag-unit">Анализ</a>
-          <a class="tag-unit">Выборы 2020</a>
-        </div>
-      </div>
-      <div class="article-preview-unit">
-        <time class="block txt-color-3-1 txt-size-14px mrgn-b-10px">
-          19:45, сегодня
-        </time>
-        <h4 class="txt-size-36px mil-txt-size-30px txt-bold txt-color-1">
-          <a class="txt-underline-inline-2px" href="#">
-            Вброшенный президент
-          </a>
-        </h4>
-        <h5 class="txt-size-28px mil-txt-size-24px txt-bold mrgn-t-15px">
-          Как белорусские УИКи не смогли «нарисовать» нужный результат Лукашенко, а Тихановская выиграла выборы.
-          Исследование «Новой».
-        </h5>
-        <div class="pdng-t-30px pdng-b-30px">
-          <p>
-            <a class="txt-underline" href="#">По версии белорусской ЦИК</a>, более 80% избирателей проголосовали за то,
-            чтобы Александр Лукашенко стал главой государства в шестой раз и остался у власти еще на пять лет, а его
-            главную соперницу — Светлану Тихановскую — поддержали скромные 10%.
-          </p>
-          <p>
-            Чтобы защитить свой реальный выбор, белорусы не только выходят на улицы, но и пытаются организовать
-            «народный Центризбирком» — ведут подсчет голосов своими силами. Собрать полные данные по всей стране
-            невозможно, однако даже доступная часть протоколов показывает, что участковые комиссии «рисовали» спущенные
-            сверху результаты во время досрочного голосования.
-          </p>
-        </div>
-        <div class="tag-wrp">
-          <a class="tag-unit">Расследование</a>
-          <a class="tag-unit">Анализ</a>
-          <a class="tag-unit">Выборы 2020</a>
-        </div>
+        <p class="txt-size-28px mil-txt-size-24px txt-bold mrgn-t-15px" v-html="item.excerpt.rendered">
+        </p>
       </div>
     </div>
   </div>
 </template>
 <script>
 import {fetchCampaigns, isLater} from './Campaigns.vue'
-import {defineComponent} from "vue";
+import {defineComponent, ref} from "vue";
 import Header from "./Header.vue";
+
+function fetchLastNews() {
+  const news = ref(null)
+  const error = ref(null)
+  const loading = ref(false)
+  const loadNews = async () => {
+    try {
+      loading.value = true
+      const response = await fetch('https://zubr.media/wp-json/wp/v2/posts?tags=79&per_page=3')
+      news.value = await response.json()
+      loading.value = false
+    } catch (e) {
+      loading.value = false
+      error.value = e.message;
+      console.error(e)
+    }
+  }
+
+  return {news, loadNews, error, loading}
+}
 
 export default defineComponent({
   components: {
@@ -171,9 +136,12 @@ export default defineComponent({
   },
   setup() {
     const {data, load} = fetchCampaigns()
+    const {news, loadNews} = fetchLastNews();
     load()
+    loadNews()
     return {
       data,
+      news,
       isLater
     }
   }

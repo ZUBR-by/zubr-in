@@ -12,7 +12,7 @@
           {{ item.date }}
         </time>
         <h4 class="txt-size-36px mil-txt-size-30px txt-bold txt-color-1">
-          <a class="txt-underline-2px" href="/news/1">
+          <a class="txt-underline-2px" :href="'/news/' + item.slug">
             {{item.title.rendered}}
           </a>
         </h4>
@@ -79,7 +79,7 @@ function fetchNews() {
   const load = async () => {
     try {
       loading.value = true
-      const response = await fetch('https://zubr.media/wp-json/wp/v2/posts?tags=79&per_page=3')
+      const response = await fetch('https://zubr.media/wp-json/wp/v2/posts?tags=79&per_page=10')
       let tmp = await response.json()
       data.value = ((items) => {
         let result = {};
