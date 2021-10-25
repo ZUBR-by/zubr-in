@@ -101,6 +101,8 @@
         </h4>
         <p class="txt-size-28px mil-txt-size-24px txt-bold mrgn-t-15px" v-html="item.excerpt.rendered">
         </p>
+        <img :src="item._embedded['wp:featuredmedia'][0]['source_url']"
+             v-if="item._embedded['wp:featuredmedia'][0]['source_url']">
       </div>
     </div>
   </div>
@@ -117,7 +119,7 @@ function fetchLastNews() {
   const loadNews = async () => {
     try {
       loading.value = true
-      const response = await fetch('https://zubr.media/wp-json/wp/v2/posts?tags=79&per_page=3')
+      const response = await fetch('https://zubr.media/wp-json/wp/v2/posts?tags=79&per_page=3&_embed')
       news.value = await response.json()
       loading.value = false
     } catch (e) {
