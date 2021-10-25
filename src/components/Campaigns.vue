@@ -4,14 +4,6 @@
       <div class="section flex-grow-all pdng-20px pdng-t-15px pdng-b-15px">
         <div class="inline-block">
           <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">
-            Статус кампаний
-          </div>
-          <div>
-            <SelectButton :options="['Все','Текущие','Архивные']"/>
-          </div>
-        </div>
-        <div class="inline-block mrgn-l-30px">
-          <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">
             Тип избирательной кампании
           </div>
           <div>
