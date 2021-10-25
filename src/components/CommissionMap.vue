@@ -53,7 +53,7 @@ export default {
 
           style = new Style({
             image: new Icon({
-              src: '/img/marker.png',
+              src: '/img/icon/commission.svg',
               scale: 0.3,
             }),
           });
