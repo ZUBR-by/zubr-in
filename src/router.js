@@ -11,6 +11,7 @@ import NewsItem from "./components/NewsItem.vue";
 import Campaigns from "./components/Campaigns.vue";
 import Campaign from "./components/Campaign.vue";
 import Organization from "./components/Organization.vue";
+import About from "./components/About.vue";
 
 const routes = [
     {
@@ -78,6 +79,12 @@ const routes = [
         name: 'news',
         label: 'Новости',
         component: News,
+    },
+    {
+        path: '/about',
+        name: 'about',
+        label: 'О проекте',
+        component: About,
     },
     {
         path: '/news/:id',
