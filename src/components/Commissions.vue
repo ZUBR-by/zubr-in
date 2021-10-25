@@ -121,11 +121,9 @@
   </div>
   <div v-show="view === 'map'" v-if="mapInit">
     <div style="max-width:100%; padding:0;" class="scene mil-mrgn-t-120px">
-      <!--      <div class="map-wrp" style="background:#EDEDED; width:auto; min-height:640px">-->
-
       <div class="map-wrp" style="background:#EDEDED; min-height:640px;height: 300px">
         <commission-map v-if="mapInit === true"></commission-map>
-        <div class="map-wrp-legend txt-size-14px mil-flex-row mil-notdisplay">
+        <div class="map-wrp-legend txt-size-14px mil-flex-row mil-notdisplay" v-if="false">
           <div class="inline-flex flex-algn-itms-c txt-color-3-1 mil-size-50">
             <div>
               <svg class="block" width="22" height="14" viewBox="0 0 22 14" fill="none"
@@ -155,9 +153,7 @@
             </div>
           </div>
         </div>
-
-
-        <a class="map-mark" style="top:170px; left:160px;">
+        <a class="map-mark" style="top:170px; left:160px;" v-if="false">
           <div class="section pdng-8px">
             <div class="flex-row flex-algn-itms-c">
               <div class="section">
@@ -195,7 +191,7 @@
             </div>
           </div>
         </a>
-        <a class="map-mark mark" style="top:220px; left:220px;">
+        <a class="map-mark mark" style="top:220px; left:220px;" v-if="false">
           <div class="section pdng-8px">
             <div class="flex-row flex-algn-itms-c">
               <div class="section">
@@ -233,7 +229,6 @@
             </div>
           </div>
         </a>
-
       </div>
     </div>
   </div>
