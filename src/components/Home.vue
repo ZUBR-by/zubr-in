@@ -49,7 +49,7 @@
               </div>
               <div class="section pdng-l-15px">
                 <div class="txt-size-20px mil-txt-size-15px mil-notdisplay">
-                  Сообщений о нарушениях:
+                  Сообщений:
                 </div>
                 <div class="txt-size-20px mil-txt-size-15px txt-bold txt-nowrap">
                   {{ campaign.messages.aggregate.count }}
@@ -119,6 +119,7 @@ function fetchLastNews() {
   const loadNews = async () => {
     try {
       loading.value = true
+      //TODO кол-во постов брать из заголовка X-WP-Total
       const response = await fetch('https://zubr.media/wp-json/wp/v2/posts?tags=79&per_page=3&_embed')
       news.value = await response.json()
       loading.value = false
