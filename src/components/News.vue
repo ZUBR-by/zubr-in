@@ -12,7 +12,7 @@
           {{ item.date }}
         </time>
         <h4 class="txt-size-36px mil-txt-size-30px txt-bold txt-color-1">
-          <a class="txt-underline-2px" :href="'/news/' + item.slug">
+          <a class="txt-underline-2px" :href="'/news/' + item.id">
             {{item.title.rendered}}
           </a>
         </h4>

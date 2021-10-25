@@ -96,15 +96,15 @@ import Header from './Header.vue';
 import {defineComponent, ref} from "vue";
 import {useRoute} from "vue-router";
 
-function fetchNews(slug) {
+function fetchNews(id) {
   const data = ref(null)
   const error = ref(null)
   const loading = ref(false)
   const load = async () => {
     try {
       loading.value = true
-      const response = await fetch('https://zubr.media/wp-json/wp/v2/posts?slug=' + encodeURIComponent(slug))
-      data.value = (await response.json())[0]
+      const response = await fetch('https://zubr.media/wp-json/wp/v2/posts/' + id)
+      data.value = await response.json()
       loading.value = false
     } catch (e) {
       loading.value = false
