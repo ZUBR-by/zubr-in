@@ -2,7 +2,7 @@
   <header-view>
   </header-view>
   <div class="scene mil-mrgn-t-170px">
-    <h2>О проекте</h2>
+    <h2 class="pdng-b-15px">О проекте</h2>
     <p>ZUBR — это платформа для наблюдателей и избирателей в Беларуси.</p>
 
     <p>
