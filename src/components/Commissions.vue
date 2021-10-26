@@ -18,6 +18,22 @@
             </div>
           </div>
         </div>
+        <div class="inline-block mrgn-l-30px">
+          <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">
+            Кампания
+          </div>
+          <div class="buttongroup">
+            <div class="buttongroup-unit" @click="campaign = '2020-08-presidential'" :class="{active: campaign === '2020-08-presidential'}">
+              2020
+            </div>
+            <div class="buttongroup-unit" @click="campaign = '2019-10-parliamentary'" :class="{active: campaign === '2019-10-parliamentary'}">
+              2019
+            </div>
+            <div class="buttongroup-unit" @click="campaign = '2018-02-local'" :class="{active: campaign === '2018-02-local'}">
+              2018
+            </div>
+          </div>
+        </div>
         <!--        <div class="inline-block mrgn-l-30px">-->
         <!--          <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">-->
         <!--            Регион и насел. пункт-->
@@ -237,13 +253,14 @@
 import 'ol/ol.css'
 import Header from './Header.vue'
 import CommissionMap from './CommissionMap.vue'
-import {defineComponent, onMounted, ref} from "vue";
+import {defineComponent, onMounted, ref, watch} from "vue";
 
 const data = ref(null)
+const campaign = ref('2020-08-presidential')
 
 async function fetchCommissions() {
   try {
-    const response = await fetch(import.meta.env.VITE_API_URL + '/commissions')
+    const response = await fetch(import.meta.env.VITE_API_URL + '/commissions/?campaign=' + campaign.value)
     data.value = await response.json()
   } catch (e) {
     data.value = {commissions: [], pagination: {aggregate: {count: 0}}};
@@ -259,15 +276,20 @@ export default defineComponent({
     CommissionMap
   },
   setup() {
+
     const view = ref('list')
     const mapInit = ref(false)
     onMounted(() => {
       fetchCommissions()
     })
+    watch(campaign, () => {
+      fetchCommissions()
+    })
     return {
       view,
       data,
-      mapInit
+      mapInit,
+      campaign
     }
   },
 })
