@@ -23,15 +23,15 @@
             Кампания
           </div>
           <div class="buttongroup">
-            <div class="buttongroup-unit" @click="campaign = '2020-08-presidential'" :class="{active: campaign === '2020-08-presidential'}">
+            <button class="buttongroup-unit" @click="campaign = '2020-08-presidential'" :class="{active: campaign === '2020-08-presidential'}">
               2020
-            </div>
-            <div class="buttongroup-unit" @click="campaign = '2019-10-parliamentary'" :class="{active: campaign === '2019-10-parliamentary'}">
+            </button>
+            <button class="buttongroup-unit" @click="campaign = '2019-10-parliamentary'" :class="{active: campaign === '2019-10-parliamentary'}">
               2019
-            </div>
-            <div class="buttongroup-unit" @click="campaign = '2018-02-local'" :class="{active: campaign === '2018-02-local'}">
+            </button>
+            <button class="buttongroup-unit" @click="campaign = '2018-02-local'" :class="{active: campaign === '2018-02-local'}">
               2018
-            </div>
+            </button>
           </div>
         </div>
         <!--        <div class="inline-block mrgn-l-30px">-->
