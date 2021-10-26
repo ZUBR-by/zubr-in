@@ -34,24 +34,6 @@
             </button>
           </div>
         </div>
-        <!--        <div class="inline-block mrgn-l-30px">-->
-        <!--          <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">-->
-        <!--            Регион и насел. пункт-->
-        <!--          </div>-->
-        <!--          <div class="buttongroup">-->
-        <!--            <div class="buttongroup-unit active">-->
-        <!--              Инпут-->
-        <!--            </div>-->
-        <!--          </div>-->
-        <!--        </div>-->
-        <!--        <div class="inline-block mrgn-l-30px">-->
-        <!--          <label class="flex-row flex-algn-itms-c txt-size-14px txt-color-3-1 txt-medium">-->
-        <!--            <input type="checkbox" style="width:16px; height:16px;">-->
-        <!--            <span class="mrgn-l-5px">-->
-        <!--                Участки без наблюдателей-->
-        <!--              </span>-->
-        <!--          </label>-->
-        <!--        </div>-->
       </div>
       <div class="section pdng-30px pdng-t-15px pdng-b-15px mil-pdng-20px mil-pdng-t-10px mil-pdng-b-10px">
         <div class="inline-block">
