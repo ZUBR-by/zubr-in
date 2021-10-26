@@ -23,13 +23,16 @@
             Кампания
           </div>
           <div class="buttongroup">
-            <button class="buttongroup-unit" @click="campaign = '2020-08-presidential'" :class="{active: campaign === '2020-08-presidential'}">
+            <button class="buttongroup-unit" @click="campaign = '2020-08-presidential'"
+                    :class="{active: campaign === '2020-08-presidential'}">
               2020
             </button>
-            <button class="buttongroup-unit" @click="campaign = '2019-10-parliamentary'" :class="{active: campaign === '2019-10-parliamentary'}">
+            <button class="buttongroup-unit" @click="campaign = '2019-10-parliamentary'"
+                    :class="{active: campaign === '2019-10-parliamentary'}">
               2019
             </button>
-            <button class="buttongroup-unit" @click="campaign = '2018-02-local'" :class="{active: campaign === '2018-02-local'}">
+            <button class="buttongroup-unit" @click="campaign = '2018-02-local'"
+                    :class="{active: campaign === '2018-02-local'}">
               2018
             </button>
           </div>
@@ -111,9 +114,9 @@
         </a>
       </div>
       <div class="flex-column flex-algn-itms-c pdng-t-40px">
-        <a href="#" class="button primary pdng-l-40px pdng-r-40px">
-          Загрузить еще 100 избирательных комиссий из {{ data.pagination.aggregate.count }}
-        </a>
+        <button @click="offset = offset + 50" class="button primary pdng-l-40px pdng-r-40px">
+          Загрузить еще 50 избирательных комиссий из {{ data.pagination.aggregate.count }}
+        </button>
       </div>
     </template>
   </div>
@@ -239,11 +242,25 @@ import {defineComponent, onMounted, ref, watch} from "vue";
 
 const data = ref(null)
 const campaign = ref('2020-08-presidential')
+const offset = ref(0)
 
 async function fetchCommissions() {
   try {
-    const response = await fetch(import.meta.env.VITE_API_URL + '/commissions/?campaign=' + campaign.value)
-    data.value = await response.json()
+    const response = await fetch(
+        import.meta.env.VITE_API_URL
+        + '/commissions/?campaign='
+        + campaign.value
+        + '&offset='
+        + offset.value
+    )
+    const tmp = await response.json()
+
+    if (offset.value > 0) {
+      data.value.commissions = data.value.commissions.concat(tmp.commissions)
+    } else {
+      data.value = tmp
+    }
+
   } catch (e) {
     data.value = {commissions: [], pagination: {aggregate: {count: 0}}};
   }
@@ -267,11 +284,15 @@ export default defineComponent({
     watch(campaign, () => {
       fetchCommissions()
     })
+    watch(offset, () => {
+      fetchCommissions()
+    })
     return {
       view,
       data,
       mapInit,
-      campaign
+      campaign,
+      offset
     }
   },
 })
