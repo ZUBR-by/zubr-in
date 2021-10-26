@@ -63,8 +63,7 @@
             <div class="infoblock">
               <div class="infoblock-name">Тип комиссии:</div>
               <div class="infoblock-value">
-<!--                {{ data.commission.kind }}-->
-                KIND
+                {{ map[data.commission.kind] ? map[data.commission.kind] : data.commission.kind }}
               </div>
             </div>
             <div class="infoblock">
@@ -127,7 +126,8 @@
                   Должность
                 </div>
                 <div class="infoblock-value ">
-                  Заместитель Председателя Центральной комиссии, директор Национального центра законодательства и правовых исследований Республики Беларусь
+                  Заместитель Председателя Центральной комиссии, директор Национального центра законодательства и
+                  правовых исследований Республики Беларусь
                 </div>
               </div>
               <div class="infoblock txt-size-12px">
@@ -147,7 +147,8 @@
   <div class="scene" v-if="data">
     <h2 class="txt-size-36px txt-bold pdng-b-40px mil-txt-size-30px">
       Последние сообщения о нарушениях.
-      <a class="txt-underline-inline-2px" href="#">Всего {{ data.commission.violations.length }} сообщений о нарушениях</a>.
+      <a class="txt-underline-inline-2px" href="#">Всего {{ data.commission.violations.length }} сообщений о
+        нарушениях</a>.
     </h2>
     <div class="incident-list">
       <div class="incident-unit cursor-pointer"
@@ -172,7 +173,8 @@
             </div>
           </div>
         </div>
-        <div class="flex-grow-all border-l-1px border-r-1px border-color2  mil-border-0 mil-border-t-1px mil-border-b-1px mil-border-color1 pdng-20px mil-size-100 mil-border-0 mil-border-t-1px mil-border-b-1px">
+        <div
+            class="flex-grow-all border-l-1px border-r-1px border-color2  mil-border-0 mil-border-t-1px mil-border-b-1px mil-border-color1 pdng-20px mil-size-100 mil-border-0 mil-border-t-1px mil-border-b-1px">
           <p class="txt-size-14px txt-color-3-1">
             {{ violation.description }}
           </p>
@@ -213,7 +215,8 @@
       <!-- Archive campaigning -->
       <div class="election-campaign-unit">
         <div class="elect-camp-unit-header flex-row flex-algn-itms-c size-100 border-b-2px border-color2">
-          <div class="section flex-grow-all txt-size-18px mil-txt-size-14px pdng-20px pdng-l-40px pdng-r-40px grayscale">
+          <div
+              class="section flex-grow-all txt-size-18px mil-txt-size-14px pdng-20px pdng-l-40px pdng-r-40px grayscale">
             <div class="txt-color-1 txt-medium">
               6—9 августа 2021
             </div>
@@ -221,7 +224,8 @@
               Архив
             </div>
           </div>
-          <div class="section flex-algn-slf-strch flex-row flex-algn-itms-c border-l-2px border-color2 pdng-20px pdng-l-40px pdng-r-40px cursor-pointer hovered">
+          <div
+              class="section flex-algn-slf-strch flex-row flex-algn-itms-c border-l-2px border-color2 pdng-20px pdng-l-40px pdng-r-40px cursor-pointer hovered">
             <div class="flex-row flex-algn-itms-c">
               <div class="section">
                 <svg class="mil-zoom-0_65" width="25" height="33" viewBox="0 0 25 33" fill="none"
@@ -499,6 +503,15 @@ import {hash} from './Messages.vue'
 
 const data = ref(null)
 
+const map = {
+  ELECTION_COMMISSION_PRECINCT_PRESIDENTIAL_2020: 'Участковая',
+  ELECTION_COMMISSION_TERRITORIAL_PRESIDENTIAL_2020: 'Территориальная',
+  ELECTION_COMMISSION_TERRITORIAL_PARLIAMENTARY_2019: 'Территориальная',
+  ELECTION_COMMISSION_PRECINCT_PARLIAMENTARY_2019: 'Участковая',
+  ELECTION_COMMISSION_PRECINCT_LOCAL_2018: 'Участковая',
+  ELECTION_COMMISSION_TERRITORIAL_LOCAL_2018: 'Территориальная',
+}
+
 async function fetchCommission() {
   try {
     const response = await fetch(import.meta.env.VITE_API_URL + '/commission/' + useRoute().params.id)
@@ -535,7 +548,8 @@ export default defineComponent({
         message.value = violation
         displayModal.value = true
       },
-      hash
+      hash,
+      map
     }
   }
 })
