@@ -121,13 +121,12 @@
               <div class="txt-color-1 txt-size-12px txt-medium mrgn-t-10px">
                 {{ item.position }}
               </div>
-              <div class="infoblock txt-size-12px">
+              <div class="infoblock txt-size-12px" v-if="item.extra.referral_notes">
                 <div class="infoblock-name">
-                  Должность
+                  Выдвинут:
                 </div>
-                <div class="infoblock-value ">
-                  Заместитель Председателя Центральной комиссии, директор Национального центра законодательства и
-                  правовых исследований Республики Беларусь
+                <div class="infoblock-value">
+                  {{item.extra.referral_notes}}
                 </div>
               </div>
               <div class="infoblock txt-size-12px">
