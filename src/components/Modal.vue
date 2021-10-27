@@ -272,7 +272,7 @@ export default {
   },
   computed: {
     maskClass() {
-      return ['popup-wrp', 'pdng-5prc'];
+      return ['popup-wrp', 'pdng-5prc', 'mil-pdng-2_5prc'];
     },
     ariaId() {
       return UniqueComponentId();

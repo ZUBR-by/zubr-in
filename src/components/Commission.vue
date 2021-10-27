@@ -265,8 +265,8 @@
       Инцидент #{{ message.id }}
     </template>
     <template v-if="message">
-      <div class="flex-row flex-algn-itms-c border-b-1px border-color1">
-        <div class="section flex-grow-all pdng-l-30px pdng-r-20px pdng-t-20px pdng-b-20px">
+      <div class="flex-row flex-algn-itms-c border-b-1px border-color1 mil-flex-column">
+        <div class="section flex-grow-all pdng-l-30px pdng-r-20px pdng-t-20px pdng-b-20px mil-size-100 mil-pdng-l-20px mil-pdng-r-20px">
           <div class="txt-size-14px txt-medium">
             {{ formatCategories(message.categories) }}
           </div>
@@ -277,41 +277,13 @@
             Честные люди
           </div>
         </div>
-        <div class="section pdng-r-30px pdng-l-20px">
+        <div class="section pdng-r-30px pdng-l-20px mil-size-100 mil-pdng-b-30px mil-pdng-t-20px">
           <!-- ПОказываем кнопку в диалоге просмотра инцидента везде, кроме раздела инцидентов и подраздела инцидентов в разделе кампании -->
-          <a class="button medium" href="#">Все нарушения/инциденты кампании</a>
+          <a class="button medium mil-size-100 txt-algn-c" href="#">Все нарушения/инциденты кампании</a>
         </div>
       </div>
-      <div class="pdng-l-30px pdng-r-30px pdng-t-10px pdng-b-30px">
-        <div class="mrgn-t-20px">
-          <h3 class="txt-size-20px txt-bold">
-            Описание:
-          </h3>
-          <div class="mrgn-t-30px">
-            {{ message.description }}
-          </div>
-        </div>
-        <div class="mrgn-t-30px" v-if="message.attachments.length > 0">
-          <h3 class="txt-size-20px txt-bold">
-            Прикрепленные файлы:
-          </h3>
-          <div class="incident-attachments mrgn-t-30px">
-            <a :href="attachment.url" class="attachment-unit cursor-pointer"
-               v-for="(attachment, index) of message.attachments">
-              <div class="flex-row flex-algn-itms-c">
-                <div class="section">
-                  <img src="/img/icon/attachment.svg" alt="Иконка вложения">
-                </div>
-                <div class="section pdng-l-10px">
-                  <div class="txt-color-1 txt-bold txt-size-14px">
-                    Файл #{{ index + 1 }}
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="mrgn-t-20px">
+      <div class="pdng-30px mil-pdng-20px">
+        <div>
           <h3 class="txt-size-20px txt-bold">
             Инцидент затрагивает:
           </h3>
@@ -474,6 +446,34 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="mrgn-t-50px">
+          <h3 class="txt-size-20px txt-bold">
+            Описание:
+          </h3>
+          <div class="mrgn-t-30px">
+            {{ message.description }}
+          </div>
+        </div>
+        <div class="mrgn-t-50px" v-if="message.attachments.length > 0">
+          <h3 class="txt-size-20px txt-bold">
+            Прикрепленные файлы:
+          </h3>
+          <div class="incident-attachments mrgn-t-30px">
+            <a :href="attachment.url" class="attachment-unit cursor-pointer"
+               v-for="(attachment, index) of message.attachments">
+              <div class="flex-row flex-algn-itms-c">
+                <div class="section">
+                  <img src="/img/icon/attachment.svg" alt="Иконка вложения">
+                </div>
+                <div class="section pdng-l-10px">
+                  <div class="txt-color-1 txt-bold txt-size-14px">
+                    Файл #{{ index + 1 }}
+                  </div>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
         <div class="mrgn-t-50px">
