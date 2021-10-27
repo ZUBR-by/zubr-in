@@ -9,6 +9,7 @@
 */
 
 
+/* Election Campaign Unit */
 .election-campaign-unit {
   background: #fff;
   border-radius:30px;
@@ -93,7 +94,8 @@
   margin-top:50px;
   }
 .article-preview-image {}
-.article-preview-image img {
+.article-preview-image img,
+.wp-block-image img {
   display:block;
   width:100%;
   height:auto;
@@ -105,6 +107,12 @@
 .article-media img {
   max-width:100%;
   }
+
+.article-view {}
+.article-view h3 {
+  padding:50px 0 15px 0;
+  }
+
 
 .incident-attachments {
   display:inline-flex;
@@ -391,7 +399,7 @@
 .map-wrp-legend {
   position:absolute;
   top:15px;
-  left:45px;
+  left:15px;
   padding:15px;
   background:#fff;
   border:#DEDEDE 1px solid;
@@ -433,7 +441,7 @@
   top:0;
   left:0;
   width:100%;
-  z-index:1000;
+  z-index:20;
   }
 .header {
   padding:10px 0;
@@ -721,7 +729,7 @@ input#brgrbtn:checked + label + .brgr-nav {
     top:0;
     left:0;
     width:100%;
-    z-index:10;
+    z-index:20;
     }
   .header {
     padding:5px 0;
@@ -798,7 +806,8 @@ input#brgrbtn:checked + label + .brgr-nav {
     font-size:12px;
     padding:6px 12px;
     }
-  .article-media {
+  .article-media,
+  .wp-block-image {
     padding:30px 0;
     }
   p.quote {

@@ -221,6 +221,7 @@ p.quote:after {
     font-size:13px;
     padding:8px 15px;
     border:#D4D4D4 1px solid;
+    .buttongroup-unit
     }
 .buttongroup-unit,
 .buttongroup-unit * {

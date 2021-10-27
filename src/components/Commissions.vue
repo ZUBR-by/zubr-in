@@ -1,7 +1,7 @@
 <template>
   <header-view>
     <div class="header-subnav border-color2">
-      <div class="section flex-grow-all pdng-30px pdng-t-15px pdng-b-15px">
+      <div class="section flex-grow-all pdng-30px pdng-t-15px pdng-b-15px mil-pdng-20px mil-pdng-t-10px mil-pdng-b-10px">
         <div class="inline-block">
           <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">
             Тип комиссии
@@ -18,24 +18,23 @@
             </div>
           </div>
         </div>
-        <div class="inline-block mrgn-l-30px">
+        <div class="inline-block mrgn-l-30px mil-mrgn-l-20px">
           <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">
-            Кампания
+            Регион и насел. пункт
           </div>
           <div class="buttongroup">
-            <button class="buttongroup-unit" @click="campaign = '2020-08-presidential'"
-                    :class="{active: campaign === '2020-08-presidential'}">
-              2020
-            </button>
-            <button class="buttongroup-unit" @click="campaign = '2019-10-parliamentary'"
-                    :class="{active: campaign === '2019-10-parliamentary'}">
-              2019
-            </button>
-            <button class="buttongroup-unit" @click="campaign = '2018-02-local'"
-                    :class="{active: campaign === '2018-02-local'}">
-              2018
-            </button>
+            <div class="buttongroup-unit active">
+              Инпут
+            </div>
           </div>
+        </div>
+        <div class="inline-block mrgn-l-30px mil-mrgn-l-20px">
+          <label class="flex-row flex-algn-itms-c txt-size-14px txt-color-3-1 txt-medium">
+            <input type="checkbox" style="width:16px; height:16px;">
+            <span class="mrgn-l-5px">
+                Участки без наблюдателей
+              </span>
+          </label>
         </div>
       </div>
       <div class="section pdng-30px pdng-t-15px pdng-b-15px mil-pdng-20px mil-pdng-t-10px mil-pdng-b-10px">
@@ -44,18 +43,18 @@
             Вид
           </div>
           <div class="buttongroup">
-            <button class="buttongroup-unit" :class="{active: view === 'list'}" @click="view = 'list'">
+            <div class="buttongroup-unit active">
               Список
-            </button>
-            <button class="buttongroup-unit" :class="{active: view === 'map'}" @click="view = 'map';mapInit = true">
+            </div>
+            <div class="buttongroup-unit">
               Карта
-            </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </header-view>
-  <div class="scene mil-mrgn-t-170px" v-if="view === 'list'">
+  <div class="scene mrgn-t-170px mil-mrgn-t-120px" v-if="view === 'list'">
     <template v-if="data">
       <div class="committee-list mil-flex-column">
         <!--        :class="{mark: item === 2}"-->
@@ -115,7 +114,7 @@
       </div>
       <div class="flex-column flex-algn-itms-c pdng-t-40px">
         <button @click="offset = offset + 50" class="button primary pdng-l-40px pdng-r-40px">
-          Загрузить еще 50 избирательных комиссий из {{ data.pagination.aggregate.count }}
+          Загрузить еще 100 <span class="notdisplay">избирательных</span> комиссий из {{ data.pagination.aggregate.count }}
         </button>
       </div>
     </template>

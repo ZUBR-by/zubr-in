@@ -1,7 +1,7 @@
 <template>
   <header-view></header-view>
   <div class="scene mil-mrgn-t-80px">
-    <h1 class="txt-color-2 txt-size-18px txt-normal pdng-l-40px pdng-r-40px">
+    <h1 class="txt-color-2 txt-size-18px txt-normal pdng-l-40px pdng-r-40px mil-pdng-l-20px mil-pdng-r-20px">
       <dl>
         <dt class="txt-color-1 txt-inline txt-bold">
           ZUBR.in
@@ -59,8 +59,9 @@
           </div>
         </div>
         <div
-            class="elect-camp-unit-info pdng-t-30px pdng-b-50px pdng-l-40px pdng-r-40px mil-pdng-l-20px mil-pdng-r-20px mil-pdng-b-40px"
-            :class="{'grayscale' : !isLater(campaign.started_at)}">
+            class="elect-camp-unit-info pdng-t-20px pdng-b-40px pdng-l-40px pdng-r-40px mil-pdng-l-20px mil-pdng-r-20px mil-pdng-b-30px"
+            :class="{'grayscale' : !isLater(campaign.started_at)}"
+        >
           <h2 class="txt-color-1 txt-size-48px mil-txt-size-34px txt-lh-1_1em">
             <a class="txt-underline-inline-2px" :href="'/campaign/' + campaign.id">
               {{ campaign.name }}
@@ -101,7 +102,7 @@
         </h4>
         <p class="txt-size-28px mil-txt-size-24px txt-bold mrgn-t-15px" v-html="item.excerpt.rendered">
         </p>
-        <div class="article-preview-image pdng-b-20px">
+        <div class="article-preview-image pdng-b-20px mrgn-t-30px">
           <img :src="item._embedded['wp:featuredmedia'][0]['source_url']"
                v-if="item._embedded['wp:featuredmedia'][0]['source_url']">
         </div>

@@ -11,7 +11,7 @@
         </div>
       </div>
       <div
-          class="section flex-row flex-algn-itms-c flex-noshrink flex-algn-slf-strch pdng-l-20px pdng-r-30px border-l-1px border-color2">
+          class="section flex-row flex-algn-itms-c flex-noshrink flex-algn-slf-strch pdng-l-20px pdng-r-30px mil-pdng-r-20px border-l-1px border-color2">
         <div class="section">
           <div class="flex-row flex-algn-itms-c">
             <div class="section">
@@ -137,7 +137,7 @@
     <div class="flex-column flex-algn-itms-c pdng-t-40px">
       <a href="#" class="button primary inline-flex flex-algn-itms-c pdng-l-40px pdng-r-40px">
         <div class="section">
-          Показать все {{ data.campaign.messages_aggregate.aggregate.count }} нарушений и инцидентов
+          Показать все {{ data.campaign.messages_aggregate.aggregate.count }} нарушений <span class="mil-notdisplay">и инцидентов</span>
         </div>
         <div class="section mrgn-l-20px">
           <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -150,7 +150,7 @@
     </div>
   </div>
   <div class="scene">
-    <h2 class="txt-size-36px txt-bold pdng-b-30px">
+    <h2 class="txt-size-36px mil-txt-size-30px txt-bold pdng-b-40px">
       Избирательные комиссии.
       <br>
       Всего наблюдается <a class="txt-underline-2px" href="/commissions">317</a> участков из <a
@@ -158,27 +158,25 @@
       396</a>.
     </h2>
     <div class="map-content">
-      <div class="flex-row pdng-b-15px txt-size-14px">
+      <div class="flex-row mil-block pdng-b-15px txt-size-14px">
         <div class="section flex-grow-all">
           <div class="inline-flex flex-algn-itms-c txt-color-3-1">
             <div>
               <svg width="22" height="13" viewBox="0 0 22 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M11 1C14.9773 1 17.4849 2.50522 19.0028 3.96966C19.7698 4.70972 20.2931 5.44898 20.6224 5.99842C20.7392 6.19335 20.8311 6.36347 20.9002 6.5C20.8311 6.63653 20.7392 6.80664 20.6224 7.00158C20.2931 7.55102 19.7698 8.29028 19.0028 9.03034C17.4849 10.4948 14.9773 12 11 12C7.02275 12 4.51514 10.4948 2.99725 9.03034C2.23018 8.29028 1.70689 7.55102 1.37761 7.00158C1.26079 6.80664 1.16894 6.63653 1.09977 6.5C1.16894 6.36347 1.26079 6.19336 1.37761 5.99842C1.70689 5.44898 2.23018 4.70972 2.99725 3.96966C4.51514 2.50522 7.02275 1 11 1Z"
-                    stroke="#FF5C01" stroke-width="2"/>
-                <circle cx="11" cy="6" r="3" stroke="#FF5C01" stroke-width="2"/>
+                <path d="M11 1C14.9773 1 17.4849 2.50522 19.0028 3.96966C19.7698 4.70972 20.2931 5.44898 20.6224 5.99842C20.7392 6.19335 20.8311 6.36347 20.9002 6.5C20.8311 6.63653 20.7392 6.80664 20.6224 7.00158C20.2931 7.55102 19.7698 8.29028 19.0028 9.03034C17.4849 10.4948 14.9773 12 11 12C7.02275 12 4.51514 10.4948 2.99725 9.03034C2.23018 8.29028 1.70689 7.55102 1.37761 7.00158C1.26079 6.80664 1.16894 6.63653 1.09977 6.5C1.16894 6.36347 1.26079 6.19336 1.37761 5.99842C1.70689 5.44898 2.23018 4.70972 2.99725 3.96966C4.51514 2.50522 7.02275 1 11 1Z" stroke="#FF5C01" stroke-width="2"></path>
+                <circle cx="11" cy="6" r="3" stroke="#FF5C01" stroke-width="2"></circle>
               </svg>
             </div>
             <div class="mrgn-l-5px">
               Количество наблюдателей
             </div>
           </div>
-          <div class="inline-flex flex-algn-itms-c txt-color-3-1 mrgn-l-20px">
+          <div class="inline-flex flex-algn-itms-c txt-color-3-1 mrgn-l-20px mil-mrgn-0 mil-mrgn-t-10px">
             <div>
               <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1.80425 15L10 1.8868L18.1958 15H1.80425Z" fill="white" stroke="#FF5C01" stroke-width="2"/>
-                <rect x="9" y="6" width="2" height="4" rx="1" fill="#FF5C01"/>
-                <rect x="9" y="11" width="2" height="2" rx="1" fill="#FF5C01"/>
+                <path d="M1.80425 15L10 1.8868L18.1958 15H1.80425Z" fill="white" stroke="#FF5C01" stroke-width="2"></path>
+                <rect x="9" y="6" width="2" height="4" rx="1" fill="#FF5C01"></rect>
+                <rect x="9" y="11" width="2" height="2" rx="1" fill="#FF5C01"></rect>
               </svg>
             </div>
             <div class="mrgn-l-5px">
@@ -186,9 +184,9 @@
             </div>
           </div>
         </div>
-        <div class="section">
+        <div class="section mil-mrgn-t-10px">
           <label class="flex-row flex-algn-itms-c txt-color-3-1">
-            <input type="checkbox" style="width:16px; height:16px;">
+            <input type="checkbox" style="width:16px; height:16px; flex-shrink:0;">
             <span class="mrgn-l-5px">
                 Участки без наблюдателей
               </span>
