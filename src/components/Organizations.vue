@@ -38,7 +38,7 @@
       <a :href="'/organization/' + item.id" class="organization-unit" v-for="item of data.organizations">
         <div class="section size-10 pdng-l-20px flex-noshrink mil-size-25 mil-pdng-l-10px">
           <div class="organization-unit-logo">
-            <img src="imgs/org-logo.png" alt="">
+            <img src="/img/org-logo.png" alt="">
           </div>
         </div>
         <div class="section flex-grow-all pdng-r-20px pdng-l-30px pdng-t-20px pdng-b-20px mil-pdng-15px">
