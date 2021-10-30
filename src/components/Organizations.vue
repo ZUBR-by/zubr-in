@@ -33,7 +33,7 @@
       </div>
     </div>
   </header-view>
-  <div class="scene mrgn-t-120px mil-mrgn-t-120px">
+  <div class="scene mrgn-t-170px mil-mrgn-t-120px">
     <div class="organization-list" v-if="data">
       <a :href="'/organization/' + item.id" class="organization-unit" v-for="item of data.organizations">
         <div class="section size-10 pdng-l-20px flex-noshrink mil-size-25 mil-pdng-l-10px">
