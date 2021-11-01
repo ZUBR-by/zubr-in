@@ -78,7 +78,7 @@
       <div class="committee-list mil-flex-column">
         <!--        :class="{mark: item === 2}"-->
         <a class="committee-unit mil-flex-column" :href="'/commission/' + item.id" v-for="item of data.commissions">
-          <div class="section pdng-r-20px pdng-l-30px pdng-t-20px pdng-b-20px mil-size-100 mil-pdng-15px">
+          <div class="section size-45 pdng-r-20px pdng-l-30px pdng-t-20px pdng-b-20px mil-size-100 mil-pdng-15px">
             <h2 class="txt-color-1 txt-size-20px txt-medium mil-txt-size-16px">
               {{ item.name }}
             </h2>
@@ -87,15 +87,17 @@
             </div>
           </div>
           <div
-              class="section pdng-r-20px pdng-l-20px pdng-t-20px pdng-b-20px border-l-1px border-color2 mil-border-0 mil-size-100 mil-pdng-15px mil-pdng-t-0 mil-border-b-1px mil-border-color1">
-            <div class="txt-color-1 txt-size-20px txt-medium mil-txt-size-16px">
-              {{ item.code }}
-            </div>
-            <div class="txt-color-2 txt-size-14px">
-              {{ item.address }}
+              class="section flex-row flex-algn-slf-strch flex-algn-itms-c size-30 pdng-r-20px pdng-l-20px pdng-t-20px pdng-b-20px border-l-1px border-color2 mil-border-0 mil-size-100 mil-pdng-15px mil-pdng-t-0 mil-border-b-1px mil-border-color1">
+            <div class="size-100">
+              <div class="txt-color-1 txt-size-20px txt-medium mil-txt-size-16px">
+                {{ item.code }}
+              </div>
+              <div class="txt-color-2 txt-size-14px">
+                {{ item.address }}
+              </div>
             </div>
           </div>
-          <div class="section flex-grow-all txt-algn-r pdng-r-30px pdng-l-20px pdng-t-20px pdng-b-20px mil-pdng-15px">
+          <div class="section size-25 flex-grow-all txt-algn-r pdng-r-30px pdng-l-20px pdng-t-20px pdng-b-20px mil-pdng-15px">
             <div class="inline-flex flex-algn-itms-c">
               <div class="section">
                 <div class="flex-row flex-algn-itms-c">
