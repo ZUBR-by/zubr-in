@@ -1,6 +1,6 @@
 <template>
   <header-view></header-view>
-  <div class="scene mil-mrgn-t-80px">
+  <div class="scene mrgn-t-130px mil-mrgn-t-80px">
     <h1 class="txt-color-2 txt-size-18px txt-normal pdng-l-40px pdng-r-40px mil-pdng-l-20px mil-pdng-r-20px">
       <dl>
         <dt class="txt-color-1 txt-inline txt-bold">
