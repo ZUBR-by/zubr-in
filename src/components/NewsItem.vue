@@ -21,7 +21,7 @@
       </div>
     </div>
   </header-view>
-  <div class="scene mil-mrgn-t-170px">
+  <div class="scene mrgn-t-170px mil-mrgn-t-170px">
     <div class="article-view" v-if="data">
       <time class="block txt-color-3-1 txt-size-14px mrgn-b-10px" :title="data.date">
         {{formatDate(data.date)}}

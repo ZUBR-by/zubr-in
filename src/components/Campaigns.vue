@@ -51,7 +51,7 @@
       </div>
     </div>
   </header-view>
-  <div class="scene mil-mrgn-t-170px">
+  <div class="scene mrgn-t-170px mil-mrgn-t-170px">
     <div class="election-campaign-list" v-if="loading">
       Загрузка...
     </div>

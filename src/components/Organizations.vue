@@ -12,7 +12,7 @@
       </div>
     </div>
   </header-view>
-  <div class="scene mil-mrgn-t-170px">
+  <div class="scene mrgn-t-170px mil-mrgn-t-170px">
     <div class="organization-list" v-if="data">
       <a :href="'/organization/' + item.id" class="organization-unit" v-for="item of data.organizations">
         <div class="section flex-grow-all pdng-r-20px pdng-l-30px pdng-t-20px pdng-b-20px mil-pdng-15px">

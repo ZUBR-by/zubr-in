@@ -27,7 +27,7 @@
       </div>
     </div>
   </header-view>
-  <div class="scene mil-mrgn-t-170px" v-if="data">
+  <div class="scene mrgn-t-170px mil-mrgn-t-170px" v-if="data">
     <div class="committee-members-list">
       <!--      :class="{mark: item === 2}"-->
       <a class="committee-members-unit mil-flex-column"

@@ -1,5 +1,5 @@
 <template>
-  <div class="header-wrp">
+  <div class="header-wrp fixedhrd">
     <div class="header flex-row flex-algn-itms-c">
       <a href="/" class="section pdng-l-20px pdng-r-20px">
         <img src="/img/icon/zubr.svg" class="zoom-0_75 mil-zoom-0_5">

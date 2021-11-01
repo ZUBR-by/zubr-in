@@ -1,7 +1,7 @@
 <template>
   <header-view :active="'О проекте'">
   </header-view>
-  <div class="scene mil-mrgn-t-80px">
+  <div class="scene mrgn-t-130px mil-mrgn-t-80px">
     <h2 class="pdng-b-15px">О проекте</h2>
     <p>ZUBR — это платформа для наблюдателей и избирателей в Беларуси.</p>
 

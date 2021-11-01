@@ -1,23 +1,8 @@
 <template>
   <header-view>
-    <div class="header-subnav border-t-1px border-color2">
-      <a  href="/members"
-          class="section flex-algn-slf-strch flex-row flex-algn-itms-c pdng-l-30px pdng-r-30px mil-pdng-l-15px mil-pdng-r-15px txt-algn-c border-r-1px border-color2 hovered">
-        <div class="inline-block">
-          <svg class="mil-zoom-0_8" width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18 13.5C18.8284 13.5 19.5 12.8284 19.5 12C19.5 11.1716 18.8284 10.5 18 10.5V13.5ZM0.939341 10.9393C0.353554 11.5251 0.353554 12.4749 0.939341 13.0607L10.4853 22.6066C11.0711 23.1924 12.0208 23.1924 12.6066 22.6066C13.1924 22.0208 13.1924 21.0711 12.6066 20.4853L4.12132 12L12.6066 3.51472C13.1924 2.92893 13.1924 1.97919 12.6066 1.3934C12.0208 0.807611 11.0711 0.807611 10.4853 1.3934L0.939341 10.9393ZM18 10.5L2 10.5V13.5L18 13.5V10.5Z" fill="#FF6C1A"/>
-          </svg>
-        </div>
-      </a>
-      <div class="section flex-grow-all pdng-30px pdng-t-15px pdng-b-15px mil-pdng-20px mil-pdng-t-10px mil-pdng-b-10px">
-        <div class="txt-color-1 txt-size-15px mil-txt-size-14px txt-bold">
-          Члены комиссий
-        </div>
-      </div>
-    </div>
   </header-view>
   <div class="scene-wrp bg-color-1 border-b-1px border-color1" v-if="data">
-    <div class="scene mil-mrgn-t-170px">
+    <div class="scene mrgn-t-130px mil-mrgn-t-170px">
       <div class="flex-row mil-flex-column">
         <div class="section pdng-r-30px mil-pdng-0 mil-flex-column flex-algn-itms-c">
           <div class="person-view mil-size-100">

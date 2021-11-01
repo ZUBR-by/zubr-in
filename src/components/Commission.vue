@@ -36,7 +36,7 @@
     </div>
   </header-view>
   <div class="scene-wrp bg-color-1 border-b-1px border-color1">
-    <div class="scene mil-mrgn-t-170px">
+    <div class="scene mrgn-t-170px mil-mrgn-t-170px">
       <div class="flex-row mil-flex-wrap" v-if="data">
         <div class="section size-50 pdng-r-30px mil-size-100 mil-pdng-0">
           <h1 class="txt-size-32px">
@@ -80,7 +80,7 @@
             </div>
           </div>
         </div>
-        <div class="section size-50 mil-size-100 mil-pdng-t-50px">
+        <div class="section size-50 mil-size-100 mil-pdng-t-50px" v-if="data.commission.coordinates">
           <div class="map-wrp committee-view">
             <location :feature="data.commission.coordinates"></location>
           </div>

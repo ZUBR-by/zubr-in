@@ -1,6 +1,6 @@
 <template>
   <header-view :active="'Новости'"></header-view>
-  <div class="scene mil-mrgn-t-80px">
+  <div class="scene mrgn-t-50px mil-mrgn-t-80px">
     <div class="article-group" v-if="data" v-for="(items, group) in data">
       <div class="pdng-b-40px">
         <h3 class="txt-size-36px txt-bold mil-txt-size-30px">
