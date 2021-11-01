@@ -27,7 +27,7 @@
       </div>
     </div>
   </header-view>
-  <div class="scene mrgn-t-170px mil-mrgn-t-120px" v-if="data">
+  <div class="scene mil-mrgn-t-170px" v-if="data">
     <div class="committee-members-list">
       <!--      :class="{mark: item === 2}"-->
       <a class="committee-members-unit mil-flex-column"
@@ -67,7 +67,7 @@
             </div>
             <div class="section pdng-l-15px">
               <div class=" txt-color-2 txt-size-20px txt-bold mil-txt-size-16px">
-                1 337
+                0
               </div>
             </div>
           </div>

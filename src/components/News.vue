@@ -1,15 +1,15 @@
 <template>
-  <header-view></header-view>
+  <header-view :active="'Новости'"></header-view>
   <div class="scene mil-mrgn-t-80px">
     <div class="article-group" v-if="data" v-for="(items, group) in data">
       <div class="pdng-b-40px">
         <h3 class="txt-size-36px txt-bold mil-txt-size-30px">
-          {{ group }}
+          {{ formatDate(group) }}
         </h3>
       </div>
       <div class="article-preview-unit shadow-type-5" v-if="data" v-for="item of items">
-        <time class="block txt-color-3-1 txt-size-14px mrgn-b-10px">
-          {{ item.date }}
+        <time class="block txt-color-3-1 txt-size-14px mrgn-b-10px" :title="item.date">
+          {{ formatDate(item.date) }}
         </time>
         <h4 class="txt-size-36px mil-txt-size-30px txt-bold txt-color-1">
           <a class="txt-underline-inline-2px" :href="'/news/' + item.id" v-html="item.title.rendered">
@@ -20,6 +20,7 @@
         <div class="pdng-t-30px pdng-b-30px" v-html="item.content.rendered" v-if="false"></div>
         <div class="article-preview-image pdng-b-20px mrgn-t-30px">
           <img :src="item._embedded['wp:featuredmedia'][0]['source_url']"
+               style="height: 50%;width: 50%"
                v-if="item._embedded['wp:featuredmedia'][0]['source_url']">
         </div>
       </div>
@@ -35,6 +36,7 @@
 //
 import Header from './Header.vue';
 import {defineComponent, ref} from "vue";
+import {formatDate} from '../date'
 
 function fetchNews() {
   const data = ref(null)
@@ -76,7 +78,8 @@ export default defineComponent({
     load()
     return {
       data,
-      loading
+      loading,
+      formatDate
     }
   }
 })

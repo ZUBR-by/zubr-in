@@ -1,35 +1,23 @@
 <template>
   <header-view>
     <div class="header-subnav border-t-1px border-color2">
-      <div class="section flex-row flex-algn-itms-c flex-grow-all flex-algn-slf-strch pdng-20px pdng-l-30px pdng-r-30px border-l-1px border-color2 mil-pdng-20px mil-pdng-t-10px mil-pdng-b-10px">
-        <div class="section">
-          <div class="flex-row flex-algn-itms-c">
-            <div class="section">
-              <svg class="mil-zoom-0_75" width="25" height="33" viewBox="0 0 25 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2.71436 2.57623C2.71436 2.57623 6.78428 0.261278 9.50878 0.0235027C13.0632 -0.286697 16.0314 2.57623 18.4774 2.57623C20.9234 2.57623 25.0001 0.874411 25.0001 0.874411V17.8926C25.0001 17.8926 22.2207 19.2549 20.3799 19.5944C16.1164 20.3807 13.8572 17.0417 9.50878 17.0417C5.16035 17.0417 2.71436 19.5944 2.71436 19.5944V2.57623Z" fill="#FF5C01"></path>
-                <rect y="1" width="2" height="32" fill="#FF5C01"></rect>
-              </svg>
-            </div>
-            <div class="section pdng-l-15px">
-              <div class="txt-size-18px mil-txt-size-14px">
-                Нарушений
-              </div>
-              <div class="txt-size-18px txt-bold mil-txt-size-14px">
-                237
-              </div>
-            </div>
-          </div>
+      <a  href="/members"
+          class="section flex-algn-slf-strch flex-row flex-algn-itms-c pdng-l-30px pdng-r-30px mil-pdng-l-15px mil-pdng-r-15px txt-algn-c border-r-1px border-color2 hovered">
+        <div class="inline-block">
+          <svg class="mil-zoom-0_8" width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 13.5C18.8284 13.5 19.5 12.8284 19.5 12C19.5 11.1716 18.8284 10.5 18 10.5V13.5ZM0.939341 10.9393C0.353554 11.5251 0.353554 12.4749 0.939341 13.0607L10.4853 22.6066C11.0711 23.1924 12.0208 23.1924 12.6066 22.6066C13.1924 22.0208 13.1924 21.0711 12.6066 20.4853L4.12132 12L12.6066 3.51472C13.1924 2.92893 13.1924 1.97919 12.6066 1.3934C12.0208 0.807611 11.0711 0.807611 10.4853 1.3934L0.939341 10.9393ZM18 10.5L2 10.5V13.5L18 13.5V10.5Z" fill="#FF6C1A"/>
+          </svg>
         </div>
-        <div class="section pdng-l-40px mil-pdng-l-20px">
-          <div class="button medium primary">
-            Сообщить о нарушении
-          </div>
+      </a>
+      <div class="section flex-grow-all pdng-30px pdng-t-15px pdng-b-15px mil-pdng-20px mil-pdng-t-10px mil-pdng-b-10px">
+        <div class="txt-color-1 txt-size-15px mil-txt-size-14px txt-bold">
+          Члены комиссий
         </div>
       </div>
     </div>
   </header-view>
-  <div class="scene-wrp bg-color-1 border-b-1px border-color1">
-    <div class="scene mrgn-t-170px mil-mrgn-t-120px">
+  <div class="scene-wrp bg-color-1 border-b-1px border-color1" v-if="data">
+    <div class="scene mil-mrgn-t-170px">
       <div class="flex-row mil-flex-column">
         <div class="section pdng-r-30px mil-pdng-0 mil-flex-column flex-algn-itms-c">
           <div class="person-view mil-size-100">

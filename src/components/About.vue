@@ -1,5 +1,5 @@
 <template>
-  <header-view>
+  <header-view :active="'О проекте'">
   </header-view>
   <div class="scene mil-mrgn-t-80px">
     <h2 class="pdng-b-15px">О проекте</h2>

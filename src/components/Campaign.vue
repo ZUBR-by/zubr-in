@@ -1,10 +1,10 @@
 <template>
-  <header-view>
+  <header-view :active="'Кампании'">
     <div class="header-subnav border-t-1px border-color2">
       <div
           class="section flex-grow-all pdng-30px pdng-t-15px pdng-b-15px mil-pdng-20px mil-pdng-t-10px mil-pdng-b-10px">
         <div class="txt-color-1 txt-size-18px mil-txt-size-14px" v-if="data">
-          {{ data.campaign.started_at }} — {{ data.campaign.ended_at }}
+          {{ formatDateCampaign(data.campaign)}}
         </div>
         <div class="txt-size-18px mil-txt-size-14px txt-bold" v-if="false">
           28 дней до начала
@@ -62,7 +62,7 @@
         </a>
       </template>
     </div>
-    <div class="mrgn-t-40px">
+    <div class="mrgn-t-40px" v-if="false">
       <p>
         Это платформа для наблюдателей и избирателей в Беларуси.
         Здесь можно узнать о любом из кандидатов и их кампаниях, любой из задействованных в выборах организациях, любом
@@ -75,7 +75,7 @@
       </p>
     </div>
   </div>
-  <div class="scene" v-if="data">
+  <div class="scene" v-if="data && data.campaign.messages_aggregate.aggregate.count">
     <h2 class="txt-size-36px mil-txt-size-30px txt-bold pdng-b-40px">
       Последние инциденты. <a class="txt-underline-inline-2px" href="#">
       Всего {{ data.campaign.messages_aggregate.aggregate.count }} сообщений о нарушениях
@@ -86,7 +86,9 @@
         <div class="size-25 mil-size-100 flex-column flex-noshrink pdng-20px txt-medium">
           <div class="flex-grow-all">
             <div class="txt-size-14px">
-              {{ item.categories }}
+              <div v-for="cat of item.categories " class="pdng-t-5px">
+                {{ hash[cat] }}
+              </div>
             </div>
             <div class="txt-color-3-1 txt-size-12px mrgn-t-5px">
               {{ item.created_at }}
@@ -201,7 +203,8 @@
 import Header from './Header.vue';
 import {defineComponent, onMounted, ref} from "vue";
 import {useRoute} from 'vue-router'
-
+import {hash} from './Messages.vue'
+import {formatDateCampaign} from "../date";
 const data = ref(null)
 
 async function fetchCampaign() {
@@ -225,7 +228,9 @@ export default defineComponent({
       fetchCampaign()
     })
     return {
-      data
+      data,
+      hash,
+      formatDateCampaign
     }
   }
 })

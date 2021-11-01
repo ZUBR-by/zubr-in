@@ -26,7 +26,7 @@
               class="section flex-grow-all txt-size-20px mil-txt-size-15px pdng-20px pdng-l-40px pdng-r-40px mil-pdng-15px mil-pdng-l-20px">
             <div class="txt-color-1 txt-medium" v-if="campaign.started_at"
                  :class="{'grayscale' : !isLater(campaign.started_at)}">
-              {{ campaign.started_at }} - {{ campaign.ended_at }}
+              {{ formatDateCampaign(campaign) }}
             </div>
             <div class="txt-color-1 txt-medium" v-else>
               Нет даты
@@ -93,10 +93,10 @@
     <div>
       <div class="article-preview-unit" v-for="item of news">
         <time class="block txt-color-3-1 txt-size-14px mrgn-b-10px">
-          {{ item.date }}
+          {{ formatDate(item.date) }}
         </time>
         <h4 class="txt-size-36px mil-txt-size-30px txt-bold txt-color-1">
-          <a class="txt-underline-inline-2px" :href="'/news/' + item.slug">
+          <a class="txt-underline-inline-2px" :href="'/news/' + item.id">
             {{ item.title.rendered }}
           </a>
         </h4>
@@ -104,6 +104,7 @@
         </p>
         <div class="article-preview-image pdng-b-20px mrgn-t-30px">
           <img :src="item._embedded['wp:featuredmedia'][0]['source_url']"
+               style="width: 50%;height: 50%"
                v-if="item._embedded['wp:featuredmedia'][0]['source_url']">
         </div>
       </div>
@@ -114,6 +115,7 @@
 import {fetchCampaigns, isLater} from './Campaigns.vue'
 import {defineComponent, ref} from "vue";
 import Header from "./Header.vue";
+import {formatDateCampaign, formatDate} from '../date'
 
 function fetchLastNews() {
   const news = ref(null)
@@ -148,7 +150,9 @@ export default defineComponent({
     return {
       data,
       news,
-      isLater
+      isLater,
+      formatDateCampaign,
+      formatDate
     }
   }
 })

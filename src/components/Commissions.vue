@@ -1,5 +1,5 @@
 <template>
-  <header-view>
+  <header-view :active="'Комиссии'">
     <div class="header-subnav border-color2">
       <div class="section flex-grow-all pdng-30px pdng-t-15px pdng-b-15px mil-pdng-20px mil-pdng-t-10px mil-pdng-b-10px">
         <div class="inline-block">
@@ -7,18 +7,37 @@
             Тип комиссии
           </div>
           <div class="buttongroup">
-            <div class="buttongroup-unit active">
+            <button class="buttongroup-unit" @click="commissionType = null" :class="{active: commissionType == null}">
               Все
-            </div>
-            <div class="buttongroup-unit">
+            </button>
+            <button class="buttongroup-unit" @click="commissionType = 'territorial'" :class="{active: commissionType === 'territorial'}">
               Территориальные
-            </div>
-            <div class="buttongroup-unit">
+            </button>
+            <button class="buttongroup-unit" @click="commissionType = 'precinct'" :class="{active: commissionType === 'precinct'}">
               Участковые
-            </div>
+            </button>
           </div>
         </div>
-        <div class="inline-block mrgn-l-30px mil-mrgn-l-20px">
+        <div class="inline-block mrgn-l-30px">
+          <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">
+            Кампания
+          </div>
+          <div class="buttongroup">
+            <button class="buttongroup-unit" @click="campaign = '2020-08-presidential'"
+                    :class="{active: campaign === '2020-08-presidential'}">
+              2020
+            </button>
+            <button class="buttongroup-unit" @click="campaign = '2019-10-parliamentary'"
+                    :class="{active: campaign === '2019-10-parliamentary'}">
+              2019
+            </button>
+            <button class="buttongroup-unit" @click="campaign = '2018-02-local'"
+                    :class="{active: campaign === '2018-02-local'}">
+              2018
+            </button>
+          </div>
+        </div>
+        <div class="inline-block mrgn-l-30px mil-mrgn-l-20px" v-if="false">
           <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">
             Регион и насел. пункт
           </div>
@@ -28,7 +47,7 @@
             </div>
           </div>
         </div>
-        <div class="inline-block mrgn-l-30px mil-mrgn-l-20px">
+        <div class="inline-block mrgn-l-30px mil-mrgn-l-20px" v-if="false">
           <label class="flex-row flex-algn-itms-c txt-size-14px txt-color-3-1 txt-medium">
             <input type="checkbox" style="width:16px; height:16px;">
             <span class="mrgn-l-5px">
@@ -43,18 +62,18 @@
             Вид
           </div>
           <div class="buttongroup">
-            <div class="buttongroup-unit active">
+            <button class="buttongroup-unit" :class="{active: view === 'list'}" @click="view = 'list'">
               Список
-            </div>
-            <div class="buttongroup-unit">
+            </button>
+            <button class="buttongroup-unit" :class="{active: view === 'map'}" @click="view = 'map';mapInit = true">
               Карта
-            </div>
+            </button>
           </div>
         </div>
       </div>
     </div>
   </header-view>
-  <div class="scene mrgn-t-170px mil-mrgn-t-120px" v-if="view === 'list'">
+  <div class="scene mil-mrgn-t-170px" v-if="view === 'list'">
     <template v-if="data">
       <div class="committee-list mil-flex-column">
         <!--        :class="{mark: item === 2}"-->
@@ -241,6 +260,7 @@ import {defineComponent, onMounted, ref, watch} from "vue";
 
 const data = ref(null)
 const campaign = ref('2020-08-presidential')
+const commissionType = ref(null)
 const offset = ref(0)
 
 async function fetchCommissions() {
@@ -291,6 +311,7 @@ export default defineComponent({
       data,
       mapInit,
       campaign,
+      commissionType,
       offset
     }
   },

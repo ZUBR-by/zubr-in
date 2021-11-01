@@ -5,7 +5,7 @@
         <img src="/img/icon/zubr.svg" class="mil-zoom-0_5">
       </a>
       <div class="header-links flex-grow-all pdng-l-20px pdng-r-20px mil-notdisplay">
-        <router-link :to="route.to" v-for="route of routes">
+        <router-link :to="route.to" v-for="route of routes" :class="{'active' : active === route.name}">
           {{ route.name }}
         </router-link>
       </div>
@@ -67,10 +67,13 @@ const hash = {
   'commissions': 'Комиссии'
 }
 export default defineComponent({
+  props: {
+    active: String
+  },
   components: {
     Dropdown
   },
-  setup() {
+  setup(props) {
     const query = ref();
     const results = ref([
       {
@@ -111,6 +114,7 @@ export default defineComponent({
       }),
       results,
       query,
+      active: props.active,
       async load({value}) {
         try {
           const response = await fetch(

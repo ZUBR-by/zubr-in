@@ -1,5 +1,5 @@
 <template>
-  <header-view>
+  <header-view :active="'Кампании'">
     <div class="header-subnav">
       <div class="section flex-grow-all pdng-30px pdng-t-15px pdng-b-15px mil-pdng-20px mil-pdng-t-5px mil-pdng-b-10px">
         <div class="inline-block">
@@ -7,21 +7,21 @@
             Тип избирательной кампании
           </div>
           <div class="buttongroup">
-            <div class="buttongroup-unit">
+            <button class="buttongroup-unit">
               Все
-            </div>
+            </button>
             <div class="buttongroup-unit active">
               Местные
             </div>
-            <div class="buttongroup-unit">
+            <button class="buttongroup-unit">
               Парламентские
-            </div>
-            <div class="buttongroup-unit">
+            </button>
+            <button class="buttongroup-unit">
               Президенсткие
-            </div>
-            <div class="buttongroup-unit">
+            </button>
+            <button class="buttongroup-unit">
               Референдум
-            </div>
+            </button>
           </div>
         </div>
 <!--        <div class="inline-block mrgn-l-30px">
@@ -51,7 +51,7 @@
       </div>
     </div>
   </header-view>
-  <div class="scene mrgn-t-190px mil-mrgn-t-120px">
+  <div class="scene mil-mrgn-t-170px">
     <div class="election-campaign-list" v-if="loading">
       Загрузка...
     </div>
@@ -63,7 +63,7 @@
               class="section flex-grow-all txt-size-20px mil-txt-size-15px pdng-20px pdng-l-40px pdng-r-40px mil-pdng-15px mil-pdng-l-20px">
             <div class="txt-color-1 txt-medium" v-if="campaign.started_at"
                  :class="{'grayscale' : !isLater(campaign.started_at)}">
-              {{ campaign.started_at }} - {{ campaign.ended_at }}
+              {{ formatDateCampaign(campaign)}}
             </div>
             <div class="txt-color-1 txt-medium" v-else>
               Нет даты
@@ -125,7 +125,7 @@
 import Header from './Header.vue'
 import {defineComponent, ref} from "vue";
 import SelectButton from "primevue/selectbutton";
-
+import {formatDateCampaign} from '../date'
 function fetchCampaigns() {
   const data = ref(null)
   const error = ref(null)
@@ -168,7 +168,8 @@ export default defineComponent({
     return {
       data,
       loading,
-      isLater
+      isLater,
+      formatDateCampaign
     }
   }
 })
