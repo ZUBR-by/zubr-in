@@ -7,7 +7,7 @@
           <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">
             Название
           </div>
-          <input-text autofocus></input-text>
+          <input class="p-inputtext p-component" autofocus v-model.lazy="name">
         </div>
       </div>
     </div>
@@ -36,13 +36,18 @@
 <script>
 import Header from './Header.vue'
 import InputText from 'primevue/inputtext'
-import {defineComponent, onMounted, ref} from "vue";
+import {defineComponent, onMounted, ref, watch} from "vue";
 
+
+const name = ref('')
 const data = ref(null)
 
 async function fetchOrganizations() {
   try {
-    const response = await fetch(import.meta.env.VITE_API_URL + '/organizations')
+    const response = await fetch(import.meta.env.VITE_API_URL
+        + '/organizations'
+        + (name.value ? '?name=' + encodeURIComponent('%' + name.value + '%') : '')
+    )
     data.value = await response.json()
   } catch (e) {
     data.value = {organizations: [], pagination: {aggregate: {count: 0}}};
@@ -57,12 +62,18 @@ export default defineComponent({
     'header-view': Header,
     InputText
   },
+
+
   setup() {
+    watch(name, () => {
+      fetchOrganizations()
+    })
     onMounted(() => {
       fetchOrganizations()
     });
     return {
-      data
+      data,
+      name
     }
   }
 })
