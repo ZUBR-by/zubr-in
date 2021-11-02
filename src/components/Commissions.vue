@@ -1,19 +1,26 @@
 <template>
   <header-view :active="'Комиссии'">
     <div class="header-subnav border-color2">
-      <div class="section flex-grow-all pdng-30px pdng-t-15px pdng-b-15px mil-pdng-20px mil-pdng-t-10px mil-pdng-b-10px">
+      <div
+          class="section flex-grow-all pdng-30px pdng-t-15px pdng-b-15px mil-pdng-20px mil-pdng-t-10px mil-pdng-b-10px">
         <div class="inline-block">
           <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">
             Тип комиссии
           </div>
           <div class="buttongroup">
-            <button class="buttongroup-unit" @click="commissionType = null" :class="{active: commissionType == null}">
+            <button class="buttongroup-unit"
+                    @click="commissionType = 'ELECTION_COMMISSION'"
+                    :class="{active: commissionType === 'ELECTION_COMMISSION'}">
               Все
             </button>
-            <button class="buttongroup-unit" @click="commissionType = 'territorial'" :class="{active: commissionType === 'territorial'}">
+            <button class="buttongroup-unit"
+                    @click="commissionType = 'ELECTION_COMMISSION_TERRITORIAL'"
+                    :class="{active: commissionType === 'ELECTION_COMMISSION_TERRITORIAL'}">
               Территориальные
             </button>
-            <button class="buttongroup-unit" @click="commissionType = 'precinct'" :class="{active: commissionType === 'precinct'}">
+            <button class="buttongroup-unit"
+                    @click="commissionType = 'ELECTION_COMMISSION_PRECINCT'"
+                    :class="{active: commissionType === 'ELECTION_COMMISSION_PRECINCT'}">
               Участковые
             </button>
           </div>
@@ -23,15 +30,18 @@
             Кампания
           </div>
           <div class="buttongroup">
-            <button class="buttongroup-unit" @click="campaign = '2020-08-presidential'"
+            <button class="buttongroup-unit"
+                    @click="campaign = '2020-08-presidential'"
                     :class="{active: campaign === '2020-08-presidential'}">
               2020
             </button>
-            <button class="buttongroup-unit" @click="campaign = '2019-10-parliamentary'"
+            <button class="buttongroup-unit"
+                    @click="campaign = '2019-10-parliamentary'"
                     :class="{active: campaign === '2019-10-parliamentary'}">
               2019
             </button>
-            <button class="buttongroup-unit" @click="campaign = '2018-02-local'"
+            <button class="buttongroup-unit"
+                    @click="campaign = '2018-02-local'"
                     :class="{active: campaign === '2018-02-local'}">
               2018
             </button>
@@ -97,7 +107,8 @@
               </div>
             </div>
           </div>
-          <div class="section size-25 flex-grow-all txt-algn-r pdng-r-30px pdng-l-20px pdng-t-20px pdng-b-20px mil-pdng-15px">
+          <div
+              class="section size-25 flex-grow-all txt-algn-r pdng-r-30px pdng-l-20px pdng-t-20px pdng-b-20px mil-pdng-15px">
             <div class="inline-flex flex-algn-itms-c">
               <div class="section">
                 <div class="flex-row flex-algn-itms-c">
@@ -133,9 +144,11 @@
           </div>
         </a>
       </div>
-      <div class="flex-column flex-algn-itms-c pdng-t-40px">
+      <div class="flex-column flex-algn-itms-c pdng-t-40px" v-if="data">
         <button @click="offset = offset + 50" class="button primary pdng-l-40px pdng-r-40px">
-          Загрузить еще 100 <span class="notdisplay">избирательных</span> комиссий из {{ data.pagination.aggregate.count }}
+          Загрузить еще 100 <span class="notdisplay">избирательных</span> комиссий из {{
+            data.pagination.aggregate.count
+          }}
         </button>
       </div>
     </template>
@@ -262,7 +275,7 @@ import {defineComponent, onMounted, ref, watch} from "vue";
 
 const data = ref(null)
 const campaign = ref('2020-08-presidential')
-const commissionType = ref(null)
+const commissionType = ref('ELECTION_COMMISSION')
 const offset = ref(0)
 
 async function fetchCommissions() {
@@ -273,6 +286,7 @@ async function fetchCommissions() {
         + campaign.value
         + '&offset='
         + offset.value
+        + '&type=' + encodeURIComponent(commissionType.value + '%')
     )
     const tmp = await response.json()
 
@@ -306,6 +320,9 @@ export default defineComponent({
       fetchCommissions()
     })
     watch(offset, () => {
+      fetchCommissions()
+    })
+    watch(commissionType, () => {
       fetchCommissions()
     })
     return {
