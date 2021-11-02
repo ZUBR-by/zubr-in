@@ -1,5 +1,17 @@
 <template>
   <div id="map" style="height: 100%;width: 100%"></div>
+  <Dialog v-model:visible="showModal"
+          class="popup"
+          :show-header="false"
+          :modal="true">
+    <div class="scene">
+      <p v-for="feature of features">
+        <a :href="'/commission/' + feature.getProperties().id">
+          {{feature.getProperties().code}}|{{feature.getProperties().name}} {{feature.getProperties().description}}
+        </a>
+      </p>
+    </div>
+  </Dialog>
 </template>
 <script>
 import Map from "ol/Map";
@@ -11,10 +23,25 @@ import VectorLayer from "ol/layer/Vector";
 import VectorSource from "ol/source/Vector";
 import GeoJSON from "ol/format/GeoJSON"
 import {Circle, Fill, Icon, Style, Text} from 'ol/style';
+import Dialog from './Modal.vue';
+import {ref} from "vue";
+
+const features = ref(null)
+const showModal = ref(false)
 
 export default {
+  components: {
+    Dialog
+  },
   props: {
     feature: Object
+  },
+  setup() {
+
+      return {
+        features,
+        showModal
+      }
   },
   mounted() {
     document.getElementById('map').innerHTML = '';
@@ -33,7 +60,16 @@ export default {
         ]),
       })
     });
-
+    map.on('click', e => {
+      e.preventDefault();
+      map.forEachFeatureAtPixel(e.pixel, baseFeature => {
+        if (baseFeature.getProperties().features.length === 0) {
+          return
+        }
+        showModal.value = true;
+        features.value = baseFeature.getProperties().features
+      });
+    });
     const cluster = new Cluster({
       distance: 40,
       source: new VectorSource({
