@@ -67,8 +67,8 @@
   </div>
   <div class="scene" v-if="data">
     <h2 class="flex-row flex-algn-itms-c txt-size-36px txt-bold pdng-b-40px mil-flex-column mil-txt-size-30px">
-      <span>Члены комиссий от организации</span>
-      <div class="buttongroup mrgn-l-20px mil-mrgn-0 mil-mrgn-t-20px mil-size-100">
+      <span>Члены комиссий от организации({{data.organization.persons.length}})</span>
+      <div class="buttongroup mrgn-l-20px mil-mrgn-0 mil-mrgn-t-20px mil-size-100" v-if="false">
         <div class="buttongroup">
           <button class="buttongroup-unit" :class="{active: view === 'list'}" @click="view = 'list'">
             Списком
