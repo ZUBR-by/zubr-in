@@ -121,15 +121,15 @@
               <div class="txt-color-1 txt-size-12px txt-medium mrgn-t-10px">
                 {{ item.position }}
               </div>
-              <div class="infoblock txt-size-12px" v-if="item.extra.referral_notes">
+              <div class="infoblock txt-size-12px" v-if="item.extra.referral_notes || item.person.extra.referral_description">
                 <div class="infoblock-name">
                   Выдвинут:
                 </div>
                 <div class="infoblock-value">
-                  {{ item.extra.referral_notes }}
+                  {{ item.extra.referral_notes || item.person.extra.referral_description }}
                 </div>
               </div>
-              <div class="infoblock txt-size-12px">
+              <div class="infoblock txt-size-12px" v-if="false">
                 <div class="infoblock-name">
                   Работодатель
                 </div>
@@ -510,6 +510,7 @@ const map = {
   ELECTION_COMMISSION_PRECINCT_PARLIAMENTARY_2019: 'Участковая',
   ELECTION_COMMISSION_PRECINCT_LOCAL_2018: 'Участковая',
   ELECTION_COMMISSION_TERRITORIAL_LOCAL_2018: 'Территориальная',
+  ELECTION_COMMISSION_CENTRAL: 'Центральная',
 }
 
 async function fetchCommission() {
