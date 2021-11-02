@@ -3,8 +3,11 @@
     <div class="header-subnav border-t-1px border-color2">
       <div
           class="section flex-grow-all pdng-30px pdng-t-15px pdng-b-15px mil-pdng-20px mil-pdng-t-10px mil-pdng-b-10px">
-        <div class="txt-color-1 txt-size-18px mil-txt-size-14px" v-if="data">
+        <div class="txt-color-1 txt-size-18px mil-txt-size-14px" v-if="data && data.campaing.started_at">
           {{ formatDateCampaign(data.campaign)}}
+        </div>
+        <div class="txt-color-1 txt-size-18px mil-txt-size-14px" v-else>
+          Нет даты
         </div>
         <div class="txt-size-18px mil-txt-size-14px txt-bold" v-if="false">
           28 дней до начала
@@ -44,7 +47,7 @@
       </div>
     </div>
   </header-view>
-  <div class="scene mil-mrgn-t-120px" v-if="data">
+  <div class="scene mrgn-t-170px mil-mrgn-t-120px" v-if="data">
     <h1 class="mil-txt-size-34px">
       {{ data.campaign.name }}
     </h1>
@@ -63,11 +66,6 @@
       </template>
     </div>
     <div class="mrgn-t-40px" v-if="false">
-      <p>
-        Это платформа для наблюдателей и избирателей в Беларуси.
-        Здесь можно узнать о любом из кандидатов и их кампаниях, любой из задействованных в выборах организациях, любом
-        из членов избирательных комиссий на любом из работающих на этих выборах участков для голосования.
-      </p>
       <p>
         Это платформа для наблюдателей и избирателей в Беларуси.
         Здесь можно узнать о любом из кандидатов и их кампаниях, любой из задействованных в выборах организациях, любом
@@ -162,7 +160,7 @@
     <div class="map-content">
       <div class="flex-row mil-block pdng-b-15px txt-size-14px">
         <div class="section flex-grow-all">
-          <div class="inline-flex flex-algn-itms-c txt-color-3-1">
+          <div class="inline-flex flex-algn-itms-c txt-color-3-1" v-if="false">
             <div>
               <svg width="22" height="13" viewBox="0 0 22 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11 1C14.9773 1 17.4849 2.50522 19.0028 3.96966C19.7698 4.70972 20.2931 5.44898 20.6224 5.99842C20.7392 6.19335 20.8311 6.36347 20.9002 6.5C20.8311 6.63653 20.7392 6.80664 20.6224 7.00158C20.2931 7.55102 19.7698 8.29028 19.0028 9.03034C17.4849 10.4948 14.9773 12 11 12C7.02275 12 4.51514 10.4948 2.99725 9.03034C2.23018 8.29028 1.70689 7.55102 1.37761 7.00158C1.26079 6.80664 1.16894 6.63653 1.09977 6.5C1.16894 6.36347 1.26079 6.19336 1.37761 5.99842C1.70689 5.44898 2.23018 4.70972 2.99725 3.96966C4.51514 2.50522 7.02275 1 11 1Z" stroke="#FF5C01" stroke-width="2"></path>
@@ -186,7 +184,7 @@
             </div>
           </div>
         </div>
-        <div class="section mil-mrgn-t-10px">
+        <div class="section mil-mrgn-t-10px" v-if="false">
           <label class="flex-row flex-algn-itms-c txt-color-3-1">
             <input type="checkbox" style="width:16px; height:16px; flex-shrink:0;">
             <span class="mrgn-l-5px">
