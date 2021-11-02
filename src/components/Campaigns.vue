@@ -1,6 +1,6 @@
 <template>
   <header-view :active="'Кампании'">
-    <div class="header-subnav">
+    <div class="header-subnav" v-if="false">
       <div class="section flex-grow-all pdng-30px pdng-t-15px pdng-b-15px mil-pdng-20px mil-pdng-t-5px mil-pdng-b-10px">
         <div class="inline-block">
           <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">
@@ -51,12 +51,11 @@
       </div>
     </div>
   </header-view>
-  <div class="scene mrgn-t-170px mil-mrgn-t-170px">
+  <div class="scene mrgn-t-130px mil-mrgn-t-120px">
     <div class="election-campaign-list" v-if="loading">
       Загрузка...
     </div>
     <div class="election-campaign-list" v-if="data">
-
       <div class="election-campaign-unit" v-for="(campaign) of data.campaigns">
         <div class="elect-camp-unit-header flex-row flex-algn-itms-c size-100 border-b-2px border-color2">
           <div
