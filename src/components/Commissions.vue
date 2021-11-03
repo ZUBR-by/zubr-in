@@ -156,7 +156,7 @@
   <div v-show="view === 'map'" v-if="mapInit">
     <div style="max-width:100%; padding:0;" class="scene mil-mrgn-t-120px">
       <div class="map-wrp" style="background:#EDEDED; min-height:640px;height: 300px">
-        <commission-map v-if="mapInit === true"></commission-map>
+        <commission-map v-if="mapInit === true" ref="map" :init-campaign="campaign"></commission-map>
         <div class="map-wrp-legend txt-size-14px mil-flex-row mil-notdisplay" v-if="false">
           <div class="inline-flex flex-algn-itms-c txt-color-3-1 mil-size-50">
             <div>
@@ -277,6 +277,7 @@ const data = ref(null)
 const campaign = ref('2020-08-presidential')
 const commissionType = ref('ELECTION_COMMISSION')
 const offset = ref(0)
+const map = ref(null)
 
 async function fetchCommissions() {
   try {
@@ -318,6 +319,9 @@ export default defineComponent({
     })
     watch(campaign, () => {
       fetchCommissions()
+      if (map.value) {
+        map.value.changeLayer(campaign.value);
+      }
     })
     watch(offset, () => {
       fetchCommissions()
@@ -327,6 +331,7 @@ export default defineComponent({
     })
     return {
       view,
+      map,
       data,
       mapInit,
       campaign,

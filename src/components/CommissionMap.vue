@@ -7,7 +7,7 @@
     <div class="scene">
       <p v-for="feature of features">
         <a :href="'/commission/' + feature.getProperties().id">
-          {{feature.getProperties().code}}|{{feature.getProperties().name}} {{feature.getProperties().description}}
+          {{ feature.getProperties().code }}|{{ feature.getProperties().name }} {{ feature.getProperties().address }}
         </a>
       </p>
     </div>
@@ -24,60 +24,30 @@ import VectorSource from "ol/source/Vector";
 import GeoJSON from "ol/format/GeoJSON"
 import {Circle, Fill, Icon, Style, Text} from 'ol/style';
 import Dialog from './Modal.vue';
-import {ref} from "vue";
+import {ref, onMounted} from "vue";
 
 const features = ref(null)
 const showModal = ref(false)
+const styleCache = {};
 
 export default {
   components: {
     Dialog
   },
   props: {
-    feature: Object
+    initCampaign: {
+      type: String,
+      default: '2020-08-presidential'
+    }
   },
-  setup() {
-
-      return {
-        features,
-        showModal
-      }
-  },
-  mounted() {
-    document.getElementById('map').innerHTML = '';
-    let map = new Map({
-      layers: [
-        new TileLayer({
-          source: new OSM(),
-        }),
-      ],
-      target: 'map',
-      view: new View({
-        zoom: 6.8,
-        center: fromLonLat([
-          27.7834,
-          53.7098
-        ]),
-      })
-    });
-    map.on('click', e => {
-      e.preventDefault();
-      map.forEachFeatureAtPixel(e.pixel, baseFeature => {
-        if (baseFeature.getProperties().features.length === 0) {
-          return
-        }
-        showModal.value = true;
-        features.value = baseFeature.getProperties().features
-      });
-    });
+  setup(props) {
     const cluster = new Cluster({
       distance: 40,
       source: new VectorSource({
-        url: 'commissions/2020.json',
+        url: `commissions/${props.initCampaign}.json`,
         format: new GeoJSON()
       }),
     });
-    const styleCache = {};
     let marker = new VectorLayer({
       source: cluster,
       style(feature) {
@@ -119,8 +89,49 @@ export default {
         return style;
       },
     });
+    onMounted(() => {
+      document.getElementById('map').innerHTML = '';
+      let map = new Map({
+        layers: [
+          new TileLayer({
+            source: new OSM(),
+          }),
+        ],
+        target: 'map',
+        view: new View({
+          zoom: 6.8,
+          center: fromLonLat([
+            27.7834,
+            53.7098
+          ]),
+        })
+      });
+      map.on('click', e => {
+        e.preventDefault();
+        map.forEachFeatureAtPixel(e.pixel, baseFeature => {
+          if (baseFeature.getProperties().features.length === 0) {
+            return
+          }
+          showModal.value = true;
+          features.value = baseFeature.getProperties().features
+        });
+      });
+      map.addLayer(marker);
+    })
+    return {
+      features,
+      showModal,
+      changeLayer(campaign) {
+        cluster.setSource(
+            new VectorSource({
+              url: `commissions/${campaign}.json`,
+              format: new GeoJSON()
+            })
+        )
+        marker.getSource().refresh()
+      }
+    }
+  },
 
-    map.addLayer(marker);
-  }
 }
 </script>
