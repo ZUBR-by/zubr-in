@@ -44,7 +44,7 @@ export default {
     const cluster = new Cluster({
       distance: 40,
       source: new VectorSource({
-        url: `commissions/${props.initCampaign}.json`,
+        url: `/commissions/${props.initCampaign}.json`,
         format: new GeoJSON()
       }),
     });

@@ -3,7 +3,7 @@
     <div class="header-subnav border-t-1px border-color2">
       <div
           class="section flex-grow-all pdng-30px pdng-t-15px pdng-b-15px mil-pdng-20px mil-pdng-t-10px mil-pdng-b-10px">
-        <div class="txt-color-1 txt-size-18px mil-txt-size-14px" v-if="data && data.campaing.started_at">
+        <div class="txt-color-1 txt-size-18px mil-txt-size-14px" v-if="data && data.campaign.started_at">
           {{ formatDateCampaign(data.campaign)}}
         </div>
         <div class="txt-color-1 txt-size-18px mil-txt-size-14px" v-else>
@@ -18,13 +18,7 @@
         <div class="section">
           <div class="flex-row flex-algn-itms-c">
             <div class="section">
-              <svg class="mil-zoom-0_75" width="25" height="33" viewBox="0 0 25 33" fill="none"
-                   xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M2.71436 2.57623C2.71436 2.57623 6.78428 0.261278 9.50878 0.0235027C13.0632 -0.286697 16.0314 2.57623 18.4774 2.57623C20.9234 2.57623 25.0001 0.874411 25.0001 0.874411V17.8926C25.0001 17.8926 22.2207 19.2549 20.3799 19.5944C16.1164 20.3807 13.8572 17.0417 9.50878 17.0417C5.16035 17.0417 2.71436 19.5944 2.71436 19.5944V2.57623Z"
-                    fill="#FF5C01"></path>
-                <rect y="1" width="2" height="32" fill="#FF5C01"></rect>
-              </svg>
+              <img src="/img/icon/flag_large.svg" class="zoom-0_75">
             </div>
             <div class="section pdng-l-15px">
               <div class="txt-size-18px mil-txt-size-14px">
@@ -75,7 +69,7 @@
   </div>
   <div class="scene" v-if="data && data.campaign.messages_aggregate.aggregate.count">
     <h2 class="txt-size-36px mil-txt-size-30px txt-bold pdng-b-40px">
-      Последние инциденты. <a class="txt-underline-inline-2px" href="#">
+      Последние инциденты. <a class="txt-underline-inline-2px" :href="'/campaign/' + data.campaign.id + '/messages'">
       Всего {{ data.campaign.messages_aggregate.aggregate.count }} сообщений о нарушениях
     </a>.
     </h2>
@@ -134,8 +128,9 @@
         </div>
       </div>
     </div>
-    <div class="flex-column flex-algn-itms-c pdng-t-40px">
-      <a href="#" class="button primary inline-flex flex-algn-itms-c pdng-l-40px pdng-r-40px">
+    <div class="flex-column flex-algn-itms-c pdng-t-40px" v-if="data">
+      <a :href="'/campaign/' + data.campaign.id + '/messages'"
+         class="button primary inline-flex flex-algn-itms-c pdng-l-40px pdng-r-40px">
         <div class="section">
           Показать все {{ data.campaign.messages_aggregate.aggregate.count }} нарушений <span class="mil-notdisplay">и инцидентов</span>
         </div>
@@ -151,11 +146,13 @@
   </div>
   <div class="scene">
     <h2 class="txt-size-36px mil-txt-size-30px txt-bold pdng-b-40px">
-      Избирательные комиссии.
-      <br>
-      Всего наблюдается <a class="txt-underline-2px" href="/commissions">317</a> участков из <a
-        class="txt-underline-2px" href="#">1
-      396</a>.
+      Избирательные комиссии
+      <template v-if="false">
+        <br>
+        Всего наблюдается <a class="txt-underline-2px" href="/commissions">317</a> участков из <a
+          class="txt-underline-2px" href="#">1
+        396</a>.
+      </template>
     </h2>
     <div class="map-content">
       <div class="flex-row mil-block pdng-b-15px txt-size-14px">
@@ -193,7 +190,9 @@
           </label>
         </div>
       </div>
-      <div class="map-wrp" style="background:#EDEDED; width:auto; height:460px"></div>
+      <div class="map-wrp" style="background:#EDEDED; width:auto; height:460px" v-if="data">
+        <commission-map :init-campaign="data.campaign.id" ></commission-map>
+      </div>
     </div>
   </div>
 </template>
@@ -202,6 +201,7 @@ import Header from './Header.vue';
 import {defineComponent, onMounted, ref} from "vue";
 import {useRoute} from 'vue-router'
 import {hash} from './Messages.vue'
+import CommissionMap from './CommissionMap.vue'
 import {formatDateCampaign} from "../date";
 const data = ref(null)
 
@@ -219,7 +219,8 @@ async function fetchCampaign() {
 
 export default defineComponent({
   components: {
-    'header-view': Header
+    'header-view': Header,
+    CommissionMap
   },
   setup() {
     onMounted(() => {

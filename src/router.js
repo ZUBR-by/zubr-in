@@ -22,13 +22,6 @@ const routes = [
         component: Home,
     },
     {
-        path: '/messages',
-        name: 'messages',
-        label: 'Сообщения',
-        exclude: true,
-        component: Messages,
-    },
-    {
         path: '/campaigns',
         name: 'campaigns',
         label: 'Кампании',
@@ -99,6 +92,13 @@ const routes = [
         label: 'Кампания',
         exclude: true,
         component: Campaign,
+    },
+    {
+        path: '/campaign/:id/messages',
+        name: 'campaign_message',
+        label: 'Сообщения',
+        exclude: true,
+        component: Messages,
     },
 ]
 const router = createRouter({
