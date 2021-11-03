@@ -25,11 +25,14 @@
         </div>
       </a>
     </div>
-    <div class="flex-column flex-algn-itms-c pdng-t-40px" v-if="data">
+    <div class="flex-column flex-algn-itms-c pdng-t-40px" v-if="data && data.pagination.aggregate.count > 0">
       <a href="#" class="button primary pdng-l-40px pdng-r-40px">
         Загрузить еще 50 <span class="mil-notdisplay">избирательных</span> комиссий из
         {{ data.pagination.aggregate.count }}
       </a>
+    </div>
+    <div v-if="data && data.pagination.aggregate.count === 0">
+      Не найдено
     </div>
   </div>
 </template>
