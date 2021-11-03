@@ -115,7 +115,8 @@
               <div class="txt-color-1 txt-size-12px txt-medium mrgn-t-10px">
                 {{ item.position }}
               </div>
-              <div class="infoblock txt-size-12px" v-if="item.extra.referral_notes || item.person.extra.referral_description">
+              <div class="infoblock txt-size-12px"
+                   v-if="item.extra.referral_notes || item.person.extra.referral_description">
                 <div class="infoblock-name">
                   Выдвинут:
                 </div>
@@ -143,62 +144,7 @@
       <a class="txt-underline-inline-2px" href="#">Всего {{ data.commission.violations.length }} сообщений о
         нарушениях</a>.
     </h2>
-    <div class="incident-list">
-      <div class="incident-unit cursor-pointer"
-           v-for="violation of data.commission.violations"
-           @click="showModal(violation)">
-        <div class="size-25 mil-size-100 flex-column flex-noshrink pdng-20px txt-medium">
-          <div class="flex-grow-all">
-            <div class="txt-color-3-1 txt-size-12px mrgn-t-5px">
-              {{ violation.created_at }}
-            </div>
-            <div class="txt-size-14px">
-              <div v-for="cat of violation.categories" class="pdng-t-5px">
-                {{ hash[cat] }}
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="mrgn-t-10px">
-              <a class="inline txt-size-12px txt-underline-inline" href="#">
-                Честные люди
-              </a>
-            </div>
-          </div>
-        </div>
-        <div
-            class="flex-grow-all border-l-1px border-r-1px border-color2  mil-border-0 mil-border-t-1px mil-border-b-1px mil-border-color1 pdng-20px mil-size-100 mil-border-0 mil-border-t-1px mil-border-b-1px">
-          <p class="txt-size-14px txt-color-3-1">
-            {{ violation.description }}
-          </p>
-          <div class="tag-wrp pdng-t-10px">
-            <a href="" class="tag-unit">Заметка</a>
-          </div>
-        </div>
-        <div class="size-20 flex-column flex-noshrink pdng-20px mil-size-100 mil-flex-row">
-          <div class="flex-grow-all">
-            <div class="flex-row flex-algn-itms-c">
-              <div class="section">
-                <img src="/img/icon/attachment.svg">
-              </div>
-              <div class="section pdng-l-10px" v-if="violation.attachments.length">
-                <div class="txt-color-1 txt-bold txt-size-14px">
-                  {{ violation.attachments.length > 0 ? violation.attachments.length : 'Нет' }}
-                </div>
-                <div class="txt-size-14px">
-                  вложений
-                </div>
-              </div>
-              <div class="section pdng-l-10px" v-else>
-                <div class="txt-size-14px">
-                  Нет вложений
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <message-list :messages="data.commission.violations"></message-list>
   </div>
   <div class="scene" v-if="false">
     <h2 class="txt-size-36px mil-txt-size-30px txt-bold pdng-b-40px">
@@ -250,244 +196,14 @@
       </div>
     </div>
   </div>
-  <Dialog v-model:visible="displayModal"
-          class="popup"
-          :show-header="false"
-          :modal="true">
-    <template #header>
-      Инцидент #{{ message.id }}
-    </template>
-    <template v-if="message">
-      <div class="flex-row flex-algn-itms-c border-b-1px border-color1 mil-flex-column">
-        <div
-            class="section flex-grow-all pdng-l-30px pdng-r-20px pdng-t-20px pdng-b-20px mil-size-100 mil-pdng-l-20px mil-pdng-r-20px">
-          <div class="txt-size-14px txt-medium">
-            {{ formatCategories(message.categories) }}
-          </div>
-          <div class="txt-color-3-1 txt-size-12px txt-medium">
-            {{ message.created_at }}
-          </div>
-          <div class="tag-unit  mrgn-t-20px">
-            Честные люди
-          </div>
-        </div>
-        <div class="section pdng-r-30px pdng-l-20px mil-size-100 mil-pdng-b-30px mil-pdng-t-20px">
-          <!-- ПОказываем кнопку в диалоге просмотра инцидента везде, кроме раздела инцидентов и подраздела инцидентов в разделе кампании -->
-          <a class="button medium mil-size-100 txt-algn-c" href="#">Все нарушения/инциденты кампании</a>
-        </div>
-      </div>
-      <div class="pdng-30px mil-pdng-20px">
-        <div v-if="false">
-          <h3 class="txt-size-20px txt-bold">
-            Инцидент затрагивает:
-          </h3>
-          <div class="mrgn-t-30px">
-            <div class="campaign-candidates-list">
-              <div class="person-wrp flex-column flex-algn-itms-strch">
-                <div class="person-photo">
-                  <div class="person-initials">С.Г.Т.</div>
-                  <img src="/img/user.svg" alt="Светлана Георгиевна Тихановская">
-                </div>
-                <div class="person-info pdng-t-10px">
-                  <div class="person-name txt-size-14px txt-medium">
-                    Светлана Георгиевна
-                    <br>
-                    Тихановская
-                  </div>
-                  <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
-                    Зам. председателя комиссии
-                  </div>
-                </div>
-
-                <div class="person-popover cursor-pointer">
-                  <div class="flex-column flex-algn-itms-strch">
-                    <div class="person-photo">
-                      <div class="person-initials">С.Г.Т.</div>
-                      <img src="/img/user.svg" alt="Светлана Георгиевна Тихановская">
-                    </div>
-                    <div class="person-info pdng-t-10px">
-                      <div class="person-name txt-size-14px txt-medium">
-                        Светлана Георгиевна
-                        <br>
-                        Тихановская
-                      </div>
-                      <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
-                        Зам. председателя комиссии
-                      </div>
-                      <div class="infoblock txt-size-12px">
-                        <div class="infoblock-name">
-                          Должность
-                        </div>
-                        <div class="infoblock-value ">
-                          Президент Республики Беларусь
-                        </div>
-                      </div>
-                      <div class="infoblock txt-size-12px">
-                        <div class="infoblock-name">
-                          Субъект выдвижения
-                        </div>
-                        <div class="infoblock-value ">
-                          Самовыдвижение
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-              <div class="person-wrp flex-column flex-algn-itms-strch">
-                <div class="person-photo">
-                  <div class="person-initials">С.Г.Т.</div>
-                  <img src="/img/user.svg" alt="Светлана Георгиевна Тихановская">
-                </div>
-                <div class="person-info pdng-t-10px">
-                  <div class="person-name txt-size-14px txt-medium">
-                    Светлана Георгиевна
-                    <br>
-                    Тихановская
-                  </div>
-                  <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
-                    Зам. председателя комиссии
-                  </div>
-                </div>
-
-                <div class="person-popover cursor-pointer">
-                  <div class="flex-column flex-algn-itms-strch">
-                    <div class="person-photo">
-                      <div class="person-initials">С.Г.Т.</div>
-                      <img src="/img/user.svg" alt="Светлана Георгиевна Тихановская">
-                    </div>
-                    <div class="person-info pdng-t-10px">
-                      <div class="person-name txt-size-14px txt-medium">
-                        Светлана Георгиевна
-                        <br>
-                        Тихановская
-                      </div>
-                      <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
-                        Зам. председателя комиссии
-                      </div>
-                      <div class="infoblock txt-size-12px">
-                        <div class="infoblock-name">
-                          Должность
-                        </div>
-                        <div class="infoblock-value ">
-                          Президент Республики Беларусь
-                        </div>
-                      </div>
-                      <div class="infoblock txt-size-12px">
-                        <div class="infoblock-name">
-                          Субъект выдвижения
-                        </div>
-                        <div class="infoblock-value ">
-                          Самовыдвижение
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-              <div class="person-wrp flex-column flex-algn-itms-strch">
-                <div class="person-photo">
-                  <div class="person-initials">С.Г.Т.</div>
-                  <img src="/img/user.svg" alt="Светлана Георгиевна Тихановская">
-                </div>
-                <div class="person-info pdng-t-10px">
-                  <div class="person-name txt-size-14px txt-medium">
-                    Светлана Георгиевна
-                    <br>
-                    Тихановская
-                  </div>
-                  <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
-                    Зам. председателя комиссии
-                  </div>
-                </div>
-
-                <div class="person-popover cursor-pointer">
-                  <div class="flex-column flex-algn-itms-strch">
-                    <div class="person-photo">
-                      <div class="person-initials">С.Г.Т.</div>
-                      <img src="/img/user.svg" alt="Светлана Георгиевна Тихановская">
-                    </div>
-                    <div class="person-info pdng-t-10px">
-                      <div class="person-name txt-size-14px txt-medium">
-                        Светлана Георгиевна
-                        <br>
-                        Тихановская
-                      </div>
-                      <div class="person-mark txt-color-3-1 txt-size-12px txt-medium">
-                        Зам. председателя комиссии
-                      </div>
-                      <div class="infoblock txt-size-12px">
-                        <div class="infoblock-name">
-                          Должность
-                        </div>
-                        <div class="infoblock-value ">
-                          Президент Республики Беларусь
-                        </div>
-                      </div>
-                      <div class="infoblock txt-size-12px">
-                        <div class="infoblock-name">
-                          Субъект выдвижения
-                        </div>
-                        <div class="infoblock-value ">
-                          Самовыдвижение
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <h3 class="txt-size-20px txt-bold">
-            Описание:
-          </h3>
-          <div class="mrgn-t-30px">
-            {{ message.description }}
-          </div>
-        </div>
-        <div class="mrgn-t-50px" v-if="message.attachments.length > 0">
-          <h3 class="txt-size-20px txt-bold">
-            Прикрепленные файлы:
-          </h3>
-          <div class="incident-attachments mrgn-t-30px">
-            <a :href="attachment.url" class="attachment-unit cursor-pointer"
-               v-for="(attachment, index) of message.attachments">
-              <div class="flex-row flex-algn-itms-c">
-                <div class="section">
-                  <img src="/img/icon/attachment.svg" alt="Иконка вложения">
-                </div>
-                <div class="section pdng-l-10px">
-                  <div class="txt-color-1 txt-bold txt-size-14px">
-                    Файл #{{ index + 1 }}
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="mrgn-t-50px">
-          <div class="txt-color-3-1 txt-size-14px">
-            Поделитесь этим материалам, это поможет <br> привлечь внимание к инциденту и его решению.
-          </div>
-        </div>
-      </div>
-    </template>
-  </Dialog>
-
 </template>
 <script>
 import Header from './Header.vue';
 import Location from './Point.vue';
 import {defineComponent, onMounted, ref} from "vue";
 import {useRoute} from 'vue-router'
-import Dialog from './Modal.vue';
 import Button from 'primevue/button';
-import {hash} from './Messages.vue'
+import MessageList from "./MessageList.vue";
 
 const data = ref(null)
 
@@ -515,29 +231,17 @@ async function fetchCommission() {
 
 export default defineComponent({
   components: {
+    MessageList,
     'header-view': Header,
     Location,
-    Dialog,
     Button
   },
   setup() {
     onMounted(() => {
       fetchCommission()
     })
-    const displayModal = ref(false)
-    const message = ref(null)
     return {
       data,
-      displayModal,
-      message,
-      formatCategories(categories) {
-        return categories.map(i => hash[i]).join(',')
-      },
-      showModal(violation) {
-        message.value = violation
-        displayModal.value = true
-      },
-      hash,
       map
     }
   }

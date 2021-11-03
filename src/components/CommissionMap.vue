@@ -14,6 +14,7 @@
   </Dialog>
 </template>
 <script>
+//TODO маркеры
 import Map from "ol/Map";
 import TileLayer from "ol/layer/Tile";
 import {Cluster, OSM} from "ol/source";
