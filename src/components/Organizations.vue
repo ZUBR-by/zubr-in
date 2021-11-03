@@ -5,9 +5,9 @@
           class="section flex-grow-all pdng-30px pdng-t-15px pdng-b-15px mil-pdng-20px mil-pdng-t-10px mil-pdng-b-10px">
         <div class="inline-block">
           <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">
-            Название
+            Фильтр
           </div>
-          <input class="p-inputtext p-component" autofocus v-model.lazy="name">
+          <input class="p-inputtext p-component" autofocus v-model.lazy="name" placeholder="Название, адрес...">
         </div>
       </div>
     </div>
