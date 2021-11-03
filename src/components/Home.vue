@@ -87,7 +87,7 @@
     <div class="pdng-b-40px">
       <h3 class="txt-size-36px mil-txt-size-30px txt-bold">
         Последние новости.
-        <a class="txt-underline-inline-2px" href="/news">Всего 73 новости</a>.
+        <a class="txt-underline-inline-2px" href="/news">Все новости</a>.
       </h3>
     </div>
     <div>
@@ -117,6 +117,7 @@ import {defineComponent, ref} from "vue";
 import Header from "./Header.vue";
 import {formatDateCampaign, formatDate} from '../date'
 
+const total = ref(0);
 function fetchLastNews() {
   const news = ref(null)
   const error = ref(null)
@@ -152,7 +153,8 @@ export default defineComponent({
       news,
       isLater,
       formatDateCampaign,
-      formatDate
+      formatDate,
+      total
     }
   }
 })
