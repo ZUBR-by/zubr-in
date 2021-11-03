@@ -29,8 +29,8 @@
       </div>
     </div>
     <div class="flex-column flex-algn-itms-c pdng-t-40px">
-      <a href="#" class="button primary pdng-l-40px pdng-r-40px">
-        Загрузить еще 10 новостей из 111
+      <a @click="loadMore" class="button primary pdng-l-40px pdng-r-40px">
+        Загрузить еще
       </a>
     </div>
   </div>
@@ -41,6 +41,8 @@ import Header from './Header.vue';
 import {defineComponent, ref} from "vue";
 import {formatDate} from '../date'
 
+const page = ref(1);
+
 function fetchNews() {
   const data = ref(null)
   const error = ref(null)
@@ -48,19 +50,36 @@ function fetchNews() {
   const load = async () => {
     try {
       loading.value = true
-      const response = await fetch('https://zubr.media/wp-json/wp/v2/posts?tags=79&per_page=10&_embed')
+      const response = await fetch('https://zubr.media/wp-json/wp/v2/posts?tags=79&per_page=10&_embed&page=' + page.value)
       let tmp = await response.json()
-      data.value = ((items) => {
-        let result = {};
-        for (let item of items) {
+      if (tmp.code) {
+        page.value -= 1;
+        loading.value = false
+        return;
+      }
+
+      if (page.value > 1) {
+        for (let item of tmp) {
           let d = item.date.split('T')[0];
-          if (!result[d]) {
-            result[d] = [];
+          if (!data.value[d]) {
+            data.value[d] = [];
           }
-          result[d].push(item)
+          data.value[d].push(item)
         }
-        return result;
-      })(tmp)
+      } else {
+        data.value = ((items) => {
+          let result = {};
+          for (let item of items) {
+            let d = item.date.split('T')[0];
+            if (!result[d]) {
+              result[d] = [];
+            }
+            result[d].push(item)
+          }
+          return result;
+        })(tmp)
+      }
+
       loading.value = false
     } catch (e) {
       loading.value = false
@@ -82,7 +101,11 @@ export default defineComponent({
     return {
       data,
       loading,
-      formatDate
+      formatDate,
+      loadMore() {
+        page.value += 1;
+        load()
+      }
     }
   }
 })
