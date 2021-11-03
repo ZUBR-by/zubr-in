@@ -5,6 +5,12 @@
           class="section flex-grow-all pdng-30px pdng-t-15px pdng-b-15px mil-pdng-20px mil-pdng-t-10px mil-pdng-b-10px">
         <div class="inline-block">
           <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">
+            Фильтр
+          </div>
+          <input class="p-inputtext p-component" autofocus v-model.lazy="search" placeholder="Код, адрес, название...">
+        </div>
+        <div class="inline-block mrgn-l-30px">
+          <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">
             Тип комиссии
           </div>
           <div class="buttongroup">
@@ -144,12 +150,15 @@
           </div>
         </a>
       </div>
-      <div class="flex-column flex-algn-itms-c pdng-t-40px" v-if="data">
-        <button @click="offset = offset + 50" class="button primary pdng-l-40px pdng-r-40px">
-          Загрузить еще 100 <span class="notdisplay">избирательных</span> комиссий из {{
+      <div class="flex-column flex-algn-itms-c pdng-t-40px" v-if="data.pagination.aggregate.count > 0">
+        <button @click="offset = offset + 50" class="button primary pdng-l-40px pdng-r-40px" v-if="data.pagination.aggregate.count > 50">
+          Загрузить еще 50 <span class="notdisplay">избирательных</span> комиссий из {{
             data.pagination.aggregate.count
           }}
         </button>
+      </div>
+      <div v-if="data.pagination.aggregate.count === 0">
+        Ничего не найдено
       </div>
     </template>
   </div>
@@ -278,6 +287,7 @@ const campaign = ref('2020-08-presidential')
 const commissionType = ref('ELECTION_COMMISSION')
 const offset = ref(0)
 const map = ref(null)
+const search = ref(null)
 
 async function fetchCommissions() {
   try {
@@ -288,6 +298,7 @@ async function fetchCommissions() {
         + '&offset='
         + offset.value
         + '&type=' + encodeURIComponent(commissionType.value + '%')
+        + (search.value ? '&search=' + encodeURIComponent('%' + search.value + '%') : '')
     )
     const tmp = await response.json()
 
@@ -329,6 +340,9 @@ export default defineComponent({
     watch(commissionType, () => {
       fetchCommissions()
     })
+    watch(search, () => {
+      fetchCommissions()
+    })
     return {
       view,
       map,
@@ -336,7 +350,8 @@ export default defineComponent({
       mapInit,
       campaign,
       commissionType,
-      offset
+      offset,
+      search
     }
   },
 })
