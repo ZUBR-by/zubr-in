@@ -3,13 +3,13 @@
     <div class="header-subnav border-color2">
       <div
           class="section flex-grow-all pdng-30px pdng-t-15px pdng-b-15px mil-pdng-20px mil-pdng-t-10px mil-pdng-b-10px">
-        <div class="inline-block">
+        <div class="inline-block" v-show="view === 'list'">
           <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">
             Фильтр
           </div>
           <input class="p-inputtext p-component" autofocus v-model.lazy="search" placeholder="Код, адрес, название...">
         </div>
-        <div class="inline-block mrgn-l-30px">
+        <div class="inline-block mrgn-l-30px" v-show="view === 'list'">
           <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">
             Тип комиссии
           </div>
@@ -31,7 +31,7 @@
             </button>
           </div>
         </div>
-        <div class="inline-block mrgn-l-30px">
+        <div class="inline-block" :class="{'mrgn-l-30px' : view === 'list'}">
           <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">
             Кампания
           </div>
