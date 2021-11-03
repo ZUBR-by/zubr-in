@@ -146,50 +146,43 @@
     </h2>
     <message-list :messages="data.commission.violations"></message-list>
   </div>
-  <div class="scene" v-if="false">
+  <div class="scene" v-if="data">
     <h2 class="txt-size-36px mil-txt-size-30px txt-bold pdng-b-40px">
-      Последние избирательные кампании
+      Избирательная кампания
     </h2>
     <div>
-      <!-- Archive campaigning -->
       <div class="election-campaign-unit">
         <div class="elect-camp-unit-header flex-row flex-algn-itms-c size-100 border-b-2px border-color2">
           <div
-              class="section flex-grow-all txt-size-18px mil-txt-size-14px pdng-20px pdng-l-40px pdng-r-40px mil-pdng-15px mil-pdng-l-20px grayscale">
-            <div class="txt-color-1 txt-medium">
-              6—9 августа 2021
+              class="section flex-grow-all txt-size-20px mil-txt-size-15px pdng-20px pdng-l-40px pdng-r-40px mil-pdng-15px mil-pdng-l-20px">
+            <div class="txt-color-1 txt-medium" v-if="data.commission.electoral_campaign.started_at"
+                 :class="{'grayscale' : !isLater(data.commission.electoral_campaign.started_at)}">
+              {{ formatDateCampaign(data.commission.electoral_campaign)}}
             </div>
-            <div class="txt-bold">
-              Архив
-            </div>
-          </div>
-          <div
-              class="section flex-algn-slf-strch flex-row flex-algn-itms-c border-l-2px border-color2 pdng-20px pdng-l-40px pdng-r-40px mil-pdng-15px mil-pdng-r-20px cursor-pointer hovered">
-            <div class="flex-row flex-algn-itms-c">
-              <div class="section">
-                <img src="/img/icon/flag_large.svg" class="mil-zoom-0_65">
-              </div>
-              <div class="section pdng-l-15px">
-                <div class="txt-size-20px mil-txt-size-14px mil-notdisplay">
-                  Сообщений
-                </div>
-                <div class="txt-size-20px mil-txt-size-14px txt-bold txt-nowrap">
-                  1 337
-                </div>
-              </div>
+            <div class="txt-color-1 txt-medium" v-else>
+              Нет даты
             </div>
           </div>
         </div>
         <div
-            class="elect-camp-unit-info pdng-t-20px pdng-b-40px pdng-l-40px pdng-r-40px mil-pdng-l-20px mil-pdng-r-20px mil-pdng-b-30px grayscale">
-          <h2 class="txt-color-1 txt-size-36px mil-txt-size-30px txt-lh-1_1em">
-            <a class="txt-underline-inline" href="#">
-              Выборы представителей нижней палаты верхнего представительства третьего созыва депутатов
+            class="elect-camp-unit-info pdng-t-20px pdng-b-40px pdng-l-40px pdng-r-40px mil-pdng-l-20px mil-pdng-r-20px mil-pdng-b-30px"
+            :class="{'grayscale' : !isLater(data.commission.electoral_campaign.started_at)}"
+        >
+          <h2 class="txt-color-1 txt-size-48px mil-txt-size-34px txt-lh-1_1em">
+            <a class="txt-underline-inline-2px" :href="'/campaign/' + data.commission.electoral_campaign.id">
+              {{ data.commission.electoral_campaign.name }}
             </a>
           </h2>
-          <div class="tag-wrp mrgn-t-20px">
-            <a class="tag-unit">
+          <div class="tag-wrp mrgn-t-20px" v-if="data.commission.electoral_campaign.extra.type">
+            <a class="tag-unit"
+               v-if="['parliamentary_elections', 'presidential_elections'].includes(data.commission.electoral_campaign.extra.type)">
               Общереспубликанские выборы
+            </a>
+            <a class="tag-unit" v-if="['local_elections'].includes(data.commission.electoral_campaign.extra.type)">
+              Местные выборы
+            </a>
+            <a class="tag-unit" v-if="['referendum'].includes(data.commission.electoral_campaign.extra.type)">
+              Референдум
             </a>
           </div>
         </div>
@@ -204,6 +197,7 @@ import {defineComponent, onMounted, ref} from "vue";
 import {useRoute} from 'vue-router'
 import Button from 'primevue/button';
 import MessageList from "./MessageList.vue";
+import {formatDateCampaign} from "../date";
 
 const data = ref(null)
 
@@ -229,6 +223,15 @@ async function fetchCommission() {
   }
 }
 
+function isLater(started_at) {
+  if (started_at === null) {
+    return true;
+  }
+  const current = new Date();
+  const campaign = new Date(started_at);
+
+  return campaign > current;
+}
 export default defineComponent({
   components: {
     MessageList,
@@ -242,7 +245,9 @@ export default defineComponent({
     })
     return {
       data,
-      map
+      map,
+      isLater,
+      formatDateCampaign
     }
   }
 })
