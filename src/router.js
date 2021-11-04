@@ -17,32 +17,32 @@ const routes = [
     {
         path: '/',
         name: 'home',
-        label: 'Главная',
+        meta: {title: 'Главная'},
         exclude: true,
         component: Home,
     },
     {
         path: '/campaigns',
         name: 'campaigns',
-        label: 'Кампании',
+        meta: {title: 'Кампании'},
         component: Campaigns,
     },
     {
         path: '/commissions',
         name: 'commissions',
-        label: 'Комиссии',
+        meta: {title: 'Комиссии'},
         component: Commissions,
     },
     {
         path: '/organization',
         name: 'organizations',
-        label: 'Организации',
+        meta: {title: 'Организации'},
         component: Organizations,
     },
     {
         path: '/organization/:id',
         name: 'organization',
-        label: 'Организация',
+        meta: {title: 'Организация'},
         exclude: true,
         component: Organization,
     },
@@ -50,53 +50,53 @@ const routes = [
         path: '/members',
         name: 'members',
         exclude: true,
-        label: 'Члены комиссий',
+        meta: {title: 'Члены комиссий'},
         component: Members,
     },
     {
         path: '/member/:id',
         name: 'member',
-        label: 'Член комиссии',
+        meta: {title: 'Член комиссии'},
         exclude: true,
         component: Member,
     },
     {
         path: '/commission/:id',
         name: 'commission',
-        label: 'Комиссия',
+        meta: {title: 'Комиссия'},
         exclude: true,
         component: Commission,
     },
     {
         path: '/news',
         name: 'news',
-        label: 'Новости',
+        meta: {title: 'Новости'},
         component: News,
     },
     {
         path: '/about',
         name: 'about',
-        label: 'О проекте',
+        meta: {title: 'О проекте'},
         component: About,
     },
     {
         path: '/news/:id',
         name: 'news_item',
-        label: 'Новость',
+        meta: {title: 'Новость'},
         exclude: true,
         component: NewsItem,
     },
     {
         path: '/campaign/:id',
         name: 'campaign',
-        label: 'Кампания',
+        meta: {title: 'Кампания'},
         exclude: true,
         component: Campaign,
     },
     {
         path: '/campaign/:id/messages',
         name: 'campaign_message',
-        label: 'Сообщения',
+        meta: {title: 'Сообщения'},
         exclude: true,
         component: Messages,
     },
@@ -104,6 +104,9 @@ const routes = [
 const router = createRouter({
     history: createWebHistory(),
     routes,
+})
+router.beforeEach((to) => {
+    document.title = `${to.meta.title} - ZUBR.in`
 })
 
 export default router

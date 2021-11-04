@@ -109,7 +109,7 @@ export default defineComponent({
       routes: routes.filter(i => !i.exclude).map(item => {
         return {
           to: item.path,
-          name: item.label
+          name: item.meta.title
         }
       }),
       results,
