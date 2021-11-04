@@ -1,7 +1,7 @@
 <template>
   <div class="incident-list">
     <div class="incident-unit cursor-pointer"
-         v-for="item of messages"
+         v-for="item of modelValue"
          @click="showModal(item)">
       <div class="size-25 mil-size-100 flex-column flex-noshrink pdng-20px txt-medium">
         <div class="flex-grow-all">
@@ -23,7 +23,7 @@
         <div>
           <div class="mrgn-t-10px">
             <a class="inline txt-size-12px txt-underline-inline" href="#" v-if="'initiative' in item.extra">
-              {{initiatives[item.extra.initiative]}}
+              {{ initiatives[item.extra.initiative] }}
             </a>
           </div>
         </div>
@@ -85,7 +85,7 @@
             </a>
           </div>
           <div class="tag-unit mrgn-t-20px" v-if="'initiative' in message.extra">
-            {{initiatives[message.extra.initiative]}}
+            {{ initiatives[message.extra.initiative] }}
           </div>
         </div>
         <div class="section pdng-r-30px pdng-l-20px mil-size-100 mil-pdng-b-30px mil-pdng-t-20px">
@@ -321,13 +321,13 @@ const hash = {
   11: "Другое",
 }
 
-export default {
+const MessageList = {
   name: "MessageList",
   components: {
     Dialog
   },
   props: {
-    messages: Array,
+    modelValue: Array,
     showCommission: {
       type: Boolean,
       default: true
@@ -343,7 +343,7 @@ export default {
       formatCategories(categories) {
         return categories.map(i => hash[i]).join(',')
       },
-      formatTime(raw){
+      formatTime(raw) {
         let d = new Date(raw);
         return d.toLocaleDateString('ru-RU', {
           year: 'numeric',
@@ -361,6 +361,8 @@ export default {
     }
   }
 }
+export {hash, initiatives, MessageList}
+export default MessageList
 </script>
 
 <style scoped>

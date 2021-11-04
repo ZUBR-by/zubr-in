@@ -73,7 +73,7 @@
       Всего {{ data.campaign.messages_aggregate.aggregate.count }} сообщений о нарушениях
     </a>.
     </h2>
-    <message-list :messages="data.campaign.messages"></message-list>
+    <message-list v-model="data.campaign.messages"></message-list>
     <div class="flex-column flex-algn-itms-c pdng-t-40px" v-if="data">
       <a :href="'/campaign/' + data.campaign.id + '/messages'"
          class="button primary inline-flex flex-algn-itms-c pdng-l-40px pdng-r-40px">

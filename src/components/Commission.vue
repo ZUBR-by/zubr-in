@@ -144,7 +144,7 @@
       <a class="txt-underline-inline-2px" href="#">Всего {{ data.commission.violations.length }} сообщений о
         нарушениях</a>.
     </h2>
-    <message-list :messages="data.commission.violations" :show-commission="false"></message-list>
+    <message-list v-model="data.commission.violations" :show-commission="false"></message-list>
   </div>
   <div class="scene" v-if="data && data.commission.electoral_campaign">
     <h2 class="txt-size-36px mil-txt-size-30px txt-bold pdng-b-40px">
