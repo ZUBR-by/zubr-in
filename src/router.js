@@ -30,7 +30,7 @@ const routes = [
     {
         path: '/commissions',
         name: 'commissions',
-        meta: {title: 'Комиссии'},
+        meta: {title: 'Избирательные комиссии'},
         component: Commissions,
     },
     {
@@ -50,7 +50,7 @@ const routes = [
         path: '/members',
         name: 'members',
         exclude: true,
-        meta: {title: 'Члены комиссий'},
+        meta: {title: 'Члены избирательных комиссий'},
         component: Members,
     },
     {
@@ -63,7 +63,7 @@ const routes = [
     {
         path: '/commission/:id',
         name: 'commission',
-        meta: {title: 'Комиссия'},
+        meta: {title: 'Избирательная комиссия'},
         exclude: true,
         component: Commission,
     },
@@ -96,7 +96,7 @@ const routes = [
     {
         path: '/campaign/:id/messages',
         name: 'campaign_message',
-        meta: {title: 'Сообщения'},
+        meta: {title: 'Сообщения о нарушениях'},
         exclude: true,
         component: Messages,
     },
