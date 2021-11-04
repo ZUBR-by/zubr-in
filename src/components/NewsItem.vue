@@ -92,28 +92,27 @@ iframe {
 </style>
 <script>
 import Header from './Header.vue';
-import {defineComponent, ref} from "vue";
+import {defineComponent, onMounted, ref} from "vue";
 import {useRoute} from "vue-router";
 import {formatDate} from '../date'
+const data = ref(null)
 
-function fetchNews(id) {
-  const data = ref(null)
+async function fetchNews(id) {
+
   const error = ref(null)
   const loading = ref(false)
-  const load = async () => {
-    try {
-      loading.value = true
-      const response = await fetch('https://zubr.media/wp-json/wp/v2/posts/' + id)
-      data.value = await response.json()
-      loading.value = false
-    } catch (e) {
-      loading.value = false
-      error.value = e.message;
-      console.error(e)
-    }
+  try {
+    loading.value = true
+    const response = await fetch('https://zubr.media/wp-json/wp/v2/posts/' + id)
+    data.value = await response.json()
+    loading.value = false
+  } catch (e) {
+    loading.value = false
+    error.value = e.message;
+    console.error(e)
   }
 
-  return {data, load, error, loading}
+  return {data, error, loading}
 }
 
 export default defineComponent({
@@ -121,8 +120,11 @@ export default defineComponent({
     'header-view': Header
   },
   setup() {
-    const {data, load} = fetchNews(useRoute().params.id)
-    load()
+    onMounted(async () => {
+      await fetchNews(useRoute().params.id)
+      document.title = document.title.replace('Новость', data.value.title.rendered)
+    })
+
     return {
       data,
       formatDate

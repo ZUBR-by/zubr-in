@@ -166,8 +166,9 @@ export default defineComponent({
     CommissionMap
   },
   setup() {
-    onMounted(() => {
-      fetchCampaign()
+    onMounted(async () => {
+      await fetchCampaign()
+      document.title = document.title.replace('Кампания', data.value.campaign.name)
     })
     return {
       data,

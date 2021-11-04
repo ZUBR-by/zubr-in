@@ -157,7 +157,7 @@
               class="section flex-grow-all txt-size-20px mil-txt-size-15px pdng-20px pdng-l-40px pdng-r-40px mil-pdng-15px mil-pdng-l-20px">
             <div class="txt-color-1 txt-medium" v-if="data.commission.electoral_campaign.started_at"
                  :class="{'grayscale' : !isLater(data.commission.electoral_campaign.started_at)}">
-              {{ formatDateCampaign(data.commission.electoral_campaign)}}
+              {{ formatDateCampaign(data.commission.electoral_campaign) }}
             </div>
             <div class="txt-color-1 txt-medium" v-else>
               Нет даты
@@ -232,6 +232,7 @@ function isLater(started_at) {
 
   return campaign > current;
 }
+
 export default defineComponent({
   components: {
     MessageList,
@@ -240,8 +241,9 @@ export default defineComponent({
     Button
   },
   setup() {
-    onMounted(() => {
-      fetchCommission()
+    onMounted(async () => {
+      await fetchCommission()
+      document.title = document.title.replace(' -', ' ' + data.value.commission.name + ' -')
     })
     return {
       data,

@@ -28,7 +28,7 @@
             <div class="infoblock">
               <div class="infoblock-name">Должность:</div>
               <div class="infoblock-value">
-                {{employer.position}}
+                {{ employer.position }}
               </div>
             </div>
             <div class="infoblock">
@@ -287,7 +287,7 @@
 </template>
 <script>
 import Header from './Header.vue';
-import {computed, defineComponent, ref} from "vue";
+import {computed, defineComponent, onMounted, ref} from "vue";
 import {useRoute} from "vue-router";
 import Dialog from './Modal.vue';
 
@@ -312,7 +312,11 @@ export default defineComponent({
   },
   setup() {
     const showModal = ref(false)
-    fetchMember()
+    onMounted(async () => {
+      await fetchMember()
+      document.title = document.title.replace(' -', ' ' + data.value.member.full_name + ' -')
+    })
+
     const employer = computed(() => {
       if (!data.value) {
         return null

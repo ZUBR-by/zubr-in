@@ -257,8 +257,9 @@ export default defineComponent({
     Location,
   },
   setup() {
-    onMounted(() => {
-      fetchOrganization()
+    onMounted(async () => {
+      await fetchOrganization()
+      document.title = document.title.replace(' -', ' ' + data.value.organization.name + ' -')
     })
     const view = ref('list')
     return {
