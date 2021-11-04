@@ -146,7 +146,7 @@
     </h2>
     <message-list :messages="data.commission.violations"></message-list>
   </div>
-  <div class="scene" v-if="data">
+  <div class="scene" v-if="data && data.commission.electoral_campaign">
     <h2 class="txt-size-36px mil-txt-size-30px txt-bold pdng-b-40px">
       Избирательная кампания
     </h2>
