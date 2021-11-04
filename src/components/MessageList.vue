@@ -11,9 +11,9 @@
             </div>
           </div>
           <div class="txt-color-3-1 txt-size-12px mrgn-t-5px">
-            {{ item.created_at }}
+            {{ formatTime(item.created_at) }}
           </div>
-          <div class="mrgn-t-10px">
+          <div class="mrgn-t-10px" v-if="showCommission">
             <a class="inline txt-size-12px txt-underline-inline"
                :href="'/commission/' + item.commission.id">
               {{ item.commission.code }},{{ item.commission.name }}: {{ item.commission.description }}
@@ -76,9 +76,15 @@
             {{ formatCategories(message.categories) }}
           </div>
           <div class="txt-color-3-1 txt-size-12px txt-medium">
-            {{ message.created_at }}
+            {{ formatTime(message.created_at) }}
           </div>
-          <div class="tag-unit  mrgn-t-20px" v-if="'initiative' in message.extra">
+          <div class="mrgn-t-10px" v-if="showCommission">
+            <a class="inline txt-size-12px txt-underline-inline"
+               :href="'/commission/' + message.commission.id">
+              {{ message.commission.code }},{{ message.commission.name }}: {{ message.commission.description }}
+            </a>
+          </div>
+          <div class="tag-unit mrgn-t-20px" v-if="'initiative' in message.extra">
             {{initiatives[message.extra.initiative]}}
           </div>
         </div>
@@ -321,7 +327,11 @@ export default {
     Dialog
   },
   props: {
-    messages: Array
+    messages: Array,
+    showCommission: {
+      type: Boolean,
+      default: true
+    }
   },
   setup() {
     const displayModal = ref(false)
@@ -332,6 +342,16 @@ export default {
       hash,
       formatCategories(categories) {
         return categories.map(i => hash[i]).join(',')
+      },
+      formatTime(raw){
+        let d = new Date(raw);
+        return d.toLocaleDateString('ru-RU', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+          hour: 'numeric',
+          minute: 'numeric'
+        })
       },
       initiatives,
       showModal(violation) {
