@@ -75,6 +75,12 @@ const routes = [
         component: Commission,
     },
     {
+        path: '/elections/member/:id',
+        name: 'old_member',
+        exclude: true,
+        redirect: { name: 'members' }
+    },
+    {
         path: '/news',
         name: 'news',
         meta: {title: 'Новости'},
