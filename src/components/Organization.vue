@@ -1,7 +1,8 @@
 <template>
   <header-view>
-    <div class="header-subnav border-t-1px border-color2">
-      <div class="section flex-row flex-algn-itms-c flex-grow-all flex-algn-slf-strch pdng-20px pdng-l-30px pdng-r-30px mil-pdng-20px mil-pdng-t-10px mil-pdng-b-10px">
+    <div class="header-subnav border-t-1px border-color2" v-if="false">
+      <div
+          class="section flex-row flex-algn-itms-c flex-grow-all flex-algn-slf-strch pdng-20px pdng-l-30px pdng-r-30px mil-pdng-20px mil-pdng-t-10px mil-pdng-b-10px">
         <div class="section">
           <div class="flex-row flex-algn-itms-c">
             <div class="section">
@@ -25,12 +26,12 @@
       </div>
     </div>
   </header-view>
-  <div class="scene mrgn-t-170px mil-mrgn-t-100px">
+  <div class="scene mrgn-t-130px mil-mrgn-t-100px">
     <div class="flex-row mil-flex-column">
       <div class="section pdng-r-30px mil-pdng-0 mil-flex-column flex-algn-itms-c" v-if="data">
         <div class="section flex-grow-all mil-size-100 mil-pdng-t-50px">
           <h1 class="txt-size-32px">
-            {{data.organization.name}}
+            {{ data.organization.name }}
           </h1>
           <div class="mrgn-t-40px txt-size-14px">
             <div class="infoblock" v-if="data.organization.address">
@@ -64,7 +65,7 @@
   </div>
   <div class="scene" v-if="data">
     <h2 class="flex-row flex-algn-itms-c txt-size-36px txt-bold pdng-b-40px mil-flex-column mil-txt-size-30px">
-      <span>Члены комиссий от организации({{data.organization.persons.length}})</span>
+      <span>Состав организации({{ data.organization.persons.length }})</span>
       <div class="buttongroup mrgn-l-20px mil-mrgn-0 mil-mrgn-t-20px mil-size-100" v-if="false">
         <div class="buttongroup">
           <button class="buttongroup-unit" :class="{active: view === 'list'}" @click="view = 'list'">
@@ -85,7 +86,7 @@
           </div>
           <div class="person-info pdng-t-10px">
             <div class="person-name txt-size-14px txt-medium">
-              {{ item.person.full_name}}
+              {{ item.person.full_name }}
             </div>
             <div class="person-mark txt-color-2 txt-size-12px" v-if="false">
               <div class="flex-row flex-algn-itms-c mrgn-t-5px">
@@ -100,7 +101,7 @@
               </div>
             </div>
             <div class="txt-color-1 txt-size-12px txt-medium mrgn-t-10px">
-              Председатель комиссии
+              {{ item.position }}
             </div>
           </div>
           <!-- Popover -->
@@ -108,12 +109,13 @@
             <div class="flex-column flex-algn-itms-strch">
               <div class="person-photo">
                 <div class="person-initials">С.Г.Т.</div>
-                <img :src="item.person.photo_url ? item.person.photo_url : '/img/user.svg'" :alt="item.person.full_name">
+                <img :src="item.person.photo_url ? item.person.photo_url : '/img/user.svg'"
+                     :alt="item.person.full_name">
               </div>
               <div class="person-info pdng-t-10px">
-                <div class="person-name txt-size-14px txt-medium">
-                  {{ item.person.full_name}}
-                </div>
+                <a class="person-name txt-size-14px txt-medium" :href="'/member/' + item.person.id">
+                  {{ item.person.full_name }}
+                </a>
                 <div class="person-mark txt-color-2 txt-size-12px" v-if="false">
                   <div class="flex-row flex-algn-itms-c mrgn-t-5px">
                     <div class="section">
@@ -127,24 +129,26 @@
                   </div>
                 </div>
                 <div class="txt-color-1 txt-size-12px txt-medium mrgn-t-10px">
-                  Председатель комиссии
+                  {{ item.position }}
                 </div>
-                <div class="infoblock txt-size-12px">
-                  <div class="infoblock-name">
-                    Должность
+                <template v-if="false">
+                  <div class="infoblock txt-size-12px">
+                    <div class="infoblock-name">
+                      Должность
+                    </div>
+                    <div class="infoblock-value ">
+                      Президент Республики Беларусь
+                    </div>
                   </div>
-                  <div class="infoblock-value ">
-                    Президент Республики Беларусь
+                  <div class="infoblock txt-size-12px">
+                    <div class="infoblock-name">
+                      Субъект выдвижения
+                    </div>
+                    <div class="infoblock-value ">
+                      Самовыдвижение
+                    </div>
                   </div>
-                </div>
-                <div class="infoblock txt-size-12px">
-                  <div class="infoblock-name">
-                    Субъект выдвижения
-                  </div>
-                  <div class="infoblock-value ">
-                    Самовыдвижение
-                  </div>
-                </div>
+                </template>
               </div>
             </div>
 
@@ -156,7 +160,8 @@
       <div class="election-campaign-list">
         <div class="election-campaign-unit">
           <div class="elect-camp-unit-header flex-row flex-algn-itms-c size-100 border-b-2px border-color2">
-            <div class="section flex-grow-all txt-size-18px mil-txt-size-14px pdng-20px pdng-l-40px pdng-r-40px mil-pdng-15px mil-pdng-l-20px grayscale">
+            <div
+                class="section flex-grow-all txt-size-18px mil-txt-size-14px pdng-20px pdng-l-40px pdng-r-40px mil-pdng-15px mil-pdng-l-20px grayscale">
               <div class="txt-color-1 txt-medium">
                 6—9 августа 2021
               </div>
@@ -164,11 +169,15 @@
                 Архив
               </div>
             </div>
-            <div class="section flex-algn-slf-strch flex-row flex-algn-itms-c border-l-2px border-color2 pdng-20px pdng-l-40px pdng-r-40px mil-pdng-15px mil-pdng-r-20px cursor-pointer hovered">
+            <div
+                class="section flex-algn-slf-strch flex-row flex-algn-itms-c border-l-2px border-color2 pdng-20px pdng-l-40px pdng-r-40px mil-pdng-15px mil-pdng-r-20px cursor-pointer hovered">
               <div class="flex-row flex-algn-itms-c">
                 <div class="section">
-                  <svg class="mil-zoom-0_65" width="25" height="33" viewBox="0 0 25 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2.71436 2.57623C2.71436 2.57623 6.78428 0.261278 9.50878 0.0235027C13.0632 -0.286697 16.0314 2.57623 18.4774 2.57623C20.9234 2.57623 25.0001 0.874411 25.0001 0.874411V17.8926C25.0001 17.8926 22.2207 19.2549 20.3799 19.5944C16.1164 20.3807 13.8572 17.0417 9.50878 17.0417C5.16035 17.0417 2.71436 19.5944 2.71436 19.5944V2.57623Z" fill="#FF5C01"></path>
+                  <svg class="mil-zoom-0_65" width="25" height="33" viewBox="0 0 25 33" fill="none"
+                       xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M2.71436 2.57623C2.71436 2.57623 6.78428 0.261278 9.50878 0.0235027C13.0632 -0.286697 16.0314 2.57623 18.4774 2.57623C20.9234 2.57623 25.0001 0.874411 25.0001 0.874411V17.8926C25.0001 17.8926 22.2207 19.2549 20.3799 19.5944C16.1164 20.3807 13.8572 17.0417 9.50878 17.0417C5.16035 17.0417 2.71436 19.5944 2.71436 19.5944V2.57623Z"
+                        fill="#FF5C01"></path>
                     <rect y="1" width="2" height="32" fill="#FF5C01"></rect>
                   </svg>
                 </div>
@@ -183,7 +192,8 @@
               </div>
             </div>
           </div>
-          <div class="elect-camp-unit-info pdng-t-20px pdng-b-40px pdng-l-40px pdng-r-40px mil-pdng-l-20px mil-pdng-r-20px mil-pdng-b-30px grayscale">
+          <div
+              class="elect-camp-unit-info pdng-t-20px pdng-b-40px pdng-l-40px pdng-r-40px mil-pdng-l-20px mil-pdng-r-20px mil-pdng-b-30px grayscale">
             <h2 class="txt-color-1 txt-size-36px mil-txt-size-30px txt-lh-1_1em">
               <a class="txt-underline-inline" href="#">
                 Выборы представителей нижней палаты верхнего представительства третьего созыва депутатов
@@ -237,6 +247,7 @@ import Header from './Header.vue';
 import Location from './Point.vue';
 import {defineComponent, onMounted, ref} from "vue";
 import {useRoute} from 'vue-router'
+
 const data = ref(null)
 
 async function fetchOrganization() {
