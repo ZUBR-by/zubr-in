@@ -20,35 +20,6 @@
             {{ data.campaign.name }}
           </div>
         </div>
-        <div
-            class="section flex-row flex-algn-itms-c flex-noshrink flex-algn-slf-strch pdng-l-20px pdng-r-30px mil-pdng-r-20px border-l-1px border-color2">
-          <div class="section">
-            <div class="flex-row flex-algn-itms-c">
-              <div class="section">
-                <svg class="mil-zoom-0_75" width="25" height="33" viewBox="0 0 25 33" fill="none"
-                     xmlns="http://www.w3.org/2000/svg">
-                  <path
-                      d="M2.71436 2.57623C2.71436 2.57623 6.78428 0.261278 9.50878 0.0235027C13.0632 -0.286697 16.0314 2.57623 18.4774 2.57623C20.9234 2.57623 25.0001 0.874411 25.0001 0.874411V17.8926C25.0001 17.8926 22.2207 19.2549 20.3799 19.5944C16.1164 20.3807 13.8572 17.0417 9.50878 17.0417C5.16035 17.0417 2.71436 19.5944 2.71436 19.5944V2.57623Z"
-                      fill="#FF5C01"></path>
-                  <rect y="1" width="2" height="32" fill="#FF5C01"></rect>
-                </svg>
-              </div>
-              <div class="section pdng-l-15px">
-                <div class="txt-size-18px mil-txt-size-14px">
-                  Сообщений
-                </div>
-                <div class="txt-size-18px mil-txt-size-14px txt-bold" v-if="data">
-                  {{data.messages_aggregate.aggregate.count}}
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="section pdng-l-20px">
-            <div class="button medium mil-txt-size-12px primary">
-              Сообщить о нарушении
-            </div>
-          </div>
-        </div>
       </div>
       <div class="header-subnav border-color2">
         <div
@@ -71,25 +42,30 @@
           </div>
           <div class="inline-block mrgn-l-30px mil-mrgn-l-20px">
             <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">
-              Тип нарушения
+              Включает категорию
             </div>
-            <div class="buttongroup">
-              <select v-model="category">
-                <option :value="null"></option>
-                <option v-for="(item, key) of hash" :value="key">{{ item }}</option>
-              </select>
-            </div>
+            <Dropdown v-model="category"
+                      :options="categories"
+                      optionLabel="name"
+                      :showClear="true"
+                      style="min-width: 400px"
+                      optionValue="value"/>
           </div>
         </div>
       </div>
     </div>
   </header-view>
-  <div class="scene mrgn-t-170px mil-mrgn-t-120px">
-    <message-list v-model="data.messages" v-if="data"></message-list>
-    <div class="flex-column flex-algn-itms-c pdng-t-40px" v-if="data">
-      <a href="#" class="button primary pdng-l-40px pdng-r-40px">
-        Загрузить еще 30 из {{data.messages_aggregate.aggregate.count}} нарушений
+  <div class="scene mrgn-t-190px mil-mrgn-t-200px">
+    <message-list v-model="data.messages" v-if="data" :show-button-all="false"></message-list>
+    <div class="flex-column flex-algn-itms-c pdng-t-40px"
+         v-if="data && data.messages_aggregate && data.messages_aggregate.aggregate.count > 0">
+      <a @click="fetchMore" class="button primary pdng-l-40px pdng-r-40px">
+        Загрузить еще 30 из {{ data.messages_aggregate.aggregate.count }} нарушений
       </a>
+    </div>
+    <div class="flex-column flex-algn-itms-c pdng-t-40px"
+         v-if="data && data.messages_aggregate && data.messages_aggregate.aggregate.count === 0">
+      Нет сообщений
     </div>
   </div>
 
@@ -100,11 +76,13 @@ import {defineComponent, onMounted, ref, watch} from "vue";
 import SelectButton from 'primevue/selectbutton';
 import {useRoute} from "vue-router";
 import {MessageList, hash, initiatives} from "./MessageList.vue";
+import Dropdown from 'primevue/dropdown';
 
 const data = ref(null)
 const category = ref(null)
 const initiative = ref(null)
-
+const offset = ref(0)
+const tmp = ref(null)
 let id = null;
 
 async function fetchMessages() {
@@ -112,6 +90,7 @@ async function fetchMessages() {
     if (!id) {
       id = useRoute().params.id;
     }
+    console.log(category.value)
     const response = await fetch(import.meta.env.VITE_API_URL + '/messages/' + id,
         {
           method: 'POST',
@@ -120,12 +99,22 @@ async function fetchMessages() {
           },
           body: JSON.stringify(
               {
-                categories: category.value === null ? {'_is_null': false} : {'_contains': parseInt(category.value)}
+                offset: offset.value,
+                categories: category.value === null ? {'_is_null': false} : {'_contains': parseInt(category.value)},
+                initiative: initiative.value === null
+                    ? {'_is_null': false}
+                    : {'_contains': {initiative: parseInt(initiative.value)}}
               }
           )
         }
     )
-    data.value = await response.json()
+    tmp.value = await response.json()
+
+    if (offset.value > 0) {
+      data.value.messages = data.value.messages.concat(tmp.value.messages)
+    } else {
+      data.value = tmp.value
+    }
   } catch (e) {
     console.error(e)
     data.value = {campaign: {}};
@@ -139,10 +128,16 @@ export default defineComponent({
   components: {
     MessageList,
     'header-view': Header,
-    SelectButton
+    SelectButton,
+    Dropdown
   },
   setup() {
     watch(category, () => {
+      offset.value = 0
+      fetchMessages()
+    })
+    watch(initiative, () => {
+      offset.value = 0
       fetchMessages()
     })
     onMounted(() => {
@@ -151,7 +146,25 @@ export default defineComponent({
     const filter = ref('Все');
     const options = ref(['Все', 'Честные Люди', 'Право Выбора']);
     const campaign = ref(useRoute().params.id)
-    return {filter, options, campaign, data, hash, category, initiatives, initiative}
+    let categories = Object.keys(hash).map((key) => {
+      return {value: key, name: hash[key]}
+    });
+    return {
+      filter,
+      options,
+      campaign,
+      data,
+      hash,
+      category,
+      initiatives,
+      initiative,
+      categories,
+      offset,
+      fetchMore() {
+        offset.value += 50;
+        fetchMessages()
+      }
+    }
   }
 })
 </script>

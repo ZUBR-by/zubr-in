@@ -329,6 +329,7 @@ export default defineComponent({
       fetchCommissions()
     })
     watch(campaign, () => {
+      offset.value = 0
       fetchCommissions()
       if (map.value) {
         map.value.changeLayer(campaign.value);
@@ -338,9 +339,11 @@ export default defineComponent({
       fetchCommissions()
     })
     watch(commissionType, () => {
+      offset.value = 0
       fetchCommissions()
     })
     watch(search, () => {
+      offset.value = 0
       fetchCommissions()
     })
     return {

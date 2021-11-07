@@ -33,7 +33,7 @@
         <p class="txt-size-14px txt-color-3-1">
           {{ item.description }}
         </p>
-        <div class="tag-wrp pdng-t-10px">
+        <div class="tag-wrp pdng-t-10px" v-if="false">
           <a href="" class="tag-unit">Заметка</a>
         </div>
       </div>
@@ -88,9 +88,13 @@
             {{ initiatives[message.extra.initiative] }}
           </div>
         </div>
-        <div class="section pdng-r-30px pdng-l-20px mil-size-100 mil-pdng-b-30px mil-pdng-t-20px">
+        <div class="section pdng-r-30px pdng-l-20px mil-size-100 mil-pdng-b-30px mil-pdng-t-20px"
+             v-if="showButtonAll"
+        >
           <!-- ПОказываем кнопку в диалоге просмотра инцидента везде, кроме раздела инцидентов и подраздела инцидентов в разделе кампании -->
-          <a class="button medium mil-size-100 txt-algn-c" href="#">Все нарушения/инциденты кампании</a>
+          <a class="button medium mil-size-100 txt-algn-c" :href="'/campaign/' + message.campaign + '/messages'">
+            Все нарушения/инциденты кампании
+          </a>
         </div>
       </div>
       <div class="pdng-30px mil-pdng-20px">
@@ -329,6 +333,10 @@ const MessageList = {
   props: {
     modelValue: Array,
     showCommission: {
+      type: Boolean,
+      default: true
+    },
+    showButtonAll: {
       type: Boolean,
       default: true
     }
