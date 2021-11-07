@@ -68,6 +68,13 @@ const routes = [
         component: Commission,
     },
     {
+        path: '/elections/commission/:id',
+        name: 'old_commission',
+        meta: {title: 'Избирательная комиссия'},
+        exclude: true,
+        component: Commission,
+    },
+    {
         path: '/news',
         name: 'news',
         meta: {title: 'Новости'},

@@ -211,9 +211,9 @@ const map = {
   ELECTION_COMMISSION_CENTRAL: 'Центральная',
 }
 
-async function fetchCommission() {
+async function fetchCommission(id) {
   try {
-    const response = await fetch(import.meta.env.VITE_API_URL + '/commission/' + useRoute().params.id)
+    const response = await fetch(import.meta.env.VITE_API_URL + '/commission/' + id)
     data.value = await response.json()
   } catch (e) {
     data.value = {commissions: [], pagination: {aggregate: {count: 0}}};
@@ -242,7 +242,13 @@ export default defineComponent({
   },
   setup() {
     onMounted(async () => {
-      await fetchCommission()
+      const route = useRoute()
+      let id = route.params.id;
+      if (route.name === 'old_commission') {
+        const json = await import('./../assets/old_commissions.json')
+        id = json.default[id] ? json.default[id] : id
+      }
+      await fetchCommission(id)
       document.title = document.title.replace(' -', ' ' + data.value.commission.name + ' -')
     })
     return {
