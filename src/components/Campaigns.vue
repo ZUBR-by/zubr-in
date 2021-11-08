@@ -98,7 +98,7 @@
             class="elect-camp-unit-info pdng-t-20px pdng-b-40px pdng-l-40px pdng-r-40px mil-pdng-l-20px mil-pdng-r-20px mil-pdng-b-30px"
             :class="{'grayscale' : !isLater(campaign.started_at)}"
         >
-          <h2 class="txt-color-1 txt-size-48px mil-txt-size-34px txt-lh-1_1em">
+          <h2 class="txt-color-1 txt-size-36px mil-txt-size-30px txt-lh-1_1em">
             <a class="txt-underline-inline-2px" :href="'/campaign/' + campaign.id">
               {{ campaign.name }}
             </a>
