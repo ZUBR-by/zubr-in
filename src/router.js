@@ -35,6 +35,13 @@ const routes = [
         component: Commissions,
     },
     {
+        path: '/elections/commissions',
+        name: 'old_commissions',
+        exclude: true,
+        meta: {title: 'Избирательные комиссии'},
+        redirect: '/commissions',
+    },
+    {
         path: '/organization',
         name: 'organizations',
         meta: {title: 'Организации'},
@@ -82,6 +89,12 @@ const routes = [
         redirect: { name: 'members' }
     },
     {
+        path: '/elections/members',
+        name: 'old_members',
+        exclude: true,
+        redirect: { name: 'members' }
+    },
+    {
         path: '/elections/messages',
         name: 'old_messages',
         exclude: true,
@@ -92,6 +105,12 @@ const routes = [
         name: 'old_about',
         exclude: true,
         redirect: '/about'
+    },
+    {
+        path: '/elections/organizations',
+        name: 'old_organizations',
+        exclude: true,
+        redirect: '/organization'
     },
     {
         path: '/news',
