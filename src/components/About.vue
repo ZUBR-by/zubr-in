@@ -40,10 +40,7 @@
       Призываем всех граждан Беларуси использовать платформу ZUBR и рассказывать о ней родным, друзьям, и своим
       коллегам!
     </p>
-    <h3 class="pdng-t-10px pdng-b-15px">Команда</h3>
-    <p>
-      По всем вопросам <a href="mailto:zubr.contact@gmail.com">zubr.contact@gmail.com</a>
-    </p>
+    <h3 class="pdng-t-30px pdng-b-15px">Команда</h3>
 
     <div class="committee-members-list pdng-t-10px">
       <div class="committee-members-unit mil-flex-column">

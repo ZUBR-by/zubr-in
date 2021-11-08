@@ -25,8 +25,9 @@
         </div>
       </a>
     </div>
-    <div class="flex-column flex-algn-itms-c pdng-t-40px" v-if="data && data.pagination.aggregate.count > 0">
-      <a href="#" class="button primary pdng-l-40px pdng-r-40px">
+    <div class="flex-column flex-algn-itms-c pdng-t-40px"
+         v-if="data && data.pagination.aggregate.count > 0">
+      <a @click="fetchMore" class="button primary pdng-l-40px pdng-r-40px">
         Загрузить еще 50 <span class="mil-notdisplay">избирательных</span> комиссий из
         {{ data.pagination.aggregate.count }}
       </a>
@@ -41,18 +42,26 @@ import Header from './Header.vue'
 import InputText from 'primevue/inputtext'
 import {defineComponent, onMounted, ref, watch} from "vue";
 
-
+const offset = ref(0)
 const name = ref('')
 const data = ref(null)
+const tmp = ref(null)
 
 async function fetchOrganizations() {
   try {
     const response = await fetch(import.meta.env.VITE_API_URL
         + '/organizations'
-        + (name.value ? '?name=' + encodeURIComponent('%' + name.value + '%') : '')
+        + '?offset=' + offset.value
+        + (name.value ? '&name=' + encodeURIComponent('%' + name.value + '%') : '')
     )
-    data.value = await response.json()
+    tmp.value = await response.json()
+    if (offset.value > 0) {
+      data.value.organizations = data.value.organizations.concat(tmp.value.organizations)
+    } else {
+      data.value = tmp.value
+    }
   } catch (e) {
+    console.error(e);
     data.value = {organizations: [], pagination: {aggregate: {count: 0}}};
   }
   return {
@@ -66,9 +75,9 @@ export default defineComponent({
     InputText
   },
 
-
   setup() {
     watch(name, () => {
+      offset.value = 0
       fetchOrganizations()
     })
     onMounted(() => {
@@ -76,7 +85,12 @@ export default defineComponent({
     });
     return {
       data,
-      name
+      name,
+      offset,
+      fetchMore() {
+        offset.value += 50
+        fetchOrganizations()
+      }
     }
   }
 })
