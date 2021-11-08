@@ -12,6 +12,7 @@ import Campaigns from "./components/Campaigns.vue";
 import Campaign from "./components/Campaign.vue";
 import Organization from "./components/Organization.vue";
 import About from "./components/About.vue";
+import Result2020 from "./components/Result2020.vue";
 
 const routes = [
     {
@@ -87,10 +88,23 @@ const routes = [
         redirect: '/campaign/2020-08-presidential/messages'
     },
     {
+        path: '/elections/about',
+        name: 'old_about',
+        exclude: true,
+        redirect: '/about'
+    },
+    {
         path: '/news',
         name: 'news',
         meta: {title: 'Новости'},
         component: News,
+    },
+    {
+        path: '/elections/results',
+        name: 'news',
+        meta: {title: 'Информация о результатах избирательной компании 2020'},
+        exclude: true,
+        component: Result2020,
     },
     {
         path: '/about',
