@@ -46,7 +46,7 @@
     </p>
 
     <div class="committee-members-list pdng-t-10px">
-      <a class="committee-members-unit mil-flex-column">
+      <div class="committee-members-unit mil-flex-column">
         <div class="section size-40 pdng-r-20px pdng-l-20px pdng-t-20px pdng-b-20px mil-size-100">
           <div class="flex-row flex-algn-itms-c">
             <div class="section pdng-r-20px">
@@ -81,7 +81,7 @@
             </div>
           </div>
         </div>
-      </a>
+      </div>
     </div>
 
     <h3 class="pdng-t-15px pdng-b-15px">Партнеры</h3>
@@ -92,7 +92,7 @@
           <div class="flex-row flex-algn-itms-c">
             <div class="section pdng-r-20px">
               <div class="partner-photo">
-                <img src="/img/about/golos.svg">
+                <img src="/img/about/golos.svg" width="148" height="53">
               </div>
             </div>
             <a class="section"  href="https://golos2020.org">
@@ -107,7 +107,7 @@
           <div class="flex-row flex-algn-itms-c">
             <div class="section pdng-r-20px">
               <div class="partner-photo">
-                <img src="/img/about/hp.jpg">
+                <img src="/img/about/hp.png" height="60" width="70">
               </div>
             </div>
             <a class="section" href="https://honest-people.by/">

@@ -159,16 +159,9 @@
 .partner-photo {
   display:flex;
   align-items:center;
-  width:80px;
-  height:80px;
-  border-radius:100%;
   overflow:hidden;
-  background:#EDEDED;
 }
 .partner-photo img {
-  min-width:120%;
-  max-width:100%;
-  min-height:100%;
 }
 .person-initials {
   width:100%;
