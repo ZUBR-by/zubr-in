@@ -5,11 +5,14 @@
           :show-header="false"
           :modal="true">
     <div class="scene">
-      <p v-for="feature of features">
-        <a :href="'/commission/' + feature.getProperties().id">
-          {{ feature.getProperties().code }}|{{ feature.getProperties().name }} {{ feature.getProperties().address }}
-        </a>
-      </p>
+      <ul>
+        <li v-for="feature of features" class="pdng-10px">
+          <strong>{{ feature.getProperties().code }} &nbsp;</strong>
+          <a :href="'/commission/' + feature.getProperties().id">
+            {{ feature.getProperties().name }} {{ feature.getProperties().address }}
+          </a>
+        </li>
+      </ul>
     </div>
   </Dialog>
 </template>
