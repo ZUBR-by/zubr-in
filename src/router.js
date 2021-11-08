@@ -120,7 +120,7 @@ const routes = [
     },
     {
         path: '/elections/results',
-        name: 'news',
+        name: 'results_2020',
         meta: {title: 'Информация о результатах избирательной компании 2020'},
         exclude: true,
         component: Result2020,
