@@ -232,6 +232,7 @@ function isLater(started_at) {
 
   return campaign > current;
 }
+export {map as commission_types}
 
 export default defineComponent({
   components: {
