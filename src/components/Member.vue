@@ -8,7 +8,7 @@
           <div class="person-view mil-size-100">
             <div class="person-photo">
               <div class="person-initials">С.Г.Т.</div>
-              <img :src="data.member.photo_url ? data.member.photo_url : '/img/user.svg'" :alt="data.member.full_name">
+              <img :src="data.member.photo_url ? data.member.photo_url : '/img/icon/person-placeholder.png'" :alt="data.member.full_name">
             </div>
             <div class="txt-size-12px">
               <div class="mrgn-t-10px" v-if="photoOrigin">

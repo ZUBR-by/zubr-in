@@ -107,7 +107,7 @@
               <div class="person-wrp flex-column flex-algn-itms-strch">
                 <div class="person-photo">
                   <div class="person-initials">С.Г.Т.</div>
-                  <img src="/img/user.svg" alt="Светлана Георгиевна Тихановская">
+                  <img src="/img/icon/person-placeholder.png" alt="Светлана Георгиевна Тихановская">
                 </div>
                 <div class="person-info pdng-t-10px">
                   <div class="person-name txt-size-14px txt-medium">
@@ -124,7 +124,7 @@
                   <div class="flex-column flex-algn-itms-strch">
                     <div class="person-photo">
                       <div class="person-initials">С.Г.Т.</div>
-                      <img src="/img/user.svg" alt="Светлана Георгиевна Тихановская">
+                      <img src="/img/icon/person-placeholder.png" alt="Светлана Георгиевна Тихановская">
                     </div>
                     <div class="person-info pdng-t-10px">
                       <div class="person-name txt-size-14px txt-medium">
@@ -159,7 +159,7 @@
               <div class="person-wrp flex-column flex-algn-itms-strch">
                 <div class="person-photo">
                   <div class="person-initials">С.Г.Т.</div>
-                  <img src="/img/user.svg" alt="Светлана Георгиевна Тихановская">
+                  <img src="/img/icon/person-placeholder.png" alt="Светлана Георгиевна Тихановская">
                 </div>
                 <div class="person-info pdng-t-10px">
                   <div class="person-name txt-size-14px txt-medium">
@@ -176,7 +176,7 @@
                   <div class="flex-column flex-algn-itms-strch">
                     <div class="person-photo">
                       <div class="person-initials">С.Г.Т.</div>
-                      <img src="/img/user.svg" alt="Светлана Георгиевна Тихановская">
+                      <img src="/img/icon/person-placeholder.png" alt="Светлана Георгиевна Тихановская">
                     </div>
                     <div class="person-info pdng-t-10px">
                       <div class="person-name txt-size-14px txt-medium">
@@ -211,7 +211,7 @@
               <div class="person-wrp flex-column flex-algn-itms-strch">
                 <div class="person-photo">
                   <div class="person-initials">С.Г.Т.</div>
-                  <img src="/img/user.svg" alt="Светлана Георгиевна Тихановская">
+                  <img src="/img/icon/person-placeholder.png" alt="Светлана Георгиевна Тихановская">
                 </div>
                 <div class="person-info pdng-t-10px">
                   <div class="person-name txt-size-14px txt-medium">
@@ -228,7 +228,7 @@
                   <div class="flex-column flex-algn-itms-strch">
                     <div class="person-photo">
                       <div class="person-initials">С.Г.Т.</div>
-                      <img src="/img/user.svg" alt="Светлана Георгиевна Тихановская">
+                      <img src="/img/icon/person-placeholder.png" alt="Светлана Георгиевна Тихановская">
                     </div>
                     <div class="person-info pdng-t-10px">
                       <div class="person-name txt-size-14px txt-medium">

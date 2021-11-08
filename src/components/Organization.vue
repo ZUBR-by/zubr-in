@@ -82,7 +82,7 @@
         <div class="person-wrp flex-column flex-algn-itms-strch" v-for="item of data.organization.persons">
           <div class="person-photo">
             <div class="person-initials">С.Г.Т.</div>
-            <img :src="item.person.photo_url ? item.person.photo_url : '/img/user.svg'" :alt="item.person.full_name">
+            <img :src="item.person.photo_url ? item.person.photo_url : '/img/icon/person-placeholder.png'" :alt="item.person.full_name">
           </div>
           <div class="person-info pdng-t-10px">
             <div class="person-name txt-size-14px txt-medium">
@@ -109,7 +109,7 @@
             <div class="flex-column flex-algn-itms-strch">
               <div class="person-photo">
                 <div class="person-initials">С.Г.Т.</div>
-                <img :src="item.person.photo_url ? item.person.photo_url : '/img/user.svg'"
+                <img :src="item.person.photo_url ? item.person.photo_url : '/img/icon/person-placeholder.png'"
                      :alt="item.person.full_name">
               </div>
               <div class="person-info pdng-t-10px">
@@ -210,7 +210,7 @@
               <div class="person-wrp flex-column flex-algn-itms-strch cursor-pointer" v-for="i in [1,2,3]">
                 <div class="person-photo">
                   <div class="person-initials">С.Г.Т.</div>
-                  <img src="/img/user.svg" alt="Светлана Георгиевна Тихановская">
+                  <img src="/img/icon/person-placeholder.png" alt="Светлана Георгиевна Тихановская">
                 </div>
                 <div class="person-info pdng-t-10px">
                   <div class="person-name txt-size-14px txt-medium">

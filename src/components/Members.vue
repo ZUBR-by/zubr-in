@@ -22,7 +22,7 @@
             <div class="section pdng-r-20px">
               <div class="person-photo">
                 <div class="person-initials">С.Г.Т.</div>
-                <img :src="item.photo_url ? item.photo_url : '/img/user.svg'" :alt="item.full_name">
+                <img :src="item.photo_url ? item.photo_url : '/img/icon/person-placeholder.png'" :alt="item.full_name">
               </div>
             </div>
             <div class="section">

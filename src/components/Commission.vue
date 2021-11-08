@@ -91,7 +91,7 @@
            v-for="item of data.commission.persons">
         <div class="person-photo">
           <!--          <div class="person-initials">С.Г.Т.</div>-->
-          <img :src="item.person.photo_url ? item.person.photo_url : '/img/user.svg'"
+          <img :src="item.person.photo_url ? item.person.photo_url : '/img/icon/person-placeholder.png'"
                :alt="item.person.full_name">
         </div>
         <div class="person-info pdng-t-10px">
@@ -106,7 +106,7 @@
         <div class="person-popover cursor-pointer">
           <div class="flex-column flex-algn-itms-strch">
             <div class="person-photo">
-              <img :src="item.person.photo_url ? item.person.photo_url : '/img/user.svg'" :alt="item.person.full_name">
+              <img :src="item.person.photo_url ? item.person.photo_url : '/img/icon/person-placeholder.png'" :alt="item.person.full_name">
             </div>
             <div class="person-info pdng-t-10px">
               <a class="txt-size-14px txt-medium" :href="'/member/' + item.person.id">
