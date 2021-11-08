@@ -95,12 +95,12 @@
         <time class="block txt-color-3-1 txt-size-14px mrgn-b-10px">
           {{ formatDate(item.date) }}
         </time>
-        <h4 class="txt-size-36px mil-txt-size-30px txt-bold txt-color-1">
+        <h4 class="txt-size-32px mil-txt-size-30px txt-bold txt-color-1">
           <a class="txt-underline-inline-2px" :href="'/news/' + item.id">
             {{ item.title.rendered }}
           </a>
         </h4>
-        <p class="txt-size-28px mil-txt-size-24px txt-bold mrgn-t-15px" v-html="item.excerpt.rendered">
+        <p class="txt-size-22px mil-txt-size-20px txt-bold mrgn-t-15px" v-html="item.excerpt.rendered">
         </p>
         <div class="article-preview-image pdng-b-20px mrgn-t-30px">
           <img :src="item._embedded['wp:featuredmedia'][0]['source_url']"
