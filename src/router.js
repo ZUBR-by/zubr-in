@@ -81,6 +81,12 @@ const routes = [
         redirect: { name: 'members' }
     },
     {
+        path: '/elections/messages',
+        name: 'old_messages',
+        exclude: true,
+        redirect: '/campaign/2020-08-presidential/messages'
+    },
+    {
         path: '/news',
         name: 'news',
         meta: {title: 'Новости'},
