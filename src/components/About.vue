@@ -40,48 +40,8 @@
       Призываем всех граждан Беларуси использовать платформу ZUBR и рассказывать о ней родным, друзьям, и своим
       коллегам!
     </p>
-    <h3 class="pdng-t-30px pdng-b-15px">Команда</h3>
 
-    <div class="committee-members-list pdng-t-10px">
-      <div class="committee-members-unit mil-flex-column">
-        <div class="section size-40 pdng-r-20px pdng-l-20px pdng-t-20px pdng-b-20px mil-size-100">
-          <div class="flex-row flex-algn-itms-c">
-            <div class="section pdng-r-20px">
-              <div class="person-photo">
-                <img src="/img/about/marinich.jpeg">
-              </div>
-            </div>
-            <div class="section">
-              <h2 class="txt-color-1 txt-size-20px txt-medium mil-txt-size-16px">
-                Павел Маринич
-              </h2>
-              <div class="txt-color-2 txt-size-14px">
-                Руководитель
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="section size-40 pdng-r-20px pdng-l-20px pdng-t-20px pdng-b-20px mil-size-100">
-          <div class="flex-row flex-algn-itms-c">
-            <div class="section pdng-r-20px">
-              <div class="person-photo">
-                <img src="/img/about/potapov.png">
-              </div>
-            </div>
-            <div class="section">
-              <h2 class="txt-color-1 txt-size-20px txt-medium mil-txt-size-16px">
-                Павел Потапов
-              </h2>
-              <div class="txt-color-2 txt-size-14px">
-                CTO
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <h3 class="pdng-t-15px pdng-b-15px">Партнеры</h3>
+    <h3 class="pdng-t-30px pdng-b-15px">Партнеры</h3>
 
     <div class="committee-members-list pdng-t-10px">
       <div class="committee-members-unit mil-flex-column">
