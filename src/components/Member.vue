@@ -60,9 +60,9 @@
       <div class="election-campaign-unit" v-for="item of commissions">
         <div
             class="elect-camp-unit-info pdng-t-20px pdng-b-40px pdng-l-40px pdng-r-40px mil-pdng-l-20px mil-pdng-r-20px mil-pdng-b-30px grayscale">
-          <h2 class="txt-color-1 txt-size-36px mil-txt-size-30px txt-lh-1_1em">
+          <h2 class="txt-color-1 txt-size-32px mil-txt-size-30px txt-lh-1_1em">
             <a class="txt-underline-inline" :href="'/commission/' + item.organization.id">
-              {{item.organization.name}}
+              {{item.organization.name ? item.organization.name : item.organization.code }}
             </a>
           </h2>
           <div class="tag-wrp mrgn-t-20px">
