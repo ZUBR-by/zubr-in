@@ -61,13 +61,13 @@
         <div
             class="elect-camp-unit-info pdng-t-20px pdng-b-40px pdng-l-40px pdng-r-40px mil-pdng-l-20px mil-pdng-r-20px mil-pdng-b-30px grayscale">
           <h2 class="txt-color-1 txt-size-36px mil-txt-size-30px txt-lh-1_1em">
-            <a class="txt-underline-inline" :href="'/campaign/' + item.organization.electoral_campaign.id">
-              {{item.organization.electoral_campaign.name}}
+            <a class="txt-underline-inline" :href="'/commission/' + item.organization.id">
+              {{item.organization.name}}
             </a>
           </h2>
           <div class="tag-wrp mrgn-t-20px">
-            <a class="tag-unit" :href="'/commission/' + item.organization.id">
-              {{item.organization.name}}
+            <a class="tag-unit" :href="'/campaign/' + item.organization.electoral_campaign.id">
+              {{item.organization.electoral_campaign.name}}
             </a>
           </div>
         </div>
