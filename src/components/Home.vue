@@ -87,7 +87,7 @@
     <div class="pdng-b-40px">
       <h3 class="txt-size-36px mil-txt-size-30px txt-bold">
         Последние новости.
-        <a class="txt-underline-inline-2px" href="/news">Все новости</a>.
+        <a class="txt-underline-inline-2px" href="/news">Все новости</a>
       </h3>
     </div>
     <div>
