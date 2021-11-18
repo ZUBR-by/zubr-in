@@ -9,6 +9,7 @@ import Members from "./components/Members.vue";
 import Member from "./components/Member.vue";
 import NewsItem from "./components/NewsItem.vue";
 import Campaigns from "./components/Campaigns.vue";
+import ForObservers from "./components/ForObservers.vue";
 import Campaign from "./components/Campaign.vue";
 import Organization from "./components/Organization.vue";
 import About from "./components/About.vue";
@@ -151,6 +152,13 @@ const routes = [
         meta: {title: 'Сообщения о нарушениях'},
         exclude: true,
         component: Messages,
+    },
+    {
+        path: '/control',
+        name: 'for_observers',
+        component: ForObservers,
+        meta: {title: 'Наблюдателям'},
+        exclude: true,
     },
 ]
 const router = createRouter({
