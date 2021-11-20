@@ -436,7 +436,7 @@
   box-shadow:rgba(0,0,0,0.25) 0 10px 20px;
   }
 .map-mark.mark {
-  border:#FF5C01 2px solid;
+  border:var(--main, #FF5C01) 2px solid;
   box-shadow:rgba(255,92,1,0.15) 0 10px 20px;
   }
 .map-mark.mark:hover {
@@ -488,7 +488,7 @@
   margin-left:25px;
   }
 .header-links a.active {
-  color:#FF5C01;
+  color:var(--main, #FF5C01);
   border:none;
   }
 
@@ -531,7 +531,7 @@
   border-radius:8px;
   }
 .droparea.active {
-  border-color:#FF5C01;
+  border-color:var(--main, #FF5C01);
   background:rgba(255,92,1,0.15);
   }
 
@@ -588,7 +588,7 @@ REMOVED STYLES
   height:auto;
   }
 .zbr-ftr {
-  background:#FF5C01;
+  background:var(--main, #FF5C01);
   color:#fff;
   }
 .zbr-ftr a {
@@ -636,7 +636,7 @@ REMOVED STYLES
   position:absolute;
   width:30px;
   height:4px;
-  background:#ff5c01;
+  background:var(--main, #FF5C01);
   border-radius:10px;
   transition: all 0.3s ease-in;
   }
@@ -660,7 +660,7 @@ input#brgrbtn:checked + .burger-button .burger-button-line:first-child,
 .burger-button.close .burger-button-line:first-child {
   top: 16px;
   transform:rotate(-45deg);
-  background:#FF5C01;
+  background:var(--main, #FF5C01);
   }
 input#brgrbtn:checked + .burger-button .burger-button-line:nth-child(2),
 .burger-button.close .burger-button-line:nth-child(2) {
@@ -670,7 +670,7 @@ input#brgrbtn:checked + .burger-button .burger-button-line:last-child,
 .burger-button.close .burger-button-line:last-child {
   bottom: 16px;
   transform:rotate(45deg);
-  background:#FF5C01;
+  background:var(--main, #FF5C01);
   }
 .brgr-nav {
   position:fixed;

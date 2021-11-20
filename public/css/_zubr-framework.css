@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700&display=swap');
 
+:root{
+    --main: #FF5C01;
+}
+
 * {
     position:relative;
     box-sizing:border-box;
@@ -106,7 +110,7 @@ blockquote:after {
     height:100%;
     width:6px;
 
-    background:#FF5C01;
+    background: var(--main);
     }
 
 .button,
@@ -119,7 +123,7 @@ blockquote:after {
     font-weight:500;
     padding:8px 12px;
     background:transparent;
-    border:#FF5C01 1px solid;
+    border:var(--main) 1px solid;
     border-radius:8px;
     outline:none;
     cursor:pointer;
@@ -157,7 +161,7 @@ blockquote:after {
     outline:none !important;
     }
 .search-input:focus {
-    border:#FF5C01 2px solid;
+    border:var(--main) 2px solid;
     }
 
 .button *,
@@ -167,7 +171,7 @@ blockquote:after {
 .button.active,
 .button.primary {
     color:#fff;
-    background:#FF5C01;
+    background:var(--main);
     box-shadow:inset rgba(0,0,0,0.25) 0 -4px 4px, inset rgba(255,255,255,0.25) 0 4px 4px;
     }
 .button.primary:hover,
@@ -207,7 +211,7 @@ blockquote:after {
     border-radius:12px;
     }
 .select-button.active {
-    border-color:#FF5C01;
+    border-color:var(--main);
     }
 .select-button img {
     display:block;
@@ -223,7 +227,7 @@ blockquote:after {
     margin-left:30px;
     }
 .buttongroup-unit {
-    color:#FF5C01;
+    color:var(--main);
     font-size:13px;
     padding:8px 15px;
     border:#D4D4D4 1px solid;
@@ -243,8 +247,8 @@ blockquote:after {
 .buttongroup-unit.active {
     color:#fff;
     font-weight:500;
-    background:#FF5C01;
-    border-color:#FF5C01;
+    background:var(--main);
+    border-color:var(--main);
     z-index:1;
     }
 
@@ -256,7 +260,7 @@ blockquote:after {
     }
 .line-tabs {
     display:inline-flex;
-    color:#FF5C01;
+    color:var(--main);
     font-size:15px;
     font-weight:500;
     }
@@ -264,11 +268,11 @@ blockquote:after {
     display:flex;
     align-items:center;
     padding:10px 15px;
-    border:#FF5C01 1px solid;
+    border:var(--main) 1px solid;
     }
 .tab-unit.active {
     color:#fff;
-    background:#FF5C01;
+    background:var(--main);
     }
 .tab-unit + .tab-unit {
     margin-left:-1px;
@@ -476,7 +480,7 @@ blockquote:after {
     left:0;
     width:100%;
     height:1px;
-    background:#FF5C01;
+    background:var(--main);
     opacity:0.3;
     }
 .txt-underline-2px:after {
@@ -686,7 +690,7 @@ blockquote:after {
 
 
 /* Colors */
-h1, a, .button, .txt-color-1 {color:#FF5C01;}
+h1, a, .button, .txt-color-1 {color:var(--main);}
 .txt-color-2 {color:rgba(0,0,0,1);}
 .txt-color-3 {color:rgba(0,0,0,0.3);}
 .txt-color-3-1 {color:rgba(0,0,0,0.5);}

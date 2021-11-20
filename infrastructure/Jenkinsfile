@@ -11,6 +11,7 @@ pipeline {
             steps {
                 sh 'yarn'
                 sh 'yarn run build --emptyOutDir'
+                sh 'mv dist/nested/index.html dist/nested.html'
             }
         }
         stage('Deploy') {

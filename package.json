@@ -3,19 +3,22 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
+    "dev-sub": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "serve1": "vite --help"
   },
   "dependencies": {
-    "vue": "^3.2.16",
-    "vue-router": "^4.0",
     "ol": "^6.8.1",
-    "primevue": "^3.7.1",
     "primeflex": "^3.0.0",
-    "primeicons": "^4.1.0"
+    "primeicons": "^4.1.0",
+    "primevue": "^3.7.1",
+    "vite-plugin-style-import": "^1.3.0",
+    "vue": "^3.2.16",
+    "vue-router": "^4.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.9.2",
-    "vite": "^2.6.0"
+    "vite": "^2.6.14"
   }
 }
