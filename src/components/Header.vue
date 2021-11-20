@@ -2,7 +2,10 @@
   <div class="header-wrp fixedhrd">
     <div class="header flex-row flex-algn-itms-c">
       <a href="/" class="section pdng-l-20px pdng-r-20px">
-        <img src="/img/icon/zubr.svg" class="zoom-0_75 mil-zoom-0_5">
+        <img :src="isUik ? '/img/about/hp.png' : '/img/icon/zubr.svg'"
+             width="100"
+             height="77"
+             class="zoom-0_75 mil-zoom-0_5">
       </a>
       <div class="header-links flex-grow-all pdng-l-20px pdng-r-20px mil-notdisplay">
         <router-link :to="route.to" v-for="route of routes" :class="{'active' : active === route.name}">
@@ -114,6 +117,7 @@ export default defineComponent({
       }),
       results,
       query,
+      isUik,
       active: props.active,
       async load({value}) {
         try {

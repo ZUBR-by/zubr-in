@@ -14,6 +14,7 @@ import Campaign from "./components/Campaign.vue";
 import Organization from "./components/Organization.vue";
 import About from "./components/About.vue";
 import Result2020 from "./components/Result2020.vue";
+import Landing from "./components/Landing.vue";
 
 const routes = [
     {
@@ -21,7 +22,7 @@ const routes = [
         name: 'home',
         meta: {title: 'Главная'},
         exclude: true,
-        component: Home,
+        component: isUik ? Landing : Home,
     },
     {
         path: '/campaigns',
@@ -162,7 +163,7 @@ const routes = [
     },
 ]
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHistory(import.meta.env.VITE_BASE_PREFIX || ''),
     routes
 })
 router.beforeEach((to) => {
