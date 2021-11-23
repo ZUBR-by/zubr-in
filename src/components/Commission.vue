@@ -191,7 +191,7 @@
                             Референдум
                         </a>
                     </div>
-                    <div v-if="data && data.commission.report && data.commission.report[0].attachments"
+                    <div v-if="data && data.commission.report.length > 0"
                          class="pdng-t-15px">
                         <Image :src="item.url" v-for="(item, index) of data.commission.report[0].attachments"
                                alt="Протокол"
