@@ -15,6 +15,7 @@ import Organization from "./components/Organization.vue";
 import About from "./components/About.vue";
 import Result2020 from "./components/Result2020.vue";
 import Landing from "./components/Landing.vue";
+import Controller from "./components/Controller.vue";
 
 const routes = [
     {
@@ -48,6 +49,12 @@ const routes = [
         name: 'organizations',
         meta: {title: 'Организации'},
         component: Organizations,
+    },
+    {
+        path: '/controller',
+        name: 'controller',
+        meta: {title: 'Гражданскому контроллеру'},
+        component: Controller,
     },
     {
         path: '/organization/:id',
