@@ -481,8 +481,8 @@
   border-bottom:rgba(0,0,0,1) 1px solid;
   }
 .header-links a:hover {
-  color:red;
-  border-color:red;
+  color:var(--main, #FF5C01);
+  border-color:var(--main, #FF5C01);
   }
 .header-links a + a {
   margin-left:25px;
