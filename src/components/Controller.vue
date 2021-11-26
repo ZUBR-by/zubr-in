@@ -24,15 +24,14 @@
             <div class="section size-50 pdng-r-30px mil-size-100 mil-pdng-0">
                 <galleria :value="images1"
                           :show-thumbnails="false"
-                          :circular="true"
                           :show-item-navigators-on-hover="true"
                           :show-item-navigators="true"
-                          :num-visible="4"
-                          :fullscreen="true"
-                          :transition-interval="3000"
+                          :transition-interval="4000"
+                          :circular="true"
+                          style="width: 500px;height: 500px"
                           :auto-play="true">
                     <template #item="slotProps">
-                        <img :src="slotProps.item.src" :alt="slotProps.item.alt" style="width: 500px;height: 500px"/>
+                        <img :src="slotProps.item.src" :alt="slotProps.item.alt"/>
                     </template>
                 </galleria>
             </div>
@@ -53,13 +52,16 @@
                 </p>
             </div>
             <div class="section size-50 pdng-r-30px mil-size-100 mil-pdng-0">
-                <galleria :value="images2" :num-visible="4" :auto-play="true" :circular="true">
+                <galleria :value="images2"
+                          :show-thumbnails="false"
+                          :show-item-navigators-on-hover="true"
+                          :show-item-navigators="true"
+                          :transition-interval="4000"
+                          :circular="true"
+                          style="width: 500px;height: 500px"
+                          :auto-play="true">
                     <template #item="slotProps">
-                        <img :src="slotProps.item.src" :alt="slotProps.item.alt"  style="width: 500px;height: 500px"/>
-                    </template>
-                    <template #thumbnail="slotProps">
-                        <img style="width: 50px;height: 50px"
-                             :src="slotProps.item.thumbnailImageSrc" :alt="slotProps.item.alt"/>
+                        <img :src="slotProps.item.src" :alt="slotProps.item.alt" />
                     </template>
                 </galleria>
             </div>
@@ -80,13 +82,16 @@
                 </p>
             </div>
             <div class="section size-50 pdng-r-30px mil-size-100 mil-pdng-0">
-                <galleria :value="images3" :num-visible="4" :fullscreen="true" :circular="true">
+                <galleria :value="images3"
+                          :show-thumbnails="false"
+                          :show-item-navigators-on-hover="true"
+                          :show-item-navigators="true"
+                          :transition-interval="4000"
+                          :circular="true"
+                          style="width: 500px;height: 500px"
+                          :auto-play="true">
                     <template #item="slotProps">
-                        <img :src="slotProps.item.src" :alt="slotProps.item.alt" style="width: 500px;height: 500px"/>
-                    </template>
-                    <template #thumbnail="slotProps">
-                        <img style="width: 50px;height: 50px"
-                             :src="slotProps.item.thumbnailImageSrc" :alt="slotProps.item.alt" />
+                        <img :src="slotProps.item.src" :alt="slotProps.item.alt"/>
                     </template>
                 </galleria>
             </div>
@@ -135,9 +140,16 @@
                 </p>
             </div>
             <div class="section size-50 pdng-r-30px mil-size-100 mil-pdng-0">
-                <galleria :value="images4" :num-visible="4" :auto-play="true" :circular="true">
+                <galleria :value="images4"
+                          :show-thumbnails="false"
+                          :show-item-navigators-on-hover="true"
+                          :show-item-navigators="true"
+                          :transition-interval="4000"
+                          :circular="true"
+                          style="width: 500px;height: 500px"
+                          :auto-play="true">
                     <template #item="slotProps">
-                        <img :src="slotProps.item.src" :alt="slotProps.item.alt" style="width: 500px;height: 500px"/>
+                        <img :src="slotProps.item.src" :alt="slotProps.item.alt"/>
                     </template>
                     <template #thumbnail="slotProps">
                         <img style="width: 50px;height: 50px"
@@ -232,6 +244,8 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-
+<style>
+.p-galleria-content .p-galleria-item-wrapper .p-galleria-item-container button.p-galleria-item-next {
+    background-color: #a8a1a1
+}
 </style>
