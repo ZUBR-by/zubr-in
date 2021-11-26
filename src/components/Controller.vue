@@ -31,7 +31,7 @@
                           style="width: 300px;height: 300px"
                           :auto-play="true">
                     <template #item="slotProps">
-                        <img :src="slotProps.item.src" :alt="slotProps.item.alt"/>
+                        <img :src="slotProps.item.src" :alt="slotProps.item.alt" style="width: 300px;height: 300px"/>
                     </template>
                 </galleria>
             </div>
@@ -61,7 +61,7 @@
                           style="width: 300px;height: 300px"
                           :auto-play="true">
                     <template #item="slotProps">
-                        <img :src="slotProps.item.src" :alt="slotProps.item.alt" />
+                        <img :src="slotProps.item.src" :alt="slotProps.item.alt" style="width: 300px;height: 300px"/>
                     </template>
                 </galleria>
             </div>
@@ -91,7 +91,7 @@
                           style="width: 300px;height: 300px"
                           :auto-play="true">
                     <template #item="slotProps">
-                        <img :src="slotProps.item.src" :alt="slotProps.item.alt"/>
+                        <img :src="slotProps.item.src" :alt="slotProps.item.alt" style="width: 300px;height: 300px"/>
                     </template>
                 </galleria>
             </div>
@@ -149,12 +149,7 @@
                           style="width: 300px;height: 300px"
                           :auto-play="true">
                     <template #item="slotProps">
-                        <img :src="slotProps.item.src" :alt="slotProps.item.alt"/>
-                    </template>
-                    <template #thumbnail="slotProps">
-                        <img style="width: 50px;height: 50px"
-                             :src="slotProps.item.thumbnailImageSrc"
-                             :alt="slotProps.item.alt"/>
+                        <img :src="slotProps.item.src" :alt="slotProps.item.alt" style="width: 300px;height: 300px"/>
                     </template>
                 </galleria>
             </div>
