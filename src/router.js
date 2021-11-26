@@ -34,7 +34,7 @@ const routes = [
     {
         path: '/commissions',
         name: 'commissions',
-        meta: {title: 'Избирательные комиссии'},
+        meta: {title: 'Комиссии'},
         component: Commissions,
     },
     {
