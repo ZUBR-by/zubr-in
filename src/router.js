@@ -41,7 +41,7 @@ const routes = [
         path: '/elections/commissions',
         name: 'old_commissions',
         exclude: true,
-        meta: {title: 'Избирательные комиссии'},
+        meta: {title: 'Комиссии'},
         redirect: '/commissions',
     },
     {
@@ -49,6 +49,7 @@ const routes = [
         name: 'organizations',
         meta: {title: 'Организации'},
         component: Organizations,
+        exclude: true,
     },
     {
         path: '/controller',

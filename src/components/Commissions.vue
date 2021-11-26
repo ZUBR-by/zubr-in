@@ -1,5 +1,5 @@
 <template>
-  <header-view :active="'Избирательные комиссии'">
+  <header-view :active="'Комиссии'">
     <div class="header-subnav border-color2">
       <div
           class="section flex-grow-all pdng-30px pdng-t-15px pdng-b-15px mil-pdng-20px mil-pdng-t-10px mil-pdng-b-10px">

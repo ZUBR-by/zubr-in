@@ -28,7 +28,7 @@
                           :show-item-navigators="true"
                           :transition-interval="4000"
                           :circular="true"
-                          style="width: 500px;height: 500px"
+                          style="width: 300px;height: 300px"
                           :auto-play="true">
                     <template #item="slotProps">
                         <img :src="slotProps.item.src" :alt="slotProps.item.alt"/>
@@ -37,7 +37,7 @@
             </div>
         </div>
     </div>
-    <div class="scene">
+    <div class="scene pdng-t-5px">
         <div class="flex-row mil-flex-wrap">
             <div class="section size-50 pdng-r-30px mil-size-100 mil-pdng-0">
                 <h2 class="txt-bold">Почему фальсификации — это убийство</h2>
@@ -58,7 +58,7 @@
                           :show-item-navigators="true"
                           :transition-interval="4000"
                           :circular="true"
-                          style="width: 500px;height: 500px"
+                          style="width: 300px;height: 300px"
                           :auto-play="true">
                     <template #item="slotProps">
                         <img :src="slotProps.item.src" :alt="slotProps.item.alt" />
@@ -67,7 +67,7 @@
             </div>
         </div>
     </div>
-    <div class="scene">
+    <div class="scene pdng-t-5px">
         <div class="flex-row mil-flex-wrap">
             <div class="section size-50 pdng-r-30px mil-size-100 mil-pdng-0">
                 <h2 class="txt-bold">Почему к нам стоит прислушаться</h2>
@@ -88,7 +88,7 @@
                           :show-item-navigators="true"
                           :transition-interval="4000"
                           :circular="true"
-                          style="width: 500px;height: 500px"
+                          style="width: 300px;height: 300px"
                           :auto-play="true">
                     <template #item="slotProps">
                         <img :src="slotProps.item.src" :alt="slotProps.item.alt"/>
@@ -97,7 +97,7 @@
             </div>
         </div>
     </div>
-    <div class="scene">
+    <div class="scene pdng-t-5px">
         <div class="flex-row mil-flex-wrap">
             <div class="section size-100 pdng-r-30px mil-size-100 mil-pdng-0">
                 <h2 class="txt-bold">Что мы предлагаем</h2>
@@ -111,7 +111,7 @@
             </div>
         </div>
     </div>
-    <div class="scene">
+    <div class="scene pdng-t-5px">
         <div class="flex-row mil-flex-wrap">
             <div class="section size-100 pdng-r-30px mil-size-100 mil-pdng-0">
                 <h2 class="txt-bold">Почему надо действовать прямо сейчас</h2>
@@ -128,7 +128,7 @@
             </div>
         </div>
     </div>
-    <div class="scene">
+    <div class="scene pdng-t-5px">
         <div class="flex-row mil-flex-wrap">
             <div class="section size-50 pdng-r-30px mil-size-100 mil-pdng-0">
                 <h2 class="txt-bold">Что надо делать прямо сейчас</h2>
@@ -146,7 +146,7 @@
                           :show-item-navigators="true"
                           :transition-interval="4000"
                           :circular="true"
-                          style="width: 500px;height: 500px"
+                          style="width: 300px;height: 300px"
                           :auto-play="true">
                     <template #item="slotProps">
                         <img :src="slotProps.item.src" :alt="slotProps.item.alt"/>
@@ -160,7 +160,7 @@
             </div>
         </div>
     </div>
-    <div class="scene">
+    <div class="scene pdng-t-5px">
         <div class="flex-row mil-flex-wrap">
             <div class="section size-100 pdng-r-30px mil-size-100 mil-pdng-0">
                 <h2 class="text-bolder pdng-l-20px">FAQ</h2>
