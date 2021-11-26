@@ -368,7 +368,7 @@
   border-radius:20px;
   }
 .committee-unit:hover,
-.committee-members-unit:hover,
+.committee-members-unit:hover:not([class*="hide-hover"]),
 .organization-unit:hover {
   box-shadow:rgba(0,0,0,0.10) 0 15px 30px;
   z-index:1;
