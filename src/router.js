@@ -16,6 +16,7 @@ import About from "./components/About.vue";
 import Result2020 from "./components/Result2020.vue";
 import Landing from "./components/Landing.vue";
 import Controller from "./components/Controller.vue";
+import PathNotFound from "./components/PathNotFound.vue";
 
 const routes = [
     {
@@ -169,13 +170,18 @@ const routes = [
         meta: {title: 'Наблюдателям'},
         exclude: true,
     },
+    {
+        path: '/:pathMatch(.*)*',
+        exclude: true,
+        component: PathNotFound
+    },
 ]
 const router = createRouter({
     history: createWebHistory(import.meta.env.VITE_BASE_PREFIX || ''),
     routes
 })
 router.beforeEach((to) => {
-    document.title = `${to.meta.title} - ZUBR.in`
+    document.title = to.meta && to.meta.title ? `${to.meta.title} - ZUBR.in` : 'ZUBR.in'
 })
 
 export default router
