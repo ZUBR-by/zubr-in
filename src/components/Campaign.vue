@@ -1,48 +1,46 @@
 <template>
-    <Portal target="#header">
-        <header-view :active="'Кампании'">
-            <div class="header-subnav border-t-1px border-color2">
-                <div
-                    class="section flex-grow-all pdng-30px pdng-t-15px pdng-b-15px mil-pdng-20px mil-pdng-t-10px mil-pdng-b-10px">
-                    <div class="txt-color-1 txt-size-18px mil-txt-size-14px" v-if="data && data.campaign.started_at">
-                        {{ formatDateCampaign(data.campaign) }}
-                    </div>
-                    <div class="txt-color-1 txt-size-18px mil-txt-size-14px" v-else>
-                        Нет даты
-                    </div>
-                    <div class="txt-size-18px mil-txt-size-14px txt-bold" v-if="false">
-                        28 дней до начала
+    <header-view :active="'Кампании'">
+        <div class="header-subnav border-t-1px border-color2">
+            <div
+                class="section flex-grow-all pdng-30px pdng-t-15px pdng-b-15px mil-pdng-20px mil-pdng-t-10px mil-pdng-b-10px">
+                <div class="txt-color-1 txt-size-18px mil-txt-size-14px" v-if="data && data.campaign.started_at">
+                    {{ formatDateCampaign(data.campaign) }}
+                </div>
+                <div class="txt-color-1 txt-size-18px mil-txt-size-14px" v-else>
+                    Нет даты
+                </div>
+                <div class="txt-size-18px mil-txt-size-14px txt-bold" v-if="false">
+                    28 дней до начала
+                </div>
+            </div>
+            <div
+                class="section flex-row flex-algn-itms-c flex-noshrink flex-algn-slf-strch pdng-l-20px pdng-r-30px mil-pdng-r-20px border-l-1px border-color2">
+                <div class="section">
+                    <div class="flex-row flex-algn-itms-c">
+                        <div class="section">
+                            <img src="/img/icon/flag_large.svg" class="zoom-0_75">
+                        </div>
+                        <div class="section pdng-l-15px">
+                            <div class="txt-size-18px mil-txt-size-14px">
+                                Нарушений
+                            </div>
+                            <div class="txt-size-18px mil-txt-size-14px txt-bold" v-if="data">
+                                {{ data.messages_aggregate.aggregate.count }}
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div
-                    class="section flex-row flex-algn-itms-c flex-noshrink flex-algn-slf-strch pdng-l-20px pdng-r-30px mil-pdng-r-20px border-l-1px border-color2">
-                    <div class="section">
-                        <div class="flex-row flex-algn-itms-c">
-                            <div class="section">
-                                <img src="/img/icon/flag_large.svg" class="zoom-0_75">
-                            </div>
-                            <div class="section pdng-l-15px">
-                                <div class="txt-size-18px mil-txt-size-14px">
-                                    Нарушений
-                                </div>
-                                <div class="txt-size-18px mil-txt-size-14px txt-bold" v-if="data">
-                                    {{ data.campaign.messages_aggregate.aggregate.count }}
-                                </div>
-                            </div>
-                        </div>
+                <div class="section pdng-l-40px">
+                    <div class="button medium mil-txt-size-12px primary">
+                        Сообщить о нарушении
                     </div>
-                    <div class="section pdng-l-40px">
-                        <div class="button medium mil-txt-size-12px primary">
-                            Сообщить о нарушении
-                        </div>
-                        <div class="button medium mrgn-l-10px mil-mrgn-l-10px">
-                            Стать наблюдателем
-                        </div>
+                    <div class="button medium mrgn-l-10px mil-mrgn-l-10px">
+                        Стать наблюдателем
                     </div>
                 </div>
             </div>
-        </header-view>
-    </Portal>
+        </div>
+    </header-view>
     <div class="scene mrgn-t-170px mil-mrgn-t-120px" v-if="data">
         <h1 class="mil-txt-size-34px">
             {{ data.campaign.name }}
@@ -70,19 +68,19 @@
             </p>
         </div>
     </div>
-    <div class="scene" v-if="data && data.campaign.messages_aggregate.aggregate.count">
+    <div class="scene" v-if="data && data.messages_aggregate.aggregate.count">
         <h2 class="txt-size-36px mil-txt-size-30px txt-bold pdng-b-40px">
             Последние сообщения. <a class="txt-underline-inline-2px"
                                     :href="'/campaign/' + data.campaign.id + '/messages'">
-            Всего {{ data.campaign.messages_aggregate.aggregate.count }} сообщений о нарушениях
+            Всего {{ data.messages_aggregate.aggregate.count }} сообщений о нарушениях
         </a>.
         </h2>
-        <message-list v-model="data.campaign.messages"></message-list>
+        <message-list v-model="data.messages"></message-list>
         <div class="flex-column flex-algn-itms-c pdng-t-40px" v-if="data">
             <a :href="'/campaign/' + data.campaign.id + '/messages'"
                class="button primary inline-flex flex-algn-itms-c pdng-l-40px pdng-r-40px">
                 <div class="section">
-                    Показать все {{ data.campaign.messages_aggregate.aggregate.count }} нарушений <span
+                    Показать все {{ data.messages_aggregate.aggregate.count }} нарушений <span
                     class="mil-notdisplay">и инцидентов</span>
                 </div>
                 <div class="section mrgn-l-20px">
@@ -160,8 +158,8 @@ const data = ref(null)
 
 async function fetchCampaign() {
     try {
-        const response = await fetch(import.meta.env.VITE_API_URL + '/campaign/' + useRoute().params.id)
-        data.value = await response.json()
+        const response = await fetch(import.meta.env.VITE_API_URL + '/campaign/' + useRoute().params.id + '?limit=5')
+        data.value     = await response.json()
     } catch (e) {
         data.value = {campaign: {}};
     }

@@ -31,7 +31,7 @@
               </div>
             </template>
             <template #option="{option}">
-              {{ option.name }}
+              {{ option.person ? option.person.name : option.name }}
             </template>
           </Dropdown>
         </div>

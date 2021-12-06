@@ -7,10 +7,10 @@
                 <div class="section pdng-r-30px mil-pdng-0 mil-flex-column flex-algn-itms-c">
                     <div class="person-view mil-size-100">
                         <div>
-                            <Image :alt="data.member.full_name"
-                                   :preview="data.member.photo_url !== ''"
+                            <Image :alt="data.member.person.full_name"
+                                   :preview="data.member.person.photo_url !== ''"
                                    class="person-photo"
-                                   :src="data.member.photo_url || '/img/icon/person-placeholder.png'"></Image>
+                                   :src="data.member.person.photo_url || '/img/icon/person-placeholder.png'"></Image>
                         </div>
                         <div class="txt-size-12px">
                             <div class="mrgn-t-10px" v-if="photoOrigin">
@@ -25,7 +25,7 @@
                 </div>
                 <div class="section flex-grow-all mil-size-100 mil-pdng-t-30px">
                     <h1 class="txt-size-32px">
-                        {{ data.member.full_name }}
+                        {{ data.member.person.full_name }}
                     </h1>
                     <div class="mrgn-t-40px txt-size-14px mil-mrgn-t-20px" v-if="employer">
                         <div class="infoblock">
@@ -64,13 +64,16 @@
                 <div
                     class="elect-camp-unit-info pdng-t-20px pdng-b-40px pdng-l-40px pdng-r-40px mil-pdng-l-20px mil-pdng-r-20px mil-pdng-b-30px grayscale">
                     <h2 class="txt-color-1 txt-size-32px mil-txt-size-30px txt-lh-1_1em">
-                        <a class="txt-underline-inline" :href="'/commission/' + item.organization.id">
-                            {{ item.organization.name ? item.organization.name : item.organization.code }}
+                        <a class="txt-underline-inline" :href="'/commission/' + item.commission.id">
+                            {{ item.commission.name ? item.commission.name : item.commission.code }}
                         </a>
                     </h2>
+                    <p v-if="item.referral_notes" class="pdng-t-20px">
+                        {{ item.referral_notes }}
+                    </p>
                     <div class="tag-wrp mrgn-t-20px">
-                        <a class="tag-unit" :href="'/campaign/' + item.organization.electoral_campaign.id">
-                            {{ item.organization.electoral_campaign.name }}
+                        <a class="tag-unit" :href="'/campaign/' + item.commission.campaign.id">
+                            {{ item.commission.campaign.name }}
                         </a>
                     </div>
                 </div>
@@ -252,7 +255,7 @@
             Это мой профиль. Почему я здесь?
         </template>
         <div class="scene">
-            <p>Уважаемый(-ая) {{ data.member.full_name }}.
+            <p>Уважаемый(-ая) {{ data.member.person.full_name }}.
                 Сведения о Вас и Ваше изображение использованы нами, поскольку Вы являетесь
                 членом избирательной комиссии и осуществляете публичную деятельность, представляющую
                 общественный интерес. Если вы НЕ осуществляете деятельность в качестве участника электоральной компании
@@ -276,7 +279,7 @@ const data = ref(null)
 async function fetchMember() {
     try {
         const response = await fetch(import.meta.env.VITE_API_URL + '/member/' + useRoute().params.id)
-        data.value = await response.json()
+        data.value     = await response.json()
     } catch (e) {
         data.value = {member: {}};
     }
@@ -295,28 +298,28 @@ export default defineComponent({
         const showModal = ref(false)
         onMounted(async () => {
             await fetchMember()
-            document.title = document.title.replace(' -', ' ' + data.value.member.full_name + ' -')
+            document.title = document.title.replace(' -', ' ' + data.value.member.person.full_name + ' -')
         })
 
-        const employer = computed(() => {
+        const employer    = computed(() => {
             if (!data.value) {
                 return null
             }
-            const tmp = data.value.member.organizations.filter(i => i.extra.employer && i.extra.employer === '2020')
+            const tmp = data.value.member.person.organizations.filter(i => i.extra.employer && i.extra.employer === '2020')
             return tmp.length > 0 ? tmp[0] : null
         })
         const photoOrigin = computed(() => {
             if (!data.value) {
                 return null
             }
-            const tmp = data.value.member.attachments.filter(i => i.type === 'photo_origin')
+            const tmp = data.value.member.person.attachments.filter(i => i.type === 'photo_origin')
             return tmp.length > 0 ? tmp[0].url : null
         })
         const commissions = computed(() => {
             if (!data.value) {
                 return null
             }
-            return data.value.member.organizations.filter(i => i.organization && i.organization.electoral_campaign)
+            return data.value.member.commissions
         })
         return {
             data,

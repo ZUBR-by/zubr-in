@@ -91,7 +91,7 @@ async function fetchMessages() {
       id = useRoute().params.id;
     }
     console.log(category.value)
-    const response = await fetch(import.meta.env.VITE_API_URL + '/messages/' + id,
+    const response = await fetch(import.meta.env.VITE_API_URL + '/campaign/' + id,
         {
           method: 'POST',
           headers: {

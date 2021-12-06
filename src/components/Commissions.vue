@@ -123,7 +123,7 @@
                   </div>
                   <div class="section pdng-l-15px">
                     <div class="txt-color-2 txt-size-20px txt-bold mil-txt-size-16px">
-                      {{ item.messages_count }}
+                      {{ item.messages.aggregate.count }}
                     </div>
                   </div>
                 </div>

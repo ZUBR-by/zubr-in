@@ -13,7 +13,7 @@
                                 Сообщений
                             </div>
                             <div class="txt-size-18px txt-bold mil-txt-size-14px">
-                                {{ data.commission.violations.length }}
+                                {{ data.commission.messages.length }}
                             </div>
                         </div>
                     </div>
@@ -57,27 +57,27 @@
                         <div class="infoblock">
                             <div class="infoblock-name">Тип комиссии:</div>
                             <div class="infoblock-value">
-                                {{ map[data.commission.kind] ? map[data.commission.kind] : data.commission.kind }}
+                                {{ map[data.commission.type] || data.commission.type }}
                             </div>
                         </div>
                         <div class="infoblock">
                             <div class="infoblock-name">Код комиссии:</div>
                             <div class="infoblock-value">{{ data.commission.code }}</div>
                         </div>
-                        <div class="infoblock" v-if="data.commission.parents.length > 0">
+                        <div class="infoblock" v-if="data.commission.parent">
                             <div class="infoblock-name">Вышестоящая комиссия:</div>
                             <div class="infoblock-value">
                                 <a class="txt-underline-inline"
-                                   :href="'/commission/' + data.commission.parents[0].parent_org.id">
-                                    {{ data.commission.parents[0].parent_org.name }}
+                                   :href="'/commission/' + data.commission.parent.id">
+                                    {{ data.commission.parent.name }}
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="section size-50 mil-size-100 mil-pdng-t-50px" v-if="data.commission.coordinates">
+                <div class="section size-50 mil-size-100 mil-pdng-t-50px" v-if="data.commission.geometry">
                     <div class="map-wrp committee-view">
-                        <location :feature="data.commission.coordinates"></location>
+                        <location :feature="data.commission.geometry"></location>
                     </div>
                 </div>
             </div>
@@ -89,15 +89,15 @@
         </h2>
         <div class="campaign-candidates-list">
             <div class="person-wrp flex-column flex-algn-itms-strch"
-                 v-for="item of data.commission.persons">
+                 v-for="item of data.commission.members">
                 <div class="person-photo">
                     <!--          <div class="person-initials">С.Г.Т.</div>-->
-                    <img :src="item.person.photo_url ? item.person.photo_url : '/img/icon/person-placeholder.png'"
-                         :alt="item.person.full_name">
+                    <img :src="item.member.person.photo_url || '/img/icon/person-placeholder.png'"
+                         :alt="item.member.person.full_name">
                 </div>
                 <div class="person-info pdng-t-10px">
                     <div class="person-name txt-size-14px txt-medium">
-                        {{ item.person.full_name }}
+                        {{ item.member.person.full_name }}
                     </div>
                     <div class="txt-color-1 txt-size-12px txt-medium mrgn-t-10px">
                         {{ item.position }}
@@ -108,23 +108,23 @@
                     <div class="flex-column flex-algn-itms-strch">
                         <div class="person-photo">
                             <img
-                                :src="item.person.photo_url ? item.person.photo_url : '/img/icon/person-placeholder.png'"
-                                :alt="item.person.full_name">
+                                :src="item.member.person.photo_url || '/img/icon/person-placeholder.png'"
+                                :alt="item.member.person.full_name">
                         </div>
                         <div class="person-info pdng-t-10px">
-                            <a class="txt-size-14px txt-medium" :href="'/member/' + item.person.id">
-                                {{ item.person.full_name }}
+                            <a class="txt-size-14px txt-medium" :href="'/member/' + item.member.id">
+                                {{ item.member.person.full_name }}
                             </a>
                             <div class="txt-color-1 txt-size-12px txt-medium mrgn-t-10px">
                                 {{ item.position }}
                             </div>
                             <div class="infoblock txt-size-12px"
-                                 v-if="item.extra.referral_notes || item.person.extra.referral_description">
+                                 v-if="item.referral_notes || item.member.person.extra.referral_description">
                                 <div class="infoblock-name">
                                     Выдвинут:
                                 </div>
                                 <div class="infoblock-value">
-                                    {{ item.extra.referral_notes || item.person.extra.referral_description }}
+                                    {{ item.referral_notes || item.member.person.extra.referral_description }}
                                 </div>
                             </div>
                             <div class="infoblock txt-size-12px" v-if="false">
@@ -144,12 +144,12 @@
     <div class="scene" v-if="data">
         <h2 class="txt-size-36px txt-bold pdng-b-40px mil-txt-size-30px">
             Последние сообщения о нарушениях.
-            <a class="txt-underline-inline-2px" href="#">Всего {{ data.commission.violations.length }} сообщений о
+            <a class="txt-underline-inline-2px" href="#">Всего {{ data.commission.messages.length }} сообщений о
                 нарушениях</a>.
         </h2>
-        <message-list v-model="data.commission.violations" :show-commission="false"></message-list>
+        <message-list v-model="data.commission.messages" :show-commission="false"></message-list>
     </div>
-    <div class="scene" v-if="data && data.commission.electoral_campaign">
+    <div class="scene" v-if="data && data.commission.campaign">
         <h2 class="txt-size-36px mil-txt-size-30px txt-bold pdng-b-40px">
             Избирательная кампания
         </h2>
@@ -158,9 +158,9 @@
                 <div class="elect-camp-unit-header flex-row flex-algn-itms-c size-100 border-b-2px border-color2">
                     <div
                         class="section flex-grow-all txt-size-20px mil-txt-size-15px pdng-20px pdng-l-40px pdng-r-40px mil-pdng-15px mil-pdng-l-20px">
-                        <div class="txt-color-1 txt-medium" v-if="data.commission.electoral_campaign.started_at"
-                             :class="{'grayscale' : !isLater(data.commission.electoral_campaign.started_at)}">
-                            {{ formatDateCampaign(data.commission.electoral_campaign) }}
+                        <div class="txt-color-1 txt-medium" v-if="data.commission.campaign.started_at"
+                             :class="{'grayscale' : !isLater(data.commission.campaign.started_at)}">
+                            {{ formatDateCampaign(data.commission.campaign) }}
                         </div>
                         <div class="txt-color-1 txt-medium" v-else>
                             Нет даты
@@ -169,31 +169,31 @@
                 </div>
                 <div
                     class="elect-camp-unit-info pdng-t-20px pdng-b-40px pdng-l-40px pdng-r-40px mil-pdng-l-20px mil-pdng-r-20px mil-pdng-b-30px"
-                    :class="{'grayscale' : !isLater(data.commission.electoral_campaign.started_at)}"
+                    :class="{'grayscale' : !isLater(data.commission.campaign.started_at)}"
                 >
                     <h2 class="txt-color-1 txt-size-36px mil-txt-size-30px txt-lh-1_1em">
                         <a class="txt-underline-inline-2px"
-                           :href="'/campaign/' + data.commission.electoral_campaign.id">
-                            {{ data.commission.electoral_campaign.name }}
+                           :href="'/campaign/' + data.commission.campaign.id">
+                            {{ data.commission.campaign.name }}
                         </a>
                     </h2>
-                    <div class="tag-wrp mrgn-t-20px" v-if="data.commission.electoral_campaign.extra.type">
+                    <div class="tag-wrp mrgn-t-20px" v-if="data.commission.campaign.extra.type">
                         <a class="tag-unit"
-                           v-if="['parliamentary_elections', 'presidential_elections'].includes(data.commission.electoral_campaign.extra.type)">
+                           v-if="['parliamentary_elections', 'presidential_elections'].includes(data.commission.campaign.extra.type)">
                             Общереспубликанские выборы
                         </a>
                         <a class="tag-unit"
-                           v-if="['local_elections'].includes(data.commission.electoral_campaign.extra.type)">
+                           v-if="['local_elections'].includes(data.commission.campaign.extra.type)">
                             Местные выборы
                         </a>
                         <a class="tag-unit"
-                           v-if="['referendum'].includes(data.commission.electoral_campaign.extra.type)">
+                           v-if="['referendum'].includes(data.commission.campaign.extra.type)">
                             Референдум
                         </a>
                     </div>
-                    <div v-if="data && data.commission.report.length > 0"
+                    <div v-if="data && data.commission.report > 0"
                          class="pdng-t-15px">
-                        <Image :src="item.url" v-for="(item, index) of data.commission.report[0].attachments"
+                        <Image :src="item.url" v-for="(item, index) of data.commission.report.attachments"
                                alt="Протокол"
                                :preview="true"
                                width="400"
@@ -265,10 +265,6 @@ export default defineComponent({
         onMounted(async () => {
             const route = useRoute()
             let id = route.params.id;
-            if (route.name === 'old_commission') {
-                const json = await import('./../assets/old_commissions.json')
-                id = json.default[id] ? json.default[id] : id
-            }
             await fetchCommission(id)
             document.title = document.title.replace(' -', ' ' + data.value.commission.name + ' -')
         })

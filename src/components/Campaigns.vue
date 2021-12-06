@@ -88,7 +88,7 @@
                   Сообщений:
                 </div>
                 <div class="txt-size-20px mil-txt-size-15px txt-bold txt-nowrap">
-                  {{ campaign.messages.aggregate.count }}
+                  {{ campaign.messages_count }}
                 </div>
               </div>
             </div>

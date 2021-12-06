@@ -97,7 +97,7 @@ const routes = [
         path: '/elections/member/:id',
         name: 'old_member',
         exclude: true,
-        redirect: { name: 'members' }
+        component: Member,
     },
     {
         path: '/elections/members',
@@ -140,6 +140,13 @@ const routes = [
         path: '/about',
         name: 'about',
         meta: {title: 'О проекте'},
+        component: About,
+    },
+    {
+        path: '/elections/about',
+        name: 'old_about',
+        meta: {title: 'О проекте'},
+        exclude: true,
         component: About,
     },
     {
