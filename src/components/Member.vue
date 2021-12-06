@@ -1,84 +1,90 @@
 <template>
     <header-view>
     </header-view>
-    <div class="scene-wrp bg-color-1 border-b-1px border-color1" v-if="data">
-        <div class="scene mrgn-t-130px mil-mrgn-t-170px">
-            <div class="flex-row mil-flex-column">
-                <div class="section pdng-r-30px mil-pdng-0 mil-flex-column flex-algn-itms-c">
-                    <div class="person-view mil-size-100">
-                        <div>
-                            <Image :alt="data.member.person.full_name"
-                                   :preview="data.member.person.photo_url !== ''"
-                                   class="person-photo"
-                                   :src="data.member.person.photo_url || '/img/icon/person-placeholder.png'"></Image>
-                        </div>
-                        <div class="txt-size-12px">
-                            <div class="mrgn-t-10px" v-if="photoOrigin">
-                                <a class="txt-underline-inline" :href="photoOrigin">Источник фото</a>
+    <template v-if="data && data.member">
+        <div class="scene-wrp bg-color-1 border-b-1px border-color1">
+            <div class="scene mrgn-t-130px mil-mrgn-t-170px">
+                <div class="flex-row mil-flex-column">
+                    <div class="section pdng-r-30px mil-pdng-0 mil-flex-column flex-algn-itms-c">
+                        <div class="person-view mil-size-100">
+                            <div>
+                                <Image :alt="data.member.person.full_name"
+                                       :preview="data.member.person.photo_url !== ''"
+                                       class="person-photo"
+                                       :src="data.member.person.photo_url || '/img/icon/person-placeholder.png'"></Image>
                             </div>
-                            <div class="mrgn-t-10px">
-                                <a class="txt-underline-inline" @click="showModal = true">Это мой профиль. Почему я
-                                    здесь?</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="section flex-grow-all mil-size-100 mil-pdng-t-30px">
-                    <h1 class="txt-size-32px">
-                        {{ data.member.person.full_name }}
-                    </h1>
-                    <div class="mrgn-t-40px txt-size-14px mil-mrgn-t-20px" v-if="employer">
-                        <div class="infoblock">
-                            <div class="infoblock-name">Должность:</div>
-                            <div class="infoblock-value">
-                                {{ employer.position }}
-                            </div>
-                        </div>
-                        <div class="infoblock">
-                            <div class="infoblock-name">Работодатель:</div>
-                            <div class="infoblock-value">
-                                <a class="txt-underline-inline" :href="'/organization/' + employer.organization.id">
-                                    {{ employer.organization.name }}
-                                </a>
+                            <div class="txt-size-12px">
+                                <div class="mrgn-t-10px" v-if="photoOrigin">
+                                    <a class="txt-underline-inline" :href="photoOrigin">Источник фото</a>
+                                </div>
+                                <div class="mrgn-t-10px">
+                                    <a class="txt-underline-inline" @click="showModal = true">Это мой профиль. Почему я
+                                        здесь?</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!--          <div class="tag-wrp mrgn-t-20px">-->
-                    <!--            <a class="tag-unit">-->
-                    <!--              Фальсификации-->
-                    <!--            </a>-->
-                    <!--            <a class="tag-unit">-->
-                    <!--              Санкции-->
-                    <!--            </a>-->
-                    <!--          </div>-->
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="scene">
-        <h2 class="txt-size-36px txt-bold pdng-b-40px mil-txt-size-30px">
-            Участие в <a class="txt-underline-2px" href="/commissions">комиссиях</a> избирательных кампаний
-        </h2>
-        <div class="election-campaign-list">
-            <div class="election-campaign-unit" v-for="item of commissions">
-                <div
-                    class="elect-camp-unit-info pdng-t-20px pdng-b-40px pdng-l-40px pdng-r-40px mil-pdng-l-20px mil-pdng-r-20px mil-pdng-b-30px grayscale">
-                    <h2 class="txt-color-1 txt-size-32px mil-txt-size-30px txt-lh-1_1em">
-                        <a class="txt-underline-inline" :href="'/commission/' + item.commission.id">
-                            {{ item.commission.name ? item.commission.name : item.commission.code }}
-                        </a>
-                    </h2>
-                    <p v-if="item.referral_notes" class="pdng-t-20px">
-                        {{ item.referral_notes }}
-                    </p>
-                    <div class="tag-wrp mrgn-t-20px">
-                        <a class="tag-unit" :href="'/campaign/' + item.commission.campaign.id">
-                            {{ item.commission.campaign.name }}
-                        </a>
+                    <div class="section flex-grow-all mil-size-100 mil-pdng-t-30px">
+                        <h1 class="txt-size-32px">
+                            {{ data.member.person.full_name }}
+                        </h1>
+                        <div class="mrgn-t-40px txt-size-14px mil-mrgn-t-20px" v-if="employer">
+                            <div class="infoblock">
+                                <div class="infoblock-name">Должность:</div>
+                                <div class="infoblock-value">
+                                    {{ employer.position }}
+                                </div>
+                            </div>
+                            <div class="infoblock">
+                                <div class="infoblock-name">Работодатель:</div>
+                                <div class="infoblock-value">
+                                    <a class="txt-underline-inline" :href="'/organization/' + employer.organization.id">
+                                        {{ employer.organization.name }}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--          <div class="tag-wrp mrgn-t-20px">-->
+                        <!--            <a class="tag-unit">-->
+                        <!--              Фальсификации-->
+                        <!--            </a>-->
+                        <!--            <a class="tag-unit">-->
+                        <!--              Санкции-->
+                        <!--            </a>-->
+                        <!--          </div>-->
                     </div>
                 </div>
             </div>
         </div>
+        <div class="scene">
+            <h2 class="txt-size-36px txt-bold pdng-b-40px mil-txt-size-30px">
+                Участие в <a class="txt-underline-2px" href="/commissions">комиссиях</a> избирательных кампаний
+            </h2>
+            <div class="election-campaign-list">
+                <div class="election-campaign-unit" v-for="item of commissions">
+                    <div
+                        class="elect-camp-unit-info pdng-t-20px pdng-b-40px pdng-l-40px pdng-r-40px mil-pdng-l-20px mil-pdng-r-20px mil-pdng-b-30px grayscale">
+                        <h2 class="txt-color-1 txt-size-32px mil-txt-size-30px txt-lh-1_1em">
+                            <a class="txt-underline-inline" :href="'/commission/' + item.commission.id">
+                                {{ item.commission.name ? item.commission.name : item.commission.code }}
+                            </a>
+                        </h2>
+                        <p v-if="item.referral_notes" class="pdng-t-20px">
+                            {{ item.referral_notes }}
+                        </p>
+                        <div class="tag-wrp mrgn-t-20px">
+                            <a class="tag-unit" :href="'/campaign/' + item.commission.campaign.id">
+                                {{ item.commission.campaign.name }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <div class="scene" v-if="data && data.member && data.member === null">
+        <p>Член комиссий не найден</p>
+        <p><a href="/members">К списку</a></p>
     </div>
     <div class="scene" v-if="false">
         <h2 class="txt-size-36px txt-bold pdng-b-40px mil-txt-size-30px">
