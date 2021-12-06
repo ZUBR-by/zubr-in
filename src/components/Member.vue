@@ -72,7 +72,7 @@
                         <p v-if="item.referral_notes" class="pdng-t-20px">
                             {{ item.referral_notes }}
                         </p>
-                        <div class="tag-wrp mrgn-t-20px">
+                        <div class="tag-wrp mrgn-t-20px" v-if="item.commission.campaign">
                             <a class="tag-unit" :href="'/campaign/' + item.commission.campaign.id">
                                 {{ item.commission.campaign.name }}
                             </a>
