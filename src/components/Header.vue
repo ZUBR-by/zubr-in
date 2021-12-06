@@ -96,7 +96,7 @@ export default defineComponent({
       if (!newValue) {
         return
       }
-      if (newValue.id && newValue.__typename === 'person') {
+      if (newValue.id && newValue.__typename === 'election_member') {
         window.location = '/member/' + newValue.id
         return;
       }
