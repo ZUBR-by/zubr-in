@@ -91,9 +91,11 @@ h3 {
 p {}
 p + p,
 p + blockquote,
-blockquote + p {
+blockquote + p,
+blockquote + * {
     margin-top:30px;
     }
+
 p.quote,
 blockquote {
     font-size:28px;
@@ -502,6 +504,8 @@ blockquote:after {
 /* Text Line Height */
 .txt-lh-1em {line-height:1em;}
 .txt-lh-1_1em {line-height:1.1em;}
+.txt-lh-1_2em {line-height:1.2em;}
+.txt-lh-1_3em {line-height:1.3em;}
 
 /* Text sizes */
 .txt-size-11px {font-size:11px;}
@@ -710,6 +714,7 @@ h1, a, .button, .txt-color-1 {color:var(--main);}
 .hovered:hover {background:#f7f7f7}
 .overflow-hide {overflow:hidden !important;}
 .cursor-pointer, .cursor-pointer * {cursor:pointer;}
+.zoom-1_2 {zoom:1.2;}
 .zoom-1 {zoom:1;}
 .zoom-0_8 {zoom:0.8;}
 .zoom-0_75 {zoom:0.75;}
