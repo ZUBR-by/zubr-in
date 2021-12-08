@@ -104,7 +104,7 @@
                     </div>
                 </div>
 
-                <div class="person-popover cursor-pointer">
+                <a class="person-popover cursor-pointer" :href="'/member/' + item.member.id">
                     <div class="flex-column flex-algn-itms-strch">
                         <div class="person-photo">
                             <img
@@ -112,7 +112,7 @@
                                 :alt="item.member.person.full_name">
                         </div>
                         <div class="person-info pdng-t-10px">
-                            <a class="txt-size-14px txt-medium" :href="'/member/' + item.member.id">
+                            <a class="txt-size-14px txt-medium">
                                 {{ item.member.person.full_name }}
                             </a>
                             <div class="txt-color-1 txt-size-12px txt-medium mrgn-t-10px">
@@ -137,7 +137,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>

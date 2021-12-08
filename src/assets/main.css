@@ -243,8 +243,11 @@
 
 .person-view .person-photo {
   width:256px;
-  height:256px;
+  height:auto;
   border-radius:5px;
+  }
+.person-view .person-photo img {
+  position:relative;
   }
 
 

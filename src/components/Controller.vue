@@ -31,7 +31,7 @@
             <div class="section size-50 mil-size-100 mil-pdng-0">
                 <galleria :value="images1"
                           :show-thumbnails="false"
-                          :show-item-navigators-on-hover="true"
+                          :show-item-navigators-on-hover="false"
                           :show-item-navigators="true"
                           :transition-interval="4000"
                           :circular="true"
