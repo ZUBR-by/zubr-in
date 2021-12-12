@@ -12,7 +12,15 @@
             </div>
         </div>
     </header-view>
+    <div class="scene mrgn-t-170px mil-mrgn-t-170px" v-if="loading">
+        <div class="committee-members-list">
+            Идет загрузка...
+        </div>
+    </div>
     <div class="scene mrgn-t-170px mil-mrgn-t-170px" v-if="data">
+        <div class="committee-members-list" v-if="loading">
+            Идет загрузка...
+        </div>
         <div class="committee-members-list">
             <!--      :class="{mark: item === 2}"-->
             <a class="committee-members-unit mil-flex-column"
@@ -42,9 +50,9 @@
                         <template v-for="sub of item.commissions">
                             {{ sub.position }}
                             в
-                            {{ sub.commission.name || sub.commission.code }}, {{sub.commission.description}}
+                            {{ sub.commission.name || sub.commission.code }}, {{ sub.commission.description }}
                             <template v-if="sub.commission.campaign_id">
-                            ({{ sub.commission.campaign_id.substr(0, 4) }})
+                                ({{ sub.commission.campaign_id.substr(0, 4) }})
                             </template>
                             <br>
                         </template>
@@ -86,16 +94,18 @@ import {commission_types} from "./Commission.vue";
 import {onBeforeRouteUpdate} from "vue-router";
 import router from "../router";
 
-const data   = ref(null)
-let filter   = reactive({
+const data    = ref(null)
+let filter    = reactive({
     name: ''
 });
-const tmp    = ref(null)
-const offset = ref(0)
-
+const tmp     = ref(null)
+const offset  = ref(0)
+const loading = ref(false)
 
 async function fetchMembers() {
     try {
+        loading.value = true;
+
         const response = await fetch(
             import.meta.env.VITE_API_URL
             +
@@ -110,8 +120,10 @@ async function fetchMembers() {
         } else {
             data.value = tmp.value
         }
+        loading.value = false;
     } catch (e) {
-        data.value = {members: [], pagination: {aggregate: {count: 0}}};
+        loading.value = false;
+        data.value    = {members: [], pagination: {aggregate: {count: 0}}};
     }
     return {
         data
@@ -149,6 +161,7 @@ export default defineComponent({
         return {
             data,
             filter,
+            loading,
             types: Object.keys(commission_types),
             fetchMore() {
                 offset.value += 50;
