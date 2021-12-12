@@ -7,7 +7,7 @@
                     <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">
                         Фильтр
                     </div>
-                    <input class="p-inputtext p-component" placeholder="ФИО" v-model.lazy="filter">
+                    <input class="p-inputtext p-component" placeholder="ФИО" v-model.lazy="filter.name">
                 </div>
             </div>
         </div>
@@ -22,13 +22,13 @@
                         <div class="section pdng-r-20px">
                             <div class="person-photo">
                                 <div class="person-initials">С.Г.Т.</div>
-                                <img :src="item.person.photo_url || '/img/icon/person-placeholder.png'"
+                                <img :src="item.photo_url || '/img/icon/person-placeholder.png'"
                                      :alt="item.full_name">
                             </div>
                         </div>
                         <div class="section">
                             <h2 class="txt-color-1 txt-size-20px txt-medium mil-txt-size-16px">
-                                {{ item.person.full_name }}
+                                {{ item.full_name }}
                             </h2>
                             <div class="txt-color-2 txt-size-14px" v-if="false">
                                 <!--                TODO add position-->
@@ -37,13 +37,16 @@
                     </div>
                 </div>
                 <div
-                    class="section flex-row flex-algn-itms-c flex-algn-slf-strch size-45 pdng-r-20px pdng-l-20px pdng-t-20px pdng-b-20px border-l-1px border-color2  mil-size-100 mil-pdng-t-0 mil-border-0 mil-border-b-1px mil-border-color1">
+                    class="section flex-row flex-algn-itms-c flex-algn-slf-strch size-60 pdng-r-20px pdng-l-20px pdng-t-20px pdng-b-20px border-l-1px border-color2  mil-size-100 mil-pdng-t-0 mil-border-0 mil-border-b-1px mil-border-color1">
                     <div class="txt-color-2 txt-size-14px">
-                        <template v-for="sub of item.person.organizations">
-                            <template v-if="!types.includes(sub.organization.kind)">
-                                {{ sub.position ? sub.position + ' в ' : '' }}{{ sub.organization.name }}
-                                <br>
+                        <template v-for="sub of item.commissions">
+                            {{ sub.position }}
+                            в
+                            {{ sub.commission.name || sub.commission.code }}, {{sub.commission.description}}
+                            <template v-if="sub.commission.campaign_id">
+                            ({{ sub.commission.campaign_id.substr(0, 4) }})
                             </template>
+                            <br>
                         </template>
                     </div>
                 </div>
@@ -68,7 +71,7 @@
                 </div>
             </a>
         </div>
-        <div class="flex-column flex-algn-itms-c pdng-t-40px">
+        <div class="flex-column flex-algn-itms-c pdng-t-40px" v-if="data.pagination.aggregate.count > 50">
             <a @click="fetchMore" class="button primary pdng-l-40px pdng-r-40px">
                 Загрузить еще 50 членов <span class="mil-notdisplay"> избирательных</span> комиссий из
                 {{ data.pagination.aggregate.count }}
@@ -78,13 +81,18 @@
 </template>
 <script>
 import Header from './Header.vue'
-import {defineComponent, onMounted, ref, watch} from "vue";
+import {defineComponent, onMounted, reactive, ref, watch} from "vue";
 import {commission_types} from "./Commission.vue";
+import {onBeforeRouteUpdate} from "vue-router";
+import router from "../router";
 
 const data   = ref(null)
-const filter = ref('')
+let filter   = reactive({
+    name: ''
+});
 const tmp    = ref(null)
 const offset = ref(0)
+
 
 async function fetchMembers() {
     try {
@@ -92,7 +100,8 @@ async function fetchMembers() {
             import.meta.env.VITE_API_URL
             +
             '/members'
-            + (filter.value ? '?name=' + encodeURIComponent('%' + filter.value + '%') : '')
+            + ('?name=' + encodeURIComponent('%' + (filter.name || '') + '%'))
+            + ('&offset=' + offset.value)
         )
         tmp.value      = await response.json()
 
@@ -115,8 +124,23 @@ export default defineComponent({
         'header-view': Header,
     },
     setup() {
-        watch(filter, () => {
+        let params = (new URL(document.location.href)).searchParams;
+        (['name']).forEach((elem) => {
+            filter[elem] = params.has(elem) ? params.get(elem) : ''
+        })
+        onBeforeRouteUpdate((to, from, next) => {
+            (['name']).forEach((elem) => {
+                filter[elem] = elem in to.query ? (to.query[elem]) : ''
+            })
+            next()
+        })
+        watch(filter, (newValue) => {
             offset.value = 0
+            router.push({
+                name: 'members', query: {
+                    name: newValue.name,
+                }
+            })
             fetchMembers()
         })
         onMounted(() => {
