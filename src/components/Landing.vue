@@ -68,12 +68,17 @@
                     </div>
                     <div
                         class="section flex-row flex-algn-slf-strch flex-algn-itms-c size-30 pdng-r-20px pdng-l-20px pdng-t-20px pdng-b-20px border-l-1px border-color2 mil-border-0 mil-size-100 mil-pdng-15px mil-pdng-t-0 mil-border-b-1px mil-border-color1">
-                        <div class="size-100">
-                            <div class="txt-color-1 txt-size-20px txt-medium mil-txt-size-16px" v-if="item.info">
+                        <div class="size-100" v-if="item.info">
+                            <div class="txt-color-1 txt-size-20px txt-medium mil-txt-size-16px" >
                                 {{item.info}}
                             </div>
                             <div class="txt-color-2 txt-size-14px">
                                 {{ item.position }}
+                            </div>
+                        </div>
+                        <div class="size-100" v-else>
+                            <div class="txt-color-2 txt-size-14px">
+                                {{item.constituency_description }}
                             </div>
                         </div>
                     </div>
