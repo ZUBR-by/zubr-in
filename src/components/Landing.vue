@@ -138,7 +138,7 @@ export default defineComponent({
         const placeholder     = computed(() => {
             return is_home_address.value
                 ? 'Ваш домашний адрес'
-                : 'Код, адрес, описание комиссии, описание округа'
+                : 'ФИО члена комиссии, Код, адрес, описание комиссии, описание округа'
         })
         watch(filter, (newValue) => {
             if (!newValue) {
