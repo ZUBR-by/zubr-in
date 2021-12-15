@@ -13,8 +13,10 @@ pipeline {
             }
             steps {
                 sh 'yarn'
-                sh 'yarn run build --emptyOutDir'
-                sh 'mv dist/nested/index.html dist/nested.html'
+                sh 'yarn run build-all'
+                sh 'rm -rf dist'
+                sh 'mv packages/main/dist dist/'
+                sh 'mv packages/ik/dist dist/ik/'
             }
         }
         stage('Deploy') {
