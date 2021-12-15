@@ -158,7 +158,7 @@ function isLater(started_at) {
 export {fetchCampaigns, isLater}
 export default defineComponent({
   components: {
-    // 'header-view': Header,
+    'header-view': Header,
     SelectButton
   },
   setup() {
