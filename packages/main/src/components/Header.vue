@@ -12,7 +12,7 @@
           {{ route.name }}
         </router-link>
       </div>
-      <div class="section pdng-l-20px pdng-r-30px mil-notdisplay">
+      <div class="section pdng-l-20px pdng-r-30px mil-notdisplay" v-if="false">
         <div class="search-input-wrp">
           <Dropdown :options="results"
                     placeholder="Поиск..."
