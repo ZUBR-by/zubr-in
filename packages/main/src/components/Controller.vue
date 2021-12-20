@@ -93,7 +93,8 @@
                     «<a href="" class="txt-underline-inline">ZUBR</a>»,
                     «<a href="" class="txt-underline-inline">Голос</a>»
                     и «<a href="" class="txt-underline-inline">Честные люди</a>», правозащитными и партийными
-                    организациями позволили доказать, что выборы были сфальсифицированы. И мировой опыт, и собственный опыт
+                    организациями позволили доказать, что выборы были сфальсифицированы. И мировой опыт, и собственный
+                    опыт
                     беларусов говорит, что любые преступления нельзя игнорировать. Их нужно фиксировать.
                     Только активные действия граждан на всех этапах любых электоральных кампаний влияют на их исход.
                 </p>
@@ -124,7 +125,8 @@
                 <p class="txt-size-18px pdng-t-20px txt-lh-1_3em">
                     Учитывая сегодняшний немыслимый уровень репрессий, оценив, оценив риски,
                     мы предлагаем беларусам покрыть краткосрочным независимым наблюдением так
-                    «референдум» именно потому, что его проведение незаконно. Через наш <a href="https://t.me/zubr_in_bot" class="txt-underline">
+                    «референдум» именно потому, что его проведение незаконно. Через наш <a
+                    href="https://t.me/zubr_in_bot" class="txt-underline">
                     чат-бот в Телеграме</a>
                     и онлайн-платформу ZUBR проведёт рекрутинг, обучение, координацию активных граждан и
                     сбор информации о готовящемся “референдуме” и ходе кампании.
@@ -153,7 +155,7 @@
     </div>
     <div class="scene pdng-t-5px">
         <div class="flex-row mil-flex-wrap">
-            <div class="section size-100 pdng-r-30px mil-size-100 mil-pdng-0 mil-pdng-b-30px">
+            <div class="section size-50 pdng-r-30px mil-size-100 mil-pdng-0 mil-pdng-b-30px">
                 <h2 class="txt-bold">Почему надо действовать прямо сейчас</h2>
                 <p class="txt-size-18px pdng-t-20px txt-lh-1_3em">
                     Режим в Беларуси использует и многоуровневую фальсификацию при голосовании,
@@ -165,6 +167,20 @@
                     активности.<br>
                     Поэтому нам всем нужно быть готовыми к наблюдению ещё до назначения даты.
                 </p>
+            </div>
+            <div class="section size-50 mil-size-100 mil-pdng-0">
+                <galleria :value="images6"
+                          :show-thumbnails="false"
+                          :show-item-navigators-on-hover="true"
+                          :show-item-navigators="true"
+                          :transition-interval="4000"
+                          :circular="true"
+                          style="width: 300px;height: 300px"
+                          :auto-play="true">
+                    <template #item="slotProps">
+                        <img :src="slotProps.item.src" :alt="slotProps.item.alt" style="width: 300px;height: 300px"/>
+                    </template>
+                </galleria>
             </div>
         </div>
     </div>
@@ -277,6 +293,7 @@ export default defineComponent({
             images3: prepareArray(18, 3, true),
             images4: prepareArray(9, 4),
             images5: prepareArray(14, 5),
+            images6: prepareArray(10, 6),
         }
     }
 })
