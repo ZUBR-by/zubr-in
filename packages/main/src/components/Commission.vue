@@ -193,13 +193,15 @@
                     </div>
                     <div v-if="data && data.commission.report.length > 0"
                          class="pdng-t-15px">
-                        <Image :src="item.url" v-for="(item, index) of data.commission.report[0].attachments"
-                               alt="Протокол"
-                               :preview="true"
-                               width="400"
-                               height="500"
-                               :class="{'pdng-l-5px' : index > 0}"
-                        ></Image>
+                        <template v-for="report of data.commission.report">
+                            <Image :src="item.url" v-for="(item, index) of report.attachments"
+                                   alt="Протокол"
+                                   :preview="true"
+                                   width="400"
+                                   height="500"
+                                   :class="{'pdng-l-5px' : index > 0}"
+                            ></Image>
+                        </template>
                     </div>
                 </div>
             </div>
@@ -232,7 +234,7 @@ const map = {
 async function fetchCommission(id) {
     try {
         const response = await fetch(import.meta.env.VITE_API_URL + '/commission/' + id)
-        data.value = await response.json()
+        data.value     = await response.json()
     } catch (e) {
         data.value = {commissions: [], pagination: {aggregate: {count: 0}}};
     }
@@ -245,7 +247,7 @@ function isLater(started_at) {
     if (started_at === null) {
         return true;
     }
-    const current = new Date();
+    const current  = new Date();
     const campaign = new Date(started_at);
 
     return campaign > current;
@@ -264,7 +266,7 @@ export default defineComponent({
     setup() {
         onMounted(async () => {
             const route = useRoute()
-            let id = route.params.id;
+            let id      = route.params.id;
             await fetchCommission(id)
             document.title = document.title.replace(' -', ' ' + data.value.commission.name + ' -')
         })
