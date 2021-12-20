@@ -20,7 +20,7 @@
             </button>
         </div>
     </div>
-    <div class="scene">
+    <div class="scene mil-pdng-b-5px">
         <div class="flex-row mil-flex-wrap">
             <div class="section size-50 pdng-r-30px mil-size-100 mil-pdng-0 mil-pdng-b-30px">
                 <h2 class="txt-bold">Кто мы такие</h2>
@@ -45,7 +45,7 @@
             </div>
         </div>
     </div>
-    <div class="scene pdng-t-5px">
+    <div class="scene pdng-t-5px mil-pdng-b-5px">
         <div class="flex-row mil-flex-wrap">
             <div class="section size-50 pdng-r-30px mil-size-100 mil-pdng-0 mil-pdng-b-30px">
                 <h2 class="txt-bold">Почему фальсификации — это убийство</h2>
@@ -82,7 +82,7 @@
             </div>
         </div>
     </div>
-    <div class="scene pdng-t-5px">
+    <div class="scene pdng-t-5px mil-pdng-b-5px">
         <div class="flex-row mil-flex-wrap">
             <div class="section size-50 pdng-r-30px mil-size-100 mil-pdng-0 mil-pdng-b-30px">
                 <h2 class="txt-bold">Почему к нам стоит присоединится</h2>
@@ -117,7 +117,7 @@
             </div>
         </div>
     </div>
-    <div class="scene pdng-t-5px">
+    <div class="scene pdng-t-5px mil-pdng-b-5px">
         <div class="flex-row mil-flex-wrap">
             <div class="section size-50 pdng-r-30px mil-size-100 mil-pdng-0 mil-pdng-b-30px">
                 <h2 class="txt-bold">Что мы предлагаем</h2>
@@ -152,7 +152,7 @@
             </div>
         </div>
     </div>
-    <div class="scene pdng-t-5px">
+    <div class="scene pdng-t-5px mil-pdng-b-5px">
         <div class="flex-row mil-flex-wrap">
             <div class="section size-50 pdng-r-30px mil-size-100 mil-pdng-0 mil-pdng-b-30px">
                 <h2 class="txt-bold">Почему надо действовать прямо сейчас</h2>
@@ -187,7 +187,7 @@
             </div>
         </div>
     </div>
-    <div class="scene pdng-t-5px">
+    <div class="scene pdng-t-5px mil-pdng-b-5px">
         <div class="flex-row mil-flex-wrap">
             <div class="section size-50 pdng-r-30px mil-size-100 mil-pdng-0 mil-pdng-b-30px">
                 <h2 class="txt-bold">Что можно делать уже сегодня</h2>
