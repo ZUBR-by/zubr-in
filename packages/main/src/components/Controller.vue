@@ -119,7 +119,7 @@
     </div>
     <div class="scene pdng-t-5px">
         <div class="flex-row mil-flex-wrap">
-            <div class="section size-100 pdng-r-30px mil-size-100 mil-pdng-0 mil-pdng-b-30px">
+            <div class="section size-50 pdng-r-30px mil-size-100 mil-pdng-0 mil-pdng-b-30px">
                 <h2 class="txt-bold">Что мы предлагаем</h2>
                 <p class="txt-size-18px pdng-t-20px txt-lh-1_3em">
                     Учитывая сегодняшний немыслимый уровень репрессий, оценив, оценив риски,
@@ -134,6 +134,20 @@
                         без официальной регистрации в качестве наблюдателя сообщить нам о замеченных
                         правонарушениях.</b>
                 </p>
+            </div>
+            <div class="section size-50 mil-size-100 mil-pdng-0">
+                <galleria :value="images5"
+                          :show-thumbnails="false"
+                          :show-item-navigators-on-hover="true"
+                          :show-item-navigators="true"
+                          :transition-interval="4000"
+                          :circular="true"
+                          style="width: 300px;height: 300px"
+                          :auto-play="true">
+                    <template #item="slotProps">
+                        <img :src="slotProps.item.src" :alt="slotProps.item.alt" style="width: 300px;height: 300px"/>
+                    </template>
+                </galleria>
             </div>
         </div>
     </div>
@@ -261,7 +275,8 @@ export default defineComponent({
             images1: prepareArray(34, 1),
             images2: prepareArray(15, 2),
             images3: prepareArray(18, 3, true),
-            images4: prepareArray(9, 4,)
+            images4: prepareArray(9, 4),
+            images5: prepareArray(14, 5),
         }
     }
 })
