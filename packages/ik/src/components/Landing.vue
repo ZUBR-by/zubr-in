@@ -38,8 +38,20 @@
                                    v-model.lazy="filter">
                         </div>
                         <div class="block mrgn-10px">
-                            <label for="is_home_address">Домашний адрес</label>
-                            <input class="mrgn-l-10px" type="checkbox" v-model="is_home_address" id="is_home_address">
+                            <label for="is_home_address1">Домашний адрес</label>
+                            <input class="mrgn-l-10px" type="radio" name="search" id="is_home_address1">
+                        </div>
+                        <div class="block mrgn-10px">
+                            <label for="is_home_address2">Комиссия</label>
+                            <input class="mrgn-l-10px" type="radio" name="search" id="is_home_address2">
+                        </div>
+                        <div class="block mrgn-10px">
+                            <label for="is_home_address3">Организации</label>
+                            <input class="mrgn-l-10px" type="radio" name="search" id="is_home_address3">
+                        </div>
+                        <div class="block mrgn-10px">
+                            <label for="is_home_address4">ФИО</label>
+                            <input class="mrgn-l-10px" type="radio" name="search" id="is_home_address4">
                         </div>
                     </div>
                 </div>
