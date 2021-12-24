@@ -1,11 +1,5 @@
 pipeline {
     agent any
-    options {
-        disableConcurrentBuilds()
-    }
-    environment {
-        CONSUL_HTTP_TOKEN    = credentials('CONSUL_HTTP_TOKEN')
-    }
     stages {
         stage('Build') {
             environment {
@@ -21,12 +15,16 @@ pipeline {
         }
         stage('Deploy') {
             environment {
-                def FRONTEND_HOST = sh(script: "consul kv get ci/api-ip", returnStdout: true).trim()
+                DIGITALOCEAN_ACCESS_TOKEN = credentials('DIGITALOCEAN_ACCESS_TOKEN')
+                def HOSTS = sh(
+                    script: "doctl compute droplet list --format PublicIPv4 --no-header --tag-name zubr_in| tr '\n' ','",
+                    returnStdout: true
+                ).trim()
             }
             steps {
                 ansiblePlaybook(
                       playbook: 'infrastructure/deploy.yml',
-                      inventory: "$FRONTEND_HOST,",
+                      inventory: "$HOSTS,",
                       credentialsId: "CURRENT_DEPLOY_KEY",
                       hostKeyChecking: false
                 )
