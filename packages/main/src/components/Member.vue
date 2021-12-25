@@ -8,10 +8,12 @@
                     <div class="section pdng-r-30px mil-pdng-0 mil-flex-column flex-algn-itms-c">
                         <div class="person-view mil-size-100">
                             <div>
-                                <Image :alt="data.member.person.full_name"
-                                       :preview="data.member.person.photo_url !== ''"
-                                       class="person-photo"
-                                       :src="data.member.person.photo_url || '/img/icon/person-placeholder.png'"></Image>
+                                <el-image :src="data.member.person.photo_url || '/img/icon/person-placeholder.png'"
+                                          :alt="data.member.person.full_name"
+                                          class="person-photo"
+                                          :hide-on-click-modal="true"
+                                          :preview-src-list="[data.member.person.photo_url || '/img/icon/person-placeholder.png']"
+                                ></el-image>
                             </div>
                             <div class="txt-size-12px">
                                 <div class="mrgn-t-10px" v-if="photoOrigin">
@@ -44,14 +46,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!--          <div class="tag-wrp mrgn-t-20px">-->
-                        <!--            <a class="tag-unit">-->
-                        <!--              Фальсификации-->
-                        <!--            </a>-->
-                        <!--            <a class="tag-unit">-->
-                        <!--              Санкции-->
-                        <!--            </a>-->
-                        <!--          </div>-->
                     </div>
                 </div>
             </div>
@@ -252,15 +246,9 @@
             </a>
         </div>
     </div>
-    <Dialog v-model:visible="showModal"
-            class="popup"
-            :show-header="false"
-            v-if="data"
-            :modal="true">
-        <template #header>
-            Это мой профиль. Почему я здесь?
-        </template>
-        <div class="scene">
+    <el-dialog v-model="showModal" :title="'Это мой профиль. Почему я здесь?'" :custom-class="'popup'"
+               :width="'100%'">
+        <div class="scene pdng-l-20px">
             <p>Уважаемый(-ая) {{ data.member.person.full_name }}.
                 Сведения о Вас и Ваше изображение использованы нами, поскольку Вы являетесь
                 членом избирательной комиссии и осуществляете публичную деятельность, представляющую
@@ -271,14 +259,13 @@
                 <a href="mailto:zubr.contact@gmail.com">ZUBR</a> .</p>
         </div>
 
-    </Dialog>
+    </el-dialog>
 </template>
 <script>
 import Header from './Header.vue';
 import {computed, defineComponent, onMounted, ref} from "vue";
 import {useRoute} from "vue-router";
-import Dialog from './Modal.vue';
-import Image from 'primevue/image';
+import {ElImage, ElDialog} from 'element-plus';
 
 const data = ref(null)
 
@@ -297,8 +284,8 @@ async function fetchMember() {
 export default defineComponent({
     components: {
         'header-view': Header,
-        Dialog,
-        Image
+        ElDialog,
+        ElImage
     },
     setup() {
         const showModal = ref(false)

@@ -38,7 +38,6 @@
 <script>
 import {defineComponent, ref, watch} from "vue";
 import {routes} from '../router';
-import Dropdown from 'primevue/dropdown';
 
 const hash = {
   'members': 'Члены комиссий',
@@ -50,7 +49,6 @@ export default defineComponent({
     active: String
   },
   components: {
-    Dropdown
   },
   setup(props) {
     const query = ref();

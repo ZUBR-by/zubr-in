@@ -1,20 +1,17 @@
 <template>
   <div id="map" style="height: 100%;width: 100%"></div>
-  <Dialog v-model:visible="showModal"
-          class="popup"
-          :show-header="false"
-          :modal="true">
-    <div class="scene">
-      <ul>
-        <li v-for="feature of features" class="pdng-10px">
-          <strong>{{ feature.getProperties().code }} &nbsp;</strong>
-          <a :href="'/commission/' + feature.getProperties().id">
-            {{ feature.getProperties().name }} {{ feature.getProperties().address }}
-          </a>
-        </li>
-      </ul>
-    </div>
-  </Dialog>
+    <el-dialog v-model="showModal" :custom-class="'popup'" :top="'10vh'" :width="'100%'">
+        <div class="scene">
+            <ul>
+                <li v-for="feature of features" class="pdng-10px">
+                    <strong>{{ feature.getProperties().code }} &nbsp;</strong>
+                    <a :href="'/commission/' + feature.getProperties().id">
+                        {{ feature.getProperties().name }} {{ feature.getProperties().address }}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </el-dialog>
 </template>
 <script>
 //TODO маркеры
@@ -27,7 +24,7 @@ import VectorLayer from "ol/layer/Vector";
 import VectorSource from "ol/source/Vector";
 import GeoJSON from "ol/format/GeoJSON"
 import {Circle, Fill, Icon, Style, Text} from 'ol/style';
-import Dialog from './Modal.vue';
+import {ElDialog} from 'element-plus';
 import {ref, onMounted} from "vue";
 
 const features = ref(null)
@@ -36,7 +33,7 @@ const styleCache = {};
 
 export default {
   components: {
-    Dialog
+    ElDialog
   },
   props: {
     initCampaign: {

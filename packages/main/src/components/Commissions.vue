@@ -7,7 +7,7 @@
           <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">
             Фильтр
           </div>
-          <input class="p-inputtext p-component" autofocus v-model.lazy="search" placeholder="Код, адрес, название...">
+          <input class="search-input" autofocus v-model.lazy="search" placeholder="Код, адрес, название...">
         </div>
         <div class="inline-block mrgn-l-30px" v-show="view === 'list'">
           <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">

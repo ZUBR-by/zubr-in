@@ -5,7 +5,8 @@
     <link rel="icon" href="/favicon.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>ZUBR.in</title>
-    <link rel="stylesheet" href="/css/_zubr-framework.css?var=7">
+    <link rel="stylesheet" href="/css/_zubr-framework.css?var=8">
+    <link rel="stylesheet" href="/src/assets/main.css">
 
     <meta name="description"
           content="Платформа онлайн-мониторинга избирательного процесса Республики Беларусь.">
@@ -62,14 +63,23 @@
         </div>
     </div>
 </div>
-<script>
-    var isUik = false;
-</script>
 <script type="module" src="/src/main.js"></script>
 </body>
 <style>
-    .p-overflow-hidden {
-        overflow: hidden !important;
+    :root {
+        --el-color-primary: #ff5c01;
+        --el-color-success: #ff5c01;
+        --el-input-placeholder-color: rgba(255, 92, 1, 0.3);
+        --el-border-color-base: #FF5C01;
+        --el-text-color-regular: black;
+    }
+    .el-dialog__body {
+        padding: 0
+    }
+
+    .el-dialog__headerbtn .el-dialog__close {
+        font-size: 30px;
+        cursor: pointer;
     }
 </style>
 </html>

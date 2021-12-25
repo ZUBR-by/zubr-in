@@ -32,7 +32,7 @@
                             <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">
                                 Фильтр
                             </div>
-                            <input class="p-inputtext p-component"
+                            <input class="search-input"
                                    style="width: 100%"
                                    :placeholder="placeholder"
                                    v-model.lazy="filter">

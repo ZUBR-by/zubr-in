@@ -7,7 +7,7 @@
                     <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">
                         Фильтр
                     </div>
-                    <input class="p-inputtext p-component" placeholder="ФИО" v-model.lazy="filter.name">
+                    <input class="search-input" placeholder="ФИО" v-model.lazy="filter.name">
                 </div>
             </div>
         </div>

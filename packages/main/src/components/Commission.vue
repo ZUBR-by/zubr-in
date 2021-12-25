@@ -19,12 +19,12 @@
                     </div>
                 </div>
                 <div class="section pdng-l-40px mil-pdng-l-20px">
-                    <div class="button medium primary">
+                    <button class="button medium primary">
                         Сообщить о нарушении
-                    </div>
-                    <div class="button medium mrgn-l-20px mil-mrgn-l-10px">
+                    </button>
+                    <button class="button medium mrgn-l-20px mil-mrgn-l-10px">
                         Стать наблюдателем
-                    </div>
+                    </button>
                 </div>
             </div>
         </div>
@@ -193,15 +193,16 @@
                     </div>
                     <div v-if="data && data.commission.report.length > 0"
                          class="pdng-t-15px">
-                        <template v-for="report of data.commission.report">
-                            <Image :src="item.url" v-for="(item, index) of report.attachments"
-                                   alt="Протокол"
-                                   :preview="true"
-                                   width="400"
-                                   height="500"
-                                   :class="{'pdng-l-5px' : index > 0}"
-                            ></Image>
-                        </template>
+                        <div v-for="report of data.commission.report" style="width: 400px;height:500px">
+                            <el-image
+                                :append-to-body="true"
+                                :src="item.url" v-for="(item, index) of report.attachments"
+                                alt="Протокол"
+                                :fit="'scale-down'"
+                                :preview-src-list="[item.url]"
+                                :class="{'pdng-l-5px' : index > 0}"
+                            ></el-image>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -213,11 +214,9 @@ import Header from './Header.vue';
 import Location from './Point.vue';
 import {defineComponent, onMounted, ref} from "vue";
 import {useRoute} from 'vue-router'
-import Button from 'primevue/button';
+import {ElImage} from 'element-plus';
 import MessageList from "./MessageList.vue";
 import {formatDateCampaign} from "../date";
-import Image from 'primevue/image';
-
 
 const data = ref(null)
 
@@ -260,8 +259,7 @@ export default defineComponent({
         MessageList,
         'header-view': Header,
         Location,
-        Button,
-        Image
+        ElImage
     },
     setup() {
         onMounted(async () => {

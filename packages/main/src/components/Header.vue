@@ -14,26 +14,6 @@
       </div>
       <div class="section pdng-l-20px pdng-r-30px mil-notdisplay" v-if="false">
         <div class="search-input-wrp">
-          <Dropdown :options="results"
-                    placeholder="Поиск..."
-                    style="width: 300px;"
-                    :filter="true"
-                    @filter="load"
-                    v-model="query"
-                    optionLabel="name"
-                    :showClear="true"
-                    scrollHeight="300px"
-                    optionGroupLabel="label"
-                    optionGroupChildren="items">
-            <template #optiongroup="slotProps">
-              <div class="p-d-flex p-ai-center country-item">
-                <div>{{ slotProps.option.label }}</div>
-              </div>
-            </template>
-            <template #option="{option}">
-              {{ option.person ? option.person.name : option.name }}
-            </template>
-          </Dropdown>
         </div>
       </div>
       <!-- mobile nav -->
@@ -62,7 +42,6 @@
 <script>
 import {defineComponent, ref, watch} from "vue";
 import {routes} from '../router';
-import Dropdown from 'primevue/dropdown';
 
 const hash = {
   'members': 'Члены комиссий',
@@ -73,9 +52,7 @@ export default defineComponent({
   props: {
     active: String
   },
-  components: {
-    Dropdown
-  },
+  components: {},
   setup(props) {
     const query = ref();
     const results = ref([

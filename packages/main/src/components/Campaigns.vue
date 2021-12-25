@@ -45,7 +45,6 @@
             Тип избирательной кампании
           </div>
           <div>
-            <SelectButton :options="['Все','Местные','Парламентские','Президентские','Референдум']" class="p-button-sm"/>
           </div>
         </div>-->
       </div>
@@ -123,7 +122,6 @@
 <script>
 import Header from './Header.vue'
 import {defineComponent, ref} from "vue";
-import SelectButton from "primevue/selectbutton";
 import {formatDateCampaign} from '../date'
 function fetchCampaigns() {
   const data = ref(null)
@@ -158,8 +156,7 @@ function isLater(started_at) {
 export {fetchCampaigns, isLater}
 export default defineComponent({
   components: {
-    'header-view': Header,
-    SelectButton
+    'header-view': Header
   },
   setup() {
     const {data, load, loading} = fetchCampaigns();

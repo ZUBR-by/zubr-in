@@ -26,22 +26,17 @@
                 <h2 class="txt-bold">Кто мы такие</h2>
                 <p class="txt-size-18px pdng-t-20px txt-lh-1_3em">
                     Мы — гражданская инициатива ZUBR, созданная беларусами для беларусов в 2020 году.<br><br>
-                    <b class="txt-color-1">Наша цель — мониторинг электоральных кампаний в Беларуси, сбор и систематизация данных о нарушениях.</b>
+                    <b class="txt-color-1">Наша цель — мониторинг электоральных кампаний в Беларуси, сбор и
+                        систематизация данных о нарушениях.</b>
                 </p>
             </div>
             <div class="section size-50 mil-size-100 mil-pdng-0">
-                <galleria :value="images1"
-                          :show-thumbnails="false"
-                          :show-item-navigators-on-hover="false"
-                          :show-item-navigators="true"
-                          :transition-interval="4000"
-                          :circular="true"
-                          style="width: 300px;height: 300px"
-                          :auto-play="true">
-                    <template #item="slotProps">
-                        <img :src="slotProps.item.src" :alt="slotProps.item.alt" style="width: 300px;height: 300px"/>
-                    </template>
-                </galleria>
+                <el-carousel indicator-position="outside">
+                    <el-carousel-item v-for="item of images1" :key="item.src">
+                        <img :src="item.src" :alt="item.alt"
+                             style="width: 300px;height: 300px;margin: auto;display: block;"/>
+                    </el-carousel-item>
+                </el-carousel>
             </div>
         </div>
     </div>
@@ -67,18 +62,12 @@
                 </p>
             </div>
             <div class="section size-50 mil-size-100 mil-pdng-0">
-                <galleria :value="images2"
-                          :show-thumbnails="false"
-                          :show-item-navigators-on-hover="true"
-                          :show-item-navigators="true"
-                          :transition-interval="4000"
-                          :circular="true"
-                          style="width: 300px;height: 300px"
-                          :auto-play="true">
-                    <template #item="slotProps">
-                        <img :src="slotProps.item.src" :alt="slotProps.item.alt" style="width: 300px;height: 300px"/>
-                    </template>
-                </galleria>
+                <el-carousel indicator-position="outside">
+                    <el-carousel-item v-for="item of images2" :key="item.src">
+                        <img :src="item.src" :alt="item.alt"
+                             style="width: 300px;height: 300px;margin: auto;display: block;"/>
+                    </el-carousel-item>
+                </el-carousel>
             </div>
         </div>
     </div>
@@ -102,18 +91,12 @@
                 </p>
             </div>
             <div class="section size-50 mil-size-100 mil-pdng-0">
-                <galleria :value="images3"
-                          :show-thumbnails="false"
-                          :show-item-navigators-on-hover="true"
-                          :show-item-navigators="true"
-                          :transition-interval="4000"
-                          :circular="true"
-                          style="width: 300px;height: 300px"
-                          :auto-play="true">
-                    <template #item="slotProps">
-                        <img :src="slotProps.item.src" :alt="slotProps.item.alt" style="width: 300px;height: 300px"/>
-                    </template>
-                </galleria>
+                <el-carousel indicator-position="outside">
+                    <el-carousel-item v-for="item of images3" :key="item.src">
+                        <img :src="item.src" :alt="item.alt"
+                             style="width: 300px;height: 300px;margin: auto;display: block;"/>
+                    </el-carousel-item>
+                </el-carousel>
             </div>
         </div>
     </div>
@@ -137,18 +120,12 @@
                 </p>
             </div>
             <div class="section size-50 mil-size-100 mil-pdng-0">
-                <galleria :value="images5"
-                          :show-thumbnails="false"
-                          :show-item-navigators-on-hover="true"
-                          :show-item-navigators="true"
-                          :transition-interval="4000"
-                          :circular="true"
-                          style="width: 300px;height: 300px"
-                          :auto-play="true">
-                    <template #item="slotProps">
-                        <img :src="slotProps.item.src" :alt="slotProps.item.alt" style="width: 300px;height: 300px"/>
-                    </template>
-                </galleria>
+                <el-carousel indicator-position="outside">
+                    <el-carousel-item v-for="item of images5" :key="item.src">
+                        <img :src="item.src" :alt="item.alt"
+                             style="width: 300px;height: 300px;margin: auto;display: block;"/>
+                    </el-carousel-item>
+                </el-carousel>
             </div>
         </div>
     </div>
@@ -172,18 +149,12 @@
                 </p>
             </div>
             <div class="section size-50 mil-size-100 mil-pdng-0">
-                <galleria :value="images6"
-                          :show-thumbnails="false"
-                          :show-item-navigators-on-hover="true"
-                          :show-item-navigators="true"
-                          :transition-interval="4000"
-                          :circular="true"
-                          style="width: 300px;height: 300px"
-                          :auto-play="true">
-                    <template #item="slotProps">
-                        <img :src="slotProps.item.src" :alt="slotProps.item.alt" style="width: 300px;height: 300px"/>
-                    </template>
-                </galleria>
+                <el-carousel indicator-position="outside">
+                    <el-carousel-item v-for="item of images6" :key="item.src">
+                        <img :src="item.src" :alt="item.alt"
+                             style="width: 300px;height: 300px;margin: auto;display: block;"/>
+                    </el-carousel-item>
+                </el-carousel>
             </div>
         </div>
     </div>
@@ -201,18 +172,12 @@
                 </p>
             </div>
             <div class="section size-50 mil-size-100 mil-pdng-0">
-                <galleria :value="images4"
-                          :show-thumbnails="false"
-                          :show-item-navigators-on-hover="true"
-                          :show-item-navigators="true"
-                          :transition-interval="4000"
-                          :circular="true"
-                          style="width: 300px;height: 300px"
-                          :auto-play="true">
-                    <template #item="slotProps">
-                        <img :src="slotProps.item.src" :alt="slotProps.item.alt" style="width: 300px;height: 300px"/>
-                    </template>
-                </galleria>
+                <el-carousel indicator-position="outside">
+                    <el-carousel-item v-for="item of images4" :key="item.src">
+                        <img :src="item.src" :alt="item.alt"
+                             style="width: 300px;height: 300px;margin: auto;display: block;"/>
+                    </el-carousel-item>
+                </el-carousel>
             </div>
         </div>
     </div>
@@ -220,31 +185,31 @@
         <div class="flex-row mil-flex-wrap">
             <div class="section size-100 pdng-r-30px mil-size-100 mil-pdng-0">
                 <h2 class="txt-bold">FAQ</h2>
-                <Accordion :multiple="true" class="pdng-t-5px">
-                    <AccordionTab header="Кто такой гражданский контролер? Кто может им стать?">
+                <el-collapse :multiple="true" class="pdng-t-5px">
+                    <el-collapse-item title="Кто такой гражданский контролер? Кто может им стать?">
                         Content
-                    </AccordionTab>
-                    <AccordionTab
-                        header="Header Зачем контролировать “референдум”, ведь все равно наши голоса украдут как в 2020-м?">
+                    </el-collapse-item>
+                    <el-collapse-item
+                        title="Зачем контролировать “референдум”, ведь все равно наши голоса украдут как в 2020-м?">
                         Content
-                    </AccordionTab>
-                    <AccordionTab
-                        header="План ZUBR + ЧЛ + Голоса">
+                    </el-collapse-item>
+                    <el-collapse-item
+                        title="План ZUBR + ЧЛ + Голоса">
                         Content
-                    </AccordionTab>
-                    <AccordionTab
-                        header="Как обеспечивается анонимность/безопасность гражданских контролеров?">
+                    </el-collapse-item>
+                    <el-collapse-item
+                        title="Как обеспечивается анонимность/безопасность гражданских контролеров?">
                         Content
-                    </AccordionTab>
-                    <AccordionTab
-                        header="Как пройти обучение?">
+                    </el-collapse-item>
+                    <el-collapse-item
+                        title="Как пройти обучение?">
                         Content
-                    </AccordionTab>
-                    <AccordionTab
-                        header=" Как сообщить о нарушении?">
+                    </el-collapse-item>
+                    <el-collapse-item
+                        title=" Как сообщить о нарушении?">
                         Content
-                    </AccordionTab>
-                </Accordion>
+                    </el-collapse-item>
+                </el-collapse>
             </div>
         </div>
     </div>
@@ -259,10 +224,8 @@
 
 <script>
 import Header from './Header.vue'
-import galleria from "primevue/galleria";
-import Accordion from "primevue/accordion";
-import AccordionTab from "primevue/accordiontab";
 import {defineComponent} from "vue";
+import {ElCollapse, ElCollapseItem, ElCarousel, ElCarouselItem} from 'element-plus';
 
 const prepareArray = (length, namespace, notShuffle) => {
     let tmp = [...Array(length + 1).keys()];
@@ -285,9 +248,10 @@ const prepareArray = (length, namespace, notShuffle) => {
 export default defineComponent({
     components: {
         'header-view': Header,
-        galleria,
-        Accordion,
-        AccordionTab
+        ElCollapseItem,
+        ElCollapse,
+        ElCarousel,
+        ElCarouselItem
     },
     setup() {
         return {
@@ -301,9 +265,3 @@ export default defineComponent({
     }
 })
 </script>
-
-<style>
-.p-galleria-content .p-galleria-item-wrapper .p-galleria-item-container button.p-galleria-item-next {
-    background-color: #a8a1a1
-}
-</style>
