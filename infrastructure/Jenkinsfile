@@ -2,6 +2,9 @@ pipeline {
     agent any
     stages {
         stage('Build') {
+            agent {
+                docker { image 'node:14-buster' }
+            }
             environment {
                 VITE_API_URL = 'https://graph.zubr.app/api/rest'
             }
@@ -11,6 +14,9 @@ pipeline {
                 sh 'rm -rf dist'
                 sh 'mv packages/main/dist dist/'
                 sh 'mv packages/ik/dist dist/ik/'
+                stash includes: 'dist',
+                      name: 'dist',
+                      useDefaultExcludes: true
             }
         }
         stage('Deploy') {
@@ -22,6 +28,7 @@ pipeline {
                 ).trim()
             }
             steps {
+                unstash 'dist'
                 ansiblePlaybook(
                       playbook: 'infrastructure/deploy.yml',
                       inventory: "$HOSTS,",
