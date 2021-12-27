@@ -30,7 +30,7 @@
                         <div class="section pdng-r-20px">
                             <div class="person-photo">
                                 <div class="person-initials">С.Г.Т.</div>
-                                <img :src="item.photo_url || '/img/icon/person-placeholder.png'"
+                                <img :src="item.photo || '/img/icon/person-placeholder.png'"
                                      :alt="item.full_name">
                             </div>
                         </div>
