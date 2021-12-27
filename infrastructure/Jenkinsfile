@@ -14,7 +14,8 @@ pipeline {
                 sh 'rm -rf dist'
                 sh 'mv packages/main/dist dist/'
                 sh 'mv packages/ik/dist dist/ik/'
-                stash includes: 'dist',
+                sh 'ls -l'
+                stash includes: 'dist/',
                       name: 'dist',
                       useDefaultExcludes: true
             }
