@@ -28,11 +28,11 @@
                 <div class="section size-40 pdng-r-20px pdng-l-20px pdng-t-20px pdng-b-20px mil-size-100">
                     <div class="flex-row flex-algn-itms-c">
                         <div class="section pdng-r-20px">
-                            <div class="person-photo">
-                                <div class="person-initials">С.Г.Т.</div>
-                                <img :src="item.photo || '/img/icon/person-placeholder.png'"
-                                     :alt="item.full_name">
-                            </div>
+                            <el-image
+                                :alt="item.full_name"
+                                class="person-photo"
+                                :fit="'scale-down'"
+                                :src="item.photo || '/img/icon/person-placeholder.png'"></el-image>
                         </div>
                         <div class="section">
                             <h2 class="txt-color-1 txt-size-20px txt-medium mil-txt-size-16px">
@@ -93,6 +93,7 @@ import {defineComponent, onMounted, reactive, ref, watch} from "vue";
 import {commission_types} from "./Commission.vue";
 import {onBeforeRouteUpdate} from "vue-router";
 import router from "../router";
+import {ElImage} from 'element-plus'
 
 const data    = ref(null)
 let filter    = reactive({
@@ -134,6 +135,7 @@ async function fetchMembers() {
 export default defineComponent({
     components: {
         'header-view': Header,
+        ElImage
     },
     setup() {
         let params = (new URL(document.location.href)).searchParams;

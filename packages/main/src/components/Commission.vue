@@ -90,11 +90,11 @@
         <div class="campaign-candidates-list">
             <div class="person-wrp flex-column flex-algn-itms-strch"
                  v-for="item of data.commission.members">
-                <div class="person-photo">
-                    <!--          <div class="person-initials">С.Г.Т.</div>-->
-                    <img :src="item.member.person.photo_url || '/img/icon/person-placeholder.png'"
-                         :alt="item.member.person.full_name">
-                </div>
+                <el-image
+                    :alt="item.member.person.full_name"
+                    class="person-photo"
+                    :fit="'scale-down'"
+                    :src="item.member.person.photo_url || '/img/icon/person-placeholder.png'"></el-image>
                 <div class="person-info pdng-t-10px">
                     <div class="person-name txt-size-14px txt-medium">
                         {{ item.member.person.full_name }}
@@ -106,11 +106,11 @@
 
                 <a class="person-popover cursor-pointer" :href="'/member/' + item.member.id">
                     <div class="flex-column flex-algn-itms-strch">
-                        <div class="person-photo">
-                            <img
-                                :src="item.member.person.photo_url || '/img/icon/person-placeholder.png'"
-                                :alt="item.member.person.full_name">
-                        </div>
+                        <el-image
+                            :alt="item.member.person.full_name"
+                            class="person-photo"
+                            :fit="'scale-down'"
+                            :src="item.member.person.photo_url || '/img/icon/person-placeholder.png'"></el-image>
                         <div class="person-info pdng-t-10px">
                             <a class="txt-size-14px txt-medium">
                                 {{ item.member.person.full_name }}
