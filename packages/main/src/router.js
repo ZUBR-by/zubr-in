@@ -56,7 +56,7 @@ const common = [
     {
         path: '/controller',
         name: 'controller',
-        meta: {title: 'Гражданскому контроллеру'},
+        meta: {title: 'Наблюдение и гражд. контроль'},
         component: Controller,
     },
     {
