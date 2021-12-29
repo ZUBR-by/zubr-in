@@ -39,19 +39,38 @@
                         </div>
                         <div class="block mrgn-10px">
                             <label for="is_home_address1">Домашний адрес</label>
-                            <input class="mrgn-l-10px" type="radio" name="search" id="is_home_address1">
+                            <input class="mrgn-l-10px"
+                                   v-model="endpoint"
+                                   type="radio"
+                                   value="home_address"
+                                   name="search"
+                                   id="is_home_address1">
                         </div>
                         <div class="block mrgn-10px">
                             <label for="is_home_address2">Комиссия</label>
-                            <input class="mrgn-l-10px" type="radio" name="search" id="is_home_address2">
+                            <input class="mrgn-l-10px"
+                                   v-model="endpoint"
+                                   value="commissions"
+                                   type="radio" name="search"
+                                   id="is_home_address2">
                         </div>
                         <div class="block mrgn-10px">
                             <label for="is_home_address3">Организации</label>
-                            <input class="mrgn-l-10px" type="radio" name="search" id="is_home_address3">
+                            <input class="mrgn-l-10px"
+                                   v-model="endpoint"
+                                   value="organizations"
+                                   type="radio"
+                                   name="search"
+                                   id="is_home_address3">
                         </div>
                         <div class="block mrgn-10px">
                             <label for="is_home_address4">ФИО</label>
-                            <input class="mrgn-l-10px" type="radio" name="search" id="is_home_address4">
+                            <input class="mrgn-l-10px"
+                                   v-model="endpoint"
+                                   type="radio"
+                                   value="members"
+                                   name="search"
+                                   id="is_home_address4">
                         </div>
                     </div>
                 </div>
@@ -121,9 +140,29 @@
 import Header from './Header.vue';
 import {computed, defineComponent, ref, watch} from "vue";
 
-const data    = ref(null)
-const filter  = ref()
-const loading = ref(false);
+const data     = ref(null)
+const filter   = ref()
+const loading  = ref(false);
+const endpoint = ref('home_address');
+
+const endpoints = {
+    'home_address': {
+        url: '/search/commission',
+        parameter: 'query'
+    },
+    'commissions': {
+        url: '/search/commission',
+        parameter: 'query'
+    },
+    'members': {
+        url: '/members',
+        parameter: 'name'
+    },
+    'organizations': {
+        url: '/organizations',
+        parameter: 'name'
+    }
+}
 
 async function search() {
     try {
@@ -131,9 +170,8 @@ async function search() {
 
         const response = await fetch(
             import.meta.env.VITE_API_URL
-            +
-            '/search/commission'
-            + ('?query=' + encodeURIComponent('%' + (filter.value) + '%'))
+            + endpoints[endpoint.value].url
+            + ('?' + endpoints[endpoint.value].parameter + '=' + encodeURIComponent('%' + (filter.value) + '%'))
         )
         data.value     = await response.json()
         loading.value  = false;
@@ -167,15 +205,20 @@ export default defineComponent({
             if (!data.value) {
                 return []
             }
-            let v = data.value.commissions.concat(data.value.members.map(i => {
+            if (!data.value.commissions) {
+                data.value.commissions = [];
+            }
+            if (!data.value.members) {
+                data.value.members = [];
+            }
+            return data.value.commissions.concat(data.value.members.map(i => {
                 i.commissions[0].commission.info     = i.full_name
                 i.commissions[0].commission.position = i.commissions[0].position
                 return i.commissions[0].commission
             }));
-            console.log(v)
-            return v;
         })
         return {
+            endpoint,
             placeholder,
             filter,
             is_home_address,
