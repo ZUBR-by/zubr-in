@@ -31,6 +31,8 @@
     </header-view>
     <div class="scene-wrp bg-color-1 border-b-1px border-color1">
         <div class="scene mrgn-t-170px mil-mrgn-t-170px">
+            <div id="remark42">
+            </div>
             <div class="flex-row mil-flex-wrap" v-if="data">
                 <div class="section size-50 pdng-r-30px mil-size-100 mil-pdng-0">
                     <h1 class="txt-size-32px">
@@ -77,7 +79,7 @@
                 </div>
                 <div class="section size-50 mil-size-100 mil-pdng-t-50px" v-if="data.commission.geometry">
                     <div class="map-wrp committee-view">
-                        <location :feature="data.commission.geometry"></location>
+<!--                        <location :feature="data.commission.geometry"></location>-->
                     </div>
                 </div>
             </div>
@@ -211,7 +213,7 @@
 </template>
 <script>
 import Header from './Header.vue';
-import Location from './Point.vue';
+// import Location from './Point.vue';
 import {defineComponent, onMounted, ref} from "vue";
 import {useRoute} from 'vue-router'
 import {ElImage} from 'element-plus';
@@ -258,7 +260,7 @@ export default defineComponent({
     components: {
         MessageList,
         'header-view': Header,
-        Location,
+        // Location,
         ElImage
     },
     setup() {
@@ -267,6 +269,20 @@ export default defineComponent({
             let id      = route.params.id;
             await fetchCommission(id)
             document.title = document.title.replace(' -', ' ' + data.value.commission.name + ' -')
+
+            const remark_config = {
+                host: 'http://localhost:8100',
+                site_id: 'zubr_in',
+                locale: 'ru',
+                components: ['embed']
+            }
+            window.remark_config = remark_config
+            !function (e, n) {
+                for (var o = 0; o < e.length; o++) {
+                    var r = n.createElement("script"), c = ".js", d = n.head || n.body;
+                    "noModule" in r ? (r.type = "module", c = ".mjs") : r.async = !0, r.defer = !0, r.src = remark_config.host + "/web/" + e[o] + c, d.appendChild(r)
+                }
+            }(remark_config.components || ["embed"], document)
         })
         return {
             data,

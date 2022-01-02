@@ -85,7 +85,7 @@
     </div>
   </div>
 </template>
-<style>
+<style scoped>
 iframe {
   display:none;
   }
