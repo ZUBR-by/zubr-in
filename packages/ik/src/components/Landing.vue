@@ -27,52 +27,74 @@
             </div>
             <div class="flex-row mil-flex-wrap pdng-t-30px ">
                 <div class="section size-100 pdng-r-30px mil-size-100 mil-pdng-0">
-                    <div class="mrgn-t-40px">
-                        <div class="block">
-                            <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">
-                                Фильтр
+                    <el-tabs type="card">
+                        <el-tab-pane label="Поиск">
+                            <div class="mrgn-t-40px">
+                                <div class="block">
+                                    <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">
+                                        Фильтр
+                                    </div>
+                                    <input class="search-input"
+                                           style="width: 100%"
+                                           :placeholder="placeholder"
+                                           v-model.lazy="filter">
+                                </div>
+                                <!--                                <div class="block mrgn-10px">-->
+                                <!--                                    <label for="is_home_address1">Домашний адрес</label>-->
+                                <!--                                    <input class="mrgn-l-10px"-->
+                                <!--                                           v-model="endpoint"-->
+                                <!--                                           type="radio"-->
+                                <!--                                           value="home_address"-->
+                                <!--                                           name="search"-->
+                                <!--                                           id="is_home_address1">-->
+                                <!--                                </div>-->
+                                <!--                                <div class="block mrgn-10px">-->
+                                <!--                                    <label for="is_home_address2">Комиссия</label>-->
+                                <!--                                    <input class="mrgn-l-10px"-->
+                                <!--                                           v-model="endpoint"-->
+                                <!--                                           value="commissions"-->
+                                <!--                                           type="radio" name="search"-->
+                                <!--                                           id="is_home_address2">-->
+                                <!--                                </div>-->
+                                <!--                                <div class="block mrgn-10px">-->
+                                <!--                                    <label for="is_home_address3">Организации</label>-->
+                                <!--                                    <input class="mrgn-l-10px"-->
+                                <!--                                           v-model="endpoint"-->
+                                <!--                                           value="organizations"-->
+                                <!--                                           type="radio"-->
+                                <!--                                           name="search"-->
+                                <!--                                           id="is_home_address3">-->
+                                <!--                                </div>-->
+                                <!--                                <div class="block mrgn-10px">-->
+                                <!--                                    <label for="is_home_address4">ФИО</label>-->
+                                <!--                                    <input class="mrgn-l-10px"-->
+                                <!--                                           v-model="endpoint"-->
+                                <!--                                           type="radio"-->
+                                <!--                                           value="members"-->
+                                <!--                                           name="search"-->
+                                <!--                                           id="is_home_address4">-->
+                                <!--                                </div>-->
                             </div>
-                            <input class="search-input"
-                                   style="width: 100%"
-                                   :placeholder="placeholder"
-                                   v-model.lazy="filter">
-                        </div>
-                        <div class="block mrgn-10px">
-                            <label for="is_home_address1">Домашний адрес</label>
-                            <input class="mrgn-l-10px"
-                                   v-model="endpoint"
-                                   type="radio"
-                                   value="home_address"
-                                   name="search"
-                                   id="is_home_address1">
-                        </div>
-                        <div class="block mrgn-10px">
-                            <label for="is_home_address2">Комиссия</label>
-                            <input class="mrgn-l-10px"
-                                   v-model="endpoint"
-                                   value="commissions"
-                                   type="radio" name="search"
-                                   id="is_home_address2">
-                        </div>
-                        <div class="block mrgn-10px">
-                            <label for="is_home_address3">Организации</label>
-                            <input class="mrgn-l-10px"
-                                   v-model="endpoint"
-                                   value="organizations"
-                                   type="radio"
-                                   name="search"
-                                   id="is_home_address3">
-                        </div>
-                        <div class="block mrgn-10px">
-                            <label for="is_home_address4">ФИО</label>
-                            <input class="mrgn-l-10px"
-                                   v-model="endpoint"
-                                   type="radio"
-                                   value="members"
-                                   name="search"
-                                   id="is_home_address4">
-                        </div>
-                    </div>
+                        </el-tab-pane>
+                        <el-tab-pane label="Карта">
+                            <div v-if="!region">
+                                Выберите область
+                                <button @click="region = '1'">Брестская</button>
+                            </div>
+                            <div v-if="region && !district">
+                                Выберите Район
+                                <button @click="district = '1';revealMap()">Барановичский</button>
+                            </div>
+                            <div v-show="region && district"
+                                class="map-wrp" style="background:#EDEDED; min-height:640px;height: 300px">
+                                <commission-map v-if="mapInit === true" ref="map"
+                                                :init-center="center"
+                                                :init-zoom="9.5"
+                                                :init-campaign="'2020-08-presidential'"></commission-map>
+                            </div>
+                        </el-tab-pane>
+                    </el-tabs>
+
                 </div>
             </div>
             <div class="committee-list mil-flex-column" v-if="filter">
@@ -139,6 +161,8 @@
 <script>
 import Header from './Header.vue';
 import {computed, defineComponent, ref, watch} from "vue";
+import {ElTabs, ElTabPane} from 'element-plus'
+import CommissionMap from '@zubr-in/main/src/components/CommissionMap.vue'
 
 const data     = ref(null)
 const filter   = ref()
@@ -186,7 +210,10 @@ async function search() {
 
 export default defineComponent({
     components: {
-        'header-view': Header
+        'header-view': Header,
+        ElTabPane,
+        ElTabs,
+        CommissionMap
     },
     setup() {
         const is_home_address = ref(false);
@@ -201,7 +228,7 @@ export default defineComponent({
             }
             search()
         })
-        const list = computed(() => {
+        const list     = computed(() => {
             if (!data.value) {
                 return []
             }
@@ -217,7 +244,24 @@ export default defineComponent({
                 return i.commissions[0].commission
             }));
         })
+        const region   = ref();
+        const district = ref();
+        const center = ref();
+        const mapInit  = ref(false)
         return {
+            revealMap() {
+
+                setTimeout(() => {
+                    center.value = [
+                        26.005343, 53.131253
+                    ];
+                    mapInit.value = true
+                },1)
+            },
+            center,
+            mapInit,
+            region,
+            district,
             endpoint,
             placeholder,
             filter,
