@@ -303,13 +303,6 @@
             </div>
         </div>
     </div>
-    <div class="scene pdng-t-5px">
-        <div class="section size-100">
-            <button class="button medium mrgn-l-10px mil-mrgn-l-10px txt-algn-c">
-                Стать Гражданским контроллером
-            </button>
-        </div>
-    </div>
 </template>
 
 <script>
