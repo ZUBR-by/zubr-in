@@ -3,7 +3,6 @@ import Home from './components/Home.vue'
 import Messages from './components/Messages.vue'
 import Organizations from './components/Organizations.vue'
 import Commissions from "./components/Commissions.vue";
-import News from "./components/News.vue";
 import Commission from "./components/Commission.vue";
 import Members from "./components/Members.vue";
 import Member from "./components/Member.vue";
@@ -16,6 +15,7 @@ import About from "./components/About.vue";
 import Result2020 from "./components/Result2020.vue";
 import Controller from "./components/Controller.vue";
 import PathNotFound from "./components/PathNotFound.vue";
+import News from "./components/News.vue";
 
 const main = [
     {
@@ -129,6 +129,9 @@ const common = [
         name: 'news',
         meta: {title: 'Новости'},
         component: News,
+        beforeEnter() {
+            window.location.href = 'https://teletype.in/@zubr_in';
+        },
     },
     {
         path: '/elections/results',
