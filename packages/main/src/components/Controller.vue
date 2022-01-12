@@ -183,7 +183,7 @@
     <div class="scene pdng-t-5px">
         <div class="flex-row mil-flex-wrap">
 
-            <div class="section size-50 pdng-r-30px mil-size-100 mil-pdng-0">
+            <div class="section size-100 pdng-r-30px mil-size-100 mil-pdng-0">
                 <h2 class="txt-bold mrgn-b-30px">FAQ</h2>
                 <details class="details-unit">
                     <summary class="details-unit-sum pdng-20px txt-size-18px txt-bold txt-color-1">
