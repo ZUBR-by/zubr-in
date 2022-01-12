@@ -239,7 +239,7 @@
                 </details>
                 <details class="details-unit">
                     <summary class="details-unit-sum pdng-20px txt-size-18px txt-bold txt-color-1">
-                        План ZUBR + ЧЛ + Голоса
+                        План ZUBR + Честные Люди + Голоса
                     </summary>
                     <div class="details-unit-cont-wrp pdng-20px pdng-b-30px">
                       <p class="txt-lh-1_3em">
@@ -266,7 +266,7 @@
                 </details>
                 <details class="details-unit">
                     <summary class="details-unit-sum pdng-20px txt-size-18px txt-bold txt-color-1">
-                        Как обеспечивается анонимность/безопасность гражданских контролеров и наблюдателей?
+                        Как обеспечивается анонимность и безопасность гражданских контролеров и наблюдателей?
                     </summary>
                     <div class="details-unit-cont-wrp pdng-20px pdng-b-30px">
                       <p class="txt-lh-1_3em">
@@ -287,7 +287,7 @@
                 </details>
                 <details class="details-unit">
                     <summary class="details-unit-sum pdng-20px txt-size-18px txt-bold txt-color-1">
-                        Как наблюдателю/гражданскому контролеру пройти обучение?
+                        Как наблюдателю или гражданскому контролеру пройти обучение?
                     </summary>
                     <div class="details-unit-cont-wrp pdng-20px pdng-b-30px">
                       <p class="txt-lh-1_3em">
@@ -302,7 +302,7 @@
                 </details>
                 <details class="details-unit">
                     <summary class="details-unit-sum pdng-20px txt-size-18px txt-bold txt-color-1">
-                        Как наблюдателю/гражданскому контролеру сообщить о нарушении?
+                        Как наблюдателю или гражданскому контролеру сообщить о нарушении?
                     </summary>
                     <div class="details-unit-cont-wrp pdng-20px pdng-b-30px">
                       <p class="txt-lh-1_3em">
