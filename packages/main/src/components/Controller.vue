@@ -6,7 +6,7 @@
         </div>
         <button class="button primary large flex-row flex-algn-itms-c">
             <div class="section">
-                Регистрация
+                Присоединиться
             </div>
             <div class="section mrgn-l-10px">
                 <svg class="zoom-1_2" width="14" height="12" viewBox="0 0 14 12" fill="none"
