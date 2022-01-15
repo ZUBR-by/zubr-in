@@ -1,0 +1,145 @@
+
+
+
+
+
+
+.promo-banner {
+
+	}
+.promo-banner-cross {
+	content:'';
+	position:absolute;
+	top:50%;
+	margin-top:-120px;
+	width:296px;
+	height:276px;
+	z-index:-1;
+	}
+.promo-banner-cross.left {
+	left:calc(-5% + -100px);
+	}
+.promo-banner-cross.right {
+	right:calc(-5% + 100px);
+	}
+
+.falsification-scheme {
+	background:url("../imgs/bg-1.jpg");
+	background-size:100% 100%;
+	}
+
+
+
+.poll-stat-unit {
+	border:rgba(48,48,48,0.5) 1px solid;
+	border-radius:4px;
+	}
+.poll-stat-unit:hover {
+	background:rgba(48,48,48,0.05);
+	border-color:transparent;
+	}
+.poll-stat-unit + .poll-stat-unit {
+	margin-top:20px;
+	}
+
+
+
+.paginator {
+	padding:30px;
+	justify-content: center;
+	}
+.paginator-unit {
+	display:flex;
+	align-items:center;
+	width:38px;
+	height:38px;
+	color:#FF5959;
+	background:#FFCDCD;
+	border-radius:4px;
+	}
+.paginator-unit:hover {
+	background:#FFACAC;
+	}
+.paginator-unit.active {
+	background:#FF5959;
+	color:#fff;
+	}
+.paginator-unit-value {
+	width:100%;
+	text-align:center;
+	}
+.paginator-unit + .paginator-unit {
+	margin-left:20px;
+	}
+
+
+
+.three-ways-block {
+	color:#fff;
+	padding:40px 50px;
+	background:#FF5959;
+	overflow:hidden;
+	}
+.three-ways-block-line {
+	position:absolute;
+	top:-20px;
+	left:0;
+	width:100%;
+	height:auto;
+	}
+
+
+
+.journal-2022-unit {
+	justify-content:center;
+	width:100%;
+	height:100%;
+	color:#fff;
+	border-radius:4px;
+	overflow:hidden;
+	}
+.journal-2022-unit-bg {
+	position:absolute;
+	left:-5%;
+	top:-5%;
+	width:110%;
+	height:110%;
+	filter:blur(4px);
+	}
+.journal-2022-button {
+	color:#fff;
+	font-size:15px;
+	font-weight:500;
+	padding:10px;
+	border:#fff 2px solid;
+	border-radius:4px;
+	}
+.journal-2022-button:hover {
+	color:#000;
+	background:#fff;
+	}
+.journal-2022-button.primary {
+	background:#fff;
+	color:#000;
+	}
+
+.info-sharing-form {
+	color:#fff;
+	background:#FF5959;
+	border-radius:4px;
+	}
+.info-sharing-form textarea {
+	width:100%;
+	min-width:100%;
+	max-width:100%;
+	min-height:128px;
+	font-family:inherit;
+	padding:10px;
+	border:none;
+	border-radius:4px;
+	}
+
+
+
+
+
