@@ -1,12 +1,70 @@
 
-
-
-
-
-
-.promo-banner {
-
+.ik2022 {
+	padding-top:60px;
 	}
+
+
+.header-ik-2022 {
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	background:#fff;
+	background:rgba(255,255,255,0.8);
+	backdrop-filter:blur(20px);
+	z-index:100;
+	}
+.header-ik-2022-link {
+	color:#000;
+	}
+.header-ik-2022-link img {
+	display:none;
+	position:absolute;
+	width:100%;
+	height:6px;
+	left:0;
+	top:100%;
+	}
+.header-ik-2022-link.active img {
+	display:block;
+	}
+.header-ik-2022-link + .header-ik-2022-link {
+	margin-left:40px;
+	}
+
+.ik2022-tabs-unit {
+	padding:8px 5px;
+	}
+.ik2022-tabs-unit:hover:not(.active) {
+	background:rgba(48,48,48,0.05);
+	}
+.ik2022-tabs-unit.active {
+	font-weight:bold;
+	}
+.ik2022-tabs-unit.active:after {
+	content:'';
+	position:absolute;
+	width:100%;
+	height:2px;
+	top:100%;
+	left:0;
+	background:#FF5959;
+	}
+.ik2022-tabs-unit + .ik2022-tabs-unit {
+	margin-left:10px;
+	}
+
+.polling-station-finder {
+	border:#FF5959 2px solid;
+	}
+.polling-station-finder input {
+	border:none;
+	outline:none;
+	}
+
+
+
+.promo-banner {}
 .promo-banner-cross {
 	content:'';
 	position:absolute;
@@ -17,10 +75,12 @@
 	z-index:-1;
 	}
 .promo-banner-cross.left {
-	left:calc(-5% + -100px);
+	/*left:calc(-5% + -100px);*/
+	right:90%;
 	}
 .promo-banner-cross.right {
-	right:calc(-5% + 100px);
+	/*right:calc(-5% + 100px);*/
+	left:90%;
 	}
 
 .falsification-scheme {
@@ -141,5 +201,7 @@
 
 
 
-
+.ik2022-radius-4px {
+	border-radius:4px;
+	}
 
