@@ -7,15 +7,15 @@
         </div>
         <div class="section pdng-r-5prc flex-grow-all txt-algn-r">
             <a class="header-ik-2022-link txt-size-16px txt-bold active" href="#">
-                <img class="size-60" src="imgs/crpline-1.png" alt="">
+                <img class="size-60" src="/imgs/crpline-1.png" alt="">
                 Наблюдателям
             </a>
             <a class="header-ik-2022-link txt-size-16px txt-bold" href="#">
-                <img class="size-60" src="imgs/crpline-1.png" alt="">
+                <img class="size-60" src="/imgs/crpline-1.png" alt="">
                 Расследование фальсификаций
             </a>
             <a class="header-ik-2022-link txt-size-16px txt-bold" href="#">
-                <img class="size-60" src="imgs/crpline-1.png" alt="">
+                <img class="size-60" src="/imgs/crpline-1.png" alt="">
                 О референдуме
             </a>
         </div>
