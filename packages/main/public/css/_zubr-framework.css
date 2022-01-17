@@ -704,6 +704,9 @@ blockquote:after {
 .txt-lh-1_3em {
     line-height: 1.3em;
 }
+.txt-lh-1_5em {
+    line-height: 1.5em;
+    }
 
 /* Text sizes */
 .txt-size-11px {

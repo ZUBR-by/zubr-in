@@ -1,3 +1,16 @@
+/*###   Rewrite ZUBR Framework variables    ###*/
+.border-color1,
+.mil-border-color1 {
+	border-color:#979797;
+	}
+.blue-link {
+	color:#2D8EE7;
+	}
+.blue-link.txt-underline-inline {
+	border-bottom:#2D8EE7 1px solid;
+	}
+/* End */
+
 
 .ik2022 {
 	padding-top:60px;
@@ -9,10 +22,19 @@
 	top:0;
 	left:0;
 	width:100%;
+	z-index:100;
+	}
+.header-ik-2022:after {
+	content:'';
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
 	background:#fff;
 	background:rgba(255,255,255,0.8);
 	backdrop-filter:blur(20px);
-	z-index:100;
+	z-index:-1;
 	}
 .header-ik-2022-link {
 	color:#000;
@@ -56,12 +78,26 @@
 
 .polling-station-finder {
 	border:#FF5959 2px solid;
+	border-radius:4px;
 	}
 .polling-station-finder input {
 	border:none;
 	outline:none;
 	}
-
+.poll-stat-finder-button {
+	display:block;
+	background:#FF5959;
+	color:#fff;
+	font-weight:bold;
+	padding:12px 20px;
+	border:none;
+	}
+.polling-station-finder:hover {
+	border-color:#D02424;
+	}
+.polling-station-finder:hover .poll-stat-finder-button {
+	background:#D02424;
+	}
 
 
 .promo-banner {}
@@ -82,6 +118,41 @@
 	/*right:calc(-5% + 100px);*/
 	left:90%;
 	}
+
+.promo-white-cross {
+	position:absolute;
+	width:200px;
+	height:200px;
+	}
+.promo-white-cross.tl {
+	top:10%;
+	left:-8%;
+	}
+.promo-white-cross.tr {
+	top:10%;
+	right:-8%;
+	}
+.promo-white-cross.bl {
+	bottom:10%;
+	left:-8%;
+	}
+.promo-white-cross.br {
+	bottom:10%;
+	right:-8%;
+	}
+.red-block-line {
+	position:absolute;
+	width:100%;
+	left:0%;
+	height:40px;
+	}
+.red-block-line.top {
+	top:-20px;
+	}
+.red-block-line.bottom {
+	bottom:-20px;
+	}
+
 
 .falsification-scheme {
 	background:url("../imgs/bg-1.jpg");
@@ -182,6 +253,10 @@
 	background:#fff;
 	color:#000;
 	}
+.journal-2022-button.black {
+	border-color:#303030;
+	color:#303030;
+	}
 
 .info-sharing-form {
 	color:#fff;
@@ -201,7 +276,146 @@
 
 
 
+.uik-info-unit + .uik-info-unit {
+	margin:15px 0 0 0;
+	}
+
+.uik-persons {
+	margin:0 -15px;
+	}
+
+
+.white-box {
+	display:block;
+	margin:0 auto;
+	background:#fff;
+	z-index:2;
+	}
+.white-box + .white-box {
+	margin-top:40px;
+	}
+
+
 .ik2022-radius-4px {
 	border-radius:4px;
 	}
+.page-sticky-nav {
+	position:sticky;
+	top:80px;
+	background:#fff;
+	z-index:10;
+	}
+
+/*   Burger Menu from JM   */
+#brgrbtn {
+	position:absolute;
+	width:0;
+	height:0;
+	opacity:0;
+	z-index:-1;
+	}
+.burger-button {
+	position:absolute;
+	top:50%;
+	right:5%;
+	display:inline-block;
+	width:36px;
+	height:36px;
+	vertical-align:middle;
+	margin-top:-18px;
+	transition: all 0.2s ease-in;
+	z-index:10;
+	zoom:0.8;
+	}
+.burger-button-line {
+	position:absolute;
+	width:30px;
+	height:4px;
+	background:#303030;
+	border-radius:0;
+	transition: all 0.3s ease-in;
+	}
+.burger-button-line:first-child {
+	left:3px;
+	top:6px;
+	}
+.burger-button-line:nth-child(2) {
+	left:3px;
+	top:16px;
+	}
+.burger-button-line:last-child {
+	left:3px;
+	bottom:6px;
+	}
+input#brgrbtn:checked + .burger-button,
+.burger-button.close {
+	transform:rotate(90deg);
+	}
+input#brgrbtn:checked + .burger-button .burger-button-line:first-child,
+.burger-button.close .burger-button-line:first-child {
+	top: 16px;
+	transform:rotate(-45deg);
+	background:#FF5C01;
+	}
+input#brgrbtn:checked + .burger-button .burger-button-line:nth-child(2),
+.burger-button.close .burger-button-line:nth-child(2) {
+	opacity:0;
+	}
+input#brgrbtn:checked + .burger-button .burger-button-line:last-child,
+.burger-button.close .burger-button-line:last-child {
+	bottom: 16px;
+	transform:rotate(45deg);
+	background:#FF5C01;
+	}
+.brgr-nav {
+	position:fixed;
+	top:0;
+	right:-100%;
+	width:65%;
+	height:100vh;
+	padding:100px 5% 10% 5%;
+	background:transparent;
+	transition: all 0.35s ease-in;
+	opacity:0;
+	z-index:5;
+	}
+.brgr-nav:after {
+	content:'';
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:rgba(255,255,255, 0.8);
+	backdrop-filter:blur(10px);
+	box-shadow:rgba(0,0,0,0.15) 0 0 60px;
+	z-index:-1;
+	}
+input#brgrbtn:checked + label + .brgr-nav {
+	right:0;
+	opacity:1;
+	}
+.brgr-nav-links .button {
+	display:block;
+	font-size:22px;
+	text-transform:none;
+	margin:15px 0;
+	border-color:rgba(255,255,255,0.15);
+	}
+.brgr-nav .lang-swicher {
+	position:absolute;
+	left:5%;
+	top:2.49%;
+	background:rgba(255,255,255,0.2);
+	}
+
+.brgr-nav .header-ik-2022-link {
+	display:inline-block;
+	}
+.brgr-nav .header-ik-2022-link + .header-ik-2022-link {
+	margin:30px 0 0 0;
+	}
+
+
+
 
