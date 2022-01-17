@@ -29,12 +29,10 @@
                 </p>
             </div>
             <div class="section size-50 mil-size-100 mil-pdng-0">
-                <el-carousel indicator-position="none">
-                    <el-carousel-item v-for="item of images1" :key="item.src">
-                        <img :src="item.src" :alt="item.alt"
-                             style="width: 300px;height: 300px;margin: auto;display: block;"/>
-                    </el-carousel-item>
-                </el-carousel>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/TI-rcwBgxCE" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
             </div>
         </div>
     </div>

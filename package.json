@@ -4,10 +4,12 @@
   "private": true,
   "scripts": {
     "dev-main": "cd packages/main && vite",
-    "dev-ik": "cd packages/ik && yarn start",
+    "dev-ik": "cd packages/ik && vite",
     "build-main": "cd packages/main && yarn run build",
+    "build-ik": "cd packages/ik && yarn run build",
     "build-all": "lerna run build",
-    "serve": "cd packages/main && vite preview"
+    "serve": "cd packages/main && vite preview",
+    "serve-ik": "cd packages/ik && vite preview"
   },
   "dependencies": {
     "vue": "^3.2.16",

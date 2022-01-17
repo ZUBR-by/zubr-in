@@ -1,0 +1,207 @@
+
+.ik2022 {
+	padding-top:60px;
+	}
+
+
+.header-ik-2022 {
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	background:#fff;
+	background:rgba(255,255,255,0.8);
+	backdrop-filter:blur(20px);
+	z-index:100;
+	}
+.header-ik-2022-link {
+	color:#000;
+	}
+.header-ik-2022-link img {
+	display:none;
+	position:absolute;
+	width:100%;
+	height:6px;
+	left:0;
+	top:100%;
+	}
+.header-ik-2022-link.active img {
+	display:block;
+	}
+.header-ik-2022-link + .header-ik-2022-link {
+	margin-left:40px;
+	}
+
+.ik2022-tabs-unit {
+	padding:8px 5px;
+	}
+.ik2022-tabs-unit:hover:not(.active) {
+	background:rgba(48,48,48,0.05);
+	}
+.ik2022-tabs-unit.active {
+	font-weight:bold;
+	}
+.ik2022-tabs-unit.active:after {
+	content:'';
+	position:absolute;
+	width:100%;
+	height:2px;
+	top:100%;
+	left:0;
+	background:#FF5959;
+	}
+.ik2022-tabs-unit + .ik2022-tabs-unit {
+	margin-left:10px;
+	}
+
+.polling-station-finder {
+	border:#FF5959 2px solid;
+	}
+.polling-station-finder input {
+	border:none;
+	outline:none;
+	}
+
+
+
+.promo-banner {}
+.promo-banner-cross {
+	content:'';
+	position:absolute;
+	top:50%;
+	margin-top:-120px;
+	width:296px;
+	height:276px;
+	z-index:-1;
+	}
+.promo-banner-cross.left {
+	/*left:calc(-5% + -100px);*/
+	right:90%;
+	}
+.promo-banner-cross.right {
+	/*right:calc(-5% + 100px);*/
+	left:90%;
+	}
+
+.falsification-scheme {
+	background:url("../imgs/bg-1.jpg");
+	background-size:100% 100%;
+	}
+
+
+
+.poll-stat-unit {
+	border:rgba(48,48,48,0.5) 1px solid;
+	border-radius:4px;
+	}
+.poll-stat-unit:hover {
+	background:rgba(48,48,48,0.05);
+	border-color:transparent;
+	}
+.poll-stat-unit + .poll-stat-unit {
+	margin-top:20px;
+	}
+
+
+
+.paginator {
+	padding:30px;
+	justify-content: center;
+	}
+.paginator-unit {
+	display:flex;
+	align-items:center;
+	width:38px;
+	height:38px;
+	color:#FF5959;
+	background:#FFCDCD;
+	border-radius:4px;
+	}
+.paginator-unit:hover {
+	background:#FFACAC;
+	}
+.paginator-unit.active {
+	background:#FF5959;
+	color:#fff;
+	}
+.paginator-unit-value {
+	width:100%;
+	text-align:center;
+	}
+.paginator-unit + .paginator-unit {
+	margin-left:20px;
+	}
+
+
+
+.three-ways-block {
+	color:#fff;
+	padding:40px 50px;
+	background:#FF5959;
+	overflow:hidden;
+	}
+.three-ways-block-line {
+	position:absolute;
+	top:-20px;
+	left:0;
+	width:100%;
+	height:auto;
+	}
+
+
+
+.journal-2022-unit {
+	justify-content:center;
+	width:100%;
+	height:100%;
+	color:#fff;
+	border-radius:4px;
+	overflow:hidden;
+	}
+.journal-2022-unit-bg {
+	position:absolute;
+	left:-5%;
+	top:-5%;
+	width:110%;
+	height:110%;
+	filter:blur(4px);
+	}
+.journal-2022-button {
+	color:#fff;
+	font-size:15px;
+	font-weight:500;
+	padding:10px;
+	border:#fff 2px solid;
+	border-radius:4px;
+	}
+.journal-2022-button:hover {
+	color:#000;
+	background:#fff;
+	}
+.journal-2022-button.primary {
+	background:#fff;
+	color:#000;
+	}
+
+.info-sharing-form {
+	color:#fff;
+	background:#FF5959;
+	border-radius:4px;
+	}
+.info-sharing-form textarea {
+	width:100%;
+	min-width:100%;
+	max-width:100%;
+	min-height:128px;
+	font-family:inherit;
+	padding:10px;
+	border:none;
+	border-radius:4px;
+	}
+
+
+
+.ik2022-radius-4px {
+	border-radius:4px;
+	}
+
