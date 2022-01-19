@@ -122,19 +122,7 @@
                 <div class="uik-persons-unit pdng-15px shadow-type-1 ik2022-radius-4px">
                     <div class="uik-persons-photo-and-marks-wrp flex-row">
                         <div class="uik-persons-photo section size-50">
-                            <svg width="136" height="181" viewBox="0 0 136 181" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M70.289 94.5555C90.9544 94.5555 107.707 77.4267 107.707 56.2973C107.707 35.1678 90.9544 18.0391 70.289 18.0391C49.6237 18.0391 32.8711 35.1678 32.8711 56.2973C32.8711 77.4267 49.6237 94.5555 70.289 94.5555Z"
-                                    fill="white"/>
-                                <circle cx="68.499" cy="62.5" r="33" stroke="#303030" stroke-width="3"/>
-                                <path
-                                    d="M16.999 140C17.9354 125.333 29.359 96 67.5627 96C105.766 96 118.438 125.333 119.999 140"
-                                    stroke="#303030" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path
-                                    d="M4 2H132V-2H4V2ZM134 4V177H138V4H134ZM132 179H4V183H132V179ZM2 177V4H-2V177H2ZM4 179C2.89543 179 2 178.105 2 177H-2C-2 180.314 0.686298 183 4 183V179ZM134 177C134 178.105 133.105 179 132 179V183C135.314 183 138 180.314 138 177H134ZM132 2C133.105 2 134 2.89543 134 4H138C138 0.686289 135.314 -2 132 -2V2ZM4 -2C0.686293 -2 -2 0.686288 -2 4H2C2 2.89543 2.89543 2 4 2V-2Z"
-                                    fill="black"/>
-                            </svg>
+                            <img :src="item.member.person.photo_url || '/imgs/person_photo_placeholder.svg'">
                         </div>
                         <div class="section size-50 flex-column">
                             <div class="flex-algn-slf-e mrgn-b-10px">
@@ -495,6 +483,7 @@
                 <div class="uik-persons-unit pdng-15px shadow-type-1 ik2022-radius-4px">
                     <div class="uik-persons-photo-and-marks-wrp flex-row">
                         <div class="uik-persons-photo section size-50">
+
                             <svg width="136" height="181" viewBox="0 0 136 181" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path
