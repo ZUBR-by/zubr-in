@@ -24,7 +24,21 @@ const main = [
         meta: {title: 'Главная'},
         exclude: true,
         component: Home,
-    }
+    },
+    {
+        path: '/commission/:id',
+        name: 'commission',
+        meta: {title: 'Избирательная комиссия'},
+        exclude: true,
+        component: Commission,
+    },
+    {
+        path: '/elections/commission/:id',
+        name: 'old_commission',
+        meta: {title: 'Избирательная комиссия'},
+        exclude: true,
+        component: Commission,
+    },
 ]
 const common = [
     {
@@ -79,20 +93,6 @@ const common = [
         meta: {title: 'Член комиссии'},
         exclude: true,
         component: Member,
-    },
-    {
-        path: '/commission/:id',
-        name: 'commission',
-        meta: {title: 'Избирательная комиссия'},
-        exclude: true,
-        component: Commission,
-    },
-    {
-        path: '/elections/commission/:id',
-        name: 'old_commission',
-        meta: {title: 'Избирательная комиссия'},
-        exclude: true,
-        component: Commission,
     },
     {
         path: '/elections/member/:id',
