@@ -73,87 +73,97 @@
             Найдите нужных членов комиссий
         </h2>
         <div class="ik2022-tabs flex-row pdng-t-30px pdng-b-20px">
-            <div class="ik2022-tabs-unit txt-size-12px cursor-pointer active">
+            <div class="ik2022-tabs-unit txt-size-12px cursor-pointer"
+                 @click="view = 'list'"
+                 :class="{active: view === 'list'}">
                 Поиск
             </div>
-            <div class="ik2022-tabs-unit txt-size-12px cursor-pointer">
+            <div class="ik2022-tabs-unit txt-size-12px cursor-pointer"
+                 @click="view = 'map'; revealMap();"
+                 :class="{active: view === 'map'}">
                 Карта
             </div>
         </div>
-        <label class="polling-station-finder inline-flex flex-algn-slf-c size-50">
-            <div class="section">
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M8.33333 7.33333H7.80667L7.62 7.15333C8.27333 6.39333 8.66667 5.40667 8.66667 4.33333C8.66667 1.94 6.72667 0 4.33333 0C1.94 0 0 1.94 0 4.33333C0 6.72667 1.94 8.66667 4.33333 8.66667C5.40667 8.66667 6.39333 8.27333 7.15333 7.62L7.33333 7.80667V8.33333L10.6667 11.66L11.66 10.6667L8.33333 7.33333V7.33333ZM4.33333 7.33333C2.67333 7.33333 1.33333 5.99333 1.33333 4.33333C1.33333 2.67333 2.67333 1.33333 4.33333 1.33333C5.99333 1.33333 7.33333 2.67333 7.33333 4.33333C7.33333 5.99333 5.99333 7.33333 4.33333 7.33333Z"
-                        fill="#303030"/>
-                </svg>
+        <template v-if="view === 'list'">
+            <label class="polling-station-finder inline-flex flex-algn-slf-c size-50">
+                <div class="section">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M8.33333 7.33333H7.80667L7.62 7.15333C8.27333 6.39333 8.66667 5.40667 8.66667 4.33333C8.66667 1.94 6.72667 0 4.33333 0C1.94 0 0 1.94 0 4.33333C0 6.72667 1.94 8.66667 4.33333 8.66667C5.40667 8.66667 6.39333 8.27333 7.15333 7.62L7.33333 7.80667V8.33333L10.6667 11.66L11.66 10.6667L8.33333 7.33333V7.33333ZM4.33333 7.33333C2.67333 7.33333 1.33333 5.99333 1.33333 4.33333C1.33333 2.67333 2.67333 1.33333 4.33333 1.33333C5.99333 1.33333 7.33333 2.67333 7.33333 4.33333C7.33333 5.99333 5.99333 7.33333 4.33333 7.33333Z"
+                            fill="#303030"/>
+                    </svg>
 
-            </div>
-            <div class="section flex-grow-all">
-                <input :placeholder="placeholder"
-                       v-model.lazy="filter">
-            </div>
-            <div class="section">
-                <button class="poll-stat-finder-bitton">
-                    Найти
-                </button>
-            </div>
-        </label>
-        <div class="polling-station-list" v-if="filter">
-            <a class="poll-stat-unit flex-row flex-algn-itms-c flex-noshrink pdng-20px cursor-pointer"
-               :href="'/commission/' + item.id" v-for="item of list">
-                <div class="section size-30 pdng-l-10px flex-algn-slf-s">
-                    <h4 class="txt-size-24px txt-bold">
-                        {{item.name}}
-                    </h4>
-                    <p class="txt-size-12px">
-                        {{item.description}}
-                    </p>
                 </div>
-                <div class="section size-30 pdng-l-25px flex-algn-slf-s">
-                    <h4 class="txt-size-24px txt-bold">
-                        {{ item.code }}
-                    </h4>
-                    <p class="txt-size-12px">
-                        {{ item.description }}
-                    </p>
+                <div class="section flex-grow-all">
+                    <input :placeholder="placeholder"
+                           v-model.lazy="filter">
                 </div>
-                <div class="section size-40 pdng-l-25px pdng-r-10px">
-                    <div class="size-100" v-if="item.info">
-                        <div class="txt-color-1 txt-size-20px txt-medium mil-txt-size-16px">
-                            {{ item.info }}
-                        </div>
-                        <div class="txt-color-2 txt-size-14px">
-                            {{ item.position }}
-                        </div>
+                <div class="section">
+                    <button class="poll-stat-finder-bitton">
+                        Найти
+                    </button>
+                </div>
+            </label>
+            <div class="polling-station-list" v-if="filter">
+                <a class="poll-stat-unit flex-row flex-algn-itms-c flex-noshrink pdng-20px cursor-pointer"
+                   :href="'/commission/' + item.id" v-for="item of list">
+                    <div class="section size-30 pdng-l-10px flex-algn-slf-s">
+                        <h4 class="txt-size-24px txt-bold">
+                            {{item.name}}
+                        </h4>
+                        <p class="txt-size-12px">
+                            {{item.description}}
+                        </p>
                     </div>
-                    <p class="txt-size-12px" v-else>
-                        {{ item.constituency_description }}
-                    </p>
+                    <div class="section size-30 pdng-l-25px flex-algn-slf-s">
+                        <h4 class="txt-size-24px txt-bold">
+                            {{ item.code }}
+                        </h4>
+                        <p class="txt-size-12px">
+                            {{ item.description }}
+                        </p>
+                    </div>
+                    <div class="section size-40 pdng-l-25px pdng-r-10px">
+                        <div class="size-100" v-if="item.info">
+                            <div class="txt-color-1 txt-size-20px txt-medium mil-txt-size-16px">
+                                {{ item.info }}
+                            </div>
+                            <div class="txt-color-2 txt-size-14px">
+                                {{ item.position }}
+                            </div>
+                        </div>
+                        <p class="txt-size-12px" v-else>
+                            {{ item.constituency_description }}
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="paginator flex-row">
+                <div class="paginator-unit cursor-pointer">
+                    <div class="paginator-unit-value">
+                        1
+                    </div>
                 </div>
-            </a>
-        </div>
-        <div class="paginator flex-row">
-            <div class="paginator-unit cursor-pointer">
-                <div class="paginator-unit-value">
-                    1
+                <div class="paginator-unit cursor-pointer active">
+                    <div class="paginator-unit-value">
+                        2
+                    </div>
+                </div>
+                <div class="paginator-unit cursor-pointer">
+                    <div class="paginator-unit-value">
+                        3
+                    </div>
+                </div>
+                <div class="paginator-unit cursor-pointer">
+                    <div class="paginator-unit-value">
+                        >
+                    </div>
                 </div>
             </div>
-            <div class="paginator-unit cursor-pointer active">
-                <div class="paginator-unit-value">
-                    2
-                </div>
-            </div>
-            <div class="paginator-unit cursor-pointer">
-                <div class="paginator-unit-value">
-                    3
-                </div>
-            </div>
-            <div class="paginator-unit cursor-pointer">
-                <div class="paginator-unit-value">
-                    >
-                </div>
-            </div>
+        </template>
+        <div v-show="view === 'map'" class="map-wrp" style="background:#EDEDED; min-height:640px;height: 300px">
+            <commission-map v-if="mapInit === true" ref="map"
+                            :init-campaign="'2020-08-presidential'"></commission-map>
         </div>
     </div>
     <div class="scene flex-row flex-algn-itms-c">
@@ -504,9 +514,9 @@ export default defineComponent({
                 return i.commissions[0].commission
             }));
         })
-        const region   = ref();
-        const district = ref();
+        const view = ref('list')
         const center   = ref();
+
         const mapInit  = ref(false)
         return {
             revealMap() {
@@ -520,13 +530,12 @@ export default defineComponent({
             },
             center,
             mapInit,
-            region,
-            district,
             endpoint,
             placeholder,
             filter,
             is_home_address,
-            list
+            list,
+            view
         }
     }
 })
