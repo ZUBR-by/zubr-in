@@ -16,7 +16,7 @@ const routes = [
     {
         path: '/schema',
         name: 'schema',
-        meta: {title: 'Схема фальсификаций'},
+        meta: {title: 'Расследования фальсификаций'},
         component: Schema,
     },
     {
