@@ -90,7 +90,8 @@
 
             </div>
             <div class="section flex-grow-all">
-                <input placeholder="Введите город и улицу вашей прописки ...">
+                <input :placeholder="placeholder"
+                       v-model.lazy="filter">
             </div>
             <div class="section">
                 <button class="poll-stat-finder-bitton">
@@ -98,111 +99,39 @@
                 </button>
             </div>
         </label>
-        <div class="polling-station-list">
-            <div class="poll-stat-unit flex-row flex-algn-itms-c flex-noshrink pdng-20px cursor-pointer">
+        <div class="polling-station-list" v-if="filter">
+            <a class="poll-stat-unit flex-row flex-algn-itms-c flex-noshrink pdng-20px cursor-pointer"
+               :href="'/commission/' + item.id" v-for="item of list">
                 <div class="section size-30 pdng-l-10px flex-algn-slf-s">
                     <h4 class="txt-size-24px txt-bold">
-                        Участок голосования #15
+                        {{item.name}}
                     </h4>
                     <p class="txt-size-12px">
-                        помещение государственного учереждения дворец культуры Костюковка
+                        {{item.description}}
                     </p>
                 </div>
                 <div class="section size-30 pdng-l-25px flex-algn-slf-s">
                     <h4 class="txt-size-24px txt-bold">
-                        03-019-0013
+                        {{ item.code }}
                     </h4>
                     <p class="txt-size-12px">
-                        г. Гомель, м-н Костюковка, ул. Независимости 2а
+                        {{ item.description }}
                     </p>
                 </div>
                 <div class="section size-40 pdng-l-25px pdng-r-10px">
-                    <p class="txt-size-12px">
-                        Гагарина, дома 35, корпуса 1, 2; 37; Полярная, 1-5-я Полярные, 1-8-я Совхозные, Нагорная,
-                        Рылеева, Серова, Осипенко, Бабушкина, Декабристов, 1-я, 2-я Усвятские, Бестужева, Скорины, 1-я,
-                        2-я Обувные, Швейников, Байдукова, Проездная, 3-я, 4-я, 7-я Суражские; переулков: Совхозный,
-                        2-4-й Совхозные, Полярный, Швейников, Осипенко; проезда Совхозный.
+                    <div class="size-100" v-if="item.info">
+                        <div class="txt-color-1 txt-size-20px txt-medium mil-txt-size-16px">
+                            {{ item.info }}
+                        </div>
+                        <div class="txt-color-2 txt-size-14px">
+                            {{ item.position }}
+                        </div>
+                    </div>
+                    <p class="txt-size-12px" v-else>
+                        {{ item.constituency_description }}
                     </p>
                 </div>
-            </div>
-            <div class="poll-stat-unit flex-row flex-algn-itms-c flex-noshrink pdng-20px cursor-pointer">
-                <div class="section size-30 pdng-l-10px flex-algn-slf-s">
-                    <h4 class="txt-size-24px txt-bold">
-                        Участок голосования #15
-                    </h4>
-                    <p class="txt-size-12px">
-                        помещение государственного учереждения дворец культуры Костюковка
-                    </p>
-                </div>
-                <div class="section size-30 pdng-l-25px flex-algn-slf-s">
-                    <h4 class="txt-size-24px txt-bold">
-                        03-019-0013
-                    </h4>
-                    <p class="txt-size-12px">
-                        г. Гомель, м-н Костюковка, ул. Независимости 2а
-                    </p>
-                </div>
-                <div class="section size-40 pdng-l-25px pdng-r-10px">
-                    <p class="txt-size-12px">
-                        Гагарина, дома 35, корпуса 1, 2; 37; Полярная, 1-5-я Полярные, 1-8-я Совхозные, Нагорная,
-                        Рылеева, Серова, Осипенко, Бабушкина, Декабристов, 1-я, 2-я Усвятские, Бестужева, Скорины, 1-я,
-                        2-я Обувные, Швейников, Байдукова, Проездная, 3-я, 4-я, 7-я Суражские; переулков: Совхозный,
-                        2-4-й Совхозные, Полярный, Швейников, Осипенко; проезда Совхозный.
-                    </p>
-                </div>
-            </div>
-            <div class="poll-stat-unit flex-row flex-algn-itms-c flex-noshrink pdng-20px cursor-pointer">
-                <div class="section size-30 pdng-l-10px flex-algn-slf-s">
-                    <h4 class="txt-size-24px txt-bold">
-                        Участок голосования #15
-                    </h4>
-                    <p class="txt-size-12px">
-                        помещение государственного учереждения дворец культуры Костюковка
-                    </p>
-                </div>
-                <div class="section size-30 pdng-l-25px flex-algn-slf-s">
-                    <h4 class="txt-size-24px txt-bold">
-                        03-019-0013
-                    </h4>
-                    <p class="txt-size-12px">
-                        г. Гомель, м-н Костюковка, ул. Независимости 2а
-                    </p>
-                </div>
-                <div class="section size-40 pdng-l-25px pdng-r-10px">
-                    <p class="txt-size-12px">
-                        Гагарина, дома 35, корпуса 1, 2; 37; Полярная, 1-5-я Полярные, 1-8-я Совхозные, Нагорная,
-                        Рылеева, Серова, Осипенко, Бабушкина, Декабристов, 1-я, 2-я Усвятские, Бестужева, Скорины, 1-я,
-                        2-я Обувные, Швейников, Байдукова, Проездная, 3-я, 4-я, 7-я Суражские; переулков: Совхозный,
-                        2-4-й Совхозные, Полярный, Швейников, Осипенко; проезда Совхозный.
-                    </p>
-                </div>
-            </div>
-            <div class="poll-stat-unit flex-row flex-algn-itms-c flex-noshrink pdng-20px cursor-pointer">
-                <div class="section size-30 pdng-l-10px flex-algn-slf-s">
-                    <h4 class="txt-size-24px txt-bold">
-                        Участок голосования #15
-                    </h4>
-                    <p class="txt-size-12px">
-                        помещение государственного учереждения дворец культуры Костюковка
-                    </p>
-                </div>
-                <div class="section size-30 pdng-l-25px flex-algn-slf-s">
-                    <h4 class="txt-size-24px txt-bold">
-                        03-019-0013
-                    </h4>
-                    <p class="txt-size-12px">
-                        г. Гомель, м-н Костюковка, ул. Независимости 2а
-                    </p>
-                </div>
-                <div class="section size-40 pdng-l-25px pdng-r-10px">
-                    <p class="txt-size-12px">
-                        Гагарина, дома 35, корпуса 1, 2; 37; Полярная, 1-5-я Полярные, 1-8-я Совхозные, Нагорная,
-                        Рылеева, Серова, Осипенко, Бабушкина, Декабристов, 1-я, 2-я Усвятские, Бестужева, Скорины, 1-я,
-                        2-я Обувные, Швейников, Байдукова, Проездная, 3-я, 4-я, 7-я Суражские; переулков: Совхозный,
-                        2-4-й Совхозные, Полярный, Швейников, Осипенко; проезда Совхозный.
-                    </p>
-                </div>
-            </div>
+            </a>
         </div>
         <div class="paginator flex-row">
             <div class="paginator-unit cursor-pointer">
