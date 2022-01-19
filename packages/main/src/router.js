@@ -39,6 +39,13 @@ const main = [
         exclude: true,
         component: Commission,
     },
+    {
+        path: '/member/:id',
+        name: 'member',
+        meta: {title: 'Член комиссии'},
+        exclude: true,
+        component: Member,
+    },
 ]
 const common = [
     {
@@ -86,13 +93,6 @@ const common = [
         exclude: true,
         meta: {title: 'Члены избирательных комиссий'},
         component: Members,
-    },
-    {
-        path: '/member/:id',
-        name: 'member',
-        meta: {title: 'Член комиссии'},
-        exclude: true,
-        component: Member,
     },
     {
         path: '/elections/member/:id',

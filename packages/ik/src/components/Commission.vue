@@ -144,7 +144,9 @@
                         </div>
                     </div>
                     <h3 class="txt-size-24px txt-bold mrgn-t-10px mrgn-b-20px">
-                        {{item.member.person.full_name}}
+                        <router-link :to="{name: 'member'}">
+                            {{item.member.person.full_name}}
+                        </router-link>
                     </h3>
                     <div class="uik-persons-marks flex-row flex-wrap mrgn-b-15px">
                         <div class="uik-persons-marks-unit mrgn-r-15px">

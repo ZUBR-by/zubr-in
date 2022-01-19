@@ -5,6 +5,7 @@ import Schema from "./components/Schema.vue";
 import ToHonestMembers from "./components/ToHonestMembers.vue";
 import {common} from "@zubr-in/main/src/router";
 import Commission from "./components/Commission.vue";
+import Member from "./components/Member.vue";
 
 const routes = [
     {
@@ -31,6 +32,13 @@ const routes = [
         meta: {title: 'Избирательная комиссия'},
         exclude: true,
         component: Commission,
+    },
+    {
+        path: '/member/:id',
+        name: 'member',
+        meta: {title: 'Член комиссии'},
+        exclude: true,
+        component: Member,
     },
     ...common
 ]
