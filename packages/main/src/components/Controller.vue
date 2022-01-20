@@ -70,13 +70,13 @@
     <div class="scene pdng-t-5px mil-pdng-b-5px">
         <div class="flex-row mil-flex-wrap">
             <div class="section size-50 pdng-r-30px mil-size-100 mil-pdng-0 mil-pdng-b-30px">
-                <h2 class="txt-bold">Почему к нам стоит присоединится</h2>
+                <h2 class="txt-bold">Почему к нам стоит присоединиться</h2>
                 <p class="txt-size-18px pdng-t-20px txt-lh-1_3em">
                     В 2020 году, несмотря на беспредел властей на выборах, совместные усилия людей, скоординированные с
                     инициативами
-                    «<a href="" class="txt-underline-inline">ZUBR</a>»,
-                    «<a href="" class="txt-underline-inline">Голос</a>»
-                    и «<a href="" class="txt-underline-inline">Честные люди</a>», правозащитными и партийными
+                    <a href="" class="txt-underline-inline">ZUBR</a>,
+                    "<a href="" class="txt-underline-inline">Голос</a>"
+                    и "<a href="" class="txt-underline-inline">Честные люди</a>", правозащитными и партийными
                     организациями позволили доказать, что выборы были сфальсифицированы. И мировой опыт, и собственный
                     опыт беларусов говорит, что любые преступления нельзя игнорировать. Их нужно фиксировать. Только
                     активные действия граждан на всех этапах любых электоральных кампаний влияют на их исход.
