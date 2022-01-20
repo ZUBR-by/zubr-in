@@ -8,7 +8,7 @@ import Members from "./components/Members.vue";
 import Member from "./components/Member.vue";
 import NewsItem from "./components/NewsItem.vue";
 import Campaigns from "./components/Campaigns.vue";
-import ForObservers from "./components/ForObservers.vue";
+import Prepare from "./components/Prepare.vue";
 import Campaign from "./components/Campaign.vue";
 import Organization from "./components/Organization.vue";
 import About from "./components/About.vue";
@@ -19,7 +19,7 @@ import News from "./components/News.vue";
 
 const main = [
     {
-        path: '/',
+        path: '/home',
         name: 'home',
         meta: {title: 'Главная'},
         exclude: true,
@@ -79,6 +79,7 @@ const common = [
         name: 'controller',
         meta: {title: 'Наблюдение и гражд. контроль'},
         component: Controller,
+        alias: ['/']
     },
     {
         path: '/organization/:id',
@@ -175,10 +176,10 @@ const common = [
         component: Messages,
     },
     {
-        path: '/control',
-        name: 'for_observers',
-        component: ForObservers,
-        meta: {title: 'Наблюдателям'},
+        path: '/prepare',
+        name: 'prepare',
+        component: Prepare,
+        meta: {title: 'Полезные материалы'},
         exclude: true,
     },
     {
