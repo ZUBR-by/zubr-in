@@ -4,7 +4,7 @@
         <div class="section">
             <img src="/img/controller/become.png" width="650" height="340">
         </div>
-        <button class="button primary large flex-row flex-algn-itms-c">
+        <a class="button primary large flex-row flex-algn-itms-c" href="https://t.me/zubr_in_bot">
             <div class="section">
                 Присоединиться
             </div>
@@ -16,7 +16,7 @@
                         fill="white"></path>
                 </svg>
             </div>
-        </button>
+        </a>
     </div>
     <div class="scene pdng-t-5px mil-pdng-b-5px">
         <div class="flex-row mil-flex-wrap">
