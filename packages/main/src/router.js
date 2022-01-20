@@ -127,7 +127,7 @@ const common = [
     {
         path: '/news',
         name: 'news',
-        meta: {title: 'Новости'},
+        meta: {title: 'Публикации'},
         component: News,
         beforeEnter() {
             window.location.href = 'https://teletype.in/@zubr_in';

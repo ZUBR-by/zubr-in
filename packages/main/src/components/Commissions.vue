@@ -5,7 +5,7 @@
           class="section flex-grow-all pdng-30px pdng-t-15px pdng-b-15px mil-pdng-20px mil-pdng-t-10px mil-pdng-b-10px">
         <div class="inline-block" v-show="view === 'list'">
           <div class="txt-size-12px txt-color-3-1 mrgn-b-5px">
-            Фильтр
+            Поиск комиссии(участка)
           </div>
           <input class="search-input" autofocus v-model.lazy="search" placeholder="Код, адрес, название...">
         </div>
