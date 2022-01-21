@@ -19,12 +19,9 @@
                     </div>
                 </div>
                 <div class="section pdng-l-40px mil-pdng-l-20px">
-                    <button class="button medium primary">
-                        Сообщить о нарушении
-                    </button>
-                    <button class="button medium mrgn-l-20px mil-mrgn-l-10px">
-                        Стать наблюдателем
-                    </button>
+                    <a class="button medium primary" :href="botURL">
+                        Участвовать!
+                    </a>
                 </div>
             </div>
         </div>
@@ -269,6 +266,7 @@ export default defineComponent({
             document.title = document.title.replace(' -', ' ' + data.value.commission.name + ' -')
         })
         return {
+            botURL: import.meta.env.VITE_BOT_URL,
             data,
             map,
             isLater,

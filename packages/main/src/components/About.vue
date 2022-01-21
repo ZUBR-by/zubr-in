@@ -1,6 +1,5 @@
 <template>
-    <header-view :active="'О проекте'">
-    </header-view>
+    <header-view :active="'О проекте'"></header-view>
     <div class="scene mrgn-t-130px mil-mrgn-t-80px">
         <div class="flex-row mil-flex-column mil-flex-wrap">
             <div class="section size-50 mil-size-100">
