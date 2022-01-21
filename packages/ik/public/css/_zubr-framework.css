@@ -1592,7 +1592,9 @@ h1, a, .button, .txt-color-1 {
     .mil-size-100 {
         width: 100%;
     }
-
+    .mil-height-200px {
+        height: 200px;
+    }
     .mil-height-250px {
         height: 250px;
     }
