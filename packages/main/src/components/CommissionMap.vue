@@ -46,12 +46,12 @@ export default {
         },
         initZoom: {
             type: Number,
-            default: 6.8
+            default: 7.3
         }
     },
     setup(props) {
         const cluster = new Cluster({
-            distance: 40,
+            distance: 30,
             source: new VectorSource({
                 url: `/commissions/${props.initCampaign}.json`,
                 format: new GeoJSON()
