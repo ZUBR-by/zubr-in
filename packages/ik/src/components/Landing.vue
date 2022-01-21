@@ -69,7 +69,7 @@
             </p>
         </div>
 
-        <h2 class="txt-size-34px mrgn-t-50px">
+        <h2 class="txt-size-34px mrgn-t-50px" id="search">
             Найдите нужных членов комиссий
         </h2>
         <div class="ik2022-tabs flex-row pdng-t-30px pdng-b-20px">
@@ -109,10 +109,10 @@
                    :href="'/commission/' + item.id" v-for="item of list">
                     <div class="section size-30 pdng-l-10px flex-algn-slf-s">
                         <h4 class="txt-size-24px txt-bold">
-                            {{item.name}}
+                            {{ item.name }}
                         </h4>
                         <p class="txt-size-12px">
-                            {{item.description}}
+                            {{ item.description }}
                         </p>
                     </div>
                     <div class="section size-30 pdng-l-25px flex-algn-slf-s">
@@ -138,27 +138,19 @@
                     </div>
                 </a>
             </div>
-            <div class="paginator flex-row">
-                <div class="paginator-unit cursor-pointer">
-                    <div class="paginator-unit-value">
-                        1
+            <div class="paginator flex-row" v-if="data && data.commissions && data.commissions.length > perPage">
+                <div class="paginator-unit cursor-pointer" v-for="i of pagesRange">
+                    <div class="paginator-unit-value cursor-pointer"
+                         :class="{active : page === i}"
+                         @click="page = i">
+                        {{ i + 1 }}
                     </div>
                 </div>
-                <div class="paginator-unit cursor-pointer active">
-                    <div class="paginator-unit-value">
-                        2
-                    </div>
-                </div>
-                <div class="paginator-unit cursor-pointer">
-                    <div class="paginator-unit-value">
-                        3
-                    </div>
-                </div>
-                <div class="paginator-unit cursor-pointer">
-                    <div class="paginator-unit-value">
-                        >
-                    </div>
-                </div>
+                <!--                <div class="paginator-unit cursor-pointer active">-->
+                <!--                    <div class="paginator-unit-value">-->
+                <!--                        2-->
+                <!--                    </div>-->
+                <!--                </div>-->
             </div>
         </template>
         <div v-show="view === 'map'" class="map-wrp" style="background:#EDEDED; min-height:640px;height: 300px">
@@ -434,29 +426,10 @@ import {computed, defineComponent, ref, watch} from "vue";
 import {ElTabs, ElTabPane} from 'element-plus'
 import CommissionMap from '@zubr-in/main/src/components/CommissionMap.vue'
 
-const data     = ref(null)
-const filter   = ref()
-const loading  = ref(false);
-const endpoint = ref('home_address');
-
-const endpoints = {
-    'home_address': {
-        url: '/search/commission',
-        parameter: 'query'
-    },
-    'commissions': {
-        url: '/search/commission',
-        parameter: 'query'
-    },
-    'members': {
-        url: '/members',
-        parameter: 'name'
-    },
-    'organizations': {
-        url: '/organizations',
-        parameter: 'name'
-    }
-}
+const data    = ref(null)
+const filter  = ref()
+const loading = ref(false);
+const perPage = 7;
 
 async function search() {
     try {
@@ -464,8 +437,8 @@ async function search() {
 
         const response = await fetch(
             import.meta.env.VITE_API_URL
-            + endpoints[endpoint.value].url
-            + ('?' + endpoints[endpoint.value].parameter + '=' + encodeURIComponent('%' + (filter.value) + '%'))
+            + '/search/commission'
+            + ('?query=' + encodeURIComponent('%' + (filter.value) + '%'))
         )
         data.value     = await response.json()
         loading.value  = false;
@@ -498,26 +471,35 @@ export default defineComponent({
             }
             search()
         })
-        const list     = computed(() => {
+        const page       = ref(0);
+        const list       = computed(() => {
             if (!data.value) {
                 return []
             }
-            if (!data.value.commissions) {
-                data.value.commissions = [];
+            let start = 0
+            if (page.value) {
+                start = page.value * perPage;
             }
-            if (!data.value.members) {
-                data.value.members = [];
-            }
-            return data.value.commissions.concat(data.value.members.map(i => {
-                i.commissions[0].commission.info     = i.full_name
-                i.commissions[0].commission.position = i.commissions[0].position
-                return i.commissions[0].commission
-            }));
+            console.log(start, data.value.commissions)
+            return data.value.commissions.slice(start, start + perPage);
         })
-        const view = ref('list')
-        const center   = ref();
+        const pagesCount = computed(() => {
+            if (!data.value) {
+                return 0
+            }
+            if (!data.value.commissions) {
+                return 0;
+            }
 
-        const mapInit  = ref(false)
+            return Math.floor(data.value.commissions.length / perPage);
+        });
+        const view       = ref('list')
+        const center     = ref();
+        const pagesRange = computed(() => {
+
+            return [...Array(pagesCount.value).keys()]
+        })
+        const mapInit    = ref(false)
         return {
             revealMap() {
 
@@ -528,14 +510,18 @@ export default defineComponent({
                     mapInit.value = true
                 }, 1)
             },
+            page,
             center,
             mapInit,
-            endpoint,
             placeholder,
             filter,
             is_home_address,
             list,
-            view
+            pagesRange,
+            pagesCount,
+            view,
+            data,
+            perPage
         }
     }
 })
