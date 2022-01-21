@@ -14,6 +14,7 @@ import Organization from "./components/Organization.vue";
 import About from "./components/About.vue";
 import Result2020 from "./components/Result2020.vue";
 import Controller from "./components/Controller.vue";
+import SendMessage from "./components/SendMessage.vue";
 import PathNotFound from "./components/PathNotFound.vue";
 import News from "./components/News.vue";
 
@@ -180,6 +181,13 @@ const common = [
         name: 'prepare',
         component: Prepare,
         meta: {title: 'Полезные материалы'},
+        exclude: true,
+    },
+    {
+        path: '/message',
+        name: 'send_message',
+        component: SendMessage,
+        meta: {title: 'Отправить сообщение'},
         exclude: true,
     },
     {
