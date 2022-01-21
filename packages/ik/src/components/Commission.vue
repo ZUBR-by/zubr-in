@@ -105,11 +105,7 @@
         </h2>
         <div class="flex-row flex-algn-itms-c mrgn-t-20px mrgn-b-10px">
             <div class="section pdng-r-10px">
-                <svg width="22" height="14" viewBox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M15 6C16.66 6 17.99 4.66 17.99 3C17.99 1.34 16.66 0 15 0C13.34 0 12 1.34 12 3C12 4.66 13.34 6 15 6ZM7 6C8.66 6 9.99 4.66 9.99 3C9.99 1.34 8.66 0 7 0C5.34 0 4 1.34 4 3C4 4.66 5.34 6 7 6ZM7 8C4.67 8 0 9.17 0 11.5V14H14V11.5C14 9.17 9.33 8 7 8ZM15 8C14.71 8 14.38 8.02 14.03 8.05C15.19 8.89 16 10.02 16 11.5V14H22V11.5C22 9.17 17.33 8 15 8Z"
-                        fill="#303030"/>
-                </svg>
+                <img src="/imgs/users_icon.svg" alt="">
             </div>
             <div class="section txt-size-14px txt-bold">
                 <p>
@@ -122,7 +118,9 @@
                 <div class="uik-persons-unit pdng-15px shadow-type-1 ik2022-radius-4px">
                     <div class="uik-persons-photo-and-marks-wrp flex-row">
                         <div class="uik-persons-photo section size-50">
-                            <img :src="item.member.person.photo_url || '/imgs/person_photo_placeholder.svg'">
+                            <img :src="item.member.person.photo_url || '/imgs/person_photo_placeholder.svg'"
+                                 alt=""
+                                 style="max-width: 120px">
                         </div>
                         <div class="section size-50 flex-column">
                             <div class="flex-algn-slf-e mrgn-b-10px">
@@ -145,7 +143,7 @@
                     </div>
                     <h3 class="txt-size-24px txt-bold mrgn-t-10px mrgn-b-20px">
                         <router-link :to="{name: 'member'}">
-                            {{item.member.person.full_name}}
+                            {{ item.member.person.full_name }}
                         </router-link>
                     </h3>
                     <div class="uik-persons-marks flex-row flex-wrap mrgn-b-15px">
@@ -197,12 +195,14 @@
                                 {{ item.position }}
                             </div>
                         </div>
-                        <div class="uik-info-unit" v-if="item.referral_notes || item.member.person.extra.referral_description">
+                        <div class="uik-info-unit"
+                             v-if="item.referral_notes || item.member.person.extra.referral_description">
                             <div class="uik-info-unit-name txt-bold">
                                 Выдвинут(a):
                             </div>
                             <div class="uik-info-unit-value">
-                                <a class="blue-link txt-underline-inline" :href="item.referral_id ? '/organization/' + item.referral_id : '#'">
+                                <a class="blue-link txt-underline-inline"
+                                   :href="item.referral_id ? '/organization/' + item.referral_id : '#'">
                                     {{ item.referral_notes || item.member.person.extra.referral_description }}
                                 </a>
                             </div>
