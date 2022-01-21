@@ -31,12 +31,9 @@
                     </div>
                 </div>
                 <div class="section pdng-l-40px">
-                    <div class="button medium mil-txt-size-12px primary">
-                        Сообщить о нарушении
-                    </div>
-                    <div class="button medium mrgn-l-10px mil-mrgn-l-10px">
-                        Стать наблюдателем
-                    </div>
+                    <a class="button medium mil-txt-size-12px primary" :href="botURL">
+                        Участвовать!
+                    </a>
                 </div>
             </div>
         </div>
@@ -180,6 +177,7 @@ export default defineComponent({
             document.title = document.title.replace('Кампания', data.value.campaign.name)
         })
         return {
+            botURL: import.meta.env.VITE_BOT_URL,
             data,
             hash: {},
             formatDateCampaign

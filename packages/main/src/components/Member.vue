@@ -1,5 +1,15 @@
 <template>
     <header-view>
+        <div class="header-subnav border-t-1px border-color2">
+            <div
+                class="section flex-row flex-algn-itms-c flex-grow-all flex-algn-slf-strch pdng-20px pdng-l-30px pdng-r-30px mil-pdng-20px mil-pdng-t-10px mil-pdng-b-10px">
+                <div class="section">
+                    <a class="button medium primary" :href="botURL">
+                        Участвовать!
+                    </a>
+                </div>
+            </div>
+        </div>
     </header-view>
     <template v-if="data && data.member">
         <div class="scene-wrp bg-color-1 border-b-1px border-color1">
@@ -315,6 +325,7 @@ export default defineComponent({
             return data.value.member.commissions
         })
         return {
+            botURL: import.meta.env.VITE_BOT_URL,
             data,
             showModal,
             employer,
