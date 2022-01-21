@@ -2,15 +2,16 @@
     <header-view :active="'Кампании'">
         <div class="header-subnav border-t-1px border-color2">
             <div
-                class="section flex-grow-all pdng-30px pdng-t-15px pdng-b-15px mil-pdng-20px mil-pdng-t-10px mil-pdng-b-10px">
-                <div class="txt-color-1 txt-size-18px mil-txt-size-14px" v-if="data && data.campaign.started_at">
+                class="section flex-grow-all pdng-30px pdng-t-15px pdng-b-15px mil-pdng-20px mil-pdng-t-10px mil-pdng-b-10px"
+                v-if="data">
+                <div class="txt-color-1 txt-size-18px mil-txt-size-14px" v-if="data.campaign.started_at">
                     {{ formatDateCampaign(data.campaign) }}
                 </div>
-                <div class="txt-color-1 txt-size-18px mil-txt-size-14px" v-else>
-                    Нет даты
+                <div class="txt-size-18px mil-txt-size-14px txt-bold" v-if="isFuture(data.campaign.started_at)">
+                    {{ dateDiff(data.campaign.started_at) }}
                 </div>
-                <div class="txt-size-18px mil-txt-size-14px txt-bold" v-if="false">
-                    28 дней до начала
+                <div class="txt-color-1 txt-size-18px mil-txt-size-14px" v-if="!data.campaign.started_at">
+                    Нет даты
                 </div>
             </div>
             <div
@@ -180,6 +181,16 @@ export default defineComponent({
             botURL: import.meta.env.VITE_BOT_URL,
             data,
             hash: {},
+            isFuture(start) {
+                return new Date(start) > new Date();
+            },
+            dateDiff(start) {
+                function date2(first, second) {
+                    return Math.round((second - first) / (1000 * 60 * 60 * 24));
+                }
+                console.log(new Date(), new Date(start));
+                return date2(new Date(), new Date(start)) + ' день до начала'
+            },
             formatDateCampaign
         }
     }
