@@ -1,7 +1,7 @@
 <template>
     <div id="map" style="height: 100%;width: 100%"></div>
     <el-dialog v-model="showModal" :custom-class="'popup'" :top="'10vh'" :width="'100%'">
-        <div class="scene">
+        <div class="scene pdng-0 pdng-l-15px">
             <ul>
                 <li v-for="feature of features" class="pdng-10px">
                     <strong>{{ feature.getProperties().code }} &nbsp;</strong>

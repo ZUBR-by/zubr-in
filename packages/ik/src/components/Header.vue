@@ -1,7 +1,7 @@
 <template>
     <div class="header-ik-2022 flex-row flex-algn-itms-c">
         <div class="section pdng-20px pdng-l-5prc pdng-r-30px">
-            <router-link :to="{name: 'home'}">
+            <router-link :to="{name: 'ik_main'}">
                 <img src="/imgs/logo.svg" alt="header logo">
             </router-link>
         </div>

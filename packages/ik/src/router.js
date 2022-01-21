@@ -10,7 +10,7 @@ import Member from "./components/Member.vue";
 const routes = [
     {
         path: '/',
-        name: 'home',
+        name: 'ik_main',
         meta: {title: 'Главная'},
         component: Landing,
     },

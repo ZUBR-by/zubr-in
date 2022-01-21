@@ -138,22 +138,20 @@
                     </div>
                 </a>
             </div>
-            <div class="paginator flex-row" v-if="data && data.commissions && data.commissions.length > perPage">
-                <div class="paginator-unit cursor-pointer" v-for="i of pagesRange">
-                    <div class="paginator-unit-value cursor-pointer"
-                         :class="{active : page === i}"
-                         @click="page = i">
+            <div class="paginator flex-row"
+                 v-if="data && data.commissions && data.commissions.length > perPage && filter">
+                <div class="paginator-unit cursor-pointer"
+                     v-for="i of pagesRange"
+                     @click="page = i"
+                     :class="{active : page === i}">
+                    <div class="paginator-unit-value">
                         {{ i + 1 }}
                     </div>
                 </div>
-                <!--                <div class="paginator-unit cursor-pointer active">-->
-                <!--                    <div class="paginator-unit-value">-->
-                <!--                        2-->
-                <!--                    </div>-->
-                <!--                </div>-->
             </div>
         </template>
-        <div v-show="view === 'map'" class="map-wrp" style="background:#EDEDED; min-height:640px;height: 300px">
+        <div v-show="view === 'map'" class="map-wrp" style="background:#EDEDED; min-height:640px;height: 300px"
+             id="map-tab">
             <commission-map v-if="mapInit === true" ref="map"
                             :init-campaign="'2020-08-presidential'"></commission-map>
         </div>
@@ -422,9 +420,11 @@
 </template>
 <script>
 import Header from './Header.vue';
-import {computed, defineComponent, ref, watch} from "vue";
+import {computed, defineComponent, onMounted, ref, watch} from "vue";
 import {ElTabs, ElTabPane} from 'element-plus'
 import CommissionMap from '@zubr-in/main/src/components/CommissionMap.vue'
+import {onBeforeRouteUpdate} from "vue-router";
+import router from "@zubr-in/main/src/router";
 
 const data    = ref(null)
 const filter  = ref()
@@ -465,7 +465,20 @@ export default defineComponent({
                 ? 'Ваш домашний адрес'
                 : 'ФИО члена комиссии, Код, адрес, описание комиссии, описание округа'
         })
+        let params            = (new URL(document.location.href)).searchParams;
+        filter.value          = params.has('query') ? params.get('query') : ''
+
+        onBeforeRouteUpdate((to, from, next) => {
+            filter.value = params.has('query') ? params.get('query') : ''
+            next()
+        })
         watch(filter, (newValue) => {
+            router.push({
+                path: '/',
+                query: {
+                    query: newValue,
+                }
+            })
             if (!newValue) {
                 return
             }
@@ -480,7 +493,6 @@ export default defineComponent({
             if (page.value) {
                 start = page.value * perPage;
             }
-            console.log(start, data.value.commissions)
             return data.value.commissions.slice(start, start + perPage);
         })
         const pagesCount = computed(() => {
@@ -496,18 +508,20 @@ export default defineComponent({
         const view       = ref('list')
         const center     = ref();
         const pagesRange = computed(() => {
-
             return [...Array(pagesCount.value).keys()]
         })
         const mapInit    = ref(false)
+        onMounted(() => {
+            search()
+        })
         return {
             revealMap() {
-
                 setTimeout(() => {
                     center.value  = [
                         26.005343, 53.131253
                     ];
                     mapInit.value = true
+                    document.getElementById("map-tab").scrollIntoView({block: "center", behavior: "smooth"})
                 }, 1)
             },
             page,
