@@ -41,7 +41,7 @@
                 </p>
             </div>
             <div class="section size-50 mil-size-100 mil-pdng-0">
-                <iframe class="mil-size-100 mil-height-200px" width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLYKY6iX1QWYGx5W2O-73VkkszLWfLVusv"
+                <iframe class="mil-size-100 mil-height-200px shadow-type-1" width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLYKY6iX1QWYGx5W2O-73VkkszLWfLVusv"
                         title="YouTube video player"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
