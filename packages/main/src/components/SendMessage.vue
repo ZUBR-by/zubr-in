@@ -248,7 +248,7 @@ export default {
                     'Успех',
                     {
                         confirmButtonText: 'Да',
-                        cancelButtonText: 'Отмена',
+                        cancelButtonText: 'Нет',
                         type: 'success',
                     }
                 )
