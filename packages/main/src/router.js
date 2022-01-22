@@ -1,20 +1,7 @@
 import {createRouter, createWebHistory} from 'vue-router'
 import Home from './components/Home.vue'
-import Messages from './components/Messages.vue'
-import Organizations from './components/Organizations.vue'
-import Commissions from "./components/Commissions.vue";
-import Commission from "./components/Commission.vue";
-import Members from "./components/Members.vue";
-import Member from "./components/Member.vue";
 import NewsItem from "./components/NewsItem.vue";
-import Campaigns from "./components/Campaigns.vue";
-import Prepare from "./components/Prepare.vue";
-import Campaign from "./components/Campaign.vue";
-import Organization from "./components/Organization.vue";
-import About from "./components/About.vue";
 import Result2020 from "./components/Result2020.vue";
-import Controller from "./components/Controller.vue";
-import SendMessage from "./components/SendMessage.vue";
 import PathNotFound from "./components/PathNotFound.vue";
 import News from "./components/News.vue";
 
@@ -31,21 +18,21 @@ const main = [
         name: 'commission',
         meta: {title: 'Избирательная комиссия'},
         exclude: true,
-        component: Commission,
+        component: () => import('./components/Commission.vue'),
     },
     {
         path: '/elections/commission/:id',
         name: 'old_commission',
         meta: {title: 'Избирательная комиссия'},
         exclude: true,
-        component: Commission,
+        component: () => import('./components/Commissions.vue'),
     },
     {
         path: '/member/:id',
         name: 'member',
         meta: {title: 'Член комиссии'},
         exclude: true,
-        component: Member,
+        component: () => import('./components/Member.vue'),
     },
 ]
 const common = [
@@ -53,33 +40,27 @@ const common = [
         path: '/campaigns',
         name: 'campaigns',
         meta: {title: 'Кампании'},
-        component: Campaigns,
+        component: () => import('./components/Campaigns.vue'),
     },
     {
         path: '/commissions',
         name: 'commissions',
         meta: {title: 'Комиссии'},
-        component: Commissions,
-    },
-    {
-        path: '/elections/commissions',
-        name: 'old_commissions',
-        exclude: true,
-        meta: {title: 'Комиссии'},
-        redirect: '/commissions',
+        component: () => import('./components/Commissions.vue'),
+        alias: ['/elections/commissions']
     },
     {
         path: '/organization',
         name: 'organizations',
         meta: {title: 'Организации'},
-        component: Organizations,
+        component: () => import('./components/Organizations.vue'),
         exclude: true,
     },
     {
         path: '/controller',
         name: 'controller',
         meta: {title: 'Наблюдение и гражд. контроль'},
-        component: Controller,
+        component: () => import('./components/Controller.vue'),
         alias: ['/']
     },
     {
@@ -87,20 +68,20 @@ const common = [
         name: 'organization',
         meta: {title: 'Организация'},
         exclude: true,
-        component: Organization,
+        component: () => import('./components/Organization.vue'),
     },
     {
         path: '/members',
         name: 'members',
         exclude: true,
         meta: {title: 'Члены избирательных комиссий'},
-        component: Members,
+        component: () => import('./components/Members.vue'),
     },
     {
         path: '/elections/member/:id',
         name: 'old_member',
         exclude: true,
-        component: Member,
+        component: () => import('./components/Member.vue'),
     },
     {
         path: '/elections/members',
@@ -146,14 +127,14 @@ const common = [
         path: '/about',
         name: 'about',
         meta: {title: 'О проекте'},
-        component: About,
+        component: () => import('./components/About.vue'),
     },
     {
         path: '/elections/about',
         name: 'old_about',
         meta: {title: 'О проекте'},
         exclude: true,
-        component: About,
+        component: () => import('./components/About.vue'),
     },
     {
         path: '/news/:id',
@@ -167,26 +148,26 @@ const common = [
         name: 'campaign',
         meta: {title: 'Кампания'},
         exclude: true,
-        component: Campaign,
+        component: () => import('./components/Campaign.vue'),
     },
     {
         path: '/campaign/:id/messages',
         name: 'campaign_message',
         meta: {title: 'Сообщения о нарушениях'},
         exclude: true,
-        component: Messages,
+        component: () => import('./components/Messages.vue'),
     },
     {
         path: '/prepare',
         name: 'prepare',
-        component: Prepare,
+        component: () => import('./components/Prepare.vue'),
         meta: {title: 'Полезные материалы'},
         exclude: true,
     },
     {
         path: '/message',
         name: 'send_message',
-        component: SendMessage,
+        component: () => import('./components/SendMessage.vue'),
         meta: {title: 'Отправить сообщение'},
         exclude: true,
     },
