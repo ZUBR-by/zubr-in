@@ -392,6 +392,38 @@
                         </div>
                     </div>
                 </div>
+                <div class="uik-persons-unit-wrp size-33_3 pdng-15px mil-size-100" v-for="item of curators_ideolog">
+                    <div class="uik-persons-unit pdng-15px shadow-type-1 ik2022-radius-4px">
+                        <div class="uik-persons-photo-and-marks-wrp flex-row">
+                            <div class="uik-persons-photo section size-50">
+                                <img :src="item.curator.person.photo_url || '/imgs/person_photo_placeholder.svg'"
+                                     alt=""
+                                     style="max-width: 120px">
+                            </div>
+                        </div>
+                        <h3 class="txt-size-24px txt-bold mrgn-t-10px mrgn-b-20px">
+                            {{ item.curator.person.full_name }}
+                        </h3>
+                        <div class="uik-persons-info txt-size-14px">
+                            <div class="uik-info-unit">
+                                <div class="uik-info-unit-name txt-bold">
+                                    Должность:
+                                </div>
+                                <div class="uik-info-unit-value">
+                                    {{ item.curator.person.organizations[0].position }}
+                                </div>
+                            </div>
+                            <div class="uik-info-unit">
+                                <div class="uik-info-unit-name txt-bold">
+                                    Работодатель:
+                                </div>
+                                <div class="uik-info-unit-value">
+                                    {{ item.curator.person.organizations[0].organization['name']}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </template>
 
@@ -562,12 +594,23 @@ export default defineComponent({
             console.log(data.value.commission.curators)
             return data.value.commission.curators.filter(i => i.position === 'местная власть')
         })
+        const curators_ideolog = computed(() => {
+            if (!data.value) {
+                return []
+            }
+            if (!data.value.commission) {
+                return [];
+            }
+            console.log(data.value.commission.curators)
+            return data.value.commission.curators.filter(i => i.position === 'идеолог')
+        })
         return {
             data,
             map,
             isLater,
             curators_local,
-            formatDateCampaign
+            formatDateCampaign,
+            curators_ideolog
         }
     }
 })
