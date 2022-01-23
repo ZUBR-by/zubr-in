@@ -28,15 +28,15 @@
             </label>
             <div class="brgr-nav notdisplay mil-show">
                 <a class="header-ik-2022-link txt-size-16px txt-bold active" href="https://zubr.in/controller">
-                    <img class="size-60" src="imgs/crpline-1.png" alt="">
+                    <img class="size-60" src="/imgs/crpline-1.png" alt="">
                     Наблюдение и гражд. контроль
                 </a>
                 <router-link  class="header-ik-2022-link txt-size-16px txt-bold" :to="{name: 'schema'}">
-                    <img class="size-60" src="imgs/crpline-1.png" alt="">
+                    <img class="size-60" src="/imgs/crpline-1.png" alt="">
                     Расследование фальсификаций
                 </router-link>
                 <a class="header-ik-2022-link txt-size-16px txt-bold" href="#">
-                    <img class="size-60" src="imgs/crpline-1.png" alt="">
+                    <img class="size-60" src="/imgs/crpline-1.png" alt="">
                     О референдуме
                 </a>
             </div>
