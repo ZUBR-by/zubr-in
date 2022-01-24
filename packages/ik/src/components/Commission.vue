@@ -355,7 +355,7 @@
             </div>
         </template>
 
-        <template v-if="curators_local.length > 0">
+        <template v-if="curators_local.length > 0 || curators_ideolog.length">
             <div class="mrgn-t-50px mrgn-b-10px">
                 Местные власти
             </div>
@@ -591,18 +591,30 @@ export default defineComponent({
             if (!data.value.commission) {
                 return [];
             }
-            console.log(data.value.commission.curators)
-            return data.value.commission.curators.filter(i => i.position === 'местная власть')
+            if (data.value.commission.curators.length > 0) {
+                console.log(3)
+                return data.value.commission.curators.filter(i => i.position === 'местная власть')
+            } else {
+                console.log(4)
+                return data.value.commission.parent.curators.filter(i => i.position === 'местная власть')
+            }
         })
         const curators_ideolog = computed(() => {
             if (!data.value) {
                 return []
             }
+            console.log(0)
             if (!data.value.commission) {
                 return [];
             }
-            console.log(data.value.commission.curators)
-            return data.value.commission.curators.filter(i => i.position === 'идеолог')
+            if (data.value.commission.curators.length > 0) {
+                console.log(1)
+                return data.value.commission.curators.filter(i => i.position === 'идеолог')
+            } else {
+                console.log(2)
+                return data.value.commission.parent.curators.filter(i => i.position === 'идеолог')
+            }
+
         })
         return {
             data,
