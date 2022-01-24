@@ -161,7 +161,7 @@ const common = [
         path: '/prepare',
         name: 'prepare',
         component: () => import('./components/Prepare.vue'),
-        meta: {title: 'Полезные материалы'},
+        meta: {title: 'Обучающие материалы'},
         exclude: true,
     },
     {
