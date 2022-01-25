@@ -7,7 +7,11 @@
             <li>Обучающий видеокурс для наблюдателей (видеокурс)</li>
             <li><a href="#laws">Законодательство</a>
                 <ul>
-                    <li>Конституция Республики Беларусь</li>
+                    <li>
+                        <a href="https://pravo.by/pravovaya-informatsiya/normativnye-dokumenty/konstitutsiya-respubliki-belarus/">
+                            Конституция Республики Беларусь
+                        </a>
+                    </li>
                     <li>Избирательный кодекс</li>
                     <li>Постановления ЦИК по референдуму 2022</li>
                     <li>Административный кодекс</li>
@@ -20,11 +24,6 @@
     </div>
     <div class="scene">
         <div id="laws">
-            <p>
-                <a
-                    href="https://pravo.by/pravovaya-informatsiya/normativnye-dokumenty/konstitutsiya-respubliki-belarus/">Конституция
-                    Республики Беларусь</a>
-            </p>
             <p>
                 <a
                     href="https://pravo.by/document/?guid=3871&amp;p0=hk0000370#:~:text=%D0%98%D0%97%D0%91%D0%98%D0%A0%D0%90%D0%A2%D0%95%D0%9B%D0%AC%D0%9D%D0%AB%D0%99%20%D0%9A%D0%9E%D0%94%D0%95%D0%9A%D0%A1%20%D0%A0%D0%95%D0%A1%D0%9F%D0%A3%D0%91%D0%9B%D0%98%D0%9A%D0%98%20%D0%91%D0%95%D0%9B%D0%90%D0%A0%D0%A3%D0%A1%D0%AC"><b>Избирательный
