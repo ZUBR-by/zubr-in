@@ -11,6 +11,16 @@
       <p>
         Информация в этом разделе обновляется, следите за изменениями.
       </p>
+      <div class="pdng-t-20px">
+        <div class="button mrgn-t-15px mrgn-r-15px">Обучающий видеокурс</div>
+        <div class="button mrgn-t-15px mrgn-r-15px">Законодательство</div>
+        <div class="button mrgn-t-15px mrgn-r-15px">Путеводитель для наблюдателей</div>
+        <div class="button mrgn-t-15px mrgn-r-15px">Образцы жалоб и заявлений</div>
+      </div>
+
+      <div class="shadow-type-1 size-100" style="height:400px; background:rgba(0,0,0,0.15); margin:80px 0 0 0;">
+        Видео
+      </div>
 
 <!--      <div class="mrgn-t-30px">
         <ol>
@@ -32,11 +42,11 @@
     </div>
     <div class="scene">
       <h2 class="txt-size-36px mil-txt-size-30px txt-bold pdng-b-40px mil-pdng-b-30px">
-        <a class="txt-color-2 txt-underline-inline-2px" href="https://pravo.by/document/?guid=3871&amp;p0=hk0000370#:~:text=%D0%98%D0%97%D0%91%D0%98%D0%A0%D0%90%D0%A2%D0%95%D0%9B%D0%AC%D0%9D%D0%AB%D0%99%20%D0%9A%D0%9E%D0%94%D0%95%D0%9A%D0%A1%20%D0%A0%D0%95%D0%A1%D0%9F%D0%A3%D0%91%D0%9B%D0%98%D0%9A%D0%98%20%D0%91%D0%95%D0%9B%D0%90%D0%A0%D0%A3%D0%A1%D0%AC">
+        <a class="txt-color-2 txt-underline-inline" href="https://pravo.by/document/?guid=3871&amp;p0=hk0000370#:~:text=%D0%98%D0%97%D0%91%D0%98%D0%A0%D0%90%D0%A2%D0%95%D0%9B%D0%AC%D0%9D%D0%AB%D0%99%20%D0%9A%D0%9E%D0%94%D0%95%D0%9A%D0%A1%20%D0%A0%D0%95%D0%A1%D0%9F%D0%A3%D0%91%D0%9B%D0%98%D0%9A%D0%98%20%D0%91%D0%95%D0%9B%D0%90%D0%A0%D0%A3%D0%A1%D0%AC">
           Избирательный кодекс Республики Беларусь
         </a>
       </h2>
-      <div id="laws" class="size-50">
+      <div class="size-70 mil-size-100">
         <div class="infoblock">
           <div class="infoblock-name">
             <div class="txt-color-2 txt-size-14px txt-bold">
@@ -231,7 +241,7 @@
           </div>
         </div>
 
-        <div class="pdng-t-60px"></div>
+        <div class="pdng-t-30px pdng-b-30px"></div>
 
         <div class="infoblock">
           <div class="infoblock-value">
@@ -250,7 +260,7 @@
           </div>
         </div>
 
-        <div class="pdng-t-60px"></div>
+        <div class="pdng-t-30px pdng-b-30px"></div>
 
         <div class="infoblock">
           <div class="infoblock-name">
@@ -337,11 +347,11 @@
     </div>
     <div class="scene">
       <h2 class="txt-size-36px mil-txt-size-30px txt-bold pdng-b-40px mil-pdng-b-30px">
-        <a class="txt-color-2 txt-underline-inline-2px" href="https://etalonline.by/document/?regnum=HK2100091#:~:text=%D0%97%D0%B0%D0%BA%D0%BB%D0%B0%D0%B4%D0%BA%D0%B8-,%D0%9A%D0%9E%D0%94%D0%95%D0%9A%D0%A1%20%D0%A0%D0%95%D0%A1%D0%9F%D0%A3%D0%91%D0%9B%D0%98%D0%9A%D0%98%20%D0%91%D0%95%D0%9B%D0%90%D0%A0%D0%A3%D0%A1%D0%AC%20%D0%9E%D0%91%20%D0%90%D0%94%D0%9C%D0%98%D0%9D%D0%98%D0%A1%D0%A2%D0%A0%D0%90%D0%A2%D0%98%D0%92%D0%9D%D0%AB%D0%A5%20%D0%9F%D0%A0%D0%90%D0%92%D0%9E%D0%9D%D0%90%D0%A0%D0%A3%D0%A8%D0%95%D0%9D%D0%98%D0%AF%D0%A5,-6%20%D1%8F%D0%BD%D0%B2%D0%B0%D1%80%D1%8F%202021">
+        <a class="txt-color-2 txt-underline-inline" href="https://etalonline.by/document/?regnum=HK2100091#:~:text=%D0%97%D0%B0%D0%BA%D0%BB%D0%B0%D0%B4%D0%BA%D0%B8-,%D0%9A%D0%9E%D0%94%D0%95%D0%9A%D0%A1%20%D0%A0%D0%95%D0%A1%D0%9F%D0%A3%D0%91%D0%9B%D0%98%D0%9A%D0%98%20%D0%91%D0%95%D0%9B%D0%90%D0%A0%D0%A3%D0%A1%D0%AC%20%D0%9E%D0%91%20%D0%90%D0%94%D0%9C%D0%98%D0%9D%D0%98%D0%A1%D0%A2%D0%A0%D0%90%D0%A2%D0%98%D0%92%D0%9D%D0%AB%D0%A5%20%D0%9F%D0%A0%D0%90%D0%92%D0%9E%D0%9D%D0%90%D0%A0%D0%A3%D0%A8%D0%95%D0%9D%D0%98%D0%AF%D0%A5,-6%20%D1%8F%D0%BD%D0%B2%D0%B0%D1%80%D1%8F%202021">
           Административный Кодекс Республики Беларусь
         </a>
       </h2>
-      <div>
+      <div class="size-70 mil-size-100">
         <div class="infoblock">
           <div class="infoblock-name">
             <div class="txt-color-2 txt-size-14px txt-bold">
@@ -360,48 +370,48 @@
     </div>
     <div class="scene">
       <h2 class="txt-size-36px mil-txt-size-30px txt-bold pdng-b-40px mil-pdng-b-30px">
-        <a class="txt-color-2 txt-underline-inline-2px" href="https://etalonline.by/document/?regnum=HK9900275#:~:text=%D0%97%D0%B0%D0%BA%D0%BB%D0%B0%D0%B4%D0%BA%D0%B8-,%D0%A3%D0%93%D0%9E%D0%9B%D0%9E%D0%92%D0%9D%D0%AB%D0%99%20%D0%9A%D0%9E%D0%94%D0%95%D0%9A%D0%A1%20%D0%A0%D0%95%D0%A1%D0%9F%D0%A3%D0%91%D0%9B%D0%98%D0%9A%D0%98%20%D0%91%D0%95%D0%9B%D0%90%D0%A0%D0%A3%D0%A1%D0%AC,-9%20%D0%B8%D1%8E%D0%BB%D1%8F%201999">
+        <a class="txt-color-2 txt-underline-inline" href="https://etalonline.by/document/?regnum=HK9900275#:~:text=%D0%97%D0%B0%D0%BA%D0%BB%D0%B0%D0%B4%D0%BA%D0%B8-,%D0%A3%D0%93%D0%9E%D0%9B%D0%9E%D0%92%D0%9D%D0%AB%D0%99%20%D0%9A%D0%9E%D0%94%D0%95%D0%9A%D0%A1%20%D0%A0%D0%95%D0%A1%D0%9F%D0%A3%D0%91%D0%9B%D0%98%D0%9A%D0%98%20%D0%91%D0%95%D0%9B%D0%90%D0%A0%D0%A3%D0%A1%D0%AC,-9%20%D0%B8%D1%8E%D0%BB%D1%8F%201999">
           Уголовный кодекс Республики Беларусь
         </a>
       </h2>
-
-      <div class="infoblock">
-        <div class="infoblock-name">
-          <div class="txt-color-2 txt-size-14px txt-bold">
-            Статья 191.
+      <div class="size-70 mil-size-100">
+        <div class="infoblock">
+          <div class="infoblock-name">
+            <div class="txt-color-2 txt-size-14px txt-bold">
+              Статья 191.
+            </div>
+          </div>
+          <div class="infoblock-value">
+            <a class="txt-underline-inline txt-normal"
+               href="https://etalonline.by/document/?regnum=HK9900275#&amp;Article=191">
+              Воспрепятствование осуществлению
+              избирательных прав, права на участие в
+              референдуме, либо реализации права
+              законодательной инициативы граждан,
+              либо работе Центральной комиссии
+              Республики Беларусь по выборам и
+              проведению республиканских референдумов,
+              избирательных комиссий, комиссий по
+              референдуму, комиссий по проведению
+              голосования об отзыве депутата
+            </a>
           </div>
         </div>
-        <div class="infoblock-value">
-          <a class="txt-underline-inline txt-normal"
-             href="https://etalonline.by/document/?regnum=HK9900275#&amp;Article=191">
-            Воспрепятствование осуществлению
-            избирательных прав, права на участие в
-            референдуме, либо реализации права
-            законодательной инициативы граждан,
-            либо работе Центральной комиссии
-            Республики Беларусь по выборам и
-            проведению республиканских референдумов,
-            избирательных комиссий, комиссий по
-            референдуму, комиссий по проведению
-            голосования об отзыве депутата
-          </a>
-        </div>
-      </div>
-      <div class="infoblock">
-        <div class="infoblock-name">
-          <div class="txt-color-2 txt-size-14px txt-bold">
-            Статья 192.
+        <div class="infoblock">
+          <div class="infoblock-name">
+            <div class="txt-color-2 txt-size-14px txt-bold">
+              Статья 192.
+            </div>
+          </div>
+          <div class="infoblock-value">
+            <a class="txt-underline-inline txt-normal"
+               href="https://etalonline.by/document/?regnum=HK9900275#&amp;Article=192">Нарушение законодательства о выборах,
+              референдуме, об отзыве депутата и о
+              реализации права законодательной
+              инициативы граждан</a>
           </div>
         </div>
-        <div class="infoblock-value">
-          <a class="txt-underline-inline txt-normal"
-             href="https://etalonline.by/document/?regnum=HK9900275#&amp;Article=192">Нарушение законодательства о выборах,
-            референдуме, об отзыве депутата и о
-            реализации права законодательной
-            инициативы граждан</a>
-        </div>
       </div>
-
     </div>
 </template>
 
