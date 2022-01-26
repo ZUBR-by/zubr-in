@@ -40,7 +40,7 @@
             </div>
             <div class="section size-50 mil-size-100 mil-pdng-0">
                 <iframe class="mil-size-100 mil-height-200px shadow-type-1" width="560" height="315"
-                        src="https://www.youtube.com/embed/LtMfdfOv1s4"
+                        src="https://www.youtube.com/embed/1MUNasfwXzE"
                         title="YouTube video player"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
