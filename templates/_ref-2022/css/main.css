@@ -1,4 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 /*###   Rewrite ZUBR Framework variables    ###*/
+body {
+	font-family:'Montserrat',Roboto, sans-serif;
+	}
 .border-color1,
 .mil-border-color1 {
 	border-color:#979797;
@@ -15,7 +22,15 @@
 .ik2022 {
 	padding-top:60px;
 	}
-
+.txt-ik2022-hdr {
+	font-family:'Bebas Neue', 'Oswald', cursive, Roboto, sans-serif;
+	}
+.txt-ik2022-txt {
+	font-family:'Merriweather', serif;
+	}
+.txt-light {
+	font-weight:300;
+	}
 
 .header-ik-2022 {
 	position:fixed;
@@ -95,6 +110,7 @@
 .polling-station-finder:hover {
 	border-color:#D02424;
 	}
+
 .polling-station-finder:hover .poll-stat-finder-button {
 	background:#D02424;
 	}
@@ -240,7 +256,7 @@
 .journal-2022-button {
 	color:#fff;
 	font-size:15px;
-	font-weight:500;
+	font-weight:bold;
 	padding:10px;
 	border:#fff 2px solid;
 	border-radius:4px;
@@ -252,6 +268,9 @@
 .journal-2022-button.primary {
 	background:#fff;
 	color:#000;
+	}
+.journal-2022-button:hover:not(.primary):not(.black ) svg {
+	filter:invert(1);
 	}
 .journal-2022-button.black {
 	border-color:#303030;
@@ -305,6 +324,26 @@
 	background:#fff;
 	z-index:10;
 	}
+
+.sms-wrp {
+	width:300px;
+	color:#fff;
+	margin:0 auto;
+	background:#313131;
+	border-radius:18px;
+	padding:20px 20px 10px 20px;
+	}
+.sms-wrp:after {
+	content:'';
+	position:absolute;
+	bottom:0;
+	right:-6px;
+	width:20px;
+	height:10px;
+	background-image: url("data:image/svg+xml,%3Csvg width='17' height='8' viewBox='0 0 17 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.858429 0L0.917941 4.62395C1.06405 4.53786 1.20869 4.45035 1.3518 4.36145C5.37018 7.10919 10.5105 8.24771 16.7727 7.77704C16.8526 7.77103 16.9239 7.73591 16.9648 7.68253C17.0356 7.59009 16.9961 7.4708 16.8765 7.41608L16.4244 7.20523C13.4615 5.79732 11.5236 4.33889 10.6109 2.82996C10.2225 2.18783 9.9213 1.24453 9.70725 0H0.858429Z' fill='%23313131'/%3E%3C/svg%3E%0A");
+	background-size:100% 100%;
+	}
+
 
 /*   Burger Menu from JM   */
 #brgrbtn {
