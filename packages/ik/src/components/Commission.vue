@@ -32,7 +32,7 @@
             </svg>
         </div>
         <div class="section txt-size-14px txt-color-2 pdng-l-5px">
-            Назад
+            <a href="/">Назад</a>
         </div>
     </a>
     <div class="scene" v-if="data">
