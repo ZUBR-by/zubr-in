@@ -1,7 +1,7 @@
 <template>
     <div class="header-ik-2022 flex-row flex-algn-itms-c">
         <div class="section pdng-20px pdng-l-5prc pdng-r-30px">
-            <a href="#">
+            <a href="/">
                 <svg width="86" height="37" viewBox="0 0 86 37" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1.80866 14.9983H0V3.48242H5.70674V14.9983H3.86543V5.12708H1.81029V14.9983H1.80866Z"
                           fill="#303030"/>

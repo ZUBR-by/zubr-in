@@ -24,12 +24,15 @@
             </h2>
             <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">
                 Рядовые члены комиссий содействуют или закрывают глаза на фальсификации.
-                “Тройки” – председатель комиссии, его заместитель и секретарь – обеспечивают нужные цифры в протоколах. Всем процессом управляют исполкомы, они же собирают голоса с участков, под контролем КГБ.
+                “Тройки” – председатель комиссии, его заместитель и секретарь – обеспечивают нужные цифры в протоколах.
+                Всем процессом управляют исполкомы, они же собирают голоса с участков, под контролем КГБ.
             </p>
             <div class="flex-row mrgn-t-20px">
                 <div class="section pdng-r-10px">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM11 15H9V9H11V15ZM11 7H9V5H11V7Z" fill="#303030"/>
+                        <path
+                            d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM11 15H9V9H11V15ZM11 7H9V5H11V7Z"
+                            fill="#303030"/>
                     </svg>
                 </div>
                 <div class="section">
@@ -48,7 +51,9 @@
             <div class="flex-row">
                 <div class="section pdng-r-10px">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM11 15H9V9H11V15ZM11 7H9V5H11V7Z" fill="#303030"/>
+                        <path
+                            d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM11 15H9V9H11V15ZM11 7H9V5H11V7Z"
+                            fill="#303030"/>
                     </svg>
                 </div>
                 <div class="section txt-size-14px txt-bold">
@@ -56,9 +61,11 @@
                 </div>
             </div>
             <p class="txt-size-12px mrgn-t-10px">
-                По статистике прошлых лет, <b>до 80% участников комиссий выборов 2020 будут включены в комиссии “референдума”</b>.
+                По статистике прошлых лет, <b>до 80% участников комиссий выборов 2020 будут включены в комиссии
+                “референдума”</b>.
                 <br>
-                Поэтому, до официального опубликования составов комиссий, на сайте будут опубликованы участники комиссий 2020
+                Поэтому, до официального опубликования составов комиссий, на сайте будут опубликованы участники комиссий
+                2020
             </p>
         </div>
 
@@ -81,7 +88,9 @@
             <label class="polling-station-finder inline-flex flex-algn-itms-c size-50 cursor-pointer mil-size-100">
                 <div class="section flex-noshrink pdng-l-15px pdng-r-10px">
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8.33333 7.33333H7.80667L7.62 7.15333C8.27333 6.39333 8.66667 5.40667 8.66667 4.33333C8.66667 1.94 6.72667 0 4.33333 0C1.94 0 0 1.94 0 4.33333C0 6.72667 1.94 8.66667 4.33333 8.66667C5.40667 8.66667 6.39333 8.27333 7.15333 7.62L7.33333 7.80667V8.33333L10.6667 11.66L11.66 10.6667L8.33333 7.33333ZM4.33333 7.33333C2.67333 7.33333 1.33333 5.99333 1.33333 4.33333C1.33333 2.67333 2.67333 1.33333 4.33333 1.33333C5.99333 1.33333 7.33333 2.67333 7.33333 4.33333C7.33333 5.99333 5.99333 7.33333 4.33333 7.33333Z" fill="#303030"/>
+                        <path
+                            d="M8.33333 7.33333H7.80667L7.62 7.15333C8.27333 6.39333 8.66667 5.40667 8.66667 4.33333C8.66667 1.94 6.72667 0 4.33333 0C1.94 0 0 1.94 0 4.33333C0 6.72667 1.94 8.66667 4.33333 8.66667C5.40667 8.66667 6.39333 8.27333 7.15333 7.62L7.33333 7.80667V8.33333L10.6667 11.66L11.66 10.6667L8.33333 7.33333ZM4.33333 7.33333C2.67333 7.33333 1.33333 5.99333 1.33333 4.33333C1.33333 2.67333 2.67333 1.33333 4.33333 1.33333C5.99333 1.33333 7.33333 2.67333 7.33333 4.33333C7.33333 5.99333 5.99333 7.33333 4.33333 7.33333Z"
+                            fill="#303030"/>
                     </svg>
                 </div>
                 <div class="section flex-grow-all">
@@ -89,7 +98,7 @@
                            v-model.lazy="filter">
                 </div>
                 <div class="section">
-                    <button class="poll-stat-finder-bitton">
+                    <button class="poll-stat-finder-bitton" @click="search">
                         Найти
                     </button>
                 </div>
@@ -105,7 +114,8 @@
                             {{ item.description }}
                         </p>
                     </div>
-                    <div class="section size-30 pdng-l-25px flex-algn-slf-s mil-size-100 mil-pdng-0 mil-pdng-b-10px mil-pdng-t-10px mil-border-t-1px mil-border-color1">
+                    <div
+                        class="section size-30 pdng-l-25px flex-algn-slf-s mil-size-100 mil-pdng-0 mil-pdng-b-10px mil-pdng-t-10px mil-border-t-1px mil-border-color1">
                         <h4 class="txt-size-24px txt-normal txt-uppercase txt-ik2022-hdr">
                             {{ item.code }}
                         </h4>
@@ -113,7 +123,8 @@
                             {{ item.description }}
                         </p>
                     </div>
-                    <div class="section size-40 pdng-l-25px pdng-r-10px mil-size-100 mil-pdng-0 mil-pdng-t-10px mil-border-t-1px mil-border-color1">
+                    <div
+                        class="section size-40 pdng-l-25px pdng-r-10px mil-size-100 mil-pdng-0 mil-pdng-t-10px mil-border-t-1px mil-border-color1">
                         <div class="size-100" v-if="item.info">
                             <div class="txt-color-1 txt-size-20px txt-medium mil-txt-size-16px">
                                 {{ item.info }}
@@ -129,7 +140,7 @@
                 </a>
             </div>
             <div class="paginator flex-row"
-                 v-if="data && data.commissions && data.commissions.length > perPage && filter">
+                 v-if="data && data.commissions && (data.commissions.length + data.members.length) > perPage && filter">
                 <div class="paginator-unit cursor-pointer"
                      v-for="i of pagesRange"
                      @click="page = i"
@@ -156,7 +167,9 @@
                 Если вы знаете члена комиссии – убедитесь в том, что он полностью понимает значимость своих действий.
             </p>
             <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">
-                Это не просто цифры – это наше будущее, которое каждый из нас хочет определять сам. Поэтому, кроме Уголовного Кодекса, который предполагает срок до пяти лет, есть еще все Беларусы, которые могут воспринять очередную фальсификацию как предательство.
+                Это не просто цифры – это наше будущее, которое каждый из нас хочет определять сам. Поэтому, кроме
+                Уголовного Кодекса, который предполагает срок до пяти лет, есть еще все Беларусы, которые могут
+                воспринять очередную фальсификацию как предательство.
             </p>
         </div>
         <div class="section size-50 pdng-l-30px mil-size-100 mil-pdng-0">
@@ -177,7 +190,8 @@
                         1
                     </div>
                     <div class="section txt-size-15px pdng-l-15px">
-                        Оставьте послание. Расскажите, что можно быть не соучастником, а свидетелем – отправьте письмо или листовку.
+                        Оставьте послание. Расскажите, что можно быть не соучастником, а свидетелем – отправьте письмо
+                        или листовку.
                     </div>
                 </div>
                 <div class="flex-row mrgn-t-20px">
@@ -193,7 +207,8 @@
                         1
                     </div>
                     <div class="section txt-size-15px pdng-l-15px">
-                        Поговорите лично: если это ваш знакомый или родственник, объясните опасность преступной фальсификации.
+                        Поговорите лично: если это ваш знакомый или родственник, объясните опасность преступной
+                        фальсификации.
                     </div>
                 </div>
             </div>
@@ -205,15 +220,19 @@
                 </div>
                 <div class="txt-size-16px mrgn-t-20px">
                     Увидела Вас в списке избирательной комиссии нашего участка https://ik.xx2022.org на «референдуме‎».
-                    Уверена, что вы будете честно считать недействительные бюллетени. Если Вас будут принуждать к фальсификациям – фиксируйте все нарушения и присылайте их @contact2022.
+                    Уверена, что вы будете честно считать недействительные бюллетени. Если Вас будут принуждать к
+                    фальсификациям – фиксируйте все нарушения и присылайте их @contact2022.
                 </div>
                 <div class="flex-row flex-algn-itms-c mrgn-t-5px">
                     <div class="flex-grow-all txt-algn-r txt-size-11px txt-italic" style="color:#8E8E93;">
                         11:50
                     </div>
                     <div class="flex-noshrink pdng-l-5px">
-                        <svg class="block" width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.1336 0.284118L6.6336 7.08412L6.57835 7.15342C6.45066 7.34745 6.4799 7.6083 6.65978 7.77055C6.86213 7.95308 7.1785 7.9417 7.3664 7.74513L13.8664 0.945127L13.9216 0.875824C14.0493 0.6818 14.0201 0.420946 13.8402 0.258694C13.6379 0.0761616 13.3215 0.0875441 13.1336 0.284118ZM9.63521 0.28245L3.43573 6.7073L0.862149 4.08105L0.794346 4.02321C0.602859 3.88745 0.333042 3.89974 0.155256 4.06415C-0.0447525 4.2491 -0.0525441 4.55655 0.137853 4.75084L3.07639 7.74952L3.14702 7.80937C3.34667 7.94891 3.62866 7.92781 3.80333 7.74679L10.3648 0.946795L10.4204 0.877744C10.549 0.684304 10.521 0.42332 10.3419 0.26025C10.1405 0.0767963 9.82405 0.0867358 9.63521 0.28245Z" fill="#54B6F9"/>
+                        <svg class="block" width="14" height="8" viewBox="0 0 14 8" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M13.1336 0.284118L6.6336 7.08412L6.57835 7.15342C6.45066 7.34745 6.4799 7.6083 6.65978 7.77055C6.86213 7.95308 7.1785 7.9417 7.3664 7.74513L13.8664 0.945127L13.9216 0.875824C14.0493 0.6818 14.0201 0.420946 13.8402 0.258694C13.6379 0.0761616 13.3215 0.0875441 13.1336 0.284118ZM9.63521 0.28245L3.43573 6.7073L0.862149 4.08105L0.794346 4.02321C0.602859 3.88745 0.333042 3.89974 0.155256 4.06415C-0.0447525 4.2491 -0.0525441 4.55655 0.137853 4.75084L3.07639 7.74952L3.14702 7.80937C3.34667 7.94891 3.62866 7.92781 3.80333 7.74679L10.3648 0.946795L10.4204 0.877744C10.549 0.684304 10.521 0.42332 10.3419 0.26025C10.1405 0.0767963 9.82405 0.0867358 9.63521 0.28245Z"
+                                  fill="#54B6F9"/>
                         </svg>
 
                     </div>
@@ -229,7 +248,8 @@
                 <img class="journal-2022-unit-bg" src="/imgs/jrn-1.png" alt="">
                 <div>
                     <svg width="55" height="66" viewBox="0 0 55 66" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="1.0332" y="1.5" width="52.9357" height="62.6" rx="3" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+                        <rect x="1.0332" y="1.5" width="52.9357" height="62.6" rx="3" stroke="white" stroke-width="2"
+                              stroke-linejoin="round"/>
                         <path d="M11.0195 19.2012H45.8121" stroke="white" stroke-width="2"/>
                         <path d="M11.0195 12.4004H31.1626" stroke="white" stroke-width="2"/>
                         <path d="M11.0195 9.00195H31.1626" stroke="white" stroke-width="2"/>
@@ -254,11 +274,13 @@
             </div>
         </div>
         <div class="section size-33_3 pdng-15px mil-size-100">
-            <div class="journal-2022-unit pdng-20px pdng-b-30px mrgn-t-30px txt-algn-c mil-pdng-t-30px mil-pdng-b-50px mil-mrgn-0">
+            <div
+                class="journal-2022-unit pdng-20px pdng-b-30px mrgn-t-30px txt-algn-c mil-pdng-t-30px mil-pdng-b-50px mil-mrgn-0">
                 <img class="journal-2022-unit-bg" src="/imgs/jrn-2.png" alt="">
                 <div>
                     <svg width="55" height="66" viewBox="0 0 55 66" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="1.0332" y="1.5" width="52.9357" height="62.6" rx="3" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+                        <rect x="1.0332" y="1.5" width="52.9357" height="62.6" rx="3" stroke="white" stroke-width="2"
+                              stroke-linejoin="round"/>
                         <path d="M11.0195 19.2012H45.8121" stroke="white" stroke-width="2"/>
                         <path d="M11.0195 12.4004H31.1626" stroke="white" stroke-width="2"/>
                         <path d="M11.0195 9.00195H31.1626" stroke="white" stroke-width="2"/>
@@ -287,7 +309,8 @@
                 <img class="journal-2022-unit-bg" src="/imgs/jrn-3.png" alt="">
                 <div>
                     <svg width="55" height="66" viewBox="0 0 55 66" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="1.0332" y="1.5" width="52.9357" height="62.6" rx="3" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+                        <rect x="1.0332" y="1.5" width="52.9357" height="62.6" rx="3" stroke="white" stroke-width="2"
+                              stroke-linejoin="round"/>
                         <path d="M11.0195 19.2012H45.8121" stroke="white" stroke-width="2"/>
                         <path d="M11.0195 12.4004H31.1626" stroke="white" stroke-width="2"/>
                         <path d="M11.0195 9.00195H31.1626" stroke="white" stroke-width="2"/>
@@ -319,10 +342,12 @@
                 Почему важно считать честно?
             </h2>
             <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">
-                Недействительные бюллютени – это результат, который будет отражен в итогах голосования наравне с “ДА” и “НЕТ”.
+                Недействительные бюллютени – это результат, который будет отражен в итогах голосования наравне с “ДА” и
+                “НЕТ”.
             </p>
             <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">
-                Чем меньше участков с фальсификациями, тем меньше людей, готовых соучаствовать в других преступлениях к которым их принуждают руководители.
+                Чем меньше участков с фальсификациями, тем меньше людей, готовых соучаствовать в других преступлениях к
+                которым их принуждают руководители.
             </p>
         </div>
         <div class="section size-50 pdng-l-50px mil-size-100 mil-pdng-0">
@@ -337,10 +362,12 @@
             </h2>
             <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">
                 Все, что произошло в августе 2020 года –
-                <b>это резульатат каждого участника фальсификаций</b>. Люди чувствуют, когда их обманывают и не готовы больше с этим мириться.
+                <b>это резульатат каждого участника фальсификаций</b>. Люди чувствуют, когда их обманывают и не готовы
+                больше с этим мириться.
             </p>
             <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">
-                Кто-то побоялся лишиться премии, кто-то быть уволенным. Но сегодня из-за этих решений убиты люди, тысячи потеряли свободу, десятки тысяч были оштрафованы или избиты.
+                Кто-то побоялся лишиться премии, кто-то быть уволенным. Но сегодня из-за этих решений убиты люди, тысячи
+                потеряли свободу, десятки тысяч были оштрафованы или избиты.
             </p>
         </div>
         <div class="section size-50 pdng-l-50px mil-size-100 mil-pdng-0">
@@ -354,10 +381,13 @@
                 Не готовы начать разговор со знакомым членом УИК?
             </h2>
             <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">
-                Из-за повышающегося уровня репрессий не каждый готов поговорить откровенно с малознакомым челвоеком о таких важных вещах.
+                Из-за повышающегося уровня репрессий не каждый готов поговорить откровенно с малознакомым челвоеком о
+                таких важных вещах.
             </p>
             <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">
-                Поэтому, если вы узнали среди членов УИК ваших знакомых, вы можете поделиться их контактами, чтобы мы включили их в нашу новостную расслку и <b>постарались обяъснить значимость их ролий в документации и противодействии фальсификаций</b>.
+                Поэтому, если вы узнали среди членов УИК ваших знакомых, вы можете поделиться их контактами, чтобы мы
+                включили их в нашу новостную расслку и <b>постарались обяъснить значимость их ролий в документации и
+                противодействии фальсификаций</b>.
             </p>
         </div>
         <div class="section size-50 pdng-l-50px mil-size-100 mil-pdng-0 mil-pdng-t-50px">
@@ -371,8 +401,11 @@
                 <div class="mrgn-t-15px">
                     <div class="journal-2022-button primary inline-flex flex-algn-itms-c cursor-pointer">
                         <div class="pdng-r-10px">
-                            <svg style="margin:-2px 0" class="block" width="11" height="22" viewBox="0 0 11 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9.5 5V16.5C9.5 18.71 7.71 20.5 5.5 20.5C3.29 20.5 1.5 18.71 1.5 16.5V4C1.5 2.62 2.62 1.5 4 1.5C5.38 1.5 6.5 2.62 6.5 4V14.5C6.5 15.05 6.05 15.5 5.5 15.5C4.95 15.5 4.5 15.05 4.5 14.5V5H3V14.5C3 15.88 4.12 17 5.5 17C6.88 17 8 15.88 8 14.5V4C8 1.79 6.21 0 4 0C1.79 0 0 1.79 0 4V16.5C0 19.54 2.46 22 5.5 22C8.54 22 11 19.54 11 16.5V5H9.5Z" fill="#303030"/>
+                            <svg style="margin:-2px 0" class="block" width="11" height="22" viewBox="0 0 11 22"
+                                 fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.5 5V16.5C9.5 18.71 7.71 20.5 5.5 20.5C3.29 20.5 1.5 18.71 1.5 16.5V4C1.5 2.62 2.62 1.5 4 1.5C5.38 1.5 6.5 2.62 6.5 4V14.5C6.5 15.05 6.05 15.5 5.5 15.5C4.95 15.5 4.5 15.05 4.5 14.5V5H3V14.5C3 15.88 4.12 17 5.5 17C6.88 17 8 15.88 8 14.5V4C8 1.79 6.21 0 4 0C1.79 0 0 1.79 0 4V16.5C0 19.54 2.46 22 5.5 22C8.54 22 11 19.54 11 16.5V5H9.5Z"
+                                    fill="#303030"/>
                             </svg>
                         </div>
                         <div>
@@ -381,16 +414,22 @@
                     </div>
                     <div class="journal-2022-button inline-flex flex-algn-itms-c cursor-pointer mrgn-l-10px">
                         <div class="pdng-r-10px">
-                            <svg style="margin:-2px 0" class="block" width="11" height="22" viewBox="0 0 11 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9.5 5V16.5C9.5 18.71 7.71 20.5 5.5 20.5C3.29 20.5 1.5 18.71 1.5 16.5V4C1.5 2.62 2.62 1.5 4 1.5C5.38 1.5 6.5 2.62 6.5 4V14.5C6.5 15.05 6.05 15.5 5.5 15.5C4.95 15.5 4.5 15.05 4.5 14.5V5H3V14.5C3 15.88 4.12 17 5.5 17C6.88 17 8 15.88 8 14.5V4C8 1.79 6.21 0 4 0C1.79 0 0 1.79 0 4V16.5C0 19.54 2.46 22 5.5 22C8.54 22 11 19.54 11 16.5V5H9.5Z" fill="white"/>
+                            <svg style="margin:-2px 0" class="block" width="11" height="22" viewBox="0 0 11 22"
+                                 fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.5 5V16.5C9.5 18.71 7.71 20.5 5.5 20.5C3.29 20.5 1.5 18.71 1.5 16.5V4C1.5 2.62 2.62 1.5 4 1.5C5.38 1.5 6.5 2.62 6.5 4V14.5C6.5 15.05 6.05 15.5 5.5 15.5C4.95 15.5 4.5 15.05 4.5 14.5V5H3V14.5C3 15.88 4.12 17 5.5 17C6.88 17 8 15.88 8 14.5V4C8 1.79 6.21 0 4 0C1.79 0 0 1.79 0 4V16.5C0 19.54 2.46 22 5.5 22C8.54 22 11 19.54 11 16.5V5H9.5Z"
+                                    fill="white"/>
                             </svg>
                         </div>
                         <div>
                             Name.pdf
                         </div>
                         <div class="pdng-l-10px">
-                            <svg style="margin:-2px 0" class="block" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="white"/>
+                            <svg style="margin:-2px 0" class="block" width="14" height="14" viewBox="0 0 14 14"
+                                 fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"
+                                    fill="white"/>
                             </svg>
                         </div>
                     </div>
@@ -479,17 +518,20 @@ export default defineComponent({
             if (page.value) {
                 start = page.value * perPage;
             }
-            return data.value.commissions.slice(start, start + perPage);
+            return data.value.commissions.concat(data.value.members.map(member => {
+                return {
+                    ...member.commissions[0].commission,
+                    info: member.full_name,
+                    position: member.commissions[0].position
+                }
+            })).slice(start, start + perPage);
         })
         const pagesCount = computed(() => {
             if (!data.value) {
                 return 0
             }
-            if (!data.value.commissions) {
-                return 0;
-            }
-
-            return Math.floor(data.value.commissions.length / perPage);
+            console.log(13123)
+            return Math.floor((data.value.commissions.length + data.value.members.length) / perPage);
         });
         const view       = ref('list')
         const center     = ref();
@@ -521,7 +563,8 @@ export default defineComponent({
             pagesCount,
             view,
             data,
-            perPage
+            perPage,
+            search
         }
     }
 })
