@@ -204,7 +204,7 @@
                 </div>
                 <div class="flex-row mrgn-t-20px">
                     <div class="section txt-size-34px txt-bold">
-                        1
+                        3
                     </div>
                     <div class="section txt-size-15px pdng-l-15px">
                         Поговорите лично: если это ваш знакомый или родственник, объясните опасность преступной
