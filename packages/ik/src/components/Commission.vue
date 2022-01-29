@@ -35,7 +35,7 @@
             Назад
         </div>
     </a>
-    <div class="scene">
+    <div class="scene" v-if="data">
         <div class="flex-row pdng-50px shadow-type-1 ik2022-radius-4px mil-flex-column-reserve">
             <div class="section size-50 mil-size-100">
                 <h1 class="txt-size-24px txt-color-2 txt-ik2022-hdr txt-uppercase">
@@ -472,26 +472,6 @@
                                     {{ item.curator.extra.work }}
                                 </div>
                             </div>
-                            <div class="uik-info-unit">
-                                <div class="uik-info-unit-name txt-bold">
-                                    Должность:
-                                </div>
-                                <div class="uik-info-unit-value">
-                                    {{ item.curator.person.organizations[0].position }}
-                                </div>
-                            </div>
-                            <div class="uik-info-unit">
-                                <div class="uik-info-unit-name txt-bold">
-                                    Работодатель:
-                                </div>
-                                <div class="uik-info-unit-value">
-                                    <a class="blue-link txt-underline-inline" href="#">
-                                        {{ item.curator.person.organizations[0].organization.name }}
-                                    </a>
-
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
@@ -557,7 +537,7 @@
                                     Должность:
                                 </div>
                                 <div class="uik-info-unit-value">
-                                    {{ item.curator.extra.position }}
+                                    {{ item.curator.person.organizations[0].position }}
                                 </div>
                             </div>
                             <div class="uik-info-unit">
@@ -565,7 +545,10 @@
                                     Работодатель:
                                 </div>
                                 <div class="uik-info-unit-value">
-                                    {{ item.curator.extra.work }}
+                                    <a class="blue-link txt-underline-inline" href="#">
+                                        {{ item.curator.person.organizations[0].organization.name }}
+                                    </a>
+
                                 </div>
                             </div>
                             <div class="uik-info-unit">
@@ -768,10 +751,8 @@ export default defineComponent({
                 return [];
             }
             if (data.value.commission.curators.length > 0) {
-                console.log(3)
                 return data.value.commission.curators.filter(i => i.position === 'местная власть')
             } else {
-                console.log(4)
                 return data.value.commission.parent.curators.filter(i => i.position === 'местная власть')
             }
         })
@@ -779,18 +760,14 @@ export default defineComponent({
             if (!data.value) {
                 return []
             }
-            console.log(0)
             if (!data.value.commission) {
                 return [];
             }
             if (data.value.commission.curators.length > 0) {
-                console.log(1)
                 return data.value.commission.curators.filter(i => i.position === 'идеолог')
             } else {
-                console.log(2)
                 return data.value.commission.parent.curators.filter(i => i.position === 'идеолог')
             }
-
         })
         return {
             data,
