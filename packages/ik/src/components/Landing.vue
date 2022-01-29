@@ -8,7 +8,7 @@
                 “Референдум” 2022 &mdash; это обман, который нам хотят навязать вместо реальных перемен.
             </p>
             <img class="block size-100 mrgn-t-30px mrgn-b-20px" src="/imgs/initiatives-list.png" alt="">
-            <a class="txt-underline-inline" href="#">Подробнее об Единой стратегии демократических сил Беларуси</a>
+            <a class="txt-underline-inline" :href="strategy">Подробнее об Единой стратегии демократических сил Беларуси</a>
         </div>
         <div class="section size-50 pdng-l-30px mil-notdisplay">
             <img class="block size-100 ik2022-radius-4px" src="/imgs/bnr-1.jpg" alt="">
@@ -450,6 +450,7 @@ import {ElTabs, ElTabPane} from 'element-plus'
 import CommissionMap from '@zubr-in/main/src/components/CommissionMap.vue'
 import {onBeforeRouteUpdate} from "vue-router";
 import router from "@zubr-in/main/src/router";
+import {strategy} from "../links";
 
 const data    = ref(null)
 const filter  = ref()
@@ -552,6 +553,7 @@ export default defineComponent({
                     document.getElementById("map-tab").scrollIntoView({block: "center", behavior: "smooth"})
                 }, 1)
             },
+            strategy,
             page,
             center,
             mapInit,

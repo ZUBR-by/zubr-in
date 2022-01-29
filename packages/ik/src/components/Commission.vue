@@ -1,6 +1,5 @@
 <template>
-    <header-view :active="'Кампании'">
-    </header-view>
+    <header-view :active="'Кампании'"></header-view>
     <div class="scene promo-banner flex-row">
         <div class="section size-50 mil-size-100">
             <img class="block size-90 mil-size-100" src="/imgs/promo-txt-1.png" alt="">
@@ -8,7 +7,9 @@
                 “Референдум” 2022 &mdash; это обман, который нам хотят навязать вместо реальных перемен.
             </p>
             <img class="block size-100 mrgn-t-30px mrgn-b-20px" src="/imgs/initiatives-list.png" alt="">
-            <a class="txt-underline-inline" href="#">Подробнее об Единой стратегии демократических сил Беларуси</a>
+            <a class="txt-underline-inline" :href="strategy">
+                Подробнее об Единой стратегии демократических сил Беларуси
+            </a>
         </div>
         <div class="section size-50 pdng-l-30px mil-notdisplay">
             <img class="block size-100 ik2022-radius-4px" src="/imgs/bnr-1.jpg" alt="">
@@ -603,7 +604,7 @@
                 через
                 безопасный чат в телеграм</b>:
             </p>
-            <a class="inline-block mrgn-t-30px" href="#">
+            <a class="inline-block mrgn-t-30px" :href="telegram_ik">
                 <img src="/imgs/telegram_button.svg">
             </a>
         </div>
@@ -694,6 +695,7 @@ import {useRoute} from 'vue-router'
 import {ElImage} from 'element-plus';
 import Location from '@zubr-in/main/src/components/Point.vue'
 import {formatDateCampaign} from "@zubr-in/main/src/date";
+import {strategy, telegram_ik} from "../links";
 
 const data = ref(null)
 
@@ -770,12 +772,14 @@ export default defineComponent({
             }
         })
         return {
+            strategy,
             data,
             map,
             isLater,
             curators_local,
             formatDateCampaign,
-            curators_ideolog
+            curators_ideolog,
+            telegram_ik
         }
     }
 })
