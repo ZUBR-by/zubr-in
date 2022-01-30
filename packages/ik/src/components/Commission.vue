@@ -136,7 +136,7 @@
                         <img src="/imgs/tag/chairman.svg" alt="председатель">
                     </div>
                     <h3 class="txt-size-24px txt-bold mrgn-b-20px txt-uppercase txt-ik2022-hdr">
-                        <router-link :to="{name: 'member'}">
+                        <router-link :to="{name: 'member', params: {id: item.member.id }}">
                             {{ item.member.person.full_name }}
                         </router-link>
                     </h3>
@@ -248,7 +248,9 @@
                             </svg>
                         </div>
                         <h3 class="txt-size-24px txt-bold mrgn-b-20px txt-uppercase txt-ik2022-hdr">
-                            {{ item.member.person.full_name }}
+                            <router-link :to="{name: 'member', params: {id: item.member.id }}">
+                                {{ item.member.person.full_name }}
+                            </router-link>
                         </h3>
                         <div class="uik-persons-marks flex-row flex-wrap mrgn-b-15px">
                             <div class="uik-persons-marks-unit mrgn-r-15px"
