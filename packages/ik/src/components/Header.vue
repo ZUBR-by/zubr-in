@@ -530,15 +530,15 @@
             </a>
         </div>
         <div class="section pdng-r-5prc flex-grow-all txt-algn-r mil-notdisplay">
-            <a class="header-ik-2022-link txt-size-16px txt-bold txt-ik2022-hdr active" href="#">
+            <a class="header-ik-2022-link txt-size-16px txt-bold txt-ik2022-hdr" href="https://zubr.in">
                 <img class="size-60" src="/imgs/crpline-1.png" alt="">
                 Наблюдателям
             </a>
-            <a class="header-ik-2022-link txt-size-16px txt-bold txt-ik2022-hdr" href="#">
+            <router-link class="header-ik-2022-link txt-size-16px txt-bold txt-ik2022-hdr" :to="{name: 'schema'}">
                 <img class="size-60" src="/imgs/crpline-1.png" alt="">
                 Расследование фальсификаций
-            </a>
-            <a class="header-ik-2022-link txt-size-16px txt-bold txt-ik2022-hdr" href="#">
+            </router-link>
+            <a class="header-ik-2022-link txt-size-16px txt-bold txt-ik2022-hdr" :href="strategy">
                 <img class="size-60" src="/imgs/crpline-1.png" alt="">
                 О референдуме
             </a>
@@ -551,15 +551,15 @@
                 <div class="burger-button-line"></div>
             </label>
             <div class="brgr-nav notdisplay mil-show">
-                <a class="header-ik-2022-link txt-size-16px txt-bold active" href="#">
+                <a class="header-ik-2022-link txt-size-16px txt-bold active" href="https://zubr.in">
                     <img class="size-60" src="/imgs/crpline-1.png" alt="">
                     Наблюдателям
                 </a>
-                <a class="header-ik-2022-link txt-size-16px txt-bold" href="#">
+                <router-link class="header-ik-2022-link txt-size-16px txt-bold" :to="{name: 'schema'}">
                     <img class="size-60" src="/imgs/crpline-1.png" alt="">
                     Расследование фальсификаций
-                </a>
-                <a class="header-ik-2022-link txt-size-16px txt-bold" href="#">
+                </router-link>
+                <a class="header-ik-2022-link txt-size-16px txt-bold" :href="strategy">
                     <img class="size-60" src="/imgs/crpline-1.png" alt="">
                     О референдуме
                 </a>
@@ -571,6 +571,7 @@
 <script>
 import {defineComponent, ref} from "vue";
 import {routes} from '../router';
+import {strategy} from "../links";
 
 export default defineComponent({
     props: {
@@ -587,6 +588,7 @@ export default defineComponent({
                 }
             }),
             query,
+            strategy,
             active: props.active
         }
     }
