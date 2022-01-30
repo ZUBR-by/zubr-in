@@ -219,9 +219,9 @@
                     Здравствуйте, Алина Анатольевна!
                 </div>
                 <div class="txt-size-16px mrgn-t-20px">
-                    Увидела Вас в списке избирательной комиссии нашего участка https://ik.xx2022.org на «референдуме‎».
+                    Увидела Вас в списке избирательной комиссии нашего участка <a :href="strategy">ik.xx2022.org</a>  на «референдуме‎».
                     Уверена, что вы будете честно считать недействительные бюллетени. Если Вас будут принуждать к
-                    фальсификациям – фиксируйте все нарушения и присылайте их @contact2022.
+                    фальсификациям – фиксируйте все нарушения и присылайте их <a :href="telegram_ik">@contact2022</a> .
                 </div>
                 <div class="flex-row flex-algn-itms-c mrgn-t-5px">
                     <div class="flex-grow-all txt-algn-r txt-size-11px txt-italic" style="color:#8E8E93;">
@@ -268,9 +268,9 @@
                         как устроен механизм фальсификации?
                     </p>
                 </div>
-                <a href="#" class="journal-2022-button cursor-pointer size-50">
+                <router-link href="#" class="journal-2022-button cursor-pointer size-50" :to="{name: 'schema'}">
                     Читать
-                </a>
+                </router-link>
             </div>
         </div>
         <div class="section size-33_3 pdng-15px mil-size-100">
@@ -299,7 +299,7 @@
                         за “референдумом”
                     </p>
                 </div>
-                <a href="#" class="journal-2022-button cursor-pointer size-50">
+                <a href="https://zubr.in" class="journal-2022-button cursor-pointer size-50">
                     Подробнее
                 </a>
             </div>
@@ -450,7 +450,7 @@ import {ElTabs, ElTabPane} from 'element-plus'
 import CommissionMap from '@zubr-in/main/src/components/CommissionMap.vue'
 import {onBeforeRouteUpdate} from "vue-router";
 import router from "@zubr-in/main/src/router";
-import {strategy} from "../links";
+import {strategy, telegram_ik} from "../links";
 
 const data    = ref(null)
 const filter  = ref()
@@ -531,7 +531,6 @@ export default defineComponent({
             if (!data.value) {
                 return 0
             }
-            console.log(13123)
             return Math.floor((data.value.commissions.length + data.value.members.length) / perPage);
         });
         const view       = ref('list')
@@ -566,7 +565,8 @@ export default defineComponent({
             view,
             data,
             perPage,
-            search
+            search,
+            telegram_ik
         }
     }
 })
