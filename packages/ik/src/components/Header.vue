@@ -534,6 +534,11 @@
                 <img class="size-60" src="/imgs/crpline-1.png" alt="">
                 Наблюдателям
             </a>
+            <router-link class="header-ik-2022-link txt-size-16px txt-bold txt-ik2022-hdr"
+                         :to="{name: 'to_honest_members'}">
+                <img class="size-60" src="/imgs/crpline-1.png" alt="">
+                Членам комиссий
+            </router-link>
             <router-link class="header-ik-2022-link txt-size-16px txt-bold txt-ik2022-hdr" :to="{name: 'schema'}">
                 <img class="size-60" src="/imgs/crpline-1.png" alt="">
                 Расследование фальсификаций
@@ -555,6 +560,10 @@
                     <img class="size-60" src="/imgs/crpline-1.png" alt="">
                     Наблюдателям
                 </a>
+                <router-link class="header-ik-2022-link txt-size-16px txt-bold" :to="{name: 'to_honest_members'}">
+                    <img class="size-60" src="/imgs/crpline-1.png" alt="">
+                    Членам комиссий
+                </router-link>
                 <router-link class="header-ik-2022-link txt-size-16px txt-bold" :to="{name: 'schema'}">
                     <img class="size-60" src="/imgs/crpline-1.png" alt="">
                     Расследование фальсификаций
