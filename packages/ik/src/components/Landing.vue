@@ -268,7 +268,7 @@
                         как устроен механизм фальсификации?
                     </p>
                 </div>
-                <router-link href="#" class="journal-2022-button cursor-pointer size-50" :to="{name: 'schema'}">
+                <router-link class="journal-2022-button cursor-pointer size-50" :to="{name: 'schema'}">
                     Читать
                 </router-link>
             </div>
@@ -329,9 +329,9 @@
                         в избирательной комиссии
                     </p>
                 </div>
-                <a href="#" class="journal-2022-button cursor-pointer size-50">
+                <router-link class="journal-2022-button cursor-pointer size-50" :to="{name: 'to_honest_members'}">
                     Поддержка
-                </a>
+                </router-link>
             </div>
         </div>
     </div>
