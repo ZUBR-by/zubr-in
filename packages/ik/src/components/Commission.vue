@@ -211,22 +211,27 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="uik-info-unit" v-if="false">
-                            <div class="uik-info-unit-name txt-bold">
-                                Должность:
+                        <template v-if="item.member.person.organizations.length > 0">
+                            <div class="uik-info-unit">
+                                <div class="uik-info-unit-name txt-bold">
+                                    Должность:
+                                </div>
+                                <div class="uik-info-unit-value">
+                                    {{ item.member.person.organizations[0].position }}
+                                </div>
                             </div>
-                            <div class="uik-info-unit-value"></div>
-                        </div>
-                        <div class="uik-info-unit" v-if="false">
-                            <div class="uik-info-unit-name txt-bold">
-                                Работодатель:
+                            <div class="uik-info-unit">
+                                <div class="uik-info-unit-name txt-bold">
+                                    Работодатель:
+                                </div>
+                                <div class="uik-info-unit-value">
+                                    <a class="blue-link txt-underline-inline"
+                                       :href="'https://zubr.in/organization/' + item.member.person.organizations[0].organization.id">
+                                        {{ item.member.person.organizations[0].organization.name }}
+                                    </a>
+                                </div>
                             </div>
-                            <div class="uik-info-unit-value">
-                                <a class="blue-link txt-underline-inline" href="#">
-                                    УЗ «1-я городская клиническая больница»
-                                </a>
-                            </div>
-                        </div>
+                        </template>
 
                     </div>
                 </div>
@@ -357,25 +362,27 @@
                                     </template>
                                 </div>
                             </div>
-                            <div class="uik-info-unit" v-if="false">
-                                <div class="uik-info-unit-name txt-bold">
-                                    Должность:
+                            <template v-if="item.member.person.organizations.length > 0">
+                                <div class="uik-info-unit">
+                                    <div class="uik-info-unit-name txt-bold">
+                                        Должность:
+                                    </div>
+                                    <div class="uik-info-unit-value">
+                                        {{ item.member.person.organizations[0].position }}
+                                    </div>
                                 </div>
-                                <div class="uik-info-unit-value">
-                                    Библиотекарь
+                                <div class="uik-info-unit">
+                                    <div class="uik-info-unit-name txt-bold">
+                                        Работодатель:
+                                    </div>
+                                    <div class="uik-info-unit-value">
+                                        <a class="blue-link txt-underline-inline"
+                                           :href="'https://zubr.in/organization/' + item.member.person.organizations[0].organization.id">
+                                            {{ item.member.person.organizations[0].organization.name }}
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="uik-info-unit" v-if="false">
-                                <div class="uik-info-unit-name txt-bold">
-                                    Работодатель:
-                                </div>
-                                <div class="uik-info-unit-value">
-                                    <a class="blue-link txt-underline-inline" href="#">
-                                        УЗ «1-я городская клиническая больница»
-                                    </a>
-                                </div>
-                            </div>
-
+                            </template>
                         </div>
                     </div>
                 </div>
