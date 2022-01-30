@@ -638,11 +638,10 @@ export default defineComponent({
             if (!data.value.commission) {
                 return [];
             }
-            if (data.value.commission.curators.length > 0) {
-                return data.value.commission.curators.filter(i => i.position === 'идеолог')
-            } else {
-                return data.value.commission.parent.curators.filter(i => i.position === 'идеолог')
+            if (data.value.commission.curators.length === 0) {
+                return []
             }
+            return data.value.commission.curators.filter(i => i.position === 'идеолог')
         })
         return {
             strategy,
