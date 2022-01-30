@@ -8,7 +8,7 @@
                      class="zoom-0_75 mil-zoom-0_5">
             </a>
             <div class="header-links flex-grow-all pdng-l-20px pdng-r-20px mil-notdisplay">
-                <router-link :to="route.to" v-for="route of routes" :class="{'active' : active === route.name}">
+                <router-link :to="route.to" v-for="route of routes" :active-class="'active'">
                     {{ route.name }}
                 </router-link>
                 <a href="https://t.me/zubr_info_bot">Связаться с нами</a>
@@ -28,7 +28,7 @@
                 <div class="brgr-nav notdisplay mil-show">
                     <div class="header-links pdng-l-20px pdng-r-20px">
                         <div class="pdng-t-30px" v-for="route of routes">
-                            <router-link :to="route.to">
+                            <router-link :to="route.to" :active-class="'active'">
                                 {{ route.name }}
                             </router-link>
                         </div>
