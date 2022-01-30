@@ -33,8 +33,8 @@
                     </defs>
                 </svg>
             </div>
-            <div class="section txt-size-14px txt-color-2 pdng-l-5px">
-                <a href="/">Назад</a>
+            <div class="section txt-size-14px txt-color-2 pdng-l-5px" @click="$router.go(-1)">
+                Назад
             </div>
         </a>
         <div class="scene">
@@ -157,7 +157,7 @@
                 </div>
             </div>
         </div>
-        <div class="scene">
+        <div class="scene" v-if="commission">
             <h2 class="txt-size-34px txt-bold">
                 Члены комиссии
             </h2>
@@ -269,7 +269,7 @@
                 </template>
             </div>
         </div>
-        <div class="scene">
+        <div class="scene" v-if="commission">
             <h2 class="txt-size-34px txt-bold">
                 Кто может оказывать давление на комиссию
             </h2>
@@ -880,6 +880,9 @@ export default defineComponent({
         })
         const commission  = computed(() => {
             if (!data.value) {
+                return null
+            }
+            if (data.value.member.commissions.length === 0) {
                 return null
             }
             return data.value.member.commissions[0].commission
