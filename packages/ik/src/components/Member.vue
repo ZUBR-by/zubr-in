@@ -187,7 +187,7 @@
                                          style="max-width: 120px">
                                 </div>
                                 <div class="section size-50 flex-column">
-                                    <div class="flex-algn-slf-e mrgn-b-10px">
+                                    <div class="flex-algn-slf-e mrgn-b-10px" v-if="false">
                                         <img src="/imgs/tag/2022.svg" alt="2022">
                                     </div>
                                     <div class="flex-algn-slf-e mrgn-b-10px">
@@ -291,7 +291,7 @@
                                          style="max-width: 120px">
                                 </div>
                                 <div class="section size-50 flex-column">
-                                    <div class="flex-algn-slf-e mrgn-b-10px">
+                                    <div class="flex-algn-slf-e mrgn-b-10px" v-if="false">
                                         <img src="/imgs/tag/2022.svg" alt="2022">
                                     </div>
                                     <div class="flex-algn-slf-e mrgn-b-10px">
