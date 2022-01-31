@@ -98,7 +98,7 @@
                            v-model.lazy="filter">
                 </div>
                 <div class="section">
-                    <button class="poll-stat-finder-bitton" @click="search">
+                    <button class="poll-stat-finder-button" @click="search">
                         Найти
                     </button>
                 </div>
