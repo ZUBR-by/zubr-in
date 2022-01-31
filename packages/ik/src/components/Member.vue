@@ -38,7 +38,7 @@
             </div>
         </a>
         <div class="scene">
-            <div class="flex-row pdng-50px shadow-type-1 ik2022-radius-4px mil-flex-column-reserve">
+            <div class="flex-row pdng-50px shadow-type-1 ik2022-radius-4px mil-flex-column-reserve mil-pdng-20px">
                 <div class="section size-50 mil-size-100">
                     <h1 class="txt-size-24px txt-color-2">
                         {{ data.member.person.full_name }}
@@ -94,11 +94,11 @@
                     </a>
                 </div>
                 <div class="section size-50 mil-size-100">
-                    <img :src="data.member.person.photo_url || '/imgs/person_photo.svg'"
+                    <img class="size-100" :src="data.member.person.photo_url || '/imgs/person_photo.svg'"
                          alt="">
                 </div>
             </div>
-            <div class="flex-row pdng-50px shadow-type-1 ik2022-radius-4px mil-flex-column-reserve mrgn-t-40px"
+            <div class="flex-row pdng-50px shadow-type-1 ik2022-radius-4px mil-flex-column-reserve mil-pdng-20px mrgn-t-40px"
                  v-if="commission">
                 <div class="section size-50 mil-size-100">
                     <h1 class="txt-size-24px txt-color-2">
