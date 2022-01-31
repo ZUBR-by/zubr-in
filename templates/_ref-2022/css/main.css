@@ -31,6 +31,9 @@ body {
 .txt-light {
 	font-weight:300;
 	}
+.txt-color-0 {
+	color:#fff;
+	}
 
 .header-ik-2022 {
 	position:fixed;
