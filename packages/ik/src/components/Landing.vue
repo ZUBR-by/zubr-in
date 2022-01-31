@@ -392,14 +392,14 @@
             </p>
             <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">
                 Поэтому, если вы узнали среди членов УИК ваших знакомых, вы можете поделиться их контактами, чтобы мы
-                включили их в нашу новостную расслку и <b>постарались обяъснить значимость их ролий в документации и
+                включили их в нашу новостную рассылку и <b>постарались объяснить значимость их роли в документации и
                 противодействии фальсификаций</b>.
             </p>
         </div>
         <div class="section size-50 pdng-l-50px mil-size-100 mil-pdng-0 mil-pdng-t-50px">
             <div class="info-sharing-form pdng-30px pdng-b-50px mil-pdng-15px">
                 <h3 class="txt-size-34px txt-uppercase txt-bold">
-                    Поделитесь данными о членах изберательных комиссий
+                    Поделитесь данными о членах избирательных комиссий
                 </h3>
                 <div class="mrgn-t-20px">
                     <textarea placeholder="Например ФИО и номер комиссии ..."></textarea>
@@ -414,11 +414,9 @@
                                     fill="#303030"/>
                             </svg>
                         </div>
-                        <div>
-                            Прикрепить файл
-                        </div>
+                        <input type="file" value="Прикрепить файл" multiple>
                     </div>
-                    <div class="journal-2022-button inline-flex flex-algn-itms-c cursor-pointer mrgn-l-10px">
+                    <div class="journal-2022-button inline-flex flex-algn-itms-c cursor-pointer mrgn-l-10px" v-if="false">
                         <div class="pdng-r-10px">
                             <svg style="margin:-2px 0" class="block" width="11" height="22" viewBox="0 0 11 22"
                                  fill="none" xmlns="http://www.w3.org/2000/svg">
