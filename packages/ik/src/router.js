@@ -47,7 +47,7 @@ const router = createRouter({
     routes
 })
 router.beforeEach((to) => {
-    document.title = to.meta && to.meta.title ? `${to.meta.title} - ik.ZUBR.in` : 'ik.ZUBR.in'
+    document.title = to.meta && to.meta.title ? `${to.meta.title} - uik.xx2022.org` : 'uik.xx2022.org'
 })
 
 export default router
