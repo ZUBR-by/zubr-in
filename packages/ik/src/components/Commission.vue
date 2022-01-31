@@ -137,6 +137,12 @@
                     <div class="pdng-t-10px" v-if="item.position === 'председатель комиссии'">
                         <img src="/imgs/tag/chairman.svg" alt="председатель">
                     </div>
+                    <div class="pdng-t-10px" v-if="item.position === 'заместитель председателя комиссии'">
+                        <img src="/imgs/tag/vice_chairman.svg" alt="заместитель председателя комиссии">
+                    </div>
+                    <div class="pdng-t-10px" v-if="item.position === 'секретарь комиссии'">
+                        <img src="/imgs/tag/secretary.svg" alt="секретарь комиссии">
+                    </div>
                     <h3 class="txt-size-24px txt-bold mrgn-b-20px txt-uppercase txt-ik2022-hdr">
                         <router-link :to="{name: 'member', params: {id: item.member.id }}">
                             {{ item.member.person.full_name }}
@@ -239,6 +245,12 @@
                         </div>
                         <div class="pdng-t-10px" v-if="item.position === 'председатель комиссии'">
                             <img src="/imgs/tag/chairman.svg" alt="председатель">
+                        </div>
+                        <div class="pdng-t-10px" v-if="item.position === 'заместитель председателя комиссии'">
+                            <img src="/imgs/tag/vice_chairman.svg" alt="заместитель председателя комиссии">
+                        </div>
+                        <div class="pdng-t-10px" v-if="item.position === 'секретарь комиссии'">
+                            <img src="/imgs/tag/secretary.svg" alt="секретарь комиссии">
                         </div>
                         <h3 class="txt-size-24px txt-bold mrgn-b-20px txt-uppercase txt-ik2022-hdr">
                             <router-link :to="{name: 'member', params: {id: item.member.id }}">
