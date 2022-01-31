@@ -8,7 +8,9 @@
                 “Референдум” 2022 &mdash; это обман, который нам хотят навязать вместо реальных перемен.
             </p>
             <img class="block size-100 mrgn-t-30px mrgn-b-20px" src="/imgs/initiatives-list.png" alt="">
-            <a class="txt-underline-inline" :href="strategy">Подробнее об Единой стратегии демократических сил Беларуси</a>
+            <a class="txt-underline-inline" :href="strategy">
+                Подробнее об Единой стратегии демократических сил Беларуси
+            </a>
         </div>
         <div class="section size-50 pdng-l-30px mil-notdisplay">
             <img class="block size-100 ik2022-radius-4px" src="/imgs/bnr-1.jpg" alt="">
@@ -219,7 +221,8 @@
                     Здравствуйте, Алина Анатольевна!
                 </div>
                 <div class="txt-size-16px mrgn-t-20px">
-                    Увидела Вас в списке избирательной комиссии нашего участка <a :href="strategy">ik.xx2022.org</a>  на «референдуме‎».
+                    Увидела Вас в списке избирательной комиссии нашего участка <a :href="strategy">ik.xx2022.org</a> на
+                    «референдуме‎».
                     Уверена, что вы будете честно считать недействительные бюллетени. Если Вас будут принуждать к
                     фальсификациям – фиксируйте все нарушения и присылайте их <a :href="telegram_ik">@contact2022</a> .
                 </div>
@@ -371,7 +374,10 @@
             </p>
         </div>
         <div class="section size-50 pdng-l-50px mil-size-100 mil-pdng-0">
-            <img class="block size-100" src="/imgs/yt-01.png" alt="">
+            <iframe class="mil-size-100" width="560" height="315" src="https://www.youtube.com/embed/a0YxH0xFJwc"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
         </div>
     </div>
     <div class="scene flex-row flex-algn-itms-c mil-block">

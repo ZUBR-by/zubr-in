@@ -123,8 +123,8 @@
                                  alt=""
                                  style="max-width: 120px">
                         </div>
-                        <div class="section size-50 flex-column">
-                            <div class="flex-algn-slf-e mrgn-b-10px" v-if="false">
+                        <div class="section size-50 flex-column" v-if="false">
+                            <div class="flex-algn-slf-e mrgn-b-10px">
                                 <img src="/imgs/tag/2022.svg" alt="2022">
                             </div>
                             <div class="flex-algn-slf-e mrgn-b-10px">
@@ -226,8 +226,8 @@
                                      alt=""
                                      style="max-width: 120px">
                             </div>
-                            <div class="section size-50 flex-column">
-                                <div class="flex-algn-slf-e mrgn-b-10px" v-if="false">
+                            <div class="section size-50 flex-column" v-if="false">
+                                <div class="flex-algn-slf-e mrgn-b-10px">
                                     <img src="/imgs/tag/2022.svg" alt="2022">
                                 </div>
                                 <div class="flex-algn-slf-e mrgn-b-10px">
@@ -393,7 +393,7 @@
     <div class="scene" style="background:#FF5959">
         <img class="red-block-line top" style="height:60px" src="/imgs/crpline-3.png" alt="">
         <img class="red-block-line bottom" style="height:60px" src="/imgs/crpline-3.png" alt="">
-        <div class="white-box shadow-type-1 size-50 pdng-50px ik2022-radius-4px mil-size-100">
+        <div class="white-box shadow-type-1 size-50 pdng-50px ik2022-radius-4px mil-size-100 mil-pdng-20px mil-pdng-t-50px mil-pdng-b-50px">
             <h3 class="txt-size-34px txt-bold mrgn-b-30px">
                 Если вас назначили в избирательную комиссию
             </h3>
