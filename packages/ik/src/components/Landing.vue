@@ -13,7 +13,7 @@
             </a>
         </div>
         <div class="section size-50 pdng-l-30px mil-notdisplay">
-            <img class="block size-100 ik2022-radius-4px" src="/imgs/bnr-1.jpg" alt="">
+            <img class="block size-100 ik2022-radius-4px" src="/imgs/banner.png" alt="">
         </div>
         <img class="promo-banner-cross left" src="/imgs/promo-cross.png">
         <img class="promo-banner-cross right" src="/imgs/promo-cross.png">
