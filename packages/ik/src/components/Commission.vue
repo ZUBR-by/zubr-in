@@ -393,7 +393,8 @@
                                     Работодатель:
                                 </div>
                                 <div class="uik-info-unit-value">
-                                    <a class="blue-link txt-underline-inline" href="#">
+                                    <a class="blue-link txt-underline-inline"
+                                       :href="'https://zubr.in/organization/' + item.curator.person.organizations[0].organization.id">
                                         {{ item.curator.person.organizations[0].organization.name }}
                                     </a>
                                 </div>

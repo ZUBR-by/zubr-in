@@ -39,7 +39,10 @@
                 </div>
                 <div class="section">
                     <p class="txt-size-15px txt-lh-1_5em txt-ik2022-txt">
-                        <a class="txt-underline-inline" href="#">Читайте подробнее</a> о механизмах фальсификации
+                        <router-link class="txt-underline-inline" :to="{name: 'schema'}">
+                            Читайте подробнее
+                        </router-link>
+                        о механизмах фальсификации
                     </p>
                 </div>
             </div>
