@@ -36,69 +36,71 @@
             Назад
         </div>
     </a>
-    <div class="scene" v-if="data">
-        <div class="flex-row pdng-50px shadow-type-1 ik2022-radius-4px mil-flex-column-reserve">
-            <div class="section size-50 mil-size-100">
-                <h1 class="txt-size-24px txt-color-2 txt-ik2022-hdr txt-uppercase">
-                    {{ data.commission.name }}
-                </h1>
-                <p class="mrgn-t-5px">
-                    {{ data.commission.description }}
-                </p>
-                <div class="uik-info-list mrgn-t-15px">
-                    <div class="uik-info-unit">
-                        <div class="uik-info-unit-name txt-size-14px txt-bold">
-                            Адрес:
+    <div class="scene" id="commission">
+        <template v-if="data">
+            <div class="flex-row pdng-50px shadow-type-1 ik2022-radius-4px mil-flex-column-reserve">
+                <div class="section size-50 mil-size-100">
+                    <h1 class="txt-size-24px txt-color-2 txt-ik2022-hdr txt-uppercase">
+                        {{ data.commission.name }}
+                    </h1>
+                    <p class="mrgn-t-5px">
+                        {{ data.commission.description }}
+                    </p>
+                    <div class="uik-info-list mrgn-t-15px">
+                        <div class="uik-info-unit">
+                            <div class="uik-info-unit-name txt-size-14px txt-bold">
+                                Адрес:
+                            </div>
+                            <div class="uik-info-unit-value txt-size-14px txt-lh-1_5em">
+                                {{ data.commission.address }}
+                            </div>
                         </div>
-                        <div class="uik-info-unit-value txt-size-14px txt-lh-1_5em">
-                            {{ data.commission.address }}
+                        <div class="uik-info-unit">
+                            <div class="uik-info-unit-name txt-size-14px txt-bold">
+                                Находится в:
+                            </div>
+                            <div class="uik-info-unit-value txt-size-14px txt-lh-1_5em">
+                                г. Гомель, м-н Костюковка, ул. Независимости 2а
+                            </div>
+                        </div>
+                        <div class="uik-info-unit">
+                            <div class="uik-info-unit-value txt-size-24px txt-bold txt-lh-1_5em txt-ik2022-hdr">
+                                {{ data.commission.code }}
+                            </div>
+                        </div>
+                        <div class="uik-info-unit">
+                            <div class="uik-info-unit-name txt-size-14px txt-bold">
+                                Вышестоящая комиссия:
+                            </div>
+                            <div class="uik-info-unit-value txt-size-14px txt-lh-1_5em">
+                                <a class="blue-link txt-underline-inline"
+                                   :href="'/commission/' + data.commission.parent.id">
+                                    {{ data.commission.parent.name }}
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="uik-info-unit">
-                        <div class="uik-info-unit-name txt-size-14px txt-bold">
-                            Находится в:
+                    <a class="journal-2022-button black inline-flex flex-algn-itms-c mrgn-t-30px" href="#">
+                        <div class="section pdng-l-10px">
+                            Напечатать листовку
                         </div>
-                        <div class="uik-info-unit-value txt-size-14px txt-lh-1_5em">
-                            г. Гомель, м-н Костюковка, ул. Независимости 2а
+                        <div class="section pdng-l-10px pdng-r-5px">
+                            <svg style="margin:-6px 0" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M18 1H6C3.79086 1 2 2.79086 2 5V20C2 22.2091 3.79086 24 6 24H18C20.2091 24 22 22.2091 22 20V5C22 2.79086 20.2091 1 18 1ZM4 5C4 3.89543 4.89543 3 6 3H18C19.1046 3 20 3.89543 20 5V20C20 21.1046 19.1046 22 18 22H6C4.89543 22 4 21.1046 4 20V5ZM13 5H7C6.45 5 6 5.45 6 6V12C6 12.55 6.45 13 7 13H13C13.55 13 14 12.55 14 12V6C14 5.45 13.55 5 13 5ZM10 6.375C10.62 6.375 11.125 6.88 11.125 7.5C11.125 8.12 10.62 8.625 10 8.625C9.38 8.625 8.875 8.12 8.875 7.5C8.875 6.88 9.38 6.375 10 6.375ZM7.5 11.5V10.75C7.5 9.915 9.165 9.5 10 9.5C10.835 9.5 12.5 9.915 12.5 10.75V11.5H7.5ZM17 15H6V14H17V15ZM17 17H6V16H17V17ZM13 19H6V18H13V19Z"
+                                      fill="#303030"/>
+                            </svg>
                         </div>
-                    </div>
-                    <div class="uik-info-unit">
-                        <div class="uik-info-unit-value txt-size-24px txt-bold txt-lh-1_5em txt-ik2022-hdr">
-                            {{ data.commission.code }}
-                        </div>
-                    </div>
-                    <div class="uik-info-unit">
-                        <div class="uik-info-unit-name txt-size-14px txt-bold">
-                            Вышестоящая комиссия:
-                        </div>
-                        <div class="uik-info-unit-value txt-size-14px txt-lh-1_5em">
-                            <a class="blue-link txt-underline-inline"
-                               :href="'/commission/' + data.commission.parent.id">
-                                {{ data.commission.parent.name }}
-                            </a>
-                        </div>
+                    </a>
+                </div>
+                <div class="section size-50 mil-size-100">
+                    <div class="map-wrp committee-view">
+                        <location :feature="data.commission.geometry"></location>
                     </div>
                 </div>
-                <a class="journal-2022-button black inline-flex flex-algn-itms-c mrgn-t-30px" href="#">
-                    <div class="section pdng-l-10px">
-                        Напечатать листовку
-                    </div>
-                    <div class="section pdng-l-10px pdng-r-5px">
-                        <svg style="margin:-6px 0" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                  d="M18 1H6C3.79086 1 2 2.79086 2 5V20C2 22.2091 3.79086 24 6 24H18C20.2091 24 22 22.2091 22 20V5C22 2.79086 20.2091 1 18 1ZM4 5C4 3.89543 4.89543 3 6 3H18C19.1046 3 20 3.89543 20 5V20C20 21.1046 19.1046 22 18 22H6C4.89543 22 4 21.1046 4 20V5ZM13 5H7C6.45 5 6 5.45 6 6V12C6 12.55 6.45 13 7 13H13C13.55 13 14 12.55 14 12V6C14 5.45 13.55 5 13 5ZM10 6.375C10.62 6.375 11.125 6.88 11.125 7.5C11.125 8.12 10.62 8.625 10 8.625C9.38 8.625 8.875 8.12 8.875 7.5C8.875 6.88 9.38 6.375 10 6.375ZM7.5 11.5V10.75C7.5 9.915 9.165 9.5 10 9.5C10.835 9.5 12.5 9.915 12.5 10.75V11.5H7.5ZM17 15H6V14H17V15ZM17 17H6V16H17V17ZM13 19H6V18H13V19Z"
-                                  fill="#303030"/>
-                        </svg>
-                    </div>
-                </a>
             </div>
-            <div class="section size-50 mil-size-100">
-                <div class="map-wrp committee-view">
-                    <location :feature="data.commission.geometry"></location>
-                </div>
-            </div>
-        </div>
+        </template>
     </div>
     <div class="scene" v-if="data">
         <h2 class="txt-size-34px txt-bold">
@@ -393,7 +395,8 @@
     <div class="scene" style="background:#FF5959">
         <img class="red-block-line top" style="height:60px" src="/imgs/crpline-3.png" alt="">
         <img class="red-block-line bottom" style="height:60px" src="/imgs/crpline-3.png" alt="">
-        <div class="white-box shadow-type-1 size-50 pdng-50px ik2022-radius-4px mil-size-100 mil-pdng-20px mil-pdng-t-50px mil-pdng-b-50px">
+        <div
+            class="white-box shadow-type-1 size-50 pdng-50px ik2022-radius-4px mil-size-100 mil-pdng-20px mil-pdng-t-50px mil-pdng-b-50px">
             <h3 class="txt-size-34px txt-bold mrgn-b-30px">
                 Если вас назначили в избирательную комиссию
             </h3>

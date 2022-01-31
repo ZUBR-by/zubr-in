@@ -71,7 +71,7 @@
             </p>
         </div>
 
-        <h2 class="txt-size-34px mrgn-t-50px txt-uppercase txt-ik2022-hdr">
+        <h2 class="txt-size-34px mrgn-t-50px txt-uppercase txt-ik2022-hdr" id="search">
             Найдите нужных членов комиссий
         </h2>
         <div class="ik2022-tabs flex-row pdng-t-30px pdng-b-20px">
@@ -97,6 +97,7 @@
                 </div>
                 <div class="section flex-grow-all">
                     <input :placeholder="placeholder"
+                           style="width: 100%"
                            v-model.lazy="filter">
                 </div>
                 <div class="section">
@@ -106,8 +107,9 @@
                 </div>
             </label>
             <div class="polling-station-list mrgn-t-50px" v-if="filter">
-                <a class="poll-stat-unit flex-row flex-algn-itms-c flex-noshrink pdng-20px cursor-pointer mil-flex-column"
-                   :href="'/commission/' + item.id" v-for="item of list">
+                <router-link
+                    class="poll-stat-unit flex-row flex-algn-itms-c flex-noshrink pdng-20px cursor-pointer mil-flex-column"
+                    :to="'/commission/' + item.id" v-for="item of list">
                     <div class="section size-30 pdng-l-10px flex-algn-slf-s mil-size-100 mil-pdng-0 mil-pdng-b-10px">
                         <h4 class="txt-size-24px txt-normal txt-uppercase txt-ik2022-hdr">
                             {{ item.name }}
@@ -139,7 +141,7 @@
                             {{ item.constituency_description }}
                         </p>
                     </div>
-                </a>
+                </router-link>
             </div>
             <div class="paginator flex-row"
                  v-if="data && data.commissions && (data.commissions.length + data.members.length) > perPage && filter">
@@ -401,10 +403,23 @@
                 <h3 class="txt-size-34px txt-uppercase txt-bold">
                     Поделитесь данными о членах избирательных комиссий
                 </h3>
-                <div class="mrgn-t-20px">
-                    <textarea placeholder="Например ФИО и номер комиссии ..."></textarea>
+                <p class="txt-size-15px txt-lh-1_5em txt-ik2022-txt">
+                    <b>Через безопасный чат в телеграм</b>:
+                </p>
+                <div>
+                    <a class="inline-block mrgn-t-10px" :href="telegram_ik">
+                        <img src="/imgs/telegram_button.svg" alt="перейти в телеграм">
+                    </a>
                 </div>
-                <div class="mrgn-t-15px">
+                <p class="txt-size-15px txt-lh-1_5em txt-ik2022-txt">
+                    <b>
+                        Или напишите нам на почту
+                        <a href="mailto:contact2022@honestby.org" class="txt-color-0">
+                            contact2022@honestby.org
+                        </a>
+                    </b>
+                </p>
+                <div class="mrgn-t-15px" v-if="false">
                     <div class="journal-2022-button primary inline-flex flex-algn-itms-c cursor-pointer">
                         <div class="pdng-r-10px">
                             <svg style="margin:-2px 0" class="block" width="11" height="22" viewBox="0 0 11 22"
@@ -416,7 +431,8 @@
                         </div>
                         <input type="file" value="Прикрепить файл" multiple>
                     </div>
-                    <div class="journal-2022-button inline-flex flex-algn-itms-c cursor-pointer mrgn-l-10px" v-if="false">
+                    <div class="journal-2022-button inline-flex flex-algn-itms-c cursor-pointer mrgn-l-10px"
+                         v-if="false">
                         <div class="pdng-r-10px">
                             <svg style="margin:-2px 0" class="block" width="11" height="22" viewBox="0 0 11 22"
                                  fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -438,7 +454,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="mrgn-t-15px">
+                <div class="mrgn-t-15px" v-if="false">
                     <div class="journal-2022-button inline-block cursor-pointer">
                         Отправить
                     </div>
