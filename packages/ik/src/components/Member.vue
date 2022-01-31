@@ -556,10 +556,10 @@ export default defineComponent({
                 return [];
             }
             let c = data.value.member.commissions.find(i => i.commission.campaign.id === '2020-08-presidential')
-            if (c.curators.length > 0) {
-                return c.curators.filter(i => i.position === 'местная власть')
+            if (c.commission.curators.length > 0) {
+                return c.commission.curators.filter(i => i.position === 'местная власть')
             } else {
-                return c.parent.curators.filter(i => i.position === 'местная власть')
+                return c.commission.parent.curators.filter(i => i.position === 'местная власть')
             }
         })
         const curators_ideolog = computed(() => {
@@ -570,10 +570,10 @@ export default defineComponent({
                 return [];
             }
             let c = data.value.member.commissions.find(i => i.commission.campaign.id === '2020-08-presidential')
-            if (c.curators.length === 0) {
+            if (c.commission.curators.length === 0) {
                 return []
             }
-            return c.curators.filter(i => i.position === 'идеолог')
+            return c.commission.curators.filter(i => i.position === 'идеолог')
         })
         return {
             telegram_ik,
