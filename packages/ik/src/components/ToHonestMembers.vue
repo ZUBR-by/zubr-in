@@ -8,7 +8,8 @@
                 “Референдум” 2022 &mdash; это обман, который нам хотят навязать вместо реальных перемен.
             </p>
             <img class="block size-100 mrgn-t-30px mrgn-b-20px" src="/imgs/initiatives-list.png" alt="">
-            <a class="txt-underline-inline" href="#">Подробнее об Единой стратегии демократических сил Беларуси</a>
+            <a class="txt-underline-inline" :href="strategy">Подробнее об Единой стратегии демократических сил
+                Беларуси</a>
         </div>
         <div class="section size-50 pdng-l-30px mil-notdisplay">
             <img class="block size-100 ik2022-radius-4px" src="/imgs/bnr-1.jpg" alt="">
@@ -33,7 +34,7 @@
                 комиссий зафиксировать все беззаконие на которое вас толкают &mdash; <b>свяжитесь с нашими волонтерами
                 через безопасный чат в телеграм</b>:
             </p>
-            <a class="inline-block mrgn-t-30px" href="#">
+            <a class="inline-block mrgn-t-30px" :href="telegram_ik">
                 <svg width="132" height="42" viewBox="0 0 132 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M0 4C0 1.79086 1.79086 0 4 0H128C130.209 0 132 1.79086 132 4V38C132 40.2091 130.209 42 128 42H4C1.79086 42 0 40.2091 0 38V4Z"
@@ -130,19 +131,19 @@
         <div class="section size-50 mil-size-100 mil-pdng-t-30px">
             <img class="size-60 mil-size-100" src="/imgs/crpline-1.png" alt="">
             <h2 class="txt-size-34px txt-bold txt-uppercase txt-ik2022-hdr">
-                Фальсификацию делают вашей трудовой обязанность?
+                Почему важно быть свидетелем, а не соучастником?
             </h2>
             <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">
-                Большинство комиссий формируются по принципу прямой подчиненности рабочих коллективов. Например, учителя
-                в комиссии, значит председатель – директор.
+                Давление на членов комиссий <i>"Вы же понимаете, как следует поступать"</i> — может быть признано
+                злоупотреблением властью или служебными полномочиями
             </p>
             <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">
-                Таким способом, под угрозой увольнения или лишения премий, людей подталкивают совершать уголовное
-                преступление с наказанием до 5 лет тюрьмы.
+                <b>Личной каждый</b>, кто ставит свою подпись под искаженным протоколом или вбрасывает
+                бюллетени, выдает лишние бюллетени, не вывешивает протокол — соучастник преступления
             </p>
             <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">
-                Если вы опасаетесь увольнения, потому что в маленьком городе вам не найти работы, то нужно учитывать,
-                что в маленьком городе все знают, кто участвовал в фальсификации и был соучастником преступления.
+                Единственный путь избежать ответственности — своевременно и добровольно заявить о преступлении
+                и активно способствовать его выявлению
             </p>
         </div>
     </div>
@@ -150,10 +151,17 @@
 <script>
 import Header from './Header.vue';
 import {defineComponent} from "vue";
+import {telegram_ik, strategy} from "../links";
 
 export default defineComponent({
     components: {
         'header-view': Header,
+    },
+    setup() {
+        return {
+            telegram_ik,
+            strategy
+        }
     }
 })
 </script>

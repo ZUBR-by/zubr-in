@@ -411,7 +411,7 @@
                         <img src="/imgs/telegram_button.svg" alt="перейти в телеграм">
                     </a>
                 </div>
-                <p class="txt-size-15px txt-lh-1_5em txt-ik2022-txt">
+                <p class="txt-size-15px txt-lh-1_5em txt-ik2022-txt mrgn-t-5px">
                     <b>
                         Или напишите нам на почту
                         <a href="mailto:contact2022@honestby.org" class="txt-color-0">
