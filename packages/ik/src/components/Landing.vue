@@ -2,27 +2,27 @@
     <header-view :active="'Кампании'">
     </header-view>
     <div class="scene promo-banner flex-row">
-        <div class="section size-50">
-            <img class="block size-90" src="/imgs/promo-txt-1.png" alt="">
-            <p class="mrgn-t-30px txt-size-14px">
+        <div class="section size-50 mil-size-100">
+            <img class="block size-90 mil-size-100" src="/imgs/promo-txt-1.png" alt="">
+            <p class="mrgn-t-30px txt-size-14px txt-ik2022-txt">
                 “Референдум” 2022 &mdash; это обман, который нам хотят навязать вместо реальных перемен.
             </p>
             <img class="block size-100 mrgn-t-30px mrgn-b-20px" src="/imgs/initiatives-list.png" alt="">
-            <a class="txt-underline-inline" href="#">Подробнее об Единой стратегии демократических сил Беларуси</a>
+            <a class="txt-underline-inline" :href="strategy">Подробнее об Единой стратегии демократических сил Беларуси</a>
         </div>
-        <div class="section size-50 pdng-l-30px">
+        <div class="section size-50 pdng-l-30px mil-notdisplay">
             <img class="block size-100 ik2022-radius-4px" src="/imgs/bnr-1.jpg" alt="">
         </div>
         <img class="promo-banner-cross left" src="/imgs/promo-cross.png">
         <img class="promo-banner-cross right" src="/imgs/promo-cross.png">
     </div>
-    <div class="scene falsification-scheme flex-row flex-algn-itms-c">
-        <div class="section size-50 pdng-r-50px">
+    <div class="scene falsification-scheme flex-row flex-algn-itms-c mil-block">
+        <div class="section size-50 pdng-r-50px mil-size-100 mil-pdng-0">
             <img class="size-60" src="/imgs/crpline-1.png" alt="">
-            <h2 class="txt-size-34px txt-bold txt-uppercase">
+            <h2 class="txt-size-34px txt-bold txt-uppercase txt-ik2022-hdr">
                 Кто отвечает за фальсификации
             </h2>
-            <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em">
+            <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">
                 Рядовые члены комиссий содействуют или закрывают глаза на фальсификации.
                 “Тройки” – председатель комиссии, его заместитель и секретарь – обеспечивают нужные цифры в протоколах.
                 Всем процессом управляют исполкомы, они же собирают голоса с участков, под контролем КГБ.
@@ -36,13 +36,13 @@
                     </svg>
                 </div>
                 <div class="section">
-                    <p class="txt-size-15px txt-lh-1_5em">
+                    <p class="txt-size-15px txt-lh-1_5em txt-ik2022-txt">
                         <a class="txt-underline-inline" href="#">Читайте подробнее</a> о механизмах фальсификации
                     </p>
                 </div>
             </div>
         </div>
-        <div class="section size-50">
+        <div class="section size-50 mil-size-100 mil-pdng-t-60px mil-pdng-t-30px">
             <img class="block size-100" src="/imgs/falsification_scheme.png" alt="">
         </div>
     </div>
@@ -69,7 +69,7 @@
             </p>
         </div>
 
-        <h2 class="txt-size-34px mrgn-t-50px" id="search">
+        <h2 class="txt-size-34px mrgn-t-50px txt-uppercase txt-ik2022-hdr">
             Найдите нужных членов комиссий
         </h2>
         <div class="ik2022-tabs flex-row pdng-t-30px pdng-b-20px">
@@ -85,45 +85,46 @@
             </div>
         </div>
         <template v-if="view === 'list'">
-            <label class="polling-station-finder inline-flex flex-algn-slf-c size-50">
-                <div class="section">
+            <label class="polling-station-finder inline-flex flex-algn-itms-c size-50 cursor-pointer mil-size-100">
+                <div class="section flex-noshrink pdng-l-15px pdng-r-10px">
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
-                            d="M8.33333 7.33333H7.80667L7.62 7.15333C8.27333 6.39333 8.66667 5.40667 8.66667 4.33333C8.66667 1.94 6.72667 0 4.33333 0C1.94 0 0 1.94 0 4.33333C0 6.72667 1.94 8.66667 4.33333 8.66667C5.40667 8.66667 6.39333 8.27333 7.15333 7.62L7.33333 7.80667V8.33333L10.6667 11.66L11.66 10.6667L8.33333 7.33333V7.33333ZM4.33333 7.33333C2.67333 7.33333 1.33333 5.99333 1.33333 4.33333C1.33333 2.67333 2.67333 1.33333 4.33333 1.33333C5.99333 1.33333 7.33333 2.67333 7.33333 4.33333C7.33333 5.99333 5.99333 7.33333 4.33333 7.33333Z"
+                            d="M8.33333 7.33333H7.80667L7.62 7.15333C8.27333 6.39333 8.66667 5.40667 8.66667 4.33333C8.66667 1.94 6.72667 0 4.33333 0C1.94 0 0 1.94 0 4.33333C0 6.72667 1.94 8.66667 4.33333 8.66667C5.40667 8.66667 6.39333 8.27333 7.15333 7.62L7.33333 7.80667V8.33333L10.6667 11.66L11.66 10.6667L8.33333 7.33333ZM4.33333 7.33333C2.67333 7.33333 1.33333 5.99333 1.33333 4.33333C1.33333 2.67333 2.67333 1.33333 4.33333 1.33333C5.99333 1.33333 7.33333 2.67333 7.33333 4.33333C7.33333 5.99333 5.99333 7.33333 4.33333 7.33333Z"
                             fill="#303030"/>
                     </svg>
-
                 </div>
                 <div class="section flex-grow-all">
                     <input :placeholder="placeholder"
                            v-model.lazy="filter">
                 </div>
                 <div class="section">
-                    <button class="poll-stat-finder-bitton">
+                    <button class="poll-stat-finder-bitton" @click="search">
                         Найти
                     </button>
                 </div>
             </label>
-            <div class="polling-station-list" v-if="filter">
-                <a class="poll-stat-unit flex-row flex-algn-itms-c flex-noshrink pdng-20px cursor-pointer"
+            <div class="polling-station-list mrgn-t-50px" v-if="filter">
+                <a class="poll-stat-unit flex-row flex-algn-itms-c flex-noshrink pdng-20px cursor-pointer mil-flex-column"
                    :href="'/commission/' + item.id" v-for="item of list">
-                    <div class="section size-30 pdng-l-10px flex-algn-slf-s">
-                        <h4 class="txt-size-24px txt-bold">
+                    <div class="section size-30 pdng-l-10px flex-algn-slf-s mil-size-100 mil-pdng-0 mil-pdng-b-10px">
+                        <h4 class="txt-size-24px txt-normal txt-uppercase txt-ik2022-hdr">
                             {{ item.name }}
                         </h4>
                         <p class="txt-size-12px">
                             {{ item.description }}
                         </p>
                     </div>
-                    <div class="section size-30 pdng-l-25px flex-algn-slf-s">
-                        <h4 class="txt-size-24px txt-bold">
+                    <div
+                        class="section size-30 pdng-l-25px flex-algn-slf-s mil-size-100 mil-pdng-0 mil-pdng-b-10px mil-pdng-t-10px mil-border-t-1px mil-border-color1">
+                        <h4 class="txt-size-24px txt-normal txt-uppercase txt-ik2022-hdr">
                             {{ item.code }}
                         </h4>
                         <p class="txt-size-12px">
                             {{ item.description }}
                         </p>
                     </div>
-                    <div class="section size-40 pdng-l-25px pdng-r-10px">
+                    <div
+                        class="section size-40 pdng-l-25px pdng-r-10px mil-size-100 mil-pdng-0 mil-pdng-t-10px mil-border-t-1px mil-border-color1">
                         <div class="size-100" v-if="item.info">
                             <div class="txt-color-1 txt-size-20px txt-medium mil-txt-size-16px">
                                 {{ item.info }}
@@ -139,7 +140,7 @@
                 </a>
             </div>
             <div class="paginator flex-row"
-                 v-if="data && data.commissions && data.commissions.length > perPage && filter">
+                 v-if="data && data.commissions && (data.commissions.length + data.members.length) > perPage && filter">
                 <div class="paginator-unit cursor-pointer"
                      v-for="i of pagesRange"
                      @click="page = i"
@@ -156,32 +157,32 @@
                             :init-campaign="'2020-08-presidential'"></commission-map>
         </div>
     </div>
-    <div class="scene flex-row flex-algn-itms-c">
-        <div class="section size-50">
-            <img class="size-60" src="/imgs/crpline-1.png" alt="">
-            <h2 class="txt-size-34px txt-bold txt-uppercase">
+    <div class="scene flex-row flex-algn-itms-c mil-flex-column-reserve">
+        <div class="section size-50 mil-size-100 mil-pdng-t-30px">
+            <img class="size-60 mil-size-100" src="/imgs/crpline-1.png" alt="">
+            <h2 class="txt-size-34px txt-bold txt-uppercase txt-ik2022-hdr">
                 Вдохновите считать честно!
             </h2>
-            <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em">
+            <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">
                 Если вы знаете члена комиссии – убедитесь в том, что он полностью понимает значимость своих действий.
             </p>
-            <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em">
+            <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">
                 Это не просто цифры – это наше будущее, которое каждый из нас хочет определять сам. Поэтому, кроме
                 Уголовного Кодекса, который предполагает срок до пяти лет, есть еще все Беларусы, которые могут
                 воспринять очередную фальсификацию как предательство.
             </p>
         </div>
-        <div class="section size-50 pdng-l-30px">
+        <div class="section size-50 pdng-l-30px mil-size-100 mil-pdng-0">
             <img class="block size-100" src="/imgs/bnr-2.jpg" alt="">
         </div>
         <img class="promo-banner-cross left" src="/imgs/promo-cross.png">
         <img class="promo-banner-cross right" src="/imgs/promo-cross.png">
     </div>
-    <div class="scene flex-row flex-algn-itms-c">
-        <div class="section size-50">
+    <div class="scene flex-row flex-algn-itms-c mil-block">
+        <div class="section size-50 mil-size-100">
             <div class="three-ways-block">
                 <img class="three-ways-block-line" src="/imgs/crpline-2.png" alt="">
-                <h2 class="txt-size-34px txt-bold txt-uppercase">
+                <h2 class="txt-size-34px txt-bold txt-uppercase txt-ik2022-hdr">
                     3 пути начать разговор
                 </h2>
                 <div class="flex-row mrgn-t-20px">
@@ -203,7 +204,7 @@
                 </div>
                 <div class="flex-row mrgn-t-20px">
                     <div class="section txt-size-34px txt-bold">
-                        1
+                        3
                     </div>
                     <div class="section txt-size-15px pdng-l-15px">
                         Поговорите лично: если это ваш знакомый или родственник, объясните опасность преступной
@@ -212,15 +213,38 @@
                 </div>
             </div>
         </div>
-        <div class="section size-50 pdng-l-30px">
-            <img style="display:block; width:300px; margin:0 auto;" src="/imgs/messege-01.png" alt="">
+        <div class="section size-50 pdng-l-30px mil-notdisplay">
+            <div class="sms-wrp">
+                <div class="txt-bold txt-size-18px">
+                    Здравствуйте, Алина Анатольевна!
+                </div>
+                <div class="txt-size-16px mrgn-t-20px">
+                    Увидела Вас в списке избирательной комиссии нашего участка <a :href="strategy">ik.xx2022.org</a>  на «референдуме‎».
+                    Уверена, что вы будете честно считать недействительные бюллетени. Если Вас будут принуждать к
+                    фальсификациям – фиксируйте все нарушения и присылайте их <a :href="telegram_ik">@contact2022</a> .
+                </div>
+                <div class="flex-row flex-algn-itms-c mrgn-t-5px">
+                    <div class="flex-grow-all txt-algn-r txt-size-11px txt-italic" style="color:#8E8E93;">
+                        11:50
+                    </div>
+                    <div class="flex-noshrink pdng-l-5px">
+                        <svg class="block" width="14" height="8" viewBox="0 0 14 8" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M13.1336 0.284118L6.6336 7.08412L6.57835 7.15342C6.45066 7.34745 6.4799 7.6083 6.65978 7.77055C6.86213 7.95308 7.1785 7.9417 7.3664 7.74513L13.8664 0.945127L13.9216 0.875824C14.0493 0.6818 14.0201 0.420946 13.8402 0.258694C13.6379 0.0761616 13.3215 0.0875441 13.1336 0.284118ZM9.63521 0.28245L3.43573 6.7073L0.862149 4.08105L0.794346 4.02321C0.602859 3.88745 0.333042 3.89974 0.155256 4.06415C-0.0447525 4.2491 -0.0525441 4.55655 0.137853 4.75084L3.07639 7.74952L3.14702 7.80937C3.34667 7.94891 3.62866 7.92781 3.80333 7.74679L10.3648 0.946795L10.4204 0.877744C10.549 0.684304 10.521 0.42332 10.3419 0.26025C10.1405 0.0767963 9.82405 0.0867358 9.63521 0.28245Z"
+                                  fill="#54B6F9"/>
+                        </svg>
+
+                    </div>
+                </div>
+            </div>
         </div>
         <img class="promo-banner-cross left" src="/imgs/promo-cross.png">
         <img class="promo-banner-cross right" src="/imgs/promo-cross.png">
     </div>
-    <div class="scene journal-2022 flex-row">
-        <div class="section size-33_3 pdng-15px">
-            <div class="journal-2022-unit pdng-20px pdng-b-30px txt-algn-c">
+    <div class="scene journal-2022 flex-row mil-block">
+        <div class="section size-33_3 pdng-15px mil-size-100">
+            <div class="journal-2022-unit pdng-20px pdng-b-30px txt-algn-c mil-pdng-t-30px mil-pdng-b-50px">
                 <img class="journal-2022-unit-bg" src="/imgs/jrn-1.png" alt="">
                 <div>
                     <svg width="55" height="66" viewBox="0 0 55 66" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -237,20 +261,21 @@
                     </svg>
                 </div>
                 <div class="mrgn-t-20px mrgn-b-30px">
-                    <h3 class="txt-size-34px txt-uppercase txt-bold">
+                    <h3 class="txt-size-32px txt-uppercase txt-bold txt-ik2022-hdr">
                         Расследование
                     </h3>
-                    <p class="txt-size-34px txt-uppercase">
+                    <p class="txt-size-32px txt-uppercase txt-light txt-ik2022-hdr">
                         как устроен механизм фальсификации?
                     </p>
                 </div>
-                <a href="#" class="journal-2022-button cursor-pointer size-50">
+                <router-link class="journal-2022-button cursor-pointer size-50" :to="{name: 'schema'}">
                     Читать
-                </a>
+                </router-link>
             </div>
         </div>
-        <div class="section size-33_3 pdng-15px">
-            <div class="journal-2022-unit pdng-20px pdng-b-30px mrgn-t-30px txt-algn-c">
+        <div class="section size-33_3 pdng-15px mil-size-100">
+            <div
+                class="journal-2022-unit pdng-20px pdng-b-30px mrgn-t-30px txt-algn-c mil-pdng-t-30px mil-pdng-b-50px mil-mrgn-0">
                 <img class="journal-2022-unit-bg" src="/imgs/jrn-2.png" alt="">
                 <div>
                     <svg width="55" height="66" viewBox="0 0 55 66" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -267,20 +292,20 @@
                     </svg>
                 </div>
                 <div class="mrgn-t-20px mrgn-b-30px">
-                    <h3 class="txt-size-34px txt-uppercase txt-bold">
+                    <h3 class="txt-size-32px txt-uppercase txt-bold txt-ik2022-hdr">
                         Наблюдение
                     </h3>
-                    <p class="txt-size-34px txt-uppercase">
+                    <p class="txt-size-32px txt-uppercase txt-light txt-ik2022-hdr">
                         за “референдумом”
                     </p>
                 </div>
-                <a href="#" class="journal-2022-button cursor-pointer size-50">
+                <a href="https://zubr.in" class="journal-2022-button cursor-pointer size-50">
                     Подробнее
                 </a>
             </div>
         </div>
-        <div class="section size-33_3 pdng-15px">
-            <div class="journal-2022-unit pdng-20px pdng-b-30px txt-algn-c">
+        <div class="section size-33_3 pdng-15px mil-size-100">
+            <div class="journal-2022-unit pdng-20px pdng-b-30px txt-algn-c mil-pdng-t-30px mil-pdng-b-50px">
                 <img class="journal-2022-unit-bg" src="/imgs/jrn-3.png" alt="">
                 <div>
                     <svg width="55" height="66" viewBox="0 0 55 66" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -297,76 +322,76 @@
                     </svg>
                 </div>
                 <div class="mrgn-t-20px mrgn-b-30px">
-                    <h3 class="txt-size-34px txt-uppercase txt-bold">
+                    <h3 class="txt-size-32px txt-uppercase txt-bold txt-ik2022-hdr">
                         Участие
                     </h3>
-                    <p class="txt-size-34px txt-uppercase">
+                    <p class="txt-size-32px txt-uppercase txt-light txt-ik2022-hdr">
                         в избирательной комиссии
                     </p>
                 </div>
-                <a href="#" class="journal-2022-button cursor-pointer size-50">
+                <router-link class="journal-2022-button cursor-pointer size-50" :to="{name: 'to_honest_members'}">
                     Поддержка
-                </a>
+                </router-link>
             </div>
         </div>
     </div>
-    <div class="scene flex-row flex-algn-itms-c">
-        <div class="section size-50">
+    <div class="scene flex-row flex-algn-itms-c mil-flex-column-reserve">
+        <div class="section size-50 mil-size-100 pdng-t-30px">
             <img class="size-60" src="/imgs/crpline-1.png" alt="">
-            <h2 class="txt-size-34px txt-bold txt-uppercase">
+            <h2 class="txt-size-34px txt-bold txt-uppercase txt-ik2022-hdr">
                 Почему важно считать честно?
             </h2>
-            <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em">
+            <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">
                 Недействительные бюллютени – это результат, который будет отражен в итогах голосования наравне с “ДА” и
                 “НЕТ”.
             </p>
-            <p>
+            <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">
                 Чем меньше участков с фальсификациями, тем меньше людей, готовых соучаствовать в других преступлениях к
                 которым их принуждают руководители.
             </p>
         </div>
-        <div class="section size-50 pdng-l-50px">
+        <div class="section size-50 pdng-l-50px mil-size-100 mil-pdng-0">
             <img class="block size-100" src="/imgs/letter-1.png" alt="">
         </div>
     </div>
-    <div class="scene flex-row flex-algn-itms-c">
-        <div class="section size-50">
+    <div class="scene flex-row flex-algn-itms-c mil-flex-column-reserve">
+        <div class="section size-50 mil-size-100 mil-pdng-t-30px">
             <img class="size-60" src="/imgs/crpline-1.png" alt="">
-            <h2 class="txt-size-34px txt-bold txt-uppercase">
+            <h2 class="txt-size-34px txt-bold txt-uppercase txt-ik2022-hdr">
                 Последствия Фальсификаций 2020
             </h2>
-            <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em">
+            <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">
                 Все, что произошло в августе 2020 года –
                 <b>это резульатат каждого участника фальсификаций</b>. Люди чувствуют, когда их обманывают и не готовы
                 больше с этим мириться.
             </p>
-            <p>
+            <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">
                 Кто-то побоялся лишиться премии, кто-то быть уволенным. Но сегодня из-за этих решений убиты люди, тысячи
                 потеряли свободу, десятки тысяч были оштрафованы или избиты.
             </p>
         </div>
-        <div class="section size-50 pdng-l-50px">
+        <div class="section size-50 pdng-l-50px mil-size-100 mil-pdng-0">
             <img class="block size-100" src="/imgs/yt-01.png" alt="">
         </div>
     </div>
-    <div class="scene flex-row flex-algn-itms-c">
-        <div class="section size-50">
+    <div class="scene flex-row flex-algn-itms-c mil-block">
+        <div class="section size-50 mil-size-100">
             <img class="size-60" src="/imgs/crpline-1.png" alt="">
-            <h2 class="txt-size-34px txt-bold txt-uppercase">
+            <h2 class="txt-size-34px txt-bold txt-uppercase txt-ik2022-hdr">
                 Не готовы начать разговор со знакомым членом УИК?
             </h2>
-            <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em">
+            <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">
                 Из-за повышающегося уровня репрессий не каждый готов поговорить откровенно с малознакомым челвоеком о
                 таких важных вещах.
             </p>
-            <p>
+            <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">
                 Поэтому, если вы узнали среди членов УИК ваших знакомых, вы можете поделиться их контактами, чтобы мы
                 включили их в нашу новостную расслку и <b>постарались обяъснить значимость их ролий в документации и
                 противодействии фальсификаций</b>.
             </p>
         </div>
-        <div class="section size-50 pdng-l-50px">
-            <div class="info-sharing-form pdng-30px pdng-b-50px">
+        <div class="section size-50 pdng-l-50px mil-size-100 mil-pdng-0 mil-pdng-t-50px">
+            <div class="info-sharing-form pdng-30px pdng-b-50px mil-pdng-15px">
                 <h3 class="txt-size-34px txt-uppercase txt-bold">
                     Поделитесь данными о членах изберательных комиссий
                 </h3>
@@ -425,6 +450,7 @@ import {ElTabs, ElTabPane} from 'element-plus'
 import CommissionMap from '@zubr-in/main/src/components/CommissionMap.vue'
 import {onBeforeRouteUpdate} from "vue-router";
 import router from "@zubr-in/main/src/router";
+import {strategy, telegram_ik} from "../links";
 
 const data    = ref(null)
 const filter  = ref()
@@ -493,17 +519,19 @@ export default defineComponent({
             if (page.value) {
                 start = page.value * perPage;
             }
-            return data.value.commissions.slice(start, start + perPage);
+            return data.value.commissions.concat(data.value.members.map(member => {
+                return {
+                    ...member.commissions[0].commission,
+                    info: member.full_name,
+                    position: member.commissions[0].position
+                }
+            })).slice(start, start + perPage);
         })
         const pagesCount = computed(() => {
             if (!data.value) {
                 return 0
             }
-            if (!data.value.commissions) {
-                return 0;
-            }
-
-            return Math.floor(data.value.commissions.length / perPage);
+            return Math.floor((data.value.commissions.length + data.value.members.length) / perPage);
         });
         const view       = ref('list')
         const center     = ref();
@@ -524,6 +552,7 @@ export default defineComponent({
                     document.getElementById("map-tab").scrollIntoView({block: "center", behavior: "smooth"})
                 }, 1)
             },
+            strategy,
             page,
             center,
             mapInit,
@@ -535,7 +564,9 @@ export default defineComponent({
             pagesCount,
             view,
             data,
-            perPage
+            perPage,
+            search,
+            telegram_ik
         }
     }
 })
