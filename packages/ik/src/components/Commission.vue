@@ -56,14 +56,6 @@
                             </div>
                         </div>
                         <div class="uik-info-unit">
-                            <div class="uik-info-unit-name txt-size-14px txt-bold">
-                                Находится в:
-                            </div>
-                            <div class="uik-info-unit-value txt-size-14px txt-lh-1_5em">
-                                г. Гомель, м-н Костюковка, ул. Независимости 2а
-                            </div>
-                        </div>
-                        <div class="uik-info-unit">
                             <div class="uik-info-unit-value txt-size-24px txt-bold txt-lh-1_5em txt-ik2022-hdr">
                                 {{ data.commission.code }}
                             </div>
