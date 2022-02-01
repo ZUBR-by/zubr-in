@@ -79,11 +79,13 @@
         </h2>
         <div class="ik2022-tabs flex-row pdng-t-30px pdng-b-20px">
             <div class="ik2022-tabs-unit txt-size-12px cursor-pointer"
+                 id="list_view_tab"
                  @click="view = 'list'"
                  :class="{active: view === 'list'}">
                 Поиск
             </div>
             <div class="ik2022-tabs-unit txt-size-12px cursor-pointer"
+                 id="map_view_tab"
                  @click="view = 'map'; revealMap();"
                  :class="{active: view === 'map'}">
                 Карта
@@ -104,7 +106,7 @@
                            v-model.lazy="filter">
                 </div>
                 <div class="section">
-                    <button class="poll-stat-finder-button" @click="search">
+                    <button class="poll-stat-finder-button" id="search-button" @click="search">
                         Найти
                     </button>
                 </div>
@@ -416,7 +418,7 @@
                     <b>Через безопасный чат в телеграм</b>:
                 </p>
                 <div>
-                    <a class="inline-block mrgn-t-10px" :href="telegram_ik">
+                    <a class="inline-block mrgn-t-10px" id="telegram_button" :href="telegram_ik">
                         <img src="/imgs/telegram_button.svg" alt="перейти в телеграм">
                     </a>
                 </div>
