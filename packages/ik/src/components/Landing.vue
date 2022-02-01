@@ -110,6 +110,11 @@
                 </div>
             </label>
             <div class="polling-station-list mrgn-t-50px" v-if="filter">
+                <div
+                    class="poll-stat-unit flex-row flex-algn-itms-c flex-noshrink pdng-20px mil-flex-column"
+                    v-if="search_initiated && list.length === 0">
+                    Не найдено
+                </div>
                 <router-link
                     class="poll-stat-unit flex-row flex-algn-itms-c flex-noshrink pdng-20px cursor-pointer mil-flex-column"
                     :to="'/commission/' + item.id" v-for="item of list">
@@ -477,22 +482,24 @@ import {onBeforeRouteUpdate} from "vue-router";
 import router from "@zubr-in/main/src/router";
 import {strategy, telegram_ik} from "../links";
 
-const data    = ref(null)
-const filter  = ref()
-const loading = ref(false);
-const perPage = 7;
+const data             = ref(null)
+const filter           = ref()
+const loading          = ref(false);
+const perPage          = 7;
+const search_initiated = ref(false)
 
 async function search() {
     try {
         loading.value = true;
 
-        const response = await fetch(
+        const response         = await fetch(
             import.meta.env.VITE_API_URL
             + '/search/commission'
             + ('?query=' + encodeURIComponent('%' + (filter.value) + '%'))
         )
-        data.value     = await response.json()
-        loading.value  = false;
+        search_initiated.value = true;
+        data.value             = await response.json()
+        loading.value          = false;
     } catch (e) {
         loading.value = false;
         data.value    = {search: {}, pagination: {aggregate: {count: 0}}};
@@ -591,7 +598,8 @@ export default defineComponent({
             data,
             perPage,
             search,
-            telegram_ik
+            telegram_ik,
+            search_initiated
         }
     }
 })
