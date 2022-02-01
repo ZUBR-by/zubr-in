@@ -145,10 +145,10 @@
                              v-if="item.member.person.extra.member_foreign_id">
                             <img src="/imgs/tag/2020.svg" alt="опыт 2020">
                         </div>
-                        <div class="uik-persons-marks-unit mrgn-r-15px">
+                        <div class="uik-persons-marks-unit mrgn-r-15px" v-if="item.member.extra.violation_tag">
                             <img src="/imgs/tag/violations.svg" alt="нарушения">
                         </div>
-                        <div class="uik-persons-marks-unit mrgn-r-15px">
+                        <div class="uik-persons-marks-unit mrgn-r-15px" v-if="item.member.extra.falsification_tag">
                             <img src="/imgs/tag/falsifications.svg" alt="фальсификации">
                         </div>
                     </div>
@@ -254,10 +254,10 @@
                                  v-if="item.member.person.extra.member_foreign_id">
                                 <img src="/imgs/tag/2020.svg" alt="опыт 2020">
                             </div>
-                            <div class="uik-persons-marks-unit mrgn-r-15px">
+                            <div class="uik-persons-marks-unit mrgn-r-15px" v-if="item.member.extra.violation_tag">
                                 <img src="/imgs/tag/violations.svg" alt="нарушения">
                             </div>
-                            <div class="uik-persons-marks-unit mrgn-r-15px">
+                            <div class="uik-persons-marks-unit mrgn-r-15px" v-if="item.member.extra.falsification_tag">
                                 <img src="/imgs/tag/falsifications.svg" alt="фальсификации">
                             </div>
                         </div>

@@ -44,6 +44,14 @@
                         {{ data.member.person.full_name }}
                     </h1>
                     <div class="uik-info-list mrgn-t-15px">
+                        <div class="uik-info-unit">
+                            <div class="uik-info-unit-name txt-bold">
+                                Должность в комиссии:
+                            </div>
+                            <div class="uik-info-unit-value">
+                                {{ data.member.commissions[0].position }}
+                            </div>
+                        </div>
                         <div class="uik-info-unit" v-if="employer">
                             <div class="uik-info-unit-name txt-size-14px txt-bold">
                                 Работодатель:
@@ -63,7 +71,7 @@
                                 {{ employer.position }}
                             </div>
                         </div>
-                        <div class="uik-info-unit" v-if="referral">
+                        <div class="uik-info-unit" v-if="referral && referral.referral_id && referral.referral_notes">
                             <div class="uik-info-unit-name txt-size-14px txt-bold">
                                 Выдвинут(а):
                             </div>
@@ -151,7 +159,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="section size-50 mil-size-100">
+                <div class="section size-50 mil-size-100" v-if="commission.geometry">
                     <div class="map-wrp committee-view">
                         <location :feature="commission.geometry"></location>
                     </div>
@@ -215,10 +223,10 @@
                                      v-if="item.member.person.extra.member_foreign_id">
                                     <img src="/imgs/tag/2020.svg" alt="опыт 2020">
                                 </div>
-                                <div class="uik-persons-marks-unit mrgn-r-15px">
+                                <div class="uik-persons-marks-unit mrgn-r-15px" v-if="item.member.extra.violation_tag">
                                     <img src="/imgs/tag/violations.svg" alt="нарушения">
                                 </div>
-                                <div class="uik-persons-marks-unit mrgn-r-15px">
+                                <div class="uik-persons-marks-unit mrgn-r-15px" v-if="item.member.extra.falsification_tag">
                                     <img src="/imgs/tag/falsifications.svg" alt="фальсификации">
                                 </div>
                             </div>
@@ -325,10 +333,10 @@
                                      v-if="item.member.person.extra.member_foreign_id">
                                     <img src="/imgs/tag/2020.svg" alt="опыт 2020">
                                 </div>
-                                <div class="uik-persons-marks-unit mrgn-r-15px">
+                                <div class="uik-persons-marks-unit mrgn-r-15px" v-if="item.member.extra.violation_tag">
                                     <img src="/imgs/tag/violations.svg" alt="нарушения">
                                 </div>
-                                <div class="uik-persons-marks-unit mrgn-r-15px">
+                                <div class="uik-persons-marks-unit mrgn-r-15px" v-if="item.member.extra.falsification_tag">
                                     <img src="/imgs/tag/falsifications.svg" alt="фальсификации">
                                 </div>
                             </div>
@@ -569,11 +577,13 @@ export default defineComponent({
             if (!data.value.member) {
                 return [];
             }
-            let c = data.value.member.commissions.find(i => i.commission.campaign.id === '2020-08-presidential')
+            let c = data.value.member.commissions.find(
+                i => i.commission.campaign === null || i.commission.campaign.id === '2020-08-presidential'
+            )
             if (c.commission.curators.length > 0) {
                 return c.commission.curators.filter(i => i.position === 'местная власть')
             } else {
-                return c.commission.parent.curators.filter(i => i.position === 'местная власть')
+                return c.commission.parent ? c.commission.parent.curators.filter(i => i.position === 'местная власть') : []
             }
         })
         const curators_ideolog = computed(() => {
@@ -583,7 +593,9 @@ export default defineComponent({
             if (!data.value.member) {
                 return [];
             }
-            let c = data.value.member.commissions.find(i => i.commission.campaign.id === '2020-08-presidential')
+            let c = data.value.member.commissions.find(
+                i => i.commission.campaign === null || i.commission.campaign.id === '2020-08-presidential'
+            )
             if (c.commission.curators.length === 0) {
                 return []
             }
