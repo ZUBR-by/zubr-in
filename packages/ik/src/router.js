@@ -44,10 +44,27 @@ const routes = [
 ]
 const router = createRouter({
     history: createWebHistory(import.meta.env.VITE_BASE_PREFIX || ''),
-    routes
+    routes,
+    scrollBehavior(to, from, savedPosition) {
+        if (to.name === 'ik_main' && to.query.query) {
+            return {
+                selector: '#search'
+            }
+        }
+        if (to.name === 'commission') {
+            return {
+                selector: 'commission'
+            }
+        }
+        if (savedPosition) {
+            return savedPosition
+        } else {
+            return {x: 0, y: 0}
+        }
+    }
 })
 router.beforeEach((to) => {
-    document.title = to.meta && to.meta.title ? `${to.meta.title} - ik.ZUBR.in` : 'ik.ZUBR.in'
+    document.title = to.meta && to.meta.title ? `${to.meta.title} - uik.xx2022.org` : 'uik.xx2022.org'
 })
 
 export default router

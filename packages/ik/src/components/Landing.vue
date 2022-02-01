@@ -8,10 +8,12 @@
                 “Референдум” 2022 &mdash; это обман, который нам хотят навязать вместо реальных перемен.
             </p>
             <img class="block size-100 mrgn-t-30px mrgn-b-20px" src="/imgs/initiatives-list.png" alt="">
-            <a class="txt-underline-inline" :href="strategy">Подробнее об Единой стратегии демократических сил Беларуси</a>
+            <a class="txt-underline-inline" :href="strategy">
+                Подробнее об Единой стратегии демократических сил Беларуси
+            </a>
         </div>
         <div class="section size-50 pdng-l-30px mil-notdisplay">
-            <img class="block size-100 ik2022-radius-4px" src="/imgs/bnr-1.jpg" alt="">
+            <img class="block size-100 ik2022-radius-4px" src="/imgs/banner.png" alt="">
         </div>
         <img class="promo-banner-cross left" src="/imgs/promo-cross.png">
         <img class="promo-banner-cross right" src="/imgs/promo-cross.png">
@@ -37,7 +39,10 @@
                 </div>
                 <div class="section">
                     <p class="txt-size-15px txt-lh-1_5em txt-ik2022-txt">
-                        <a class="txt-underline-inline" href="#">Читайте подробнее</a> о механизмах фальсификации
+                        <router-link class="txt-underline-inline" :to="{name: 'schema'}">
+                            Читайте подробнее
+                        </router-link>
+                        о механизмах фальсификации
                     </p>
                 </div>
             </div>
@@ -69,7 +74,7 @@
             </p>
         </div>
 
-        <h2 class="txt-size-34px mrgn-t-50px txt-uppercase txt-ik2022-hdr">
+        <h2 class="txt-size-34px mrgn-t-50px txt-uppercase txt-ik2022-hdr" id="search">
             Найдите нужных членов комиссий
         </h2>
         <div class="ik2022-tabs flex-row pdng-t-30px pdng-b-20px">
@@ -95,6 +100,7 @@
                 </div>
                 <div class="section flex-grow-all">
                     <input :placeholder="placeholder"
+                           style="width: 100%"
                            v-model.lazy="filter">
                 </div>
                 <div class="section">
@@ -104,8 +110,9 @@
                 </div>
             </label>
             <div class="polling-station-list mrgn-t-50px" v-if="filter">
-                <a class="poll-stat-unit flex-row flex-algn-itms-c flex-noshrink pdng-20px cursor-pointer mil-flex-column"
-                   :href="'/commission/' + item.id" v-for="item of list">
+                <router-link
+                    class="poll-stat-unit flex-row flex-algn-itms-c flex-noshrink pdng-20px cursor-pointer mil-flex-column"
+                    :to="'/commission/' + item.id" v-for="item of list">
                     <div class="section size-30 pdng-l-10px flex-algn-slf-s mil-size-100 mil-pdng-0 mil-pdng-b-10px">
                         <h4 class="txt-size-24px txt-normal txt-uppercase txt-ik2022-hdr">
                             {{ item.name }}
@@ -137,7 +144,7 @@
                             {{ item.constituency_description }}
                         </p>
                     </div>
-                </a>
+                </router-link>
             </div>
             <div class="paginator flex-row"
                  v-if="data && data.commissions && (data.commissions.length + data.members.length) > perPage && filter">
@@ -219,7 +226,10 @@
                     Здравствуйте, Алина Анатольевна!
                 </div>
                 <div class="txt-size-16px mrgn-t-20px">
-                    Увидела Вас в списке избирательной комиссии нашего участка <a :href="strategy">ik.xx2022.org</a>  на «референдуме‎».
+                    Увидела Вас в списке избирательной комиссии нашего участка <a href="https://bit.ly/izberkom2022">
+                    bit.ly/izberkom2022
+                </a> на
+                    «референдуме‎».
                     Уверена, что вы будете честно считать недействительные бюллетени. Если Вас будут принуждать к
                     фальсификациям – фиксируйте все нарушения и присылайте их <a :href="telegram_ik">@contact2022</a> .
                 </div>
@@ -371,7 +381,10 @@
             </p>
         </div>
         <div class="section size-50 pdng-l-50px mil-size-100 mil-pdng-0">
-            <img class="block size-100" src="/imgs/yt-01.png" alt="">
+            <iframe class="mil-size-100" width="560" height="315" src="https://www.youtube.com/embed/uGh4Vs-zqQs"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
         </div>
     </div>
     <div class="scene flex-row flex-algn-itms-c mil-block">
@@ -386,19 +399,32 @@
             </p>
             <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">
                 Поэтому, если вы узнали среди членов УИК ваших знакомых, вы можете поделиться их контактами, чтобы мы
-                включили их в нашу новостную расслку и <b>постарались обяъснить значимость их ролий в документации и
+                включили их в нашу новостную рассылку и <b>постарались объяснить значимость их роли в документации и
                 противодействии фальсификаций</b>.
             </p>
         </div>
         <div class="section size-50 pdng-l-50px mil-size-100 mil-pdng-0 mil-pdng-t-50px">
             <div class="info-sharing-form pdng-30px pdng-b-50px mil-pdng-15px">
                 <h3 class="txt-size-34px txt-uppercase txt-bold">
-                    Поделитесь данными о членах изберательных комиссий
+                    Поделитесь данными о членах избирательных комиссий
                 </h3>
-                <div class="mrgn-t-20px">
-                    <textarea placeholder="Например ФИО и номер комиссии ..."></textarea>
+                <p class="txt-size-15px txt-lh-1_5em txt-ik2022-txt">
+                    <b>Через безопасный чат в телеграм</b>:
+                </p>
+                <div>
+                    <a class="inline-block mrgn-t-10px" :href="telegram_ik">
+                        <img src="/imgs/telegram_button.svg" alt="перейти в телеграм">
+                    </a>
                 </div>
-                <div class="mrgn-t-15px">
+                <p class="txt-size-15px txt-lh-1_5em txt-ik2022-txt mrgn-t-5px">
+                    <b>
+                        Или напишите нам на почту
+                        <a href="mailto:contact2022@honestby.org" class="txt-color-0">
+                            contact2022@honestby.org
+                        </a>
+                    </b>
+                </p>
+                <div class="mrgn-t-15px" v-if="false">
                     <div class="journal-2022-button primary inline-flex flex-algn-itms-c cursor-pointer">
                         <div class="pdng-r-10px">
                             <svg style="margin:-2px 0" class="block" width="11" height="22" viewBox="0 0 11 22"
@@ -408,11 +434,10 @@
                                     fill="#303030"/>
                             </svg>
                         </div>
-                        <div>
-                            Прикрепить файл
-                        </div>
+                        <input type="file" value="Прикрепить файл" multiple>
                     </div>
-                    <div class="journal-2022-button inline-flex flex-algn-itms-c cursor-pointer mrgn-l-10px">
+                    <div class="journal-2022-button inline-flex flex-algn-itms-c cursor-pointer mrgn-l-10px"
+                         v-if="false">
                         <div class="pdng-r-10px">
                             <svg style="margin:-2px 0" class="block" width="11" height="22" viewBox="0 0 11 22"
                                  fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -434,7 +459,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="mrgn-t-15px">
+                <div class="mrgn-t-15px" v-if="false">
                     <div class="journal-2022-button inline-block cursor-pointer">
                         Отправить
                     </div>

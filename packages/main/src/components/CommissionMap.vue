@@ -26,6 +26,7 @@ import GeoJSON from "ol/format/GeoJSON"
 import {Circle, Fill, Icon, Style, Text} from 'ol/style';
 import {ElDialog} from 'element-plus';
 import {ref, onMounted} from "vue";
+import 'ol/ol.css'
 
 const features   = ref(null)
 const showModal  = ref(false)
