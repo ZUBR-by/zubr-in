@@ -4,14 +4,14 @@
     <div class="scene flex-row mil-flex-column">
         <div class="section size-35 mil-size-100 pdng-r-30px">
             <div class="investigation-nav mil-pdng-b-50px">
-                <div class="investigation-nav-link active">
-                    <a href="#intro">Введение</a>
+                <div class="investigation-nav-link">
+                    <router-link to="#intro" active-class="active">Введение</router-link>
                 </div>
                 <div class="investigation-nav-link">
-                    <a href="#commission_creating">Формирование комиссий</a>
+                    <router-link to="#commission_creating" active-class="active">Формирование комиссий</router-link>
                 </div>
                 <div class="investigation-nav-link">
-                    <a href="#example1">Пример формирования комиссии №1</a>
+                    <router-link to="#example1" active-class="active">Пример формирования комиссии №1</router-link>
                 </div>
                 <div class="investigation-nav-link">
                     <a href="#example2"> Пример формирования комиссии №2</a>
@@ -349,10 +349,12 @@
 <script>
 import Header from './Header.vue';
 import {defineComponent} from "vue";
+import {ElAffix} from 'element-plus'
 
 export default defineComponent({
     components: {
         'header-view': Header,
+        ElAffix
     }
 })
 </script>
