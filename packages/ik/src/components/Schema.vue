@@ -2,31 +2,33 @@
     <header-view>
     </header-view>
     <div class="scene flex-row mil-flex-column">
-        <div class="section size-35 mil-size-100 pdng-r-30px">
-            <div class="investigation-nav mil-pdng-b-50px">
-                <div class="investigation-nav-link">
-                    <router-link to="#intro" active-class="active">Введение</router-link>
-                </div>
-                <div class="investigation-nav-link">
-                    <router-link to="#commission_creating" active-class="active">Формирование комиссий</router-link>
-                </div>
-                <div class="investigation-nav-link">
-                    <router-link to="#example1" active-class="active">Пример формирования комиссии №1</router-link>
-                </div>
-                <div class="investigation-nav-link">
-                    <a href="#example2"> Пример формирования комиссии №2</a>
-                </div>
-                <div class="investigation-nav-link">
-                    <a href="#results">Управление результатами</a>
-                </div>
-                <div class="investigation-nav-link">
-                    <a href="#results_example">Пример управления результатами</a>
-                </div>
-                <div class="investigation-nav-link">
-                    <a href="#participate">Вы можете повлиять на результат голосования</a>
+        <el-affix :offset="120">
+            <div class="section size-35 mil-size-100 pdng-r-30px">
+                <div class="investigation-nav mil-pdng-b-50px">
+                    <div class="investigation-nav-link">
+                        <router-link to="#intro" active-class="active">Введение</router-link>
+                    </div>
+                    <div class="investigation-nav-link">
+                        <router-link to="#commission_creating" active-class="active">Формирование комиссий</router-link>
+                    </div>
+                    <div class="investigation-nav-link">
+                        <router-link to="#example1" active-class="active">Пример формирования комиссии №1</router-link>
+                    </div>
+                    <div class="investigation-nav-link">
+                        <a href="#example2"> Пример формирования комиссии №2</a>
+                    </div>
+                    <div class="investigation-nav-link">
+                        <a href="#results">Управление результатами</a>
+                    </div>
+                    <div class="investigation-nav-link">
+                        <a href="#results_example">Пример управления результатами</a>
+                    </div>
+                    <div class="investigation-nav-link">
+                        <a href="#participate">Вы можете повлиять на результат голосования</a>
+                    </div>
                 </div>
             </div>
-        </div>
+        </el-affix>
         <div class="section size-65 mil-size-100">
             <div>
                 <h1 class="txt-size-34px txt-uppercase txt-color-2 txt-ik2022-hdr">
