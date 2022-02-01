@@ -98,7 +98,7 @@
                 Пример формирования комиссии #1
             </h2>
             <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">
-                <a class="txt-underline-inline" href="">
+                <a class="txt-underline-inline" href="https://uik.xx2022.org/commission/4403">
                     Школьный участок для голосования №29:<br>
                     ГУО "Средняя школа №1 г. Фаниполь"
                 </a>
@@ -128,7 +128,7 @@
                 Пример формирования комиссии #2
             </h2>
             <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">
-                <a class="txt-underline-inline" href="">
+                <a class="txt-underline-inline" href="https://uik.xx2022.org/commission/2977">
                     Участок для голосования № 31:<br>
                     Общежитие ОАО "БМЗ” г. Жлобин (03-091-0031)
                 </a>
@@ -200,7 +200,7 @@
                 Пример управления результатами
             </h2>
             <p class="txt-size-15px txt-lh-1_5em txt-ik2022-txt">
-                <a class="txt-underline-inline" href="">
+                <a class="txt-underline-inline" href="https://uik.xx2022.org/commission/71">
                     Жлобинская районная избирательная комиссия
                 </a>
             </p>
@@ -219,7 +219,7 @@
                 Жлобинского райисполкома.
             </p>
             <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">
-                <a class="txt-underline-inline" href="">
+                <a class="txt-underline-inline" href="https://uik.xx2022.org/commission/59">
                     Гомельская областная комиссия
                 </a>
             </p>
@@ -243,7 +243,11 @@
             </p>
             <p class=" txt-size-15px txt-lh-1_5em txt-ik2022-txt">
                 Для контроля за итогами голосования за каждым исполкомом закреплены сотрудники КГБ, которые прослушивают
-                телефонные разговоры, инициируют уголовные дела или убийства. Это не тайное наблюдение, а открытое
+                телефонные разговоры, инициируют уголовные дела или
+                <a href="https://belsat.eu/ru/news/09-03-2021-ya-ne-veryu-v-suitsid-roditeli-pogibshego-direktora-volkovysskogo-muzeya-rasskazali-o-syne/">
+                    убийства
+                </a>
+                . Это не тайное наблюдение, а открытое
                 взаимодействие с кадровиками и идеологами, в ходе которого представители исполкомов могут жаловаться на
                 отдельных членов ИК или других участников процесса, которые отказываются или противодействуют
                 фальсификации.
@@ -339,7 +343,8 @@
                                 в избирательной комиссии
                             </p>
                         </div>
-                        <router-link :to="{name: 'to_honest_members'}" class="journal-2022-button cursor-pointer size-50">
+                        <router-link :to="{name: 'to_honest_members'}"
+                                     class="journal-2022-button cursor-pointer size-50">
                             Поддержка
                         </router-link>
                     </div>
