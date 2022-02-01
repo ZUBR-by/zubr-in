@@ -48,7 +48,10 @@
             </div>
         </div>
         <div class="section size-50 mil-size-100 mil-pdng-t-60px mil-pdng-t-30px">
-            <img class="block size-100" src="/imgs/falsification_scheme.png" alt="">
+            <div class="img-wrp block size-100">
+                <img class="size-100 mil-notdisplay" src="/imgs/falsification_scheme.png" alt="">
+                <img class="size-100 notdisplay mil-show" src="/imgs/falsification_scheme_mob.png" alt="">
+            </div>
         </div>
     </div>
     <div class="scene">
