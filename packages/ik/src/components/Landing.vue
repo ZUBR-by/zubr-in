@@ -225,7 +225,7 @@
                 </div>
             </div>
         </div>
-        <div class="section size-50 pdng-l-30px mil-notdisplay">
+        <div class="section size-50 pdng-l-30px mil-pdng-t-10px mil-pdng-l-20px mil-pdng-r-20px">
             <div class="sms-wrp">
                 <div class="txt-bold txt-size-18px">
                     Здравствуйте, Алина Анатольевна!
