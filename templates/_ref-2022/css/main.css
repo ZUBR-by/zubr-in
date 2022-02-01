@@ -34,6 +34,12 @@ body {
 .txt-color-0 {
 	color:#fff;
 	}
+.pdng-l-0 {
+	padding-left:0;
+	}
+.pdng-r-0 {
+	padding-right:0;
+	}
 
 .header-ik-2022 {
 	position:fixed;
@@ -70,6 +76,21 @@ body {
 	}
 .header-ik-2022-link + .header-ik-2022-link {
 	margin-left:40px;
+	}
+
+.investigation-nav {}
+.investigation-nav-link {
+	padding:8px 0;
+	}
+.investigation-nav-link a {
+	color:#000;
+	}
+.investigation-nav-link a:hover {
+	font-weight:bold;
+	}
+.investigation-nav-link.active a {
+	color:#FF5959;
+	font-weight:bold;
 	}
 
 .ik2022-tabs-unit {
