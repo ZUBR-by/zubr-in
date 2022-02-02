@@ -2,12 +2,12 @@
 import {defineComponent} from 'vue'
 
 export default defineComponent({
-  name: 'App'
+    name: 'App'
 })
 </script>
 
 <template>
-  <router-view/>
+    <router-view :key="$route.fullPath"/>
 </template>
 
 <style scoped>
