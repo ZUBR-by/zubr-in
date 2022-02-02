@@ -316,7 +316,9 @@ body {
 	border:none;
 	border-radius:4px;
 	}
-
+.info-sharing-form a.txt-color-0:hover {
+	color:#fffbeb !important;
+	}
 
 
 .uik-info-unit + .uik-info-unit {
