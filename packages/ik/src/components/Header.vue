@@ -530,10 +530,6 @@
             </a>
         </div>
         <div class="section pdng-r-5prc flex-grow-all txt-algn-r mil-notdisplay">
-            <a class="header-ik-2022-link txt-size-16px txt-bold txt-ik2022-hdr" href="https://zubr.in">
-                <img class="size-60" src="/imgs/crpline-1.png" alt="">
-                Наблюдателям
-            </a>
             <router-link class="header-ik-2022-link txt-size-16px txt-bold txt-ik2022-hdr"
                          :active-class="'active'"
                          :to="{name: 'to_honest_members'}">
@@ -550,6 +546,10 @@
                 <img class="size-60" src="/imgs/crpline-1.png" alt="">
                 О референдуме
             </a>
+            <a class="header-ik-2022-link txt-size-16px txt-bold txt-ik2022-hdr" href="https://zubr.in">
+                <img class="size-60" src="/imgs/crpline-1.png" alt="">
+                Наблюдателям
+            </a>
         </div>
         <div class="section flex-grow-all pdng-l-20px pdng-r-30px notdisplay mil-show">
             <input id="brgrbtn" class="notdisplay mil-show" type="checkbox">
@@ -559,10 +559,6 @@
                 <div class="burger-button-line"></div>
             </label>
             <div class="brgr-nav notdisplay mil-show">
-                <a class="header-ik-2022-link txt-size-16px txt-bold active" href="https://zubr.in">
-                    <img class="size-60" src="/imgs/crpline-1.png" alt="">
-                    Наблюдателям
-                </a>
                 <router-link class="header-ik-2022-link txt-size-16px txt-bold" :to="{name: 'to_honest_members'}">
                     <img class="size-60" src="/imgs/crpline-1.png" alt="">
                     Членам комиссий
@@ -574,6 +570,10 @@
                 <a class="header-ik-2022-link txt-size-16px txt-bold" :href="strategy">
                     <img class="size-60" src="/imgs/crpline-1.png" alt="">
                     О референдуме
+                </a>
+                <a class="header-ik-2022-link txt-size-16px txt-bold active" href="https://zubr.in">
+                    <img class="size-60" src="/imgs/crpline-1.png" alt="">
+                    Наблюдателям
                 </a>
             </div>
         </div>
