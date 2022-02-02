@@ -2,7 +2,7 @@
     <header-view>
     </header-view>
     <div class="scene flex-row mil-flex-column">
-<!--        <el-affix :offset="120">-->
+        <el-affix :offset="120">
             <div class="section size-35 mil-size-100 pdng-r-30px">
                 <div class="investigation-nav mil-pdng-b-50px">
                     <div class="investigation-nav-link">
@@ -28,7 +28,7 @@
                     </div>
                 </div>
             </div>
-<!--        </el-affix>-->
+        </el-affix>
         <div class="section size-65 mil-size-100">
             <div>
                 <h1 class="txt-size-34px txt-uppercase txt-color-2 txt-ik2022-hdr">
