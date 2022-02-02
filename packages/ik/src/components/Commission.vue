@@ -211,10 +211,10 @@
         </h2>
         <template v-if="data && data.commission.parent">
             <div class="mrgn-t-20px mrgn-b-10px">
-                <router-link class="txt-underline-inline"
-                             :to="{name: 'commission', params: {id: data.commission.parent.id}}">
+                <a class="txt-underline-inline"
+                   :href="'/commission/' + data.commission.parent.id">
                     Вышестоящая комиссия
-                </router-link>
+                </a>
             </div>
             <div class="uik-persons flex-row flex-wrap">
                 <div class="uik-persons-unit-wrp size-25 pdng-15px mil-size-100"
@@ -267,10 +267,10 @@
                                     Комиссия:
                                 </div>
                                 <div class="uik-info-unit-value">
-                                    <router-link class="blue-link txt-underline-inline"
-                                                 :to="{name: 'commission', params: {id: data.commission.parent.id}}">
+                                    <a class="blue-link txt-underline-inline"
+                                       :href="'/commission/' + data.commission.parent.id">
                                         {{ data.commission.parent.name }}
-                                    </router-link>
+                                    </a>
                                 </div>
                             </div>
                             <div class="uik-info-unit">
