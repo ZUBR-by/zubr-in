@@ -87,7 +87,7 @@
                             </div>
                         </div>
                     </div>
-                    <a class="journal-2022-button black inline-flex flex-algn-itms-c mrgn-t-30px" href="#">
+                    <a class="journal-2022-button black inline-flex flex-algn-itms-c mrgn-t-30px" href="#" v-if="false">
                         <div class="section pdng-l-10px">
                             Напечатать листовку
                         </div>
@@ -145,7 +145,7 @@
                             </div>
                         </div>
                     </div>
-                    <a class="journal-2022-button black inline-flex flex-algn-itms-c mrgn-t-30px" href="#">
+                    <a class="journal-2022-button black inline-flex flex-algn-itms-c mrgn-t-30px" href="#" v-if="false">
                         <div class="section pdng-l-10px">
                             Напечатать листовку
                         </div>
