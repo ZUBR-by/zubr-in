@@ -7,7 +7,7 @@ pipeline {
             }
             environment {
                 VITE_API_URL = 'https://graph.zubr.app/api/rest'
-                VITE_BOT_URL = '/'
+                VITE_BOT_URL = 'https://t.me/zubr_in_bot'
             }
             steps {
                 sh 'yarn'
