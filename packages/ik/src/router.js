@@ -46,21 +46,7 @@ const router = createRouter({
     history: createWebHistory(import.meta.env.VITE_BASE_PREFIX || ''),
     routes,
     scrollBehavior(to, from, savedPosition) {
-        if (to.name === 'ik_main' && to.query.query) {
-            return {
-                selector: '#search'
-            }
-        }
-        if (to.name === 'commission') {
-            return {
-                selector: 'commission'
-            }
-        }
-        if (savedPosition) {
-            return savedPosition
-        } else {
-            return {x: 0, y: 0}
-        }
+        return {left: 0, top: 120}
     }
 })
 router.beforeEach((to) => {

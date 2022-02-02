@@ -60,7 +60,7 @@
                                 {{ data.commission.code }}
                             </div>
                         </div>
-                        <div class="uik-info-unit">
+                        <div class="uik-info-unit" v-if="data.commission.parent">
                             <div class="uik-info-unit-name txt-size-14px txt-bold">
                                 Вышестоящая комиссия:
                             </div>
@@ -211,10 +211,10 @@
         </h2>
         <template v-if="data && data.commission.parent">
             <div class="mrgn-t-20px mrgn-b-10px">
-                <a class="txt-underline-inline"
-                   :href="'/commission/' + data.commission.parent.id">
+                <router-link class="txt-underline-inline"
+                             :to="'/commission/' + data.commission.parent.id">
                     Вышестоящая комиссия
-                </a>
+                </router-link>
             </div>
             <div class="uik-persons flex-row flex-wrap">
                 <div class="uik-persons-unit-wrp size-25 pdng-15px mil-size-100"
@@ -493,6 +493,9 @@ export default defineComponent({
             if (data.value.commission.curators.length > 0) {
                 return data.value.commission.curators.filter(i => i.position === 'местная власть')
             } else {
+                if (data.value.commission.parent === null) {
+                    return [];
+                }
                 return data.value.commission.parent.curators.filter(i => i.position === 'местная власть')
             }
         })
