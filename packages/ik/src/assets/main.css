@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 /*###   Rewrite ZUBR Framework variables    ###*/
 body {
@@ -28,11 +28,11 @@ body {
 }
 
 .txt-ik2022-hdr {
-    font-family: 'Bebas Neue', 'Oswald', cursive, Roboto, sans-serif;
+    /*font-family: 'Bebas Neue', 'Oswald', cursive, Roboto, sans-serif;*/
 }
 
 .txt-ik2022-txt {
-    font-family: 'Merriweather', serif;
+    /*font-family: 'Merriweather', serif;*/
 }
 
 .txt-light {
@@ -358,6 +358,9 @@ body {
     border: none;
     border-radius: 4px;
 }
+.info-sharing-form a:hover {
+    color:yellow !important;
+    }
 
 
 .uik-info-unit + .uik-info-unit {

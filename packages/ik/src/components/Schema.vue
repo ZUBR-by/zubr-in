@@ -3,7 +3,7 @@
     </header-view>
     <div class="scene flex-row mil-flex-column">
         <el-affix :offset="120">
-            <div class="section size-35 mil-size-100 pdng-r-30px">
+            <div class="section mil-size-100 pdng-r-30px mil-notdisplay">
                 <div class="investigation-nav mil-pdng-b-50px">
                     <div class="investigation-nav-link">
                         <router-link to="#intro" active-class="active">Введение</router-link>

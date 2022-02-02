@@ -414,7 +414,7 @@
         </div>
         <div class="section size-50 pdng-l-50px mil-size-100 mil-pdng-0 mil-pdng-t-50px">
             <div class="info-sharing-form pdng-30px pdng-b-50px mil-pdng-15px">
-                <h3 class="txt-size-34px txt-uppercase txt-bold">
+                <h3 class="txt-size-34px mil-txt-size-30px txt-uppercase txt-bold">
                     Поделитесь данными о членах избирательных комиссий
                 </h3>
                 <p class="txt-size-15px txt-lh-1_5em txt-ik2022-txt">
