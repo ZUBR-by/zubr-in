@@ -559,11 +559,15 @@
                 <div class="burger-button-line"></div>
             </label>
             <div class="brgr-nav notdisplay mil-show">
-                <router-link class="header-ik-2022-link txt-size-16px txt-bold" :to="{name: 'to_honest_members'}">
+                <router-link class="header-ik-2022-link txt-size-16px txt-bold"
+                             :active-class="'active'"
+                             :to="{name: 'to_honest_members'}">
                     <img class="size-60" src="/imgs/crpline-1.png" alt="">
                     Членам комиссий
                 </router-link>
-                <router-link class="header-ik-2022-link txt-size-16px txt-bold" :to="{name: 'schema'}">
+                <router-link class="header-ik-2022-link txt-size-16px txt-bold"
+                             :active-class="'active'"
+                             :to="{name: 'schema'}">
                     <img class="size-60" src="/imgs/crpline-1.png" alt="">
                     Расследование фальсификаций
                 </router-link>
@@ -571,7 +575,7 @@
                     <img class="size-60" src="/imgs/crpline-1.png" alt="">
                     О референдуме
                 </a>
-                <a class="header-ik-2022-link othersource txt-size-16px txt-bold active" href="https://zubr.in">
+                <a class="header-ik-2022-link othersource txt-size-16px txt-bold" href="https://zubr.in">
                     <img class="size-60" src="/imgs/crpline-1.png" alt="">
                     Наблюдателям
                 </a>
