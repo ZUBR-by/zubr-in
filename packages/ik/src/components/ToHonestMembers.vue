@@ -17,7 +17,7 @@
         <img class="promo-banner-cross left" src="/imgs/promo-cross.png">
         <img class="promo-banner-cross right" src="/imgs/promo-cross.png">
     </div>
-    <div class="scene" style="background:#FF5959">
+    <div class="scene mil-mrgn-t-20px" style="background:#FF5959">
         <img class="red-block-line top" style="height:60px" src="/imgs/crpline-3.png" alt="">
         <img class="red-block-line bottom" style="height:60px" src="/imgs/crpline-3.png" alt="">
         <div
@@ -66,7 +66,7 @@
     <div class="scene flex-row flex-algn-itms-c mil-flex-column-reserve">
         <div class="section size-50 mil-size-100 mil-pdng-t-30px">
             <img class="size-60 mil-size-100" src="/imgs/crpline-1.png" alt="">
-            <h2 class="txt-size-34px txt-bold txt-uppercase txt-ik2022-hdr">
+            <h2 class="txt-size-34px mil-txt-size-30px txt-bold txt-uppercase txt-ik2022-hdr">
                 Фальсификацию делают вашей трудовой обязанностью?
             </h2>
             <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">
@@ -91,15 +91,15 @@
     <div class="scene flex-row flex-algn-itms-c mil-flex-column-reserve">
         <div class="section size-50 pdng-r-50px mil-size-100 mil-pdng-0 mil-pdng-t-50px">
             <div class="txt-color-0" style="background:#FF5959;">
-                <div class="pdng-30px pdng-t-40px pdng-b-50px">
-                    <h2 class="txt-size-34px txt-bold txt-uppercase txt-ik2022-hdr mrgn-b-20px">
+                <div class="pdng-30px pdng-t-40px pdng-b-50px mil-pdng-20px mil-pdng-t-30px mil-pdng-b-40px">
+                    <h2 class="txt-size-34px mil-txt-size-30px txt-bold txt-uppercase txt-ik2022-hdr mrgn-b-20px mil-mrgn-t-20px">
                         от 5 до 12 лет.
                         <br>
                         Без срока давности
                     </h2>
-                    <div class="flex-row mrgn-b-20px">
+                    <div class="flex-row mrgn-b-20px pdng-t-20px">
                         <div
-                            class="section size-30 flex-noshrink txt-nowrap txt-size-34px txt-bold txt-uppercase txt-ik2022-hdr">
+                            class="section size-30 mil-size-40 flex-noshrink txt-nowrap txt-size-34px mil-txt-size-30px txt-bold txt-uppercase txt-ik2022-hdr">
                             СТ. 192
                         </div>
                         <div class="section txt-size-15px txt-bold txt-ik2022-txt pdng-l-20px">
@@ -108,7 +108,7 @@
                     </div>
                     <div class="flex-row mrgn-b-20px">
                         <div
-                            class="section size-30 flex-noshrink txt-nowrap txt-size-34px txt-bold txt-uppercase txt-ik2022-hdr">
+                            class="section size-30 mil-size-40 flex-noshrink txt-nowrap txt-size-34px mil-txt-size-30px txt-bold txt-uppercase txt-ik2022-hdr">
                             СТ. 424
                         </div>
                         <div class="section txt-size-15px txt-bold txt-ik2022-txt pdng-l-20px">
@@ -117,7 +117,7 @@
                     </div>
                     <div class="flex-row">
                         <div
-                            class="section size-30 flex-noshrink txt-nowrap txt-size-34px txt-bold txt-uppercase txt-ik2022-hdr">
+                            class="section size-30 mil-size-40 flex-noshrink txt-nowrap txt-size-34px mil-txt-size-30px txt-bold txt-uppercase txt-ik2022-hdr">
                             СТ. 357
                         </div>
                         <div class="section txt-size-15px txt-bold txt-ik2022-txt pdng-l-20px">
@@ -130,7 +130,7 @@
         </div>
         <div class="section size-50 mil-size-100 mil-pdng-t-30px">
             <img class="size-60 mil-size-100" src="/imgs/crpline-1.png" alt="">
-            <h2 class="txt-size-34px txt-bold txt-uppercase txt-ik2022-hdr">
+            <h2 class="txt-size-34px mil-txt-size-30px txt-bold txt-uppercase txt-ik2022-hdr">
                 Почему важно быть свидетелем, а не соучастником?
             </h2>
             <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">

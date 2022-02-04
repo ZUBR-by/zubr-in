@@ -31,13 +31,13 @@
         </el-affix>
         <div class="section size-65 mil-size-100">
             <div>
-                <h1 class="txt-size-34px txt-uppercase txt-color-2 txt-ik2022-hdr">
-                    Кто управляет фальсификациями в беларуси
+                <h1 class="txt-size-34px mil-txt-size-30px txt-uppercase txt-color-2 txt-ik2022-hdr">
+                    Кто управляет фаль&shy;си&shy;фи&shy;ка&shy;ци&shy;ями в беларуси
                 </h1>
                 <img style="position:absolute; top:100%; left:0; height:15px;" class="size-40" src="/imgs/crpline-1.png"
                      alt="">
             </div>
-            <h2 class="txt-size-34px txt-uppercase txt-ik2022-hdr txt-normal mrgn-t-40px">
+            <h2 class="txt-size-34px mil-txt-size-30px txt-uppercase txt-ik2022-hdr txt-normal mrgn-t-40px">
                 Вкратце
             </h2>
             <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">
@@ -50,7 +50,7 @@
                 <img class="size-100 mil-notdisplay" src="/imgs/investigation-01.png" alt="">
                 <img class="size-100 notdisplay mil-show" src="/imgs/investigation-01-mob.png" alt="">
             </div>
-            <h2 class="txt-size-34px txt-uppercase txt-ik2022-hdr txt-normal mrgn-t-30px" id="intro">
+            <h2 class="txt-size-34px mil-txt-size-30px txt-uppercase txt-ik2022-hdr txt-normal mrgn-t-30px" id="intro">
                 Введение
             </h2>
             <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">
@@ -64,7 +64,7 @@
                 (далее – ИК) по всей стране, имевших опыт участия в электоральных кампаниях прошлых лет, а также
                 информации от действующих и уволившихся сотрудников государственного аппарата.
             </p>
-            <h2 class="txt-size-34px txt-uppercase txt-ik2022-hdr txt-normal mrgn-t-50px" id="commission_creating">
+            <h2 class="txt-size-34px mil-txt-size-30px txt-uppercase txt-ik2022-hdr txt-normal mrgn-t-50px" id="commission_creating">
                 Формирование комиссий
             </h2>
             <div class="img-wrp pdng-t-20px pdng-b-20px">
@@ -94,7 +94,7 @@
                 <img class="size-100 mil-notdisplay" src="/imgs/investigation-03.png" alt="">
                 <img class="size-100 notdisplay mil-show" src="/imgs/investigation-03-mob.png" alt="">
             </div>
-            <h2 class="txt-size-34px txt-uppercase txt-ik2022-hdr txt-normal mrgn-t-50px" id="example1">
+            <h2 class="txt-size-34px mil-txt-size-30px txt-uppercase txt-ik2022-hdr txt-normal mrgn-t-50px" id="example1">
                 Пример формирования комиссии #1
             </h2>
             <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">
@@ -124,7 +124,7 @@
                 <img class="size-100 mil-notdisplay" src="/imgs/investigation-04.png" alt="">
                 <img class="size-100 notdisplay mil-show" src="/imgs/investigation-04-mob.png" alt="">
             </div>
-            <h2 class="txt-size-34px txt-uppercase txt-ik2022-hdr txt-normal mrgn-t-50px" id="example2">
+            <h2 class="txt-size-34px mil-txt-size-30px txt-uppercase txt-ik2022-hdr txt-normal mrgn-t-50px" id="example2">
                 Пример формирования комиссии #2
             </h2>
             <p class="mrgn-t-30px txt-size-15px txt-lh-1_5em txt-ik2022-txt">
@@ -161,7 +161,7 @@
                 <img class="size-100 mil-notdisplay" src="/imgs/investigation-06.png" alt="">
                 <img class="size-100 notdisplay mil-show" src="/imgs/investigation-06-mob.png" alt="">
             </div>
-            <h2 class="txt-size-34px txt-uppercase txt-ik2022-hdr txt-normal mrgn-t-30px" id="results">
+            <h2 class="txt-size-34px mil-txt-size-30px txt-uppercase txt-ik2022-hdr txt-normal mrgn-t-30px" id="results">
                 Управление результатами
             </h2>
             <p class=" txt-size-15px txt-lh-1_5em txt-ik2022-txt mrgn-t-30px">
@@ -196,7 +196,7 @@
                 участковых комиссий), документы передают областным комиссиям и далее в ЦИК. На этом уровне практически
                 нет препятствий для фальсификации.
             </p>
-            <h2 class="txt-size-34px txt-uppercase txt-ik2022-hdr txt-normal mrgn-t-50px" id="results_example">
+            <h2 class="txt-size-34px mil-txt-size-30px txt-uppercase txt-ik2022-hdr txt-normal mrgn-t-50px" id="results_example">
                 Пример управления результатами
             </h2>
             <p class="txt-size-15px txt-lh-1_5em txt-ik2022-txt">
@@ -252,7 +252,7 @@
                 отдельных членов ИК или других участников процесса, которые отказываются или противодействуют
                 фальсификации.
             </p>
-            <h2 class="txt-size-34px txt-uppercase txt-ik2022-hdr txt-normal mrgn-t-50px">
+            <h2 class="txt-size-34px mil-txt-size-30px txt-uppercase txt-ik2022-hdr txt-normal mrgn-t-50px">
                 Заключение
             </h2>
             <div class="img-wrp pdng-t-20px pdng-b-20px">
@@ -280,7 +280,7 @@
                 Поэтому важно активно воздействовать на систему: проявлять свое несогласие, делать бюллетени
                 недействительными, фиксировать все нарушения, использовать платформу альтернативного подсчета голосов.
             </p>
-            <h2 class="txt-size-34px txt-uppercase txt-ik2022-hdr txt-normal mrgn-t-50px" id="participate">
+            <h2 class="txt-size-34px mil-txt-size-30px txt-uppercase txt-ik2022-hdr txt-normal mrgn-t-50px mrgn-b-20px" id="participate">
                 Вы можете повлиять на результат голосования
             </h2>
 
@@ -305,10 +305,10 @@
                             </svg>
                         </div>
                         <div class="mrgn-t-20px mrgn-b-30px">
-                            <h3 class="txt-size-32px txt-uppercase txt-bold txt-ik2022-hdr">
+                            <h3 class="txt-size-32px mil-txt-size-28px txt-uppercase txt-bold txt-ik2022-hdr">
                                 Наблюдение
                             </h3>
-                            <p class="txt-size-32px txt-uppercase txt-light txt-ik2022-hdr">
+                            <p class="txt-size-32px mil-txt-size-28px txt-uppercase txt-light txt-ik2022-hdr">
                                 за “референдумом”
                             </p>
                         </div>
@@ -336,10 +336,10 @@
                             </svg>
                         </div>
                         <div class="mrgn-t-20px mrgn-b-30px">
-                            <h3 class="txt-size-32px txt-uppercase txt-bold txt-ik2022-hdr">
+                            <h3 class="txt-size-32px mil-txt-size-28px txt-uppercase txt-bold txt-ik2022-hdr">
                                 Участие
                             </h3>
-                            <p class="txt-size-32px txt-uppercase txt-light txt-ik2022-hdr">
+                            <p class="txt-size-32px mil-txt-size-28px txt-uppercase txt-light txt-ik2022-hdr">
                                 в избирательной комиссии
                             </p>
                         </div>
