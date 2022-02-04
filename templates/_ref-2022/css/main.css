@@ -16,6 +16,9 @@ body {
 .blue-link.txt-underline-inline {
 	border-bottom:#2D8EE7 1px solid;
 	}
+.scene {
+	overflow-x:hidden;
+	}
 /* End */
 
 
