@@ -7,7 +7,7 @@
     "dev-ik": "cd packages/ik && vite",
     "build-main": "cd packages/main && yarn run build",
     "build-ik": "cd packages/ik && yarn run build",
-    "build-all": "lerna run build",
+    "build-all": "lerna run build-prod",
     "serve": "cd packages/main && vite preview",
     "serve-ik": "cd packages/ik && vite preview"
   },
