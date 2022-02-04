@@ -5,7 +5,7 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
-    "build-prod": "vite build --base https://d32ciz1qgsa0a3.cloudfront.net/"
+    "build-prod": "vite build --base /"
   },
   "dependencies": {
     "@zubr-in/main": "*",
