@@ -198,7 +198,7 @@
     </div>
     <div class="scene flex-row flex-algn-itms-c mil-block">
         <div class="section size-50 mil-size-100">
-            <div class="three-ways-block">
+            <div class="three-ways-block pdng-50px pdng-t-40px pdng-b-40px mil-pdng-20px mil-pdng-t-30px  mil-pdng-b-30px">
                 <img class="three-ways-block-line" src="/imgs/crpline-2.png" alt="">
                 <h2 class="txt-size-34px mil-txt-size-30px txt-bold txt-uppercase txt-ik2022-hdr">
                     3 пути начать разговор
@@ -230,7 +230,7 @@
                 </div>
             </div>
         </div>
-        <div class="section size-50 pdng-l-30px mil-pdng-t-10px mil-pdng-l-20px mil-pdng-r-20px">
+        <div class="section size-50 pdng-l-30px mil-size-100 mil-pdng-t-50px mil-pdng-l-20px mil-pdng-r-20px">
             <div class="sms-wrp">
                 <div class="txt-bold txt-size-18px">
                     Здравствуйте, Алина Анатольевна!
@@ -281,10 +281,10 @@
                     </svg>
                 </div>
                 <div class="mrgn-t-20px mrgn-b-30px">
-                    <h3 class="txt-size-32px txt-uppercase txt-bold txt-ik2022-hdr">
+                    <h3 class="txt-size-32px mil-txt-size-28px txt-uppercase txt-bold txt-ik2022-hdr">
                         Расследование
                     </h3>
-                    <p class="txt-size-32px txt-uppercase txt-light txt-ik2022-hdr">
+                    <p class="txt-size-32px mil-txt-size-28px txt-uppercase txt-light txt-ik2022-hdr">
                         как устроен механизм фальсификации?
                     </p>
                 </div>
@@ -312,10 +312,10 @@
                     </svg>
                 </div>
                 <div class="mrgn-t-20px mrgn-b-30px">
-                    <h3 class="txt-size-32px txt-uppercase txt-bold txt-ik2022-hdr">
+                    <h3 class="txt-size-32px mil-txt-size-28px txt-uppercase txt-bold txt-ik2022-hdr">
                         Наблюдение
                     </h3>
-                    <p class="txt-size-32px txt-uppercase txt-light txt-ik2022-hdr">
+                    <p class="txt-size-32px mil-txt-size-28px txt-uppercase txt-light txt-ik2022-hdr">
                         за “референдумом”
                     </p>
                 </div>
@@ -342,10 +342,10 @@
                     </svg>
                 </div>
                 <div class="mrgn-t-20px mrgn-b-30px">
-                    <h3 class="txt-size-32px txt-uppercase txt-bold txt-ik2022-hdr">
+                    <h3 class="txt-size-32px mil-txt-size-28px txt-uppercase txt-bold txt-ik2022-hdr">
                         Участие
                     </h3>
-                    <p class="txt-size-32px txt-uppercase txt-light txt-ik2022-hdr">
+                    <p class="txt-size-32px mil-txt-size-28px txt-uppercase txt-light txt-ik2022-hdr">
                         в избирательной комиссии
                     </p>
                 </div>
