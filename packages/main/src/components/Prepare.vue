@@ -251,18 +251,6 @@
                         Бюллетень для голосования</a>
                 </div>
             </div>
-            <div class="infoblock">
-                <div class="infoblock-name">
-                    <div class="txt-color-2 txt-size-14px txt-bold">
-                        Статья 118.
-                    </div>
-                </div>
-                <div class="infoblock-value">
-                    <a class="txt-underline-inline txt-normal"
-                       href="https://pravo.by/document/?guid=3871&amp;p0=hk0000370#:~:text=%D1%80%D0%B5%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D0%B4%D1%83%D0%BC%D0%B0%20%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D1%8F%D0%B5%D1%82%D1%81%D1%8F%20%D1%83%D0%BA%D0%B0%D0%B7%D0%BE%D0%BC.-,%D0%A1%D1%82%D0%B0%D1%82%D1%8C%D1%8F%C2%A0118.%C2%A0%D0%91%D1%8E%D0%BB%D0%BB%D0%B5%D1%82%D0%B5%D0%BD%D1%8C%20%D0%B4%D0%BB%D1%8F%20%D0%B3%D0%BE%D0%BB%D0%BE%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F,-%D0%92%20%D0%B1%D1%8E%D0%BB%D0%BB%D0%B5%D1%82%D0%B5%D0%BD%D0%B5%20%D0%B4%D0%BB%D1%8F">
-                        Бюллетень для голосования</a>
-                </div>
-            </div>
 
             <div class="pdng-t-30px pdng-b-30px"></div>
 
