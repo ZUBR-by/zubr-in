@@ -36,11 +36,11 @@
                         Кампания
                     </div>
                     <div class="buttongroup">
-<!--                        <button class="buttongroup-unit"-->
-<!--                                @click="campaign = '2022-02-referendum'"-->
-<!--                                :class="{active: campaign === '2022-02-referendum'}">-->
-<!--                            2022-->
-<!--                        </button>-->
+                        <button class="buttongroup-unit"
+                                @click="campaign = '2022-02-referendum'"
+                                :class="{active: campaign === '2022-02-referendum'}">
+                            2022
+                        </button>
                         <button class="buttongroup-unit"
                                 @click="campaign = '2020-08-presidential'"
                                 :class="{active: campaign === '2020-08-presidential'}">
