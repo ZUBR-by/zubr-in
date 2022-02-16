@@ -1,6 +1,11 @@
 <template>
     <header-view :active="'Кампании'">
         <div class="header-subnav border-t-1px border-color2">
+            <div class="section pdng-l-10px">
+                <a class="button medium mil-txt-size-12px primary" :href="botURL">
+                    Участвовать!
+                </a>
+            </div>
             <div
                 class="section flex-grow-all pdng-30px pdng-t-15px pdng-b-15px mil-pdng-20px mil-pdng-t-10px mil-pdng-b-10px"
                 v-if="data">
@@ -30,11 +35,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="section pdng-l-40px">
-                    <a class="button medium mil-txt-size-12px primary" :href="botURL">
-                        Участвовать!
-                    </a>
                 </div>
             </div>
         </div>
