@@ -22,8 +22,8 @@
                 </div>
                 <div>
                     <div class="mrgn-t-10px">
-                        <a class="inline txt-size-12px txt-underline-inline" href="#" v-if="'initiative' in item.extra">
-                            {{ initiatives[item.extra.initiative] }}
+                        <a class="inline txt-size-12px txt-underline-inline" href="#" v-if="item.initiative">
+                            {{ initiatives[item.initiative] }}
                         </a>
                     </div>
                 </div>
@@ -79,8 +79,8 @@
                             {{ message.commission.description }}
                         </a>
                     </div>
-                    <div class="tag-unit mrgn-t-20px" v-if="'initiative' in message.extra">
-                        {{ initiatives[message.extra.initiative] }}
+                    <div class="tag-unit mrgn-t-20px" v-if="message.initiative">
+                        {{ initiatives[message.initiative] }}
                     </div>
                 </div>
                 <div class="section pdng-r-30px pdng-l-5px mil-pdng-l-20px mil-size-100 mil-pdng-b-30px mil-pdng-t-20px"

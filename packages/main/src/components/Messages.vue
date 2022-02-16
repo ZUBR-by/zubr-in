@@ -112,7 +112,7 @@ async function fetchMessages() {
                             : {'_contains': parseInt(category.value)},
                         initiative: initiative.value === null
                             ? {'_is_null': false}
-                            : {'_contains': {initiative: parseInt(initiative.value)}}
+                            : {'_eq': initiative.value}
                     }
                 )
             }
