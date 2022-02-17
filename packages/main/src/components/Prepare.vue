@@ -1,7 +1,7 @@
 <template>
     <header-view :active="'Обучающие материалы'">
     </header-view>
-    <div class="scene mrgn-t-130px mil-mrgn-t-80px">
+    <div class="scene mrgn-t-130px mil-mrgn-t-80px pdng-b-10px">
         <h1 class="mil-txt-size-34px">
             Обучающие материалы
         </h1>
@@ -72,6 +72,43 @@
                 </ol>
               </div>-->
 
+    </div>
+    <div class="scene pdng-b-10px">
+        <h2 class="txt-size-36px mil-txt-size-30px txt-bold pdng-b-10px mil-pdng-b-30px">
+            <a class="txt-color-2 txt-underline-inline">
+                Конспекты
+            </a>
+        </h2>
+        <div class="size-70 mil-size-100">
+            <div class="infoblock">
+                <div class="infoblock-name">
+                    <div class="txt-color-2 txt-size-14px txt-bold">
+                        Для наблюдателей
+                    </div>
+                </div>
+                <div class="infoblock-value">
+                    <a class="txt-underline-inline txt-normal"
+                       href="https://drive.google.com/file/d/1YsrSJQiOJUY4qRSGbij1NozZXSut63CT/view">
+                        https://drive.google.com/file/d/1Qb_EJJwfg5shpX1F33AZnPcEF6mGGVwg/view
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="size-70 mil-size-100">
+            <div class="infoblock">
+                <div class="infoblock-name">
+                    <div class="txt-color-2 txt-size-14px txt-bold">
+                        Для гражданских контролеров
+                    </div>
+                </div>
+                <div class="infoblock-value">
+                    <a class="txt-underline-inline txt-normal"
+                       href="https://drive.google.com/file/d/1YsrSJQiOJUY4qRSGbij1NozZXSut63CT/view ">
+                        https://drive.google.com/file/d/1YsrSJQiOJUY4qRSGbij1NozZXSut63CT/view
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="scene">
         <h2 class="txt-size-36px mil-txt-size-30px txt-bold pdng-b-40px mil-pdng-b-30px">
