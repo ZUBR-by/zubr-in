@@ -88,7 +88,7 @@
                 </div>
                 <div class="infoblock-value">
                     <a class="txt-underline-inline txt-normal"
-                       href="https://drive.google.com/file/d/1YsrSJQiOJUY4qRSGbij1NozZXSut63CT/view">
+                       href="https://drive.google.com/file/d/1Qb_EJJwfg5shpX1F33AZnPcEF6mGGVwg/view">
                         https://drive.google.com/file/d/1Qb_EJJwfg5shpX1F33AZnPcEF6mGGVwg/view
                     </a>
                 </div>
