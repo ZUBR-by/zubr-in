@@ -125,7 +125,7 @@
                     :to="'/commission/' + item.id" v-for="item of list">
                     <div class="section size-30 pdng-l-10px flex-algn-slf-s mil-size-100 mil-pdng-0 mil-pdng-b-10px">
                         <h4 class="txt-size-24px txt-normal txt-uppercase txt-ik2022-hdr">
-                            {{ item.name }}
+                            {{ item.name }}<template v-if="item.campaign_id === '2020-08-presidential'"> (2020)</template>
                         </h4>
                         <p class="txt-size-12px">
                             {{ item.description }}
