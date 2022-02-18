@@ -109,6 +109,21 @@
                 </div>
             </div>
         </div>
+        <div class="size-70 mil-size-100">
+            <div class="infoblock">
+                <div class="infoblock-name">
+                    <div class="txt-color-2 txt-size-14px txt-bold">
+                        "Нейтральный" конспект (для распечатки с собой на участок)
+                    </div>
+                </div>
+                <div class="infoblock-value">
+                    <a class="txt-underline-inline txt-normal"
+                       href="https://drive.google.com/file/d/1JNI983tSRbr7swn4PGtXTcGEHbG17c79/view?usp=sharing">
+                        https://drive.google.com/file/d/1JNI983tSRbr7swn4PGtXTcGEHbG17c79/view?usp=sharing
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="scene">
         <h2 class="txt-size-36px mil-txt-size-30px txt-bold pdng-b-40px mil-pdng-b-30px">
