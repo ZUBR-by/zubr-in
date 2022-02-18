@@ -171,7 +171,7 @@
         <div v-show="view === 'map'" class="map-wrp" style="background:#EDEDED; min-height:640px;height: 300px"
              id="map-tab">
             <commission-map v-if="mapInit === true" ref="map"
-                            :init-campaign="'2020-08-presidential'"></commission-map>
+                            :init-campaign="'2022-02-referendum'"></commission-map>
         </div>
     </div>
     <div class="scene flex-row flex-algn-itms-c mil-flex-column-reserve">
