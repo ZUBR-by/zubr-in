@@ -506,7 +506,7 @@ async function search() {
         loading.value          = false;
     } catch (e) {
         loading.value = false;
-        data.value    = {search: {}, pagination: {aggregate: {count: 0}}};
+        data.value    = {search: {}, commissions: [], members: [], pagination: {aggregate: {count: 0}}};
     }
     return {
         data
