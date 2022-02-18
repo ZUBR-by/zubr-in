@@ -76,7 +76,7 @@
     <div class="scene pdng-b-10px">
         <h2 class="txt-size-36px mil-txt-size-30px txt-bold pdng-b-10px mil-pdng-b-30px">
             <a class="txt-color-2 txt-underline-inline">
-                Конспекты
+                Курсы обучения
             </a>
         </h2>
         <div class="size-70 mil-size-100">
