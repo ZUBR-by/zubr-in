@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div
-                v-if="false"
+                v-if="data && data.campaign.id !== '2022-02-referendum'"
                 class="section flex-row flex-algn-itms-c flex-noshrink flex-algn-slf-strch pdng-l-20px pdng-r-30px mil-pdng-r-20px border-l-1px border-color2">
                 <div class="section">
                     <div class="flex-row flex-algn-itms-c">
@@ -67,32 +67,35 @@
             </p>
         </div>
     </div>
-    <div class="scene pdng-b-5px pdng-r-30px" v-for="i of news">
-        <div class="flex-row mil-flex-column">
-            <div class="section size-60 mil-size-100">
-                <h1 class="txt-size-28px">
-                    {{ i.title }}
-                </h1>
-                <h3 class="txt-size-16px txt-bold">
-                    {{ i.created_at }}
-                </h3>
-                <p style="white-space: pre-wrap;"
-                   class="pdng-t-5px"
-                   v-html="i.content">
-                </p>
-            </div>
-            <div class="section size-40 mrgn-t-50px mil-pdng-t-0 mil-size-100 mil-pdng-t-20px" v-html="i.instagram">
+    <template v-if="data && data.campaign.id === '2022-02-referendum'">
+        <div class="scene pdng-r-30px" v-for="i of news">
+            <div class="flex-row mil-flex-column">
+                <div class="section size-60 mil-size-100">
+                    <h1 class="txt-size-28px">
+                        {{ i.title }}
+                    </h1>
+                    <h3 class="txt-size-16px txt-bold">
+                        {{ i.created_at }}
+                    </h3>
+                    <p style="white-space: pre-wrap;"
+                       class="pdng-t-5px"
+                       v-html="i.content">
+                    </p>
+                </div>
+                <div class="section size-40 mrgn-t-50px mil-pdng-t-0 mil-size-100 mil-pdng-t-20px" v-html="i.instagram">
+                </div>
             </div>
         </div>
-    </div>
-    <div class="scene" v-if="data && data.messages_aggregate.aggregate.count">
+    </template>
+    <div class="scene"
+         v-if="data && data.messages_aggregate.aggregate.count && data.campaign.id !== '2022-02-referendum'">
         <h2 class="txt-size-36px mil-txt-size-30px txt-bold pdng-b-40px">
             Последние сообщения. <a class="txt-underline-inline-2px"
                                     :href="'/campaign/' + data.campaign.id + '/messages'">
             Всего {{ data.messages_aggregate.aggregate.count }} сообщений о нарушениях
         </a>.
         </h2>
-        <message-list v-model="data.messages" v-if="false"></message-list>
+        <message-list v-model="data.messages"></message-list>
         <div class="flex-column flex-algn-itms-c pdng-t-40px" v-if="data">
             <a :href="'/campaign/' + data.campaign.id + '/messages'"
                class="button primary inline-flex flex-algn-itms-c pdng-l-40px pdng-r-40px">
@@ -106,7 +109,7 @@
             </a>
         </div>
     </div>
-    <div class="scene" v-if="false">
+    <div class="scene" v-if="data && data.campaign.id !== '2022-02-referendum'">
         <h2 class="txt-size-36px mil-txt-size-30px txt-bold pdng-b-40px">
             Избирательные комиссии
             <template v-if="false">
