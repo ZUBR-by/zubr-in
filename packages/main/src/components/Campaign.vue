@@ -157,7 +157,7 @@
                 </div>
             </div>
             <div class="map-wrp" style="background:#EDEDED; width:auto; height:460px" v-if="data">
-                <commission-map :init-campaign="data.campaign.id"></commission-map>
+                <commission-map :init-campaign="data.campaign.id" :wheel="true"></commission-map>
             </div>
         </div>
     </div>
@@ -211,6 +211,7 @@ export default defineComponent({
                 function date2(first, second) {
                     return Math.round((second - first) / (1000 * 60 * 60 * 24));
                 }
+
                 console.log(new Date(), new Date(start));
                 return date2(new Date(), new Date(start)) + ' день до начала'
             },

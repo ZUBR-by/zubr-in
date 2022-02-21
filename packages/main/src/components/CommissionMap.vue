@@ -27,6 +27,8 @@ import {Circle, Fill, Icon, Style, Text} from 'ol/style';
 import {ElDialog} from 'element-plus';
 import {ref, onMounted} from "vue";
 import 'ol/ol.css'
+import {defaults} from "ol/interaction";
+import MouseWheelZoom from 'ol/interaction/MouseWheelZoom';
 
 const features   = ref(null)
 const showModal  = ref(false)
@@ -48,6 +50,10 @@ export default {
         initZoom: {
             type: Number,
             default: 7.3
+        },
+        wheel: {
+            type: Boolean,
+            default: false
         }
     },
     setup(props) {
@@ -58,7 +64,9 @@ export default {
                 format: new GeoJSON()
             }),
         });
-        let marker    = new VectorLayer({
+
+
+        let marker = new VectorLayer({
             source: cluster,
             style(feature) {
 
@@ -99,9 +107,29 @@ export default {
                 return style;
             },
         });
+
         onMounted(() => {
+            let i         = new MouseWheelZoom();
+            if (props.wheel) {
+                var oldFn     = i.handleEvent;
+                i.handleEvent = function (e) {
+                    let type = e.type;
+                    if (type !== "wheel" && type !== "wheel") {
+                        return true;
+                    }
+
+                    if (!e.originalEvent.ctrlKey) {
+                        return true
+                    }
+
+                    oldFn.call(this, e);
+                }
+            }
             document.getElementById('map').innerHTML = '';
             let map                                  = new Map({
+                interactions: props.wheel
+                    ? defaults({mouseWheelZoom: false}).extend([i])
+                    : defaults(),
                 layers: [
                     new TileLayer({
                         source: new OSM(),
