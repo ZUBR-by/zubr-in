@@ -70,11 +70,11 @@
     <template v-if="data && data.campaign.id === '2022-02-referendum'">
         <div class="scene pdng-r-30px" v-for="i of news">
             <div class="flex-row mil-flex-column">
-                <div class="section size-60 mil-size-100">
+                <div class="section size-60 mil-size-100 pdng-r-30px">
                     <h1 class="txt-size-28px">
                         {{ i.title }}
                     </h1>
-                    <h3 class="txt-size-16px txt-bold">
+                    <h3 class="txt-size-16px txt-bold" style="padding-top: 5px">
                         {{ i.created_at }}
                     </h3>
                     <p style="white-space: pre-wrap;"
@@ -82,7 +82,8 @@
                        v-html="i.content">
                     </p>
                 </div>
-                <div class="section size-40 mrgn-t-50px mil-pdng-t-0 mil-size-100 mil-pdng-t-20px" v-html="i.instagram">
+                <div class="section size-40 mrgn-t-50px mil-pdng-t-0 mil-size-100 mil-pdng-t-20px"
+                     v-html="i.instagram.replaceAll('post_id', i.post_id)">
                 </div>
             </div>
         </div>
