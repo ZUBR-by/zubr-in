@@ -20,6 +20,7 @@
                 </div>
             </div>
             <div
+                v-if="false"
                 class="section flex-row flex-algn-itms-c flex-noshrink flex-algn-slf-strch pdng-l-20px pdng-r-30px mil-pdng-r-20px border-l-1px border-color2">
                 <div class="section">
                     <div class="flex-row flex-algn-itms-c">
@@ -91,7 +92,7 @@
             Всего {{ data.messages_aggregate.aggregate.count }} сообщений о нарушениях
         </a>.
         </h2>
-        <message-list v-model="data.messages"></message-list>
+        <message-list v-model="data.messages" v-if="false"></message-list>
         <div class="flex-column flex-algn-itms-c pdng-t-40px" v-if="data">
             <a :href="'/campaign/' + data.campaign.id + '/messages'"
                class="button primary inline-flex flex-algn-itms-c pdng-l-40px pdng-r-40px">
@@ -105,7 +106,7 @@
             </a>
         </div>
     </div>
-    <div class="scene">
+    <div class="scene" v-if="false">
         <h2 class="txt-size-36px mil-txt-size-30px txt-bold pdng-b-40px">
             Избирательные комиссии
             <template v-if="false">
