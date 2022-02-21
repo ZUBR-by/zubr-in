@@ -39,7 +39,7 @@
             </div>
         </div>
     </header-view>
-    <div class="scene mrgn-t-170px mil-mrgn-t-120px" v-if="data">
+    <div class="scene mrgn-t-170px mil-mrgn-t-120px pdng-b-0" v-if="data">
         <h1 class="mil-txt-size-34px">
             {{ data.campaign.name }}
         </h1>
@@ -64,6 +64,24 @@
                 организациях, любом
                 из членов избирательных комиссий на любом из работающих на этих выборах участков для голосования.
             </p>
+        </div>
+    </div>
+    <div class="scene pdng-b-5px pdng-r-30px" v-for="i of news">
+        <div class="flex-row mil-flex-column">
+            <div class="section size-60 mil-size-100">
+                <h1 class="txt-size-28px">
+                    {{ i.title }}
+                </h1>
+                <h3 class="txt-size-16px txt-bold">
+                    {{ i.created_at }}
+                </h3>
+                <p style="white-space: pre-wrap;"
+                   class="pdng-t-5px"
+                   v-html="i.content">
+                </p>
+            </div>
+            <div class="section size-40 mrgn-t-50px mil-pdng-t-0 mil-size-100 mil-pdng-t-20px" v-html="i.instagram">
+            </div>
         </div>
     </div>
     <div class="scene" v-if="data && data.messages_aggregate.aggregate.count">
@@ -151,6 +169,7 @@ import {useRoute} from 'vue-router'
 import CommissionMap from './CommissionMap.vue'
 import {formatDateCampaign} from "../date";
 import MessageList from "./MessageList.vue";
+import news from './../news'
 
 const data = ref(null)
 
@@ -176,10 +195,14 @@ export default defineComponent({
         onMounted(async () => {
             await fetchCampaign()
             document.title = document.title.replace('Кампания', data.value.campaign.name)
+            if (window.instgrm) {
+                window.instgrm.Embeds.process();
+            }
         })
         return {
             botURL: import.meta.env.VITE_BOT_URL,
             data,
+            news,
             hash: {},
             isFuture(start) {
                 return new Date(start) > new Date();

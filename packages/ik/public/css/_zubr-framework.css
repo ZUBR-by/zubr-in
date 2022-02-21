@@ -1110,6 +1110,10 @@ blockquote:after {
     padding-top: 50px;
 }
 
+.pdng-t-70px {
+    padding-top: 70px;
+}
+
 .pdng-t-5prc {
     padding-top: 5%;
 }
@@ -1160,6 +1164,10 @@ blockquote:after {
 
 .pdng-r-5prc {
     padding-right: 5%;
+}
+
+.pdng-b-0 {
+    padding-bottom: 0;
 }
 
 .pdng-b-5px {
