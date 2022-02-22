@@ -90,7 +90,7 @@ export default defineComponent({
             }
         })
         return {
-            routes: routes.filter(i => ['commissions', 'prepare', 'campaigns'].includes(i.name)).map(item => {
+            routes: routes.filter(i => ['commissions', 'prepare', 'campaign_2022'].includes(i.name)).map(item => {
                 return {
                     to: item.path,
                     name: item.meta.title

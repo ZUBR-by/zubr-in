@@ -5,7 +5,7 @@ import Result2020 from "./components/Result2020.vue";
 import PathNotFound from "./components/PathNotFound.vue";
 import News from "./components/News.vue";
 
-const main = [
+const main   = [
     {
         path: '/home',
         name: 'home',
@@ -40,6 +40,7 @@ const common = [
         path: '/campaigns',
         name: 'campaigns',
         meta: {title: 'Кампании'},
+        exclude: true,
         component: () => import('./components/Campaigns.vue'),
     },
     {
@@ -60,8 +61,7 @@ const common = [
         path: '/controller',
         name: 'controller',
         meta: {title: 'Наблюдение и гражд. контроль'},
-        component: () => import('./components/Controller.vue'),
-        alias: ['/']
+        component: () => import('./components/Controller.vue')
     },
     {
         path: '/organization/:id',
@@ -87,7 +87,7 @@ const common = [
         path: '/elections/members',
         name: 'old_members',
         exclude: true,
-        redirect: { name: 'members' }
+        redirect: {name: 'members'}
     },
     {
         path: '/elections/messages',
@@ -142,6 +142,13 @@ const common = [
         meta: {title: 'Новость'},
         exclude: true,
         component: NewsItem,
+    },
+    {
+        path: '/campaign/2022-02-referendum',
+        name: 'campaign_2022',
+        meta: {title: '"Референдум" 2022'},
+        component: () => import('./components/Campaign.vue'),
+        alias: ['/']
     },
     {
         path: '/campaign/:id',

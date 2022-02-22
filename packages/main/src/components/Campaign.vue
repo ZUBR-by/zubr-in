@@ -180,7 +180,16 @@ const data = ref(null)
 
 async function fetchCampaign() {
     try {
-        const response = await fetch(import.meta.env.VITE_API_URL + '/campaign/' + useRoute().params.id + '?limit=5')
+        let campaign_id = '2022-02-referendum';
+        if (useRoute().params.id) {
+            campaign_id = useRoute().params.id
+        }
+        const response = await fetch(
+            import.meta.env.VITE_API_URL
+            + '/campaign/'
+            + campaign_id
+            + '?limit=5'
+        )
         data.value     = await response.json()
     } catch (e) {
         data.value = {campaign: {}};
