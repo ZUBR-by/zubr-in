@@ -1,144 +1,148 @@
 <template>
     <header-view :active="'Отправить нарушение'">
     </header-view>
-    <div class="scene mrgn-t-20px mil-mrgn-t-80px" style="width: 700px;margin-left: auto;margin-right: auto">
-        <div class="committee-list mil-flex-column ">
-            <h2 class="pdng-b-15px">Отправить сообщение о нарушении</h2>
-            <div class="flex-row flex-wrap size-100 mrgn-t-30px">
-                <div class="section size-33_3 pdng-7_5px mil-size-100">
-                    <div class="txt-size-12px txt-color-3-1 pdng-b-5px">Область</div>
-                    <el-input v-model="form.region"
-                              readonly
-                              style="width: 500px"
-                              @click="showRegions = true"
-                              :model-value="displayArea"></el-input>
-                </div>
-            </div>
-            <div class="flex-row flex-wrap size-100">
-                <div class="section size-33_3 pdng-7_5px mil-size-100">
-                    <div class="txt-size-12px txt-color-3-1 pdng-b-5px">Район</div>
-                    <el-input v-model="district"
-                              :disabled="!area"
-                              style="width: 500px"
-                              readonly
-                              @click="showDistricts = true"></el-input>
-                </div>
-            </div>
-            <div class="flex-row flex-wrap size-100">
-                <div class="section size-33_3 pdng-7_5px pdng-t-10px mil-size-100">
-                    <div class="txt-size-12px txt-color-3-1 pdng-b-5px">Номер участка</div>
-                    <el-input-number
-                        v-model="form.commission_number"
-                        :min="0"
-                        :max="150"
-                    ></el-input-number>
-                </div>
-            </div>
-            <div class="flex-row flex-wrap size-100">
-                <div class="section size-33_3 pdng-7_5px pdng-t-10px mil-size-100">
-                    <div class="txt-size-12px txt-color-3-1 pdng-b-5px">Есть аккредитация</div>
-                    <el-radio-group v-model="form.has_accreditation" style="width: 500px" size="medium">
-                        <el-radio-button :label="true">Да</el-radio-button>
-                        <el-radio-button :label="false">Нет</el-radio-button>
-                    </el-radio-group>
-                </div>
-            </div>
-            <div class="flex-row flex-wrap size-100">
-                <div class="section size-33_3 pdng-7_5px pdng-t-10px mil-size-100">
-                    <div class="txt-size-12px txt-color-3-1 pdng-b-5px">Категории</div>
-                    <el-select v-model="form.categories" placeholder="Категории" :multiple="true" style="width: 500px">
-                        <template v-if="form.has_accreditation">
-                            <el-option :label="item" :value="key"
-                                       v-for="(item, key) in categoriesForObservers"></el-option>
-                        </template>
-                        <template v-else>
-                            <el-option :label="item" :value="key"
-                                       v-for="(item, key) in categoriesForCivilControllers"></el-option>
-                        </template>
-                    </el-select>
-                </div>
-            </div>
-            <div class="flex-row flex-wrap size-100">
-                <div class="section size-33_3 pdng-7_5px pdng-t-10px mil-size-100" style="width: 300px">
-                    <div class="txt-size-12px txt-color-3-1 pdng-b-5px">Дата</div>
-                    <el-input-number
-                        v-model="form.date"
-                        :min="12"
-                        :max="27"
-                    ></el-input-number>
-                    (февраля)
-                </div>
-            </div>
-            <div class="flex-row flex-wrap size-100">
-                <div class="section size-33_3 pdng-7_5px pdng-t-10px mil-size-100">
-                    <div class="txt-size-12px txt-color-3-1 pdng-b-5px">Описание</div>
-                    <el-input type="textarea"
-                              style="width: 500px"
-                              rows="5"
-                              v-model="form.description"></el-input>
-                </div>
-            </div>
-            <div class="flex-row flex-wrap size-100">
-                <div class="section size-33_3 pdng-7_5px pdng-t-10px mil-size-100">
-                    <div class="txt-size-12px txt-color-3-1 pdng-b-5px">Медиа-файлы</div>
-                    <el-upload
-                        class="upload-demo"
-                        ref="upload"
-                        action="https://jsonplaceholder.typicode.com/posts/"
-                        multiple
-                        :limit="3"
-                    >
-                        <el-button type="primary">Кликните для загрузки</el-button>
-                        <!--                        <template #tip>-->
-                        <!--                            <div class="el-upload__tip">-->
-                        <!--                                jpg/png-->
-                        <!--                            </div>-->
-                        <!--                        </template>-->
-                    </el-upload>
-                </div>
-            </div>
-            <div class="flex-row flex-wrap size-100">
-                <div class="section size-33_3 pdng-7_5px pdng-t-10px mil-size-100" style="width: 500px">
-                    <div class="txt-size-12px txt-color-3-1 pdng-b-5px">Разрешаете ли вы публиковать ваше сообщение о
-                        нарушении в медиа?
+    <div class="scene mrgn-t-50px mil-mrgn-t-90px">
+        <div class="flex-row mil-flex-column">
+            <div class="section size-60 mil-size-90 pdng-r-30px">
+                <h2 class="pdng-b-15px">Отправить сообщение о нарушении</h2>
+                <div class="flex-row flex-wrap size-100 mrgn-t-30px">
+                    <div class="section pdng-7_5px mil-size-100">
+                        <div class="txt-size-12px txt-color-3-1 pdng-b-5px">Область</div>
+                        <el-input v-model="form.region"
+                                  readonly
+                                  @click="showRegions = true"
+                                  :model-value="displayArea"></el-input>
                     </div>
-                    <el-radio-group v-model="form.media_consent" style="width: 300px">
-                        <el-radio-button :label="true">Да, разрешаю</el-radio-button>
-                        <el-radio-button :label="false">Нет, не разрешаю</el-radio-button>
-                    </el-radio-group>
                 </div>
-            </div>
-            <div class="flex-row flex-wrap size-100 mrgn-t-30px">
-                <div class="section size-33_3 pdng-7_5px pdng-t-10px mil-size-100" style="width: 300px">
-                    <el-button type="primary" @click="onSubmit">Отправить</el-button>
+                <div class="flex-row flex-wrap size-100">
+                    <div class="section pdng-7_5px mil-size-100">
+                        <div class="txt-size-12px txt-color-3-1 pdng-b-5px">Район</div>
+                        <el-input v-model="district"
+                                  :disabled="!area"
+                                  readonly
+                                  @click="showDistricts = true"></el-input>
+                    </div>
+                </div>
+                <div class="flex-row flex-wrap size-100">
+                    <div class="section size-33_3 pdng-7_5px pdng-t-10px mil-size-100">
+                        <div class="txt-size-12px txt-color-3-1 pdng-b-5px">Номер участка</div>
+                        <el-input-number
+                            v-model="form.commission_number"
+                            :min="0"
+                            :max="150"
+                        ></el-input-number>
+                    </div>
+                </div>
+                <div class="flex-row flex-wrap size-100">
+                    <div class="section pdng-7_5px pdng-t-10px mil-size-100">
+                        <div class="txt-size-12px txt-color-3-1 pdng-b-5px">Есть аккредитация</div>
+                        <el-radio-group v-model="form.has_accreditation" size="medium">
+                            <el-radio-button :label="true">Да</el-radio-button>
+                            <el-radio-button :label="false">Нет</el-radio-button>
+                        </el-radio-group>
+                    </div>
+                </div>
+                <div class="flex-row flex-wrap size-100">
+                    <div class="section pdng-7_5px pdng-t-10px mil-size-100">
+                        <div class="txt-size-12px txt-color-3-1 pdng-b-5px">Категории</div>
+                        <el-select v-model="form.categories" placeholder="Категории" :multiple="true">
+                            <template v-if="form.has_accreditation">
+                                <el-option :label="item" :value="key"
+                                           v-for="(item, key) in categoriesForObservers"></el-option>
+                            </template>
+                            <template v-else>
+                                <el-option :label="item" :value="key"
+                                           v-for="(item, key) in categoriesForCivilControllers"></el-option>
+                            </template>
+                        </el-select>
+                    </div>
+                </div>
+                <div class="flex-row flex-wrap size-100 mil-size-100">
+                    <div class="section pdng-7_5px pdng-t-10px mil-size-100" style="width: 350px">
+                        <div class="txt-size-12px txt-color-3-1 pdng-b-5px">Дата</div>
+                        <el-input-number
+                            v-model="form.date"
+                            :min="12"
+                            :max="27"
+                        ></el-input-number>
+                        <div class="pdng-t-10px">(февраля)</div>
+                    </div>
+                </div>
+                <div class="flex-row flex-wrap size-100">
+                    <div class="section pdng-7_5px pdng-t-10px mil-size-100">
+                        <div class="txt-size-12px txt-color-3-1 pdng-b-5px">Описание</div>
+                        <el-input type="textarea"
+                                  rows="10"
+                                  v-model="form.description"></el-input>
+                    </div>
+                </div>
+                <div class="flex-row flex-wrap size-100">
+                    <div class="section size-33_3 pdng-7_5px pdng-t-10px mil-size-100">
+                        <div class="txt-size-12px txt-color-3-1 pdng-b-5px">Медиа-файлы</div>
+                        <el-upload
+                            class="upload-demo"
+                            :auto-upload="false"
+                            ref="upload"
+                            action="https://jsonplaceholder.typicode.com/posts/"
+                            :on-change="onChange"
+                            :on-remove="handleRemove"
+                            multiple
+                            :limit="3"
+                            accept="image/*,video/*,audio/*"
+                            :on-exceed="handleExceed"
+                            :file-list="fileList"
+                        >
+                            <el-button type="primary"><i class="el-icon-close"></i>Кликните для загрузки</el-button>
+                        </el-upload>
+                    </div>
+                </div>
+                <div class="flex-row flex-wrap size-100">
+                    <div class="section size-33_3 pdng-7_5px pdng-t-10px mil-size-100" style="width: 350px">
+                        <div class="txt-size-12px txt-color-3-1 pdng-b-5px">Разрешаете ли вы публиковать ваше сообщение
+                            о
+                            нарушении в медиа?
+                        </div>
+                        <el-radio-group v-model="form.media_consent" style="width: 300px">
+                            <el-radio-button :label="true">Да, разрешаю</el-radio-button>
+                            <el-radio-button :label="false">Нет, не разрешаю</el-radio-button>
+                        </el-radio-group>
+                    </div>
+                </div>
+                <div class="flex-row flex-wrap size-100 mrgn-t-30px">
+                    <div class="section size-33_3 pdng-7_5px pdng-t-10px mil-size-100" style="width: 300px">
+                        <el-button type="primary"
+                                   :disabled="!isValidForm"
+                                   @click="onSubmit">
+                            Отправить
+                        </el-button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <el-dialog v-model="showRegions" :custom-class="'popup'" :center="true" :width="'100%'" :show-close="false">
-        <div class="pdng-t-10px">
-            <el-row v-for="item in areas">
-                <div class="pdng-l-20px choose-region" style="margin-right: auto;margin-left: auto">
+    <el-dialog v-model="showRegions" :custom-class="'popup'" :center="true" :width="'100%'" :show-close="false" center>
+        <div class="pdng-t-10px" style="margin-right: auto;width: 350px;margin-left: auto">
+            <el-radio-group v-model="area" class="pdng-l-20px choose-region"
+                            style="margin-right: auto;margin-left: auto">
+                <el-row v-for="item in areas">
                     <el-radio-button :label="item.code"
-                                     v-model="area"
-                                     @click="showRegions = false"
+                                     @change="chooseRegion"
                     >{{ item.label + (item.code !== '7' ? ' область' : '') }}
                     </el-radio-button>
-                </div>
-            </el-row>
+                </el-row>
+            </el-radio-group>
         </div>
     </el-dialog>
     <el-dialog v-model="showDistricts" :custom-class="'popup'" :center="true" :width="'100%'" :show-close="false">
-        <div class="pdng-t-10px">
-            <el-row v-for="item in districts">
-                <div class="pdng-l-20px choose-region" style="margin-right: auto;margin-left: auto">
-                    <el-radio-button :label="item.label.replace(' район', '')"
-                                     v-model="district"
+        <div class="pdng-t-10px" style="margin-right: auto;width: 350px;margin-left: auto">
+            <el-radio-group v-model="district">
+                <div class="pdng-l-20px choose-region" v-for="item in districts">
+                    <el-radio-button :label="item.label"
                                      @click="showDistricts = false"
-                    >{{ item.label }}
+                    >{{ item.label.replace(' район', '') }}
                     </el-radio-button>
                 </div>
-            </el-row>
+            </el-radio-group>
         </div>
     </el-dialog>
 </template>
@@ -164,7 +168,7 @@ import {
     ElMessage,
     ElMessageBox
 } from 'element-plus'
-import {computed, ref} from "vue";
+import {computed, reactive, ref} from "vue";
 
 const categoriesForCivilControllers = {
     1: 'Манипуляция со списками избирателей',
@@ -203,18 +207,21 @@ export default {
         ElRow
     },
     setup() {
+        let d               = (new Date()).getDate();
+        let date            = d > 27 ? 27 : d;
         const showRegions   = ref(false);
         const showDistricts = ref(false);
-        const form          = ref({
+        const form          = reactive({
             region: '',
             district: '',
-            date: 12,
+            date,
             commission_number: 0,
             media_consent: false,
             description: '',
             categories: [],
             area: null,
-            has_accreditation: false
+            has_accreditation: false,
+            attachments: []
         })
         const area          = ref();
         const district      = ref();
@@ -231,8 +238,31 @@ export default {
             }
             return areas[area.value].label;
         })
+        const fileList      = ref([]);
+        const isValidForm   = computed(() => {
+            console.log(form.district)
+            if (!form.district) {
+                return false;
+            }
+            return form.categories.length !== 0;
+
+        });
         return {
+            isValidForm,
+            upload,
+            handleExceed(files, fileList) {
+                ElMessage.error('Максимум три файла!');
+            },
+            handleRemove(file) {
+                form.attachments = form.attachments.filter(
+                    (i) => file.uid !== i.uid
+                );
+            },
+            onChange(file) {
+                form.attachments.push(file);
+            },
             form,
+            fileList,
             areas,
             showRegions,
             showDistricts,
@@ -242,32 +272,59 @@ export default {
             displayArea,
             categoriesForCivilControllers,
             districts,
+            chooseRegion(value) {
+                form.region       = value;
+                showRegions.value = false
+            },
+            chooseDistrict(value) {
+                form.district       = value;
+                showDistricts.value = false
+            },
             onSubmit() {
-                ElMessageBox.confirm(
-                    'Сообщение отправлено. Желаете ли отправить еще одно сообщение?',
-                    'Успех',
+                let formData = new FormData();
+                formData.append('description', form.description);
+                formData.append('date', form.date + '');
+                formData.append('commission_code', form.commission_number + '');
+                formData.append('media_consent', form.media_consent ? '1' : '');
+                formData.append('role', form.has_accreditation ? 'observer' : 'civil_controller');
+                for (let c of form.categories) {
+                    formData.append('categories[]', c);
+                }
+                form.attachments.forEach((elem, index) => {
+                    formData.append(index + '', elem.raw);
+                })
+                fetch(
+                    'http://localhost:9031/api/violation?XDEBUG_SESSION=start',
                     {
-                        confirmButtonText: 'Да',
-                        cancelButtonText: 'Нет',
-                        type: 'success',
+                        body: formData,
+                        method: "post"
                     }
                 )
-                    .then(() => {
-                        form.value.date              = 12;
-                        form.value.media_consent     = false;
-                        form.value.description       = '';
-                        form.value.area              = null;
-                        form.value.has_accreditation = false;
-                        form.value.categories        = [];
-                        // upload.value.clearFiles()
-                    })
-                    .catch((e) => {
-                        ElMessage({
-                            type: 'success',
-                            message: 'Успешно завершено',
-                        })
-                        throw e
-                    })
+                // ElMessageBox.confirm(
+                //     'Сообщение отправлено. Желаете ли отправить еще одно сообщение?',
+                //     'Успех',
+                //     {
+                //         confirmButtonText: 'Да',
+                //         cancelButtonText: 'Нет',
+                //         type: 'success',
+                //     }
+                // )
+                //     .then(() => {
+                //         form.value.date              = 12;
+                //         form.value.media_consent     = false;
+                //         form.value.description       = '';
+                //         form.value.area              = null;
+                //         form.value.has_accreditation = false;
+                //         form.value.categories        = [];
+                //         upload.value.clearFiles()
+                //     })
+                //     .catch((e) => {
+                //         ElMessage({
+                //             type: 'success',
+                //             message: 'Успешно завершено',
+                //         })
+                //         throw e
+                //     })
             }
         }
     }
