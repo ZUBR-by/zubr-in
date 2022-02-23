@@ -6,8 +6,9 @@ pipeline {
                 docker { image 'node:14-buster' }
             }
             environment {
-                VITE_API_URL = 'https://graph.zubr.app/api/rest'
-                VITE_BOT_URL = 'https://t.me/zubr_in_bot'
+                VITE_API_URL     = 'https://graph.zubr.app/api/rest'
+                VITE_BOT_URL     = 'https://t.me/zubr_in_bot'
+                VITE_ZUBR_IN_API = 'https://api.zubr.life/api'
             }
             steps {
                 sh 'yarn'

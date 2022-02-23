@@ -102,7 +102,7 @@
                             о
                             нарушении в медиа?
                         </div>
-                        <el-radio-group v-model="form.media_consent" style="width: 300px">
+                        <el-radio-group v-model="form.publish_media" style="width: 300px">
                             <el-radio-button :label="true">Да, разрешаю</el-radio-button>
                             <el-radio-button :label="false">Нет, не разрешаю</el-radio-button>
                         </el-radio-group>
@@ -138,7 +138,7 @@
             <el-radio-group v-model="district">
                 <div class="pdng-l-20px choose-region" v-for="item in districts">
                     <el-radio-button :label="item.label"
-                                     @click="showDistricts = false"
+                                     @change="chooseDistrict(item.code)"
                     >{{ item.label.replace(' район', '') }}
                     </el-radio-button>
                 </div>
@@ -177,7 +177,13 @@ const categoriesForCivilControllers = {
     4: 'Невывешивание копии протокола',
     12: 'Другое'
 }
-const categoriesForObservers        = {
+
+const formatCode = (code) => {
+    code = code.slice(1);
+    return code.slice(0, 2) + code.slice(3, 6) + code.slice(-1)
+}
+
+const categoriesForObservers = {
     ...categoriesForCivilControllers,
     5: 'Отказ в аккредитации наблюдателя',
     6: 'Ограничение прав наблюдателя ',
@@ -216,7 +222,7 @@ export default {
             district: '',
             date,
             commission_number: 0,
-            media_consent: false,
+            publish_media: false,
             description: '',
             categories: [],
             area: null,
@@ -283,9 +289,10 @@ export default {
             onSubmit() {
                 let formData = new FormData();
                 formData.append('description', form.description);
-                formData.append('date', form.date + '');
-                formData.append('commission_code', form.commission_number + '');
-                formData.append('media_consent', form.media_consent ? '1' : '');
+                formData.append('district', formatCode(form.district));
+                formData.append('day', form.date + '');
+                formData.append('commission_number', form.commission_number + '');
+                formData.append('publish_media', form.publish_media ? '1' : '');
                 formData.append('role', form.has_accreditation ? 'observer' : 'civil_controller');
                 for (let c of form.categories) {
                     formData.append('categories[]', c);
@@ -294,7 +301,7 @@ export default {
                     formData.append(index + '', elem.raw);
                 })
                 fetch(
-                    'http://localhost:9031/api/violation?XDEBUG_SESSION=start',
+                    import.meta.env.VITE_ZUBR_IN_API + '/api/violation?XDEBUG_SESSION=start',
                     {
                         body: formData,
                         method: "post"
@@ -311,7 +318,7 @@ export default {
                 // )
                 //     .then(() => {
                 //         form.value.date              = 12;
-                //         form.value.media_consent     = false;
+                //         form.value.publish_media     = false;
                 //         form.value.description       = '';
                 //         form.value.area              = null;
                 //         form.value.has_accreditation = false;
