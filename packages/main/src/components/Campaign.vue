@@ -83,6 +83,7 @@
                     </p>
                 </div>
                 <div class="section size-40 mrgn-t-50px mil-pdng-t-0 mil-size-100 mil-pdng-t-20px"
+                     v-if="i.post_id"
                      v-html="instagram.replaceAll('post_id', i.post_id)">
                 </div>
             </div>
