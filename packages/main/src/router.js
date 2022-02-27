@@ -4,6 +4,7 @@ import NewsItem from "./components/NewsItem.vue";
 import Result2020 from "./components/Result2020.vue";
 import PathNotFound from "./components/PathNotFound.vue";
 import News from "./components/News.vue";
+import Declaration from "./components/Declaration.vue";
 
 const main   = [
     {
@@ -33,6 +34,12 @@ const main   = [
         meta: {title: 'Член комиссии'},
         exclude: true,
         component: () => import('./components/Member.vue'),
+    },
+    {
+        path: '/declaration',
+        name: 'declaration_war',
+        meta: {title: 'Заявление беларусов против участия в войне с Украиной'},
+        component: Declaration,
     },
 ]
 const common = [
