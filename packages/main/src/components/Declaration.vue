@@ -41,7 +41,7 @@
                 Заявление поддержали:
                 <ul>
                     <li>Гражданская инициатива ZUBR https://t.me/zubr_in</li>
-                    <li>Водители 97 https://t.me/drivers_97</li>
+                    <li>Водители 97 ⚡️ https://t.me/drivers_97</li>
                     <li>Яднайся https://t.me/supolka_by</li>
                     <li>Менторская программа развития сообществ Пачатак.</li>
                     <li>Фонд Медицинской Солидарности Беларуси https://bymedsol.org/</li>
