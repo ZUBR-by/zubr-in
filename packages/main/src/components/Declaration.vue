@@ -62,7 +62,7 @@
                     <li>Мэта-Беларусь</li>
                     <li>Беларуская нацыянальная платформа Форуму грамадзянскай супольнасці Усходняга партнёрства (БНП) (https://npbelarus.info/)</li>
                     <li>Хрысціянская візія, https://t.me/christianvision</li>
-                    <li>Беларускі ПЭН-цэнтр, https://penbelarus.org/</li>
+                    <li>Беларускі ПЭН, https://penbelarus.org/</li>
                 </ul>
                 <p class="pdng-t-20px">
                     Если хотите добавить подпись вашей инициативы, то пишите на zubr.contact@gmail.com. Подписи будут
