@@ -272,7 +272,7 @@
     </el-dialog>
 </template>
 <script>
-import Header from './Header.vue';
+import Header from './Navbar.vue';
 import {computed, defineComponent, onMounted, ref} from "vue";
 import {useRoute} from "vue-router";
 import {ElImage, ElDialog} from 'element-plus';

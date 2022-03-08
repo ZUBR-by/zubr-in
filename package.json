@@ -12,7 +12,7 @@
     "serve-ik": "cd packages/ik && vite preview"
   },
   "dependencies": {
-    "vue": "^3.2.16",
+    "vue": "3.2.31",
     "vue-router": "^4.0",
     "lerna": "^4.0.0"
   },

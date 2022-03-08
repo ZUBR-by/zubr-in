@@ -321,7 +321,7 @@
 </template>
 
 <script>
-import Header from './Header.vue'
+import Header from './Navbar.vue'
 import {defineComponent} from "vue";
 import {ElCarousel, ElCarouselItem} from 'element-plus';
 

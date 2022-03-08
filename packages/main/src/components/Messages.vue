@@ -78,7 +78,7 @@
 
 </template>
 <script>
-import Header from './Header.vue';
+import Header from './Navbar.vue';
 import {defineComponent, onMounted, ref, watch} from "vue";
 import {useRoute} from "vue-router";
 import {ElSelect, ElOption, ElButton} from 'element-plus';

@@ -148,7 +148,7 @@
 </template>
 
 <script>
-import Header from './Header.vue'
+import Header from './Navbar.vue'
 import areas from "../areas";
 import {
     ElDialog,

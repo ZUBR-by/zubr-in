@@ -38,7 +38,7 @@
     </div>
 </template>
 <script>
-import Header from './Header.vue'
+import Header from './Navbar.vue'
 import {defineComponent, onMounted, ref, watch} from "vue";
 
 const offset = ref(0)

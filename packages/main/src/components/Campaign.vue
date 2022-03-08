@@ -169,7 +169,7 @@
     </div>
 </template>
 <script>
-import Header from './Header.vue';
+import Header from './Navbar.vue';
 import {defineComponent, onMounted, ref} from "vue";
 import {useRoute} from 'vue-router'
 import CommissionMap from './CommissionMap.vue'

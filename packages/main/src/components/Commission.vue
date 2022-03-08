@@ -1,5 +1,5 @@
 <template>
-    <header-view :active="'Комиссии'">
+    <navbar :active="'Комиссии'">
         <div class="header-subnav border-t-1px border-color2">
             <div
                 class="section flex-row flex-algn-itms-c flex-grow-all flex-algn-slf-strch pdng-20px pdng-l-30px pdng-r-30px mil-pdng-20px mil-pdng-t-10px mil-pdng-b-10px">
@@ -25,7 +25,7 @@
                 </div>
             </div>
         </div>
-    </header-view>
+    </navbar>
     <div class="scene-wrp bg-color-1 border-b-1px border-color1">
         <div class="scene mrgn-t-170px mil-mrgn-t-170px">
             <div class="flex-row mil-flex-wrap" v-if="data">
@@ -207,16 +207,6 @@
     </div>
 </template>
 <script>
-import Header from './Header.vue';
-import Location from './Point.vue';
-import {defineComponent, onMounted, ref} from "vue";
-import {useRoute} from 'vue-router'
-import {ElImage} from 'element-plus';
-import MessageList from "./MessageList.vue";
-import {formatDateCampaign} from "../date";
-
-const data = ref(null)
-
 const map = {
     ELECTION_COMMISSION_PRECINCT_PRESIDENTIAL_2020: 'Участковая',
     ELECTION_COMMISSION_TERRITORIAL_PRESIDENTIAL_2020: 'Территориальная',
@@ -228,6 +218,19 @@ const map = {
     ELECTION_COMMISSION_TERRITORIAL_LOCAL_2018: 'Территориальная',
     ELECTION_COMMISSION_CENTRAL: 'Центральная',
 }
+export {map as commission_types}
+</script>
+
+<script setup>
+import Navbar from './Navbar.vue';
+import Location from './Point.vue';
+import {onMounted, ref} from "vue";
+import {useRoute} from 'vue-router'
+import {ElImage} from 'element-plus';
+import MessageList from "./MessageList.vue";
+import {formatDateCampaign} from "../date";
+
+const data = ref(null)
 
 async function fetchCommission(id) {
     try {
@@ -251,29 +254,12 @@ function isLater(started_at) {
     return campaign > current;
 }
 
-export {map as commission_types}
-
-export default defineComponent({
-    components: {
-        MessageList,
-        'header-view': Header,
-        Location,
-        ElImage
-    },
-    setup() {
-        onMounted(async () => {
-            const route = useRoute()
-            let id      = route.params.id;
-            await fetchCommission(id)
-            document.title = document.title.replace(' -', ' ' + data.value.commission.name + ' -')
-        })
-        return {
-            botURL: import.meta.env.VITE_BOT_URL,
-            data,
-            map,
-            isLater,
-            formatDateCampaign
-        }
-    }
+onMounted(async () => {
+    const route = useRoute()
+    let id      = route.params.id;
+    await fetchCommission(id)
+    document.title = document.title.replace(' -', ' ' + data.value.commission.name + ' -')
 })
+const botURL = import.meta.env.VITE_BOT_URL
+
 </script>

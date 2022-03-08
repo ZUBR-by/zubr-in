@@ -139,7 +139,7 @@
 </template>
 
 <script>
-import Header from './Header.vue';
+import Header from './Navbar.vue';
 
 export default {
     name: "Result2020",

@@ -91,7 +91,7 @@ iframe {
   }
 </style>
 <script>
-import Header from './Header.vue';
+import Header from './Navbar.vue';
 import {defineComponent, onMounted, ref} from "vue";
 import {useRoute} from "vue-router";
 import {formatDate} from '../date'

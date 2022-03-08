@@ -122,7 +122,7 @@
 <script>
 import {fetchCampaigns, isLater} from './Campaigns.vue'
 import {defineComponent, ref} from "vue";
-import Header from "./Header.vue";
+import Header from "./Navbar.vue";
 import {formatDateCampaign, formatDate} from '../date'
 
 const total = ref(0);

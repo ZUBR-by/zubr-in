@@ -37,7 +37,7 @@
 </template>
 <script>
 //
-import Header from './Header.vue';
+import Header from './Navbar.vue';
 import {defineComponent, ref} from "vue";
 import {formatDate} from '../date'
 

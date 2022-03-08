@@ -88,7 +88,7 @@
     </div>
 </template>
 <script>
-import Header from './Header.vue'
+import Header from './Navbar.vue'
 import {defineComponent, onMounted, reactive, ref, watch} from "vue";
 import {commission_types} from "./Commission.vue";
 import {onBeforeRouteUpdate} from "vue-router";

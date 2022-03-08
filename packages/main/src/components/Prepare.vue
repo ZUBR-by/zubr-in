@@ -493,7 +493,7 @@
 </template>
 
 <script>
-import Header from './Header.vue'
+import Header from './Navbar.vue'
 
 export default {
     components: {

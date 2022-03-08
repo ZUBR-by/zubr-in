@@ -1,5 +1,5 @@
 <template>
-    <header-view :active="'Комиссии'">
+    <navbar :active="'Комиссии'">
         <div class="header-subnav border-color2">
             <div
                 class="section flex-grow-all pdng-30px pdng-t-15px pdng-b-15px mil-pdng-20px mil-pdng-t-10px mil-pdng-b-10px">
@@ -94,7 +94,7 @@
                 </div>
             </div>
         </div>
-    </header-view>
+    </navbar>
     <div class="scene mrgn-t-170px mil-mrgn-t-170px" v-if="view === 'list'">
         <template v-if="data">
             <div class="committee-list mil-flex-column">
@@ -285,11 +285,11 @@
         </div>
     </div>
 </template>
-<script>
+<script setup>
 import 'ol/ol.css'
-import Header from './Header.vue'
+import Navbar from './Navbar.vue'
 import CommissionMap from './CommissionMap.vue'
-import {defineComponent, onMounted, ref, watch} from "vue";
+import {onMounted, ref, watch} from "vue";
 
 const data           = ref(null)
 const campaign       = ref('2020-08-presidential')
@@ -325,47 +325,28 @@ async function fetchCommissions() {
     }
 }
 
-export default defineComponent({
-    components: {
-        'header-view': Header,
-        CommissionMap
-    },
-    setup() {
-
-        const view    = ref('list')
-        const mapInit = ref(false)
-        onMounted(() => {
-            fetchCommissions()
-        })
-        watch(campaign, () => {
-            offset.value = 0
-            fetchCommissions()
-            if (map.value) {
-                map.value.changeLayer(campaign.value);
-            }
-        })
-        watch(offset, () => {
-            fetchCommissions()
-        })
-        watch(commissionType, () => {
-            offset.value = 0
-            fetchCommissions()
-        })
-        watch(search, () => {
-            offset.value = 0
-            fetchCommissions()
-        })
-        return {
-            view,
-            map,
-            data,
-            mapInit,
-            campaign,
-            commissionType,
-            offset,
-            search
-        }
-    },
+const view    = ref('list')
+const mapInit = ref(false)
+onMounted(() => {
+    fetchCommissions()
+})
+watch(campaign, () => {
+    offset.value = 0
+    fetchCommissions()
+    if (map.value) {
+        map.value.changeLayer(campaign.value);
+    }
+})
+watch(offset, () => {
+    fetchCommissions()
+})
+watch(commissionType, () => {
+    offset.value = 0
+    fetchCommissions()
+})
+watch(search, () => {
+    offset.value = 0
+    fetchCommissions()
 })
 </script>
 <style>
