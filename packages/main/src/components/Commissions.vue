@@ -292,7 +292,7 @@ import CommissionMap from './CommissionMap.vue'
 import {onMounted, ref, watch} from "vue";
 
 const data           = ref(null)
-const campaign       = ref('2020-08-presidential')
+const campaign       = ref('2022-02-referendum')
 const commissionType = ref('ELECTION_COMMISSION')
 const offset         = ref(0)
 const map            = ref(null)
