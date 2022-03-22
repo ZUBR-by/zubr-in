@@ -150,8 +150,11 @@ export default {
                     if (baseFeature.getProperties().features.length === 0) {
                         return
                     }
-                    showModal.value = true;
-                    features.value  = baseFeature.getProperties().features
+                    setTimeout(() => {
+                        showModal.value = true;
+                        features.value  = baseFeature.getProperties().features
+                    }, 100)
+
                 });
             });
             map.addLayer(marker);
