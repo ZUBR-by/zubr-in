@@ -8,7 +8,7 @@ import Declaration from "./components/Declaration.vue";
 
 const main   = [
     {
-        path: '/home',
+        path: '/',
         name: 'home',
         meta: {title: 'Главная'},
         exclude: true,
@@ -154,8 +154,7 @@ const common = [
         path: '/campaign/2022-02-referendum',
         name: 'campaign_2022',
         meta: {title: '"Референдум" 2022'},
-        component: () => import('./components/Campaign.vue'),
-        alias: ['/']
+        component: () => import('./components/Campaign.vue')
     },
     {
         path: '/campaign/:id',
