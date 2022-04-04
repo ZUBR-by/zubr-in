@@ -1,7 +1,7 @@
 <template>
     <header-view :active="'Кампании'">
         <div class="header-subnav border-t-1px border-color2">
-            <div class="section pdng-l-10px" v-if="data.campaign.started_at && isFuture(data.campaign.started_at)">
+            <div class="section pdng-l-10px" v-if="data && data.campaign.started_at && isFuture(data.campaign.started_at)">
                 <a class="button medium mil-txt-size-12px primary" :href="botURL">
                     Участвовать!
                 </a>
