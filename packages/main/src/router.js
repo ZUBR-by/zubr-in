@@ -2,6 +2,7 @@ import {createRouter, createWebHistory} from 'vue-router'
 import Home from './components/Home.vue'
 import NewsItem from "./components/NewsItem.vue";
 import Result2020 from "./components/Result2020.vue";
+import Result2022 from "./components/Result2022.vue";
 import PathNotFound from "./components/PathNotFound.vue";
 import News from "./components/News.vue";
 import Declaration from "./components/Declaration.vue";
@@ -129,6 +130,13 @@ const common = [
         meta: {title: 'Информация о результатах избирательной компании 2020'},
         exclude: true,
         component: Result2020,
+    },
+    {
+        path: '/ref',
+        name: 'results_2022',
+        meta: {title: 'Результаты кампании "референдума" 2022'},
+        exclude: true,
+        component: Result2022,
     },
     {
         path: '/about',
