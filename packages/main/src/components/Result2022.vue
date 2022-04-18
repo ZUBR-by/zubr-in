@@ -1,7 +1,7 @@
 <template>
     <header-view></header-view>
     <div class="scene mrgn-t-170px mil-mrgn-t-170px">
-        <h2><strong>"ГОЛОС", "ЧЕСТНЫЕ ЛЮДИ", ZUBR: ОТЧЕТ О "РЕФЕРЕНДУМЕ"-2022 В БЕЛАРУСИ</strong></h2>
+        <h2 class="txt-color-1"><strong>"ГОЛОС", "ЧЕСТНЫЕ ЛЮДИ", ZUBR: ОТЧЕТ О "РЕФЕРЕНДУМЕ"-2022 В БЕЛАРУСИ</strong></h2>
         <div class="row">
             <div style="font-size: 18px">
                 <p style="padding-top: 15px">В совместном отчете беларусских гражданских инициатив <a
