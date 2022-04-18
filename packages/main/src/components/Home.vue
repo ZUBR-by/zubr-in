@@ -77,7 +77,14 @@
                             Референдум
                         </a>
                     </div>
+                    <div v-if="campaign.id === '2022-02-referendum'" class="pdng-t-20px">
+                        <a href="/ref"><h1 class="txt-size-28px">
+                            "ГОЛОС", "ЧЕСТНЫЕ ЛЮДИ", ZUBR: ОТЧЕТ О "РЕФЕРЕНДУМЕ"-2022 В БЕЛАРУСИ
+                        </h1>
+                        </a>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
