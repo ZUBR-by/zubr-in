@@ -1,6 +1,6 @@
 [build]
 base = "packages/ik"
-publish = "packages/ik/dist/"
+publish = "dist/"
 command = "yarn run build"
 
 [context.production]
