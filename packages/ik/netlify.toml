@@ -1,0 +1,7 @@
+[build]
+base = "packages/ik"
+publish = "packages/ik/dist/"
+command = "yarn run build"
+
+[context.production]
+environment = { NODE_VERSION = "14.15.3",VITE_API_URL='https://graph.zubr.app/api/rest',VITE_BOT_URL= 'https://t.me/zubr_in_bot',VITE_ZUBR_IN_API = 'https://api.zubr.life/api'}
