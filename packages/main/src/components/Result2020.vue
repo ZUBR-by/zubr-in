@@ -27,7 +27,7 @@
         </div>
     </header-view>
     <div class="scene mrgn-t-170px mil-mrgn-t-170px">
-        <h3>Информация о результатах избирательной компании 2020 года</h3>
+        <h3>Информация о результатах избирательной кампании 2020 года</h3>
         <div class="col-md-6">
             <img src="/img/final2020.png" style="width: 70%;">
         </div>

@@ -42,7 +42,7 @@
             </div>
             <div class="infoblock" v-if="data.organization.description">
               <div class="infoblock-name">
-                О компании:
+                О кампании:
               </div>
               <div class="infoblock-value">
                 {{ data.organization.description }}
