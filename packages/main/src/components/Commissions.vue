@@ -15,19 +15,15 @@
                     </div>
                     <div class="buttongroup">
                         <button class="buttongroup-unit"
-                                @click="commissionType = 'ELECTION_COMMISSION'"
-                                :class="{active: commissionType === 'ELECTION_COMMISSION'}">
+                                @click="commissionType = ''"
+                                :class="{active: commissionType === ''}">
                             Все
                         </button>
                         <button class="buttongroup-unit"
-                                @click="commissionType = 'ELECTION_COMMISSION_TERRITORIAL'"
-                                :class="{active: commissionType === 'ELECTION_COMMISSION_TERRITORIAL'}">
-                            Территориальные
-                        </button>
-                        <button class="buttongroup-unit"
-                                @click="commissionType = 'ELECTION_COMMISSION_PRECINCT'"
-                                :class="{active: commissionType === 'ELECTION_COMMISSION_PRECINCT'}">
-                            Участковые
+                                v-for="(name, key) in commission_types"
+                                @click="commissionType = key"
+                                :class="{active: commissionType === key}">
+                            {{name}}
                         </button>
                     </div>
                 </div>
@@ -290,10 +286,11 @@ import 'ol/ol.css'
 import Navbar from './Navbar.vue'
 import CommissionMap from './CommissionMap.vue'
 import {onMounted, ref, watch} from "vue";
+import {commission_types} from "./Commission.vue";
 
 const data           = ref(null)
 const campaign       = ref('2022-02-referendum')
-const commissionType = ref('ELECTION_COMMISSION')
+const commissionType = ref('')
 const offset         = ref(0)
 const map            = ref(null)
 const search         = ref(null)

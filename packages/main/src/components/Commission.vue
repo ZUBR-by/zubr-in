@@ -208,15 +208,9 @@
 </template>
 <script>
 const map = {
-    ELECTION_COMMISSION_PRECINCT_PRESIDENTIAL_2020: 'Участковая',
-    ELECTION_COMMISSION_TERRITORIAL_PRESIDENTIAL_2020: 'Территориальная',
-    ELECTION_COMMISSION_TERRITORIAL_PARLIAMENTARY_2019: 'Территориальная',
-    ELECTION_COMMISSION_TERRITORIAL: 'Территориальная',
-    ELECTION_COMMISSION_PRECINCT_PARLIAMENTARY_2019: 'Участковая',
-    ELECTION_COMMISSION_PRECINCT_LOCAL_2018: 'Участковая',
-    ELECTION_COMMISSION_PRECINCT: 'Участковая',
-    ELECTION_COMMISSION_TERRITORIAL_LOCAL_2018: 'Территориальная',
-    ELECTION_COMMISSION_CENTRAL: 'Центральная',
+    central: 'Центральная',
+    precinct: 'Участковая',
+    territorial: 'Территориальная'
 }
 export {map as commission_types}
 </script>
