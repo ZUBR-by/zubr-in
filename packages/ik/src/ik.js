@@ -5,10 +5,7 @@ import './assets/main.css'
 
 import * as Sentry from "@sentry/vue";
 import {BrowserTracing} from "@sentry/tracing"; // ES 2015
-
 const app = createApp(App)
-app.use(router)
-app.mount('#app')
 
 if (import.meta.env.MODE !== 'development') {
     Sentry.init({
@@ -22,3 +19,8 @@ if (import.meta.env.MODE !== 'development') {
         tracesSampleRate: 1.0,
     });
 }
+
+app.use(router)
+app.mount('#app')
+
+
