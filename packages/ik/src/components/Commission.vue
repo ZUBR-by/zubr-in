@@ -432,20 +432,11 @@ import {computed, defineComponent, onMounted, ref} from "vue";
 import {useRoute} from 'vue-router'
 import {ElImage} from 'element-plus';
 import Location from '@zubr-in/main/src/components/Point.vue'
+import {commission_types} from '@zubr-in/main/src/components/Commission.vue'
 import {formatDateCampaign} from "@zubr-in/main/src/date";
 import {strategy, telegram_ik} from "../links";
 
 const data = ref(null)
-
-const map = {
-    ELECTION_COMMISSION_PRECINCT_PRESIDENTIAL_2020: 'Участковая',
-    ELECTION_COMMISSION_TERRITORIAL_PRESIDENTIAL_2020: 'Территориальная',
-    ELECTION_COMMISSION_TERRITORIAL_PARLIAMENTARY_2019: 'Территориальная',
-    ELECTION_COMMISSION_PRECINCT_PARLIAMENTARY_2019: 'Участковая',
-    ELECTION_COMMISSION_PRECINCT_LOCAL_2018: 'Участковая',
-    ELECTION_COMMISSION_TERRITORIAL_LOCAL_2018: 'Территориальная',
-    ELECTION_COMMISSION_CENTRAL: 'Центральная',
-}
 
 async function fetchCommission(id) {
     try {
@@ -521,7 +512,7 @@ export default defineComponent({
         return {
             strategy,
             data,
-            map,
+            map: commission_types,
             list,
             isLater,
             curators_local,
