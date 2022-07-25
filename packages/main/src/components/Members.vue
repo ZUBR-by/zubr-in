@@ -17,6 +17,11 @@
             Идет загрузка...
         </div>
     </div>
+    <div class="scene mrgn-t-170px mil-mrgn-t-170px" v-if="error">
+        <div class="committee-members-list">
+            Произошла ошибка при загрузке
+        </div>
+    </div>
     <div class="scene mrgn-t-170px mil-mrgn-t-170px" v-if="data">
         <div class="committee-members-list" v-if="loading">
             Идет загрузка...
@@ -88,12 +93,12 @@
     </div>
 </template>
 <script>
-import Header from './Navbar.vue'
+import Header                                             from './Navbar.vue'
 import {defineComponent, onMounted, reactive, ref, watch} from "vue";
-import {commission_types} from "./Commission.vue";
-import {onBeforeRouteUpdate} from "vue-router";
-import router from "../router";
-import {ElImage} from 'element-plus'
+import {commission_types}                                 from "./Commission.vue";
+import {onBeforeRouteUpdate}                              from "vue-router";
+import router                                             from "../router";
+import {ElImage}                                          from 'element-plus'
 
 const data    = ref(null)
 let filter    = reactive({
@@ -102,6 +107,7 @@ let filter    = reactive({
 const tmp     = ref(null)
 const offset  = ref(0)
 const loading = ref(false)
+const error   = ref();
 
 async function fetchMembers() {
     try {
@@ -115,13 +121,18 @@ async function fetchMembers() {
             + ('&offset=' + offset.value)
         )
         tmp.value      = await response.json()
-
+        loading.value  = false;
+        if (tmp.value.error) {
+            error.value = true;
+            data.value  = {members: [], pagination: {aggregate: {count: 0}}};
+            return
+        }
         if (offset.value > 0) {
             data.value.members = data.value.members.concat(tmp.value.members)
         } else {
             data.value = tmp.value
         }
-        loading.value = false;
+
     } catch (e) {
         loading.value = false;
         data.value    = {members: [], pagination: {aggregate: {count: 0}}};
@@ -161,6 +172,7 @@ export default defineComponent({
             fetchMembers()
         });
         return {
+            error,
             data,
             filter,
             loading,
