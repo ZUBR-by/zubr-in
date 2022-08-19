@@ -63,7 +63,8 @@
         </div>
     </header-view>
     <div class="scene mrgn-t-190px mil-mrgn-t-200px">
-        <message-list v-model="data.messages" v-if="data" :show-button-all="false"></message-list>
+        Скрыты по соображениям безопасности, при изменении ситуации будут возвращены
+<!--        <message-list v-model="data.messages" v-if="data" :show-button-all="false"></message-list>-->
         <div class="flex-column flex-algn-itms-c pdng-t-40px"
              v-if="data && data.messages_aggregate && data.messages_aggregate.aggregate.count > 0">
             <a @click="fetchMore" class="button primary pdng-l-40px pdng-r-40px">
