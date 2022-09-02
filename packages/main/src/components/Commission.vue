@@ -197,7 +197,7 @@
                                 :src="item.attachment.url" v-for="(item, index) of report.attachments"
                                 alt="Протокол"
                                 :fit="'scale-down'"
-                                :preview-src-list="[item.url]"
+                                :preview-src-list="[item.attachment.url]"
                                 :class="{'pdng-l-5px' : index > 0}"
                             ></el-image>
                         </div>
