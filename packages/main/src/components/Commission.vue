@@ -194,7 +194,7 @@
                         <div v-for="report of data.commission.report" style="width: 400px;height:500px">
                             <el-image
                                 :append-to-body="true"
-                                :src="item.url" v-for="(item, index) of report.attachments"
+                                :src="item.attachment.url" v-for="(item, index) of report.attachments"
                                 alt="Протокол"
                                 :fit="'scale-down'"
                                 :preview-src-list="[item.url]"
