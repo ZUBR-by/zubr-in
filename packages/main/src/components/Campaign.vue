@@ -71,7 +71,7 @@
     <template v-if="data && data.campaign.id === '2022-02-referendum'">
         <div class="scene" style="padding-top: 0;padding-bottom: 0">
             <a href="/ref"><h1 class="txt-size-28px">
-                "ГОЛОС", "ЧЕСТНЫЕ ЛЮДИ", ZUBR: ОТЧЕТ О "РЕФЕРЕНДУМЕ"-2022 В БЕЛАРУСИ
+                ОТЧЕТ О "РЕФЕРЕНДУМЕ"-2022 В БЕЛАРУСИ
             </h1>
             </a>
         </div>
