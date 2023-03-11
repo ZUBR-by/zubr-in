@@ -266,7 +266,7 @@
                 по
                 выборам, и
                 размещение вашего профиля является ошибкой, просим вас незамедлительно обратиться в администрацию
-                <a href="mailto:zubr.contact@gmail.com">ZUBR</a> .</p>
+                <a href="mailto:contact@zubr.in">ZUBR</a> .</p>
         </div>
 
     </el-dialog>
