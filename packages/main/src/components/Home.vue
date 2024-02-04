@@ -113,7 +113,7 @@
                 <div class="article-preview-image pdng-b-20px mrgn-t-30px">
                     <img :src="item._embedded['wp:featuredmedia'][0]['source_url']"
                          style="width: 50%;height: 50%"
-                         v-if="item._embedded['wp:featuredmedia'][0]['source_url']">
+                         v-if="item._embedded['wp:featuredmedia'] && item._embedded['wp:featuredmedia'][0]['source_url']">
                 </div>
             </div>
         </div>
