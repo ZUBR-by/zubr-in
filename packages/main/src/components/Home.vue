@@ -93,7 +93,7 @@
         <div class="pdng-b-40px">
             <h3 class="txt-size-36px mil-txt-size-30px txt-bold">
                 Последние новости.
-                <a href="https://teletype.in/@zubr_in" class="txt-underline-inline-2px">
+                <a href="https://t.me/zubr_in" class="txt-underline-inline-2px">
                     Все новости
                 </a>
             </h3>
