@@ -1,7 +1,7 @@
 <template>
     <header-view></header-view>
-    <div class="scene mrgn-t-130px mil-mrgn-t-80px">
-        <h1 class="txt-color-2 txt-size-18px txt-normal pdng-l-40px pdng-r-40px mil-pdng-l-20px mil-pdng-r-20px">
+    <div class="scene mrgn-t-130px mil-mrgn-t-80px pdng-b-0">
+        <h1 class="txt-color-2 txt-size-18px txt-normal pdng-l-40px pdng-r-40px mil-pdng-l-0 mil-pdng-r-0">
             <dl>
                 <dt class="txt-color-1 txt-inline txt-bold">
                     ZUBR.in
@@ -15,9 +15,14 @@
             </dl>
         </h1>
     </div>
-
-    <div class="scene pdng-t-0">
-        <div class="election-campaign-list" v-if="data">
+    <div class="scene pdng-t-0 pdng-b-0" style="padding-bottom: 0">
+      <div class="banner-home">
+        <a href="https://www.newbelarus-taxes.com/">
+          <img src="/img/banner_taxes.png" ></a>
+      </div>
+    </div>
+    <div class="scene pdng-t-0" v-if="data">
+        <div class="election-campaign-list">
             <div class="election-campaign-unit" v-for="(campaign) of data.campaigns">
                 <div class="elect-camp-unit-header flex-row flex-algn-itms-c size-100 border-b-2px border-color2">
                     <div

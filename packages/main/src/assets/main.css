@@ -879,6 +879,16 @@ input#brgrbtn:checked + label + .brgr-nav {
     background: rgba(255, 255, 255, 0.2);
 }
 
+.banner-home {
+    margin: auto;
+    width: 36em;
+    height: 24em
+}
+
+.banner-home img {
+    width: 33em;
+    height: 22em
+}
 
 @media (max-width: 820px) {
     @viewport {
@@ -1010,6 +1020,16 @@ input#brgrbtn:checked + label + .brgr-nav {
         padding: 50% 0;
     }
 
+    .banner-home {
+        margin: 0;
+        width: 21em;
+        height: 14em
+    }
+
+    .banner-home img {
+        width: 21em;
+        height: 14em
+    }
 
 }
 
