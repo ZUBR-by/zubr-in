@@ -1749,6 +1749,13 @@ h1, a, .button, .txt-color-1 {
         padding-right: 20px;
     }
 
+    .mil-pdng-b-0 {
+        padding-bottom: 0;
+    }
+
+    .mil-pdng-b-5px {
+        padding-bottom: 5px;
+    }
 
     .mil-pdng-b-5px {
         padding-bottom: 5px;
