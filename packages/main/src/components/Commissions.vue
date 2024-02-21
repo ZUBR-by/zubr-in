@@ -32,6 +32,11 @@
                         Кампания
                     </div>
                     <div class="buttongroup">
+                      <button class="buttongroup-unit"
+                              @click="campaign = '2024-02-parliamentary-local'"
+                              :class="{active: campaign === '2024-02-parliamentary-local'}">
+                        2024
+                      </button>
                         <button class="buttongroup-unit"
                                 @click="campaign = '2022-02-referendum'"
                                 :class="{active: campaign === '2022-02-referendum'}">
@@ -289,7 +294,7 @@ import {onMounted, ref, watch} from "vue";
 import {commission_types} from "./Commission.vue";
 
 const data           = ref(null)
-const campaign       = ref('2022-02-referendum')
+const campaign       = ref('2024-02-parliamentary-local')
 const commissionType = ref('')
 const offset         = ref(0)
 const map            = ref(null)
