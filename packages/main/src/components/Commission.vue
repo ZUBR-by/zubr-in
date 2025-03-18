@@ -143,9 +143,8 @@
             Последние сообщения о нарушениях.
             <a class="txt-underline-inline-2px" href="#">Всего {{ data.commission.messages.length }} сообщений о
                 нарушениях</a>.
-            Скрыты по соображениям безопасности, при изменении ситуации будут возвращены
         </h2>
-<!--        <message-list v-model="data.commission.messages" :show-commission="false"></message-list>-->
+        <message-list v-model="data.commission.messages" :show-commission="false"></message-list>
     </div>
     <div class="scene" v-if="data && data.commission.campaign">
         <h2 class="txt-size-36px mil-txt-size-30px txt-bold pdng-b-40px">

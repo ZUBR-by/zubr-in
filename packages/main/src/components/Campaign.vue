@@ -102,10 +102,9 @@
             Последние сообщения. <a class="txt-underline-inline-2px"
                                     :href="'/campaign/' + data.campaign.id + '/messages'">
             Всего {{ data.messages_aggregate.aggregate.count }} сообщений о нарушениях
-            . Скрыты по соображениям безопасности, при изменении ситуации будут возвращены
         </a>.
         </h2>
-<!--        <message-list v-model="data.messages"></message-list>-->
+        <message-list v-model="data.messages"></message-list>
         <div class="flex-column flex-algn-itms-c pdng-t-40px" v-if="data">
             <a :href="'/campaign/' + data.campaign.id + '/messages'"
                class="button primary inline-flex flex-algn-itms-c pdng-l-40px pdng-r-40px">
