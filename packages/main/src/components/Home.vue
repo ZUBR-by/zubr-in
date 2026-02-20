@@ -18,7 +18,7 @@
     <div class="scene pdng-t-0 pdng-b-0" style="padding-bottom: 0">
       <div class="banner-home">
         <a href="https://www.newbelarus-taxes.com/">
-          <img src="../assets/svae-banner-2025.jpg" ></a>
+          <img src="../assets/svae-banner-2026.jpg" ></a>
       </div>
     </div>
     <div class="scene" v-if="news">
